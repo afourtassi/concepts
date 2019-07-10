@@ -1,0 +1,188 @@
+---
+title: "childes-db"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r childes-1}
+install.packages("devtools")
+devtools::install_github("langcog/childesr")
+```
+
+Gets all of the English transcripts:
+
+```{r childes-2}
+library(childesr)
+d_eng_na <- get_transcripts(collection = "Eng-NA")
+```
+
+Get speech-act participants in the corpora:
+
+```{r childes-3}
+library(childesr)
+d_participants <- get_participants()
+```
+
+Get instances of a particular word:
+
+```{r childes-4}
+library(childesr)
+d_adam_prod <- get_tokens(corpus = "Brown",
+                          role = "target_child",
+                          target_child = "Adam",
+                          token = c("dog", "ball"))
+```
+
+Get the utterances:
+
+```{r childes-5}
+library(childesr)
+d_adam_utts <- get_utterances(corpus = "Brown",
+                              target_child = "Adam")
+```
+
+Get all values for speaker role:
+ [1] "Target_Child"    "Investigator"    "Mother"         
+ [4] "Father"          "Adult"           "Child"          
+ [7] "Unidentified"    "Camera_Operator" "Grandmother"    
+[10] "Cousin"          "Brother"         "Playmate"       
+[13] "Uncle"           "Aunt"            "Family_Friend"  
+[16] "Teacher"         "Non_Human"       "Grandfather"    
+[19] "Teenager"        "Toy"             "Visitor"        
+[22] "Babysitter"      "Participant"     "Sister"         
+[25] "Girl"            "Male"            "Sibling"        
+[28] "Environment"     "Observer"        "Nurse"          
+[31] "Doctor"          "Uncertain"       "Student"        
+[34] "Clinician"       "Housekeeper"
+
+```{r childes-6}
+library(childesr)
+d_participants <- get_participants(collection = "Eng-NA")
+categories <- unique(d_participants$role)
+print(categories)
+```
+
+```{r childes-6}
+library(childesr)
+d_participants <- get_participants(collection = "Eng-NA")
+categories1 <- unique(d_participants$corpus_name)
+print(categories1)
+```
+
+Get all utterances in English by speakers of a particular role:
+(What roles should this be ideally?)
+
+```{r childes-2}
+library(childesr)
+adult_utterances <- get_utterances(role_exclude = c("Target_Child", "Child"), language = "eng")
+```
+
+```{r childes-2}
+library(childesr)
+adult_utterances <- get_utterances(role_exclude = c("Target_Child", "Child"), language = "eng")
+adult_utterances_age <- dplyr::filter(adult_utterances, target_child_age < 36)
+adult_utterances_age_corpus <- dplyr::filter(adult_utterances_age, corpus_name %in% c("Clark", "Brown"))
+```
+
+```{r childes-2}
+library(childesr)
+all_utterances <- get_utterances(language = "eng")
+all_utterances_age <- dplyr::filter(all_utterances, target_child_age < 36)
+all_utterances_age_corpus <- dplyr::filter(all_utterances_age, corpus_name == "Clark", "Brown")
+```
+
+```{r childes-2}
+library(childesr)
+child_utterances <- get_utterances(role = c("Target_Child", "Child"), language = "eng")
+child_utterances_age <- dplyr::filter(child_utterances, target_child_age < 36)
+child_utterances_age_corpus <- dplyr::filter(adult_utterances_age, corpus_name %in% c("Clark", "Brown"))
+```
+
+```{r childes-2}
+library(childesr)
+d_adam_prod <- get_tokens(corpus = "Brown",
+                          role = "target_child",
+                          token = c("dog", "ball"))
+```
+
+```{r childes-2}
+library(childesr)
+get_contexts(target_child = "Shem", token = c("dog", "ball"))
+```
+
+```{r childes-2}
+write.csv(adult_utterances, "adult_utterances.csv")
+```
+
+```{r childes-2}
+write.csv(adult_utterances_age, "adult_utterances_age.csv")
+```
+
+```{r childes-2}
+write.csv(adult_utterances_age_corpus, "adult_utterances_age_corpus.csv")
+```
+
+```{r childes-2}
+write.csv(child_utterances_age, "child_utterances_age.csv")
+```
+
+```{r childes-2}
+write.csv(child_utterances_age_corpus, "child_utterances_age_corpus.csv")
+```
+
+```{r childes-2}
+write.csv(all_utterances_age, "all_utterances_3.csv")
+```
+
+```{r childes-2}
+write.csv(all_utterances_age, "all_utterances_3.csv")
+```
+
+```{r childes-2}
+library(dplyr)
+df_0 <- `concept_and_instance_n=0` %>%
+    mutate(age = cut(V6, c(0, 18, 27, 36))) %>% 
+    mutate(window = 0) %>%
+    group_by(window, V1, V5, age) %>%
+    summarise(count=n())
+df_1 <- `concept_and_instance_n=1` %>%
+    mutate(age = cut(V6, c(0, 18, 27, 36))) %>% 
+    mutate(window = 1) %>%
+    group_by(window, V1, V5, age) %>%
+    summarise(count=n())
+df_2 <- `concept_and_instance_n=2` %>%
+    mutate(age = cut(V6, c(0, 18, 27, 36))) %>% 
+    mutate(window = 2) %>%
+    group_by(window, V1, V5, age) %>%
+    summarise(count=n())
+df_3 <- `concept_and_instance_n=3` %>%
+    mutate(age = cut(V6, c(0, 18, 27, 36))) %>% 
+    mutate(window = 3) %>%
+    group_by(window, V1, V5, age) %>%
+    summarise(count=n())
+dfMerge <- do.call("rbind", list(df_0, df_1, df_2, df_3))
+```
+
+```{r childes-2}
+library(ggplot2)
+p <- ggplot(dfMerge, aes(age, count, colour=V5)) + 
+    geom_line() + 
+    geom_point()
+p
+p + facet_grid(rows = vars(window))
+p
+```
+
+
+```{r childes-2}
+library(ggplot2)
+p <- ggplot(dfMerge, aes(age, count, colour=V5), group=V5) + 
+    geom_line(aes(group = V5)) + geom_point() + 
+    facet_grid(rows = vars(window), vars(V1))
+p
+```
+
