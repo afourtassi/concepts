@@ -6,12 +6,19 @@ filename = 'child_utterances_age_corpus.csv'
 
 concepts = ["food", "clothes", "animal", "toy", "furniture"]
 
-food = ["banana", "apple", "peas", "corn", "bread"]
-clothes = ["shirt", "pants", "pajamas", "coat", "jeans"]
-animals = ["dog", "bunny", "cat", "cow", "pig"]
-toys = ["book", "doll", "stick", "ball", "train"]
-furniture = ["chair", "table", "bed", "couch", "door"]
+data = {}
 
+food=[]
+clothes=[]
+animals=[]
+toys=[]
+furniture=[]
+
+foodShort = ["banana", "apple", "peas", "corn", "bread"]
+clothesShort = ["shirt", "pants", "pajamas", "coat", "jeans"]
+animalsShort = ["dog", "bunny", "cat", "cow", "pig"]
+toysShort = ["book", "doll", "stick", "ball", "train"]
+furnitureShort = ["chair", "table", "bed", "couch", "door"]
 
 foodExt = ["beans", "peas", "corn", "bread", "orange", "turkey", "banana", "chicken", "cake", "raisin", "strawberry", "potato", "apple", "pickle", "pumpkin"]
 clothesExt = ["gloves", "pajamas", "pants", "boots", "jeans", "mittens", "coat", "jacket", "shirt", "sweater", "belt"]
@@ -248,11 +255,11 @@ def extraction_with_rules():
 
 #If there is a mention of a concept, look at surrounding utterances for mention of instance
 
-n = 0
+n = 3
 all = True
 
 def concept_and_instance(n, all):
-    conceptLists = [food, clothes, animals, toys, furniture]
+    conceptLists = ["food", "clothes", "animals", "toys", "furniture"]
 
     if n == 0:
         concept_and_instance_zero(conceptLists, all)
@@ -296,8 +303,8 @@ def concept_and_instance_helper(i, curUtterances, conceptLists, writer, all):
 
                 for utt in curUtterances:
                     for group in conceptLists:
-                        for instance in group:
-                            if instance in utt[0].split():
+                        for instance in data[group]:
+                            if instance in utt[0].split() and instance != concept:
                                 temp.append([curUtterances.index(utt), utt])
                                 temp.append(instance)
                                 temp.append(curUtterances[i][2])
@@ -322,11 +329,11 @@ def concept_and_instance_helper(i, curUtterances, conceptLists, writer, all):
                 temp.append(" ")
                 temp.append((curUtterances[i][0], curUtterances[i][1]))
 
-                topicIndex = concepts.index(concept)
+                #topicIndex = concepts.index(concept)
 
                 for utt in curUtterances:
-                    for instance in conceptLists[topicIndex]:
-                        if instance in utt[0].split():
+                    for instance in data[concept]:
+                        if instance in utt[0].split() and instance != concept:
                             temp.append([curUtterances.index(utt), utt])
                             temp.append(instance)
                             temp.append(curUtterances[i][2])
@@ -361,8 +368,8 @@ def concept_and_instance_zero(conceptLists, all):
                             temp.append((row[8], row[12]))
 
                             for group in conceptLists:
-                                for instance in group:
-                                    if instance in row[8].split():
+                                for instance in data[group]:
+                                    if instance in row[8].split() and instance != concept:
                                         temp.append([0, row[8]])
                                         temp.append(instance)
                                         temp.append(row[14])
@@ -381,10 +388,10 @@ def concept_and_instance_zero(conceptLists, all):
                             temp.append(" ")
                             temp.append((row[8], row[12]))
 
-                            topicIndex = concepts.index(concept)
+                            #topicIndex = concepts.index(concept)
 
-                            for instance in conceptLists[topicIndex]:
-                                if instance in row[8].split():
+                            for instance in data[concept]:
+                                if instance in row[8].split() and instance != concept:
                                     temp.append([0, row[8]])
                                     temp.append(instance)
                                     temp.append(row[14])
@@ -395,7 +402,13 @@ def concept_and_instance_zero(conceptLists, all):
 
                                     temp = temp[:3]
 
+def get_instances():
 
+    with open('wb_nouns.csv', newline='') as f:
+        reader = csv.reader(f)
+
+        for row in reader:
+            data[row[1]] = [x for x in row[2:] if x != ""]
 
 
 #count_concepts()
@@ -405,6 +418,7 @@ def concept_and_instance_zero(conceptLists, all):
 #concept_utterances_books()
 #hearst_extraction_books()
 #extract_concepts_books()
+get_instances()
 concept_and_instance(n, all)
 
 
@@ -421,6 +435,7 @@ concept_and_instance(n, all)
 #take a sample from each window to make sure co-occurrences are valid
 
 #make vectors for each of the basic terms
+#then make the network
 
 #Ask isaac about network construction, ask about input matrix etc.
 #igraph library in r
@@ -429,3 +444,7 @@ concept_and_instance(n, all)
 
 #Things to think about later: what to do with zero vectors
 #Backup code
+
+#if you refactor code, might be smart to include things in dictionaries instead of lists
+
+#possibly change if instance is concept to if instance is any of the concepts
