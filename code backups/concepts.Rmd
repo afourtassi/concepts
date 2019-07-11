@@ -1,0 +1,72 @@
+---
+title: "concepts"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(childesr)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(tidyverse)
+library(text2vec)
+```
+
+Get all utterances from childes where language is English and age of target child is less than 3.
+```{r}
+all_utterances <- get_utterances(language = "eng")
+all_utterances_age <- dplyr::filter(all_utterances, target_child_age < 36)
+```
+
+//Python script to generate a list of co-occurrences of basic terms and superordinate categories.//
+
+Group responses by age range and count occurrences of basic term within superordinate categories. Then join together all dataframes for particular window sizes. 
+```{r}
+df_0 <- `concept_and_instance_all_n=0` %>%
+    mutate(age = cut(V6, c(0, 36))) %>% 
+    mutate(wndw = 0) %>%
+    group_by(wndw, V1, V5, age) %>%
+    summarise(count=n())
+df_1 <- `concept_and_instance_all_n=1` %>%
+    mutate(age = cut(V6, c(0,36))) %>% 
+    mutate(wndw = 1) %>%
+    group_by(wndw, V1, V5, age) %>%
+    summarise(count=n())
+df_2 <- `concept_and_instance_all_n=2` %>%
+    mutate(age = cut(V6, c(0,36))) %>% 
+    mutate(wndw = 2) %>%
+    group_by(wndw, V1, V5, age) %>%
+    summarise(count=n())
+df_3 <- `concept_and_instance_all_n=3` %>%
+    mutate(age = cut(V6, c(0, 36))) %>% 
+    mutate(wndw = 3) %>%
+    group_by(wndw, V1, V5, age) %>%
+    summarise(count=n())
+dfMerge <- do.call("rbind", list(df_0, df_1, df_2, df_3))
+```
+
+Plot the number of co-occurrences of basic terms and superordinate categories as age increases according to superordinate category and window size.
+```{r}
+occurrence_change <- ggplot(dfMerge, aes(age, count, colour=V5)) + 
+    geom_line(aes(group = V5)) + geom_point(aes(group = V5)) + 
+    facet_grid(rows = vars(wndw), vars(V1))
+```
+
+Calculate weightings of each superordinate category for each basic term (number of co-occurrences * 1/window size+1), then sum weightings across all window sizes for equivalent basic terms. 
+```{r}
+dfMerge <- mutate(dfMerge, weight = count * (1/(wndw + 1)))
+dfSum <- dfMerge %>% group_by(V1, V5) %>%
+  summarize(weight = sum(weight))
+df <- spread(dfSum, V1, weight, fill=0)
+df <- df %>% remove_rownames %>% column_to_rownames(var="V5")
+```
+
+Calculate word-word similarity using cosine similarity for all word pairs.
+```{r}
+cos_sim <- sim2(as.matrix(df), as.matrix(df), method="cosine")
+```
+

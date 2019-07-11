@@ -258,6 +258,11 @@ def extraction_with_rules():
 n = 3
 all = True
 
+'''
+PARAMETERS: n, the size of the window to search
+            all, whether to search for co-occurrence in all categories or only the correct superordinate category.
+Find any co-ocurrences of basic terms and superordinate categroies in utterances from childes database.
+'''
 def concept_and_instance(n, all):
     conceptLists = ["food", "clothes", "animals", "toys", "furniture"]
 
@@ -329,8 +334,6 @@ def concept_and_instance_helper(i, curUtterances, conceptLists, writer, all):
                 temp.append(" ")
                 temp.append((curUtterances[i][0], curUtterances[i][1]))
 
-                #topicIndex = concepts.index(concept)
-
                 for utt in curUtterances:
                     for instance in data[concept]:
                         if instance in utt[0].split() and instance != concept:
@@ -388,8 +391,6 @@ def concept_and_instance_zero(conceptLists, all):
                             temp.append(" ")
                             temp.append((row[8], row[12]))
 
-                            #topicIndex = concepts.index(concept)
-
                             for instance in data[concept]:
                                 if instance in row[8].split() and instance != concept:
                                     temp.append([0, row[8]])
@@ -402,13 +403,18 @@ def concept_and_instance_zero(conceptLists, all):
 
                                     temp = temp[:3]
 
+#def concept_and_instance_append():
+
+'''
+Given CSV with categories and nouns from Wordbank, create a dictionary with all terms.
+'''
 def get_instances():
 
     with open('wb_nouns.csv', newline='') as f:
         reader = csv.reader(f)
 
         for row in reader:
-            data[row[1]] = [x for x in row[2:] if x != ""]
+            data[row[1]] = [x for x in row[2:] if x != "" and x != "animal"]
 
 
 #count_concepts()
@@ -443,8 +449,5 @@ concept_and_instance(n, all)
 #then add in verbs (play, eat, wear)
 
 #Things to think about later: what to do with zero vectors
-#Backup code
-
-#if you refactor code, might be smart to include things in dictionaries instead of lists
 
 #possibly change if instance is concept to if instance is any of the concepts

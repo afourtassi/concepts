@@ -3,6 +3,7 @@ title: "childes-db"
 output: html_document
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -144,25 +145,25 @@ write.csv(all_utterances_age, "all_utterances_3.csv")
 
 ```{r childes-2}
 library(dplyr)
-df_0 <- `concept_and_instance_n=0` %>%
-    mutate(age = cut(V6, c(0, 18, 27, 36))) %>% 
-    mutate(window = 0) %>%
-    group_by(window, V1, V5, age) %>%
+df_0 <- `concept_and_instance_all_n=0` %>%
+    mutate(age = cut(V6, c(0, 36))) %>% 
+    mutate(wndw = 0) %>%
+    group_by(wndw, V1, V5, age) %>%
     summarise(count=n())
-df_1 <- `concept_and_instance_n=1` %>%
-    mutate(age = cut(V6, c(0, 18, 27, 36))) %>% 
-    mutate(window = 1) %>%
-    group_by(window, V1, V5, age) %>%
+df_1 <- `concept_and_instance_all_n=1` %>%
+    mutate(age = cut(V6, c(0,36))) %>% 
+    mutate(wndw = 1) %>%
+    group_by(wndw, V1, V5, age) %>%
     summarise(count=n())
-df_2 <- `concept_and_instance_n=2` %>%
-    mutate(age = cut(V6, c(0, 18, 27, 36))) %>% 
-    mutate(window = 2) %>%
-    group_by(window, V1, V5, age) %>%
+df_2 <- `concept_and_instance_all_n=2` %>%
+    mutate(age = cut(V6, c(0,36))) %>% 
+    mutate(wndw = 2) %>%
+    group_by(wndw, V1, V5, age) %>%
     summarise(count=n())
-df_3 <- `concept_and_instance_n=3` %>%
-    mutate(age = cut(V6, c(0, 18, 27, 36))) %>% 
-    mutate(window = 3) %>%
-    group_by(window, V1, V5, age) %>%
+df_3 <- `concept_and_instance_all_n=3` %>%
+    mutate(age = cut(V6, c(0, 36))) %>% 
+    mutate(wndw = 3) %>%
+    group_by(wndw, V1, V5, age) %>%
     summarise(count=n())
 dfMerge <- do.call("rbind", list(df_0, df_1, df_2, df_3))
 ```
@@ -172,17 +173,74 @@ library(ggplot2)
 p <- ggplot(dfMerge, aes(age, count, colour=V5)) + 
     geom_line() + 
     geom_point()
-p
-p + facet_grid(rows = vars(window))
+p + facet_grid(rows = vars(wndw))
 p
 ```
 
 
 ```{r childes-2}
 library(ggplot2)
-p <- ggplot(dfMerge, aes(age, count, colour=V5), group=V5) + 
-    geom_line(aes(group = V5)) + geom_point() + 
-    facet_grid(rows = vars(window), vars(V1))
+p <- ggplot(dfMerge, aes(age, count, colour=V5)) + 
+    geom_line(aes(group = V5)) + geom_point(aes(group = V5)) + 
+    facet_grid(rows = vars(wndw), vars(V1))
 p
 ```
+
+Make weightings
+```{r}
+dfMerge <- mutate(dfMerge, weight = count * (1/(wndw + 1)))
+```
+
+Sum all weights across windows
+```{r}
+dfSum <- dfMerge %>% group_by(V1, V5) %>%
+  summarize(weight = sum(weight))
+```
+
+
+Create similarity matrix for explicit cues using a vectorial representation:
+```{r}
+library(tidyr)
+library(tidyverse)
+df <- spread(dfSum, V1, weight, fill=0)
+df <- df %>% remove_rownames %>% column_to_rownames(var="V5")
+```
+
+```{r}
+write.csv(df, "vectors_n<=3.csv")
+```
+
+Check this function!!!! Calculate cosine similarity
+```{r}
+library(text2vec)
+cos_sim <- sim2(as.matrix(df), as.matrix(df), method="cosine")
+```
+
+Is there a way to get this with categories organized?
+```{r}
+library(ggcorrplot)
+library(ggplot2)
+
+reorder_cormat <- function(cos_sim){
+# Use correlation between variables as distance
+dd <- as.dist((1-cos_sim)/2)
+hc <- hclust(dd)
+cos_sim <- cos_sim[hc$order, hc$order]
+}
+
+get_lower_tri<-function(cormat){
+    cormat[upper.tri(cormat)] <- NA
+    return(cormat)
+}
+
+cos_sim <- reorder_cormat(cos_sim)
+lower_tri <- get_lower_tri(cos_sim)
+heatmap <- ggcorrplot(lower_tri) + theme(axis.text.x = element_text(size=9), axis.text.y = element_text(size=9))
+heatmap
+
+png("heatmap.png", width = 1600, height = 1600)
+plot(heatmap)
+dev.off()
+```
+
 
