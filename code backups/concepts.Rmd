@@ -14,6 +14,7 @@ library(ggplot2)
 library(tidyr)
 library(tidyverse)
 library(text2vec)
+library(ggcorrplot)
 ```
 
 Get all utterances from childes where language is English and age of target child is less than 3.
@@ -26,7 +27,7 @@ all_utterances_age <- dplyr::filter(all_utterances, target_child_age < 36)
 
 Group responses by age range and count occurrences of basic term within superordinate categories. Then join together all dataframes for particular window sizes. 
 ```{r}
-df_0 <- `concept_and_instance_all_n=0` %>%
+df_0 <- `concept_and_instance_all_verbs_n=0` %>%
     mutate(age = cut(V6, c(0, 36))) %>% 
     mutate(wndw = 0) %>%
     group_by(wndw, V1, V5, age) %>%
@@ -46,7 +47,7 @@ df_3 <- `concept_and_instance_all_n=3` %>%
     mutate(wndw = 3) %>%
     group_by(wndw, V1, V5, age) %>%
     summarise(count=n())
-dfMerge <- do.call("rbind", list(df_0, df_1, df_2, df_3))
+dfMerge <- do.call("rbind", list(df_0))
 ```
 
 Plot the number of co-occurrences of basic terms and superordinate categories as age increases according to superordinate category and window size.
@@ -65,8 +66,21 @@ df <- spread(dfSum, V1, weight, fill=0)
 df <- df %>% remove_rownames %>% column_to_rownames(var="V5")
 ```
 
+```{r}
+print(colSums(df))
+```
+
+
 Calculate word-word similarity using cosine similarity for all word pairs.
 ```{r}
 cos_sim <- sim2(as.matrix(df), as.matrix(df), method="cosine")
 ```
 
+Plot heatmap of cosine similarities and save as png
+```{r}
+heatmap <- ggcorrplot(cos_sim, hc.order = TRUE) + theme(axis.text.x = element_text(size=9), axis.text.y = element_text(size=9))
+
+png("heatmap_n=0_verbs.png", width = 1600, height = 1600)
+plot(heatmap)
+dev.off()
+```
