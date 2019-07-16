@@ -277,7 +277,7 @@ def concept_and_instance(n, all):
         with open('all_utterances_3.csv', newline='') as f:
             reader = csv.reader(f)
 
-            with open('concept_and_instance_all_n=3.csv', 'w') as writeFile:
+            with open('concept_and_instance_all_verbs_n=3.csv', 'w') as writeFile:
                 writer = csv.writer(writeFile)
 
                 for i in range(n):
@@ -300,7 +300,9 @@ def concept_and_instance(n, all):
 def concept_and_instance_helper(i, curUtterances, conceptLists, writer, all):
     if all:
         for concept in concepts:
-            if concept in curUtterances[i][0].split():
+            if concept in curUtterances[i][0].split() or concept == "food" and "eat" in curUtterances[i][0].split() \
+                or concept == "clothes" and "wear" in curUtterances[i][0].split() \
+                    or concept == "toy" and "play" in curUtterances[i][0].split():
                 temp = []
                 temp.append(concept)
                 temp.append(" ")
@@ -326,9 +328,12 @@ def concept_and_instance_helper(i, curUtterances, conceptLists, writer, all):
                                 writer.writerow(temp)
                                 temp = temp[:3]
 
+    #add something in here to know if utterance was a category utterance or verb utterance?
     else:
         for concept in concepts:
-            if concept in curUtterances[i][0].split():
+            if concept in curUtterances[i][0].split() or concept == "food" and "eat" in curUtterances[i][0].split() \
+                or concept == "clothes" and "wear" in curUtterances[i][0].split() \
+                    or concept == "toy" and "play" in curUtterances[i][0].split():
                 temp = []
                 temp.append(concept)
                 temp.append(" ")
@@ -358,13 +363,15 @@ def concept_and_instance_zero(conceptLists, all):
     with open('all_utterances_3.csv', newline='') as f:
         reader = csv.reader(f)
 
-        with open('concept_and_instance_all_n=0.csv', 'w') as writeFile:
+        with open('concept_and_instance_all_verbs_n=0.csv', 'w') as writeFile:
             writer = csv.writer(writeFile)
 
             if all:
                 for row in reader:
                     for concept in concepts:
-                        if concept in row[8].split():
+                        if concept in row[8].split() or concept == "food" and "eat" in row[8].split() \
+                            or concept == "clothes" and "wear" in row[8].split() \
+                                or concept == "toy" and "play" in row[8].split():
                             temp = []
                             temp.append(concept)
                             temp.append(" ")
@@ -385,7 +392,9 @@ def concept_and_instance_zero(conceptLists, all):
             else:
                 for row in reader:
                     for concept in concepts:
-                        if concept in row[8].split():
+                        if concept in row[8].split() or concept == "food" and "eat" in row[8].split() \
+                            or concept == "clothes" and "wear" in row[8].split() \
+                                or concept == "toy" and "play" in row[8].split():
                             temp = []
                             temp.append(concept)
                             temp.append(" ")
@@ -414,7 +423,40 @@ def get_instances():
         reader = csv.reader(f)
 
         for row in reader:
-            data[row[1]] = [x for x in row[2:] if x != "" and x != "animal"]
+            data[row[1]] = [x for x in row[2:] if x != "" and x != "animal" and x != "toy" and x != "food"]
+
+
+#Takes a v long time to run
+def miscategorization():
+    keys = ['toys', 'clothes', 'animals', 'furniture', 'food']
+    count = 0
+
+    with open('all_utterances_3.csv', newline='') as f:
+        reader = csv.reader(f)
+
+        with open('miscategorization_n=0.csv', 'w') as writeFile:
+            writer = csv.writer(writeFile)
+
+            for row in reader:
+                count +=1
+                print(count)
+                for concept in concepts:
+                    #Look for any words that are not in the basic terms of the category
+                    for key in [x for x in keys if concept not in x]:
+                        for instance in data[key]:
+                            if concept in row[8].split() and instance in row[8].split():
+                                writer.writerow([concept, instance, row[8], row[12], row[14], row[16], row[25]])
+
+def utterances_to_txt():
+    with open('all_utterances_3.csv', newline='') as f:
+        reader = csv.reader(f)
+
+        with open('all_utterances_3.txt', 'w') as writeFile:
+
+            next(reader)
+
+            for row in reader:
+                writeFile.write(row[8] + " ")
 
 
 #count_concepts()
@@ -424,8 +466,10 @@ def get_instances():
 #concept_utterances_books()
 #hearst_extraction_books()
 #extract_concepts_books()
-get_instances()
-concept_and_instance(n, all)
+#get_instances()
+#concept_and_instance(n, all)
+#miscategorization()
+utterances_to_txt()
 
 
 #More things to do:
@@ -436,7 +480,6 @@ concept_and_instance(n, all)
 #Add headers
 #Clean code?
 
-#add verbs for toys, clothes, food to co-occurrences
 #find number of unique words for up to 3 year olds
 #take a sample from each window to make sure co-occurrences are valid
 
@@ -451,3 +494,11 @@ concept_and_instance(n, all)
 #Things to think about later: what to do with zero vectors
 
 #possibly change if instance is concept to if instance is any of the concepts
+
+
+#download corpus
+#NLTK, tidytext to process text before feeding to algorithm (do it in R)
+#adjust length of context, and dimensionality
+#run word2 vec training
+#heatmap
+#compare up to 3 and up to 5

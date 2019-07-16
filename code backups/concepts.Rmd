@@ -23,31 +23,32 @@ all_utterances <- get_utterances(language = "eng")
 all_utterances_age <- dplyr::filter(all_utterances, target_child_age < 36)
 ```
 
-//Python script to generate a list of co-occurrences of basic terms and superordinate categories.//
+//Other R script to get basic terms and superordinate categories from wordbank.
+//Python script to generate a list of co-occurrences of basic terms and superordinate categories in utterances from childes.//
 
 Group responses by age range and count occurrences of basic term within superordinate categories. Then join together all dataframes for particular window sizes. 
 ```{r}
-df_0 <- `concept_and_instance_all_verbs_n=0` %>%
+df_0 <- 'concept_and_instance_all_n=0.csv' %>%
     mutate(age = cut(V6, c(0, 36))) %>% 
     mutate(wndw = 0) %>%
     group_by(wndw, V1, V5, age) %>%
     summarise(count=n())
-df_1 <- `concept_and_instance_all_n=1` %>%
+df_1 <- `concept_and_instance_all_verbs_n=1` %>%
     mutate(age = cut(V6, c(0,36))) %>% 
     mutate(wndw = 1) %>%
     group_by(wndw, V1, V5, age) %>%
     summarise(count=n())
-df_2 <- `concept_and_instance_all_n=2` %>%
+df_2 <- `concept_and_instance_all_verbs_n=2` %>%
     mutate(age = cut(V6, c(0,36))) %>% 
     mutate(wndw = 2) %>%
     group_by(wndw, V1, V5, age) %>%
     summarise(count=n())
-df_3 <- `concept_and_instance_all_n=3` %>%
+df_3 <- `concept_and_instance_all_verbs_n=3` %>%
     mutate(age = cut(V6, c(0, 36))) %>% 
     mutate(wndw = 3) %>%
     group_by(wndw, V1, V5, age) %>%
     summarise(count=n())
-dfMerge <- do.call("rbind", list(df_0))
+dfMerge <- do.call("rbind", list(df_3))
 ```
 
 Plot the number of co-occurrences of basic terms and superordinate categories as age increases according to superordinate category and window size.
@@ -66,21 +67,50 @@ df <- spread(dfSum, V1, weight, fill=0)
 df <- df %>% remove_rownames %>% column_to_rownames(var="V5")
 ```
 
-```{r}
-print(colSums(df))
-```
-
-
 Calculate word-word similarity using cosine similarity for all word pairs.
 ```{r}
 cos_sim <- sim2(as.matrix(df), as.matrix(df), method="cosine")
 ```
 
-Plot heatmap of cosine similarities and save as png
+Plot heatmap of word-word similarities, and save plot as png.
 ```{r}
-heatmap <- ggcorrplot(cos_sim, hc.order = TRUE) + theme(axis.text.x = element_text(size=9), axis.text.y = element_text(size=9))
-
-png("heatmap_n=0_verbs.png", width = 1600, height = 1600)
+heatmap <- ggcorrplot(cosSim_cds, hc.order = TRUE) + theme(axis.text.x = element_text(size=9), axis.text.y = element_text(size=9))
+png("heatmap_cosSim_wndw=10.png", width = 1600, height = 1600)
 plot(heatmap)
 dev.off()
 ```
+
+Clean up corpus data
+```{r}
+library(udpipe)
+
+all_utterances_3 <- mutate(all_utterances_3, lemma = gloss)
+
+for (row in 1:nrow(all_utterances_3)){
+  x <- udpipe(x = toString(all_utterances_3[row, 7]), object = "english")
+  lemmatize <- x$lemma
+  all_utterances_3$lemma[row] <- lemmatize
+}
+ #right now still only taking the first word.
+#This takes forever and is bad
+```
+
+Train word2vec model, calculate cosine similarities of nouns from wordbank
+```{r}
+library(wordVectors)
+model = train_word2vec("all_utterances_3.txt",
+                            output="all_utterances_3_w2v.bin", threads = 4,
+                            vectors = 100, window=10, cbow=1, min_count = 10, force= TRUE)
+
+model_cds = read.vectors("all_utterances_3_w2v.bin")
+
+#Need to get data (unique_items) from wordbank here
+
+cue_words <- c(unique_items$food_drink, unique_items$animals, unique_items$clothing, unique_items$furniture_rooms, unique_items$toys)
+
+model_cue_cds <- model_cds[[which(rownames(model_cds) %in% cue_words), average=FALSE]]
+#model_target_cds <- model_cds[[which(rownames(model_cds) %in% target_words), average=FALSE]]
+cosSim_cds <- cosineSimilarity(model_cue_cds, model_cue_cds)
+
+```
+
