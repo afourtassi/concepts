@@ -15,12 +15,21 @@ library(tidyr)
 library(tidyverse)
 library(text2vec)
 library(ggcorrplot)
+library(factoextra)
+library(cluster)
+
+`%!in%` = Negate(`%in%`)
 ```
 
 Get all utterances from childes where language is English and age of target child is less than 3.
 ```{r}
 all_utterances <- get_utterances(language = "eng")
-all_utterances_age <- dplyr::filter(all_utterances, target_child_age < 36)
+all_utterances_5 <- dplyr::filter(read.csv("all_utterances_6.csv"), target_child_age < 60)
+all_utterances_4 <- dplyr::filter(all_utterances_5, target_child_age < 48)
+```
+
+```{r}
+write.csv(all_utterances_4, 'all_utterances_4.csv')
 ```
 
 //Other R script to get basic terms and superordinate categories from wordbank.
@@ -28,7 +37,7 @@ all_utterances_age <- dplyr::filter(all_utterances, target_child_age < 36)
 
 Group responses by age range and count occurrences of basic term within superordinate categories. Then join together all dataframes for particular window sizes. 
 ```{r}
-df_0 <- 'concept_and_instance_all_n=0.csv' %>%
+df_0 <- `concept_and_instance_all_verbs_n=0` %>%
     mutate(age = cut(V6, c(0, 36))) %>% 
     mutate(wndw = 0) %>%
     group_by(wndw, V1, V5, age) %>%
@@ -48,7 +57,7 @@ df_3 <- `concept_and_instance_all_verbs_n=3` %>%
     mutate(wndw = 3) %>%
     group_by(wndw, V1, V5, age) %>%
     summarise(count=n())
-dfMerge <- do.call("rbind", list(df_3))
+dfMerge <- do.call("rbind", list(df_0))
 ```
 
 Plot the number of co-occurrences of basic terms and superordinate categories as age increases according to superordinate category and window size.
@@ -113,4 +122,294 @@ model_cue_cds <- model_cds[[which(rownames(model_cds) %in% cue_words), average=F
 cosSim_cds <- cosineSimilarity(model_cue_cds, model_cue_cds)
 
 ```
+
+Compute hierarchical clustering
+```{r}
+# Dissimilarity matrix
+d <- dist(cos_sim, method = "euclidean")
+# Hierarchical clustering using Complete Linkage
+hc1 <- hclust(d, method = "average" )
+# Plot the obtained dendrogram--do we need any other kinds of graphs???
+plot(hc1, cex=0.6, hang = -1)
+```
+
+Compute optimal number of clusters
+```{r}
+set.seed(123)
+num <- fviz_nbclust(cosSim_cds, hcut,  method = "silhouette")+
+  labs(subtitle = "Silhouette statistic method")
+fviz_nbclust(cosSim_cds, hcut,  method = "gap_stat", nboot = 50)+
+  labs(subtitle = "Gap statistic method")
+fviz_nbclust(cosSim_cds, hcut,  method = "silhouette")+
+  labs(subtitle = "Silhouette statistic method")
+fviz_nbclust(cosSim_cds, hcut,  method = "wss")+
+  labs(subtitle = "WSS statistic method")
+print(num)
+```
+
+Looking at plots
+```{r}
+clust <- cutree(hc1, k = 3)
+fviz_cluster(list(data = cosSim_Cds, cluster = clust)) 
+```
+
+Compute optimal number of clusters
+Uses silhouette method, perhaps not the best measure? (but easiest to implement)
+```{r}
+#This could theoretically do everything for clustering, so maybe simplify code in the future
+
+
+library(NbClust)
+optimal_nbcluster <- function(sim_data, dis){
+  vals <- c(0, 0, 0)
+  
+  vals[1] <- NbClust(data = sim_data, diss = dis, distance = NULL, min.nc = 1, max.nc = 10, method = "average", index = "kl")$Best.nc[1]
+  
+  #vals[2] <- NbClust(data = sim_data, diss = dis, distance = NULL, min.nc = 1, max.nc = 10, method = "average", index = "gap")$Best.nc[1]
+  
+  #vals[3] <- NbClust(data = sim_data, diss = dis, distance = NULL, min.nc = 1, max.nc = 10, method = "average", index = "silhouette")$Best.nc[1]
+  
+  optimal_clust_size <- max(vals)
+  return(max(vals))
+}
+```
+
+Compute explicit clustering
+```{r}
+explicit_clustering <- function(filename, age){
+  df_0 <- read.csv(filename, header = FALSE)  %>%
+    #should maybe change this line
+    mutate(age = cut(V6, c(0, 36))) %>% 
+    mutate(wndw = 0) %>%
+    group_by(wndw, V1, V5, age) %>%
+    summarise(count=n())
+  dfMerge <- do.call("rbind", list(df_0))
+  dfMerge <- mutate(dfMerge, weight = count * (1/(wndw + 1)))
+  dfSum <- dfMerge %>% group_by(V1, V5) %>%
+    summarise(weight = sum(weight))
+  df <- spread(dfSum, V1, weight, fill=0)
+  df <- df %>% remove_rownames %>% column_to_rownames(var="V5")
+  cos_sim <- sim2(as.matrix(df), as.matrix(df), method="cosine")
+  
+  # Dissimilarity matrix
+  d <- dist(cos_sim, method = "euclidean")
+  # Hierarchical clustering using Complete Linkage
+  hc1 <- hclust(d, method = "average" )
+  clust <- cutree(hc1, k = optimal_nbcluster(cos_sim, d))
+  clust[order(as.numeric(names(clust)))]
+  clust_file <- paste(toString(age), "explicit.rds", sep = "_")
+  saveRDS(clust, clust_file )
+  write(sapply(names(clust),function(x) paste(x,paste(clust[[x]],collapse=" "))), file = 'clusters.txt', append=TRUE)
+  return(clust)
+}
+```
+
+Compute w2v clustering
+```{r}
+library(wordVectors)
+w2v_clustering <- function(filename, age){
+  model = train_word2vec(filename,
+                         output="all_utterances_w2v.bin", threads = 4,
+                         vectors = 100, window=10, cbow=1, min_count = 10, force= TRUE)
+  
+  model_cds = read.vectors("all_utterances_w2v.bin")
+  
+  cue_words <- c(unique_items$food_drink, unique_items$animals, unique_items$clothing, unique_items$furniture_rooms, unique_items$toys)
+  
+  model_cue_cds <- model_cds[[which(rownames(model_cds) %in% cue_words), average=FALSE]]
+  #model_target_cds <- model_cds[[which(rownames(model_cds) %in% target_words), average=FALSE]]
+  cosSim_cds <- cosineSimilarity(model_cue_cds, model_cue_cds)
+  
+  # Hierarchical clustering using Complete Linkage
+  # Dissimilarity matrix
+  d <- dist(cosSim_cds, method = "euclidean")
+  # Hierarchical clustering using Complete Linkage
+  hc1 <- hclust(d, method = "average" )
+  #clust <- cutree(hc1, k = optimal_nbcluster(cosSim_cds, d))
+  clust <- cutree(hc1, k = 4)
+  clust[order(as.numeric(names(clust)))]
+  clust_file <- paste(toString(age), "w2v.rds", sep = "_")
+  saveRDS(clust, clust_file )
+  write(sapply(names(clust),function(x) paste(x,paste(clust[[x]],collapse=" "))), file = 'clusters.txt', append=TRUE)
+  return(clust)
+}
+```
+
+Compute number of matches for categories
+```{r}
+correct_pairings <- function(category, clustering){
+  #Compute number of pairings that occur in the same category
+  countCtg <- vector(mode = "numeric", length = max(clustering))
+  for (instance in clustering[which(names(clustering) %in% category)]){
+    countCtg[instance] = countCtg[instance] + 1
+  }
+  pairs <- 0
+  for (num in countCtg){
+    pairs = pairs + choose(n = num, 2)
+  }
+  #print(category)
+  #print(countCtg)
+  #print(table(clustering))
+  
+  #Compute number of possible correct pairings for a category
+  total_correct_pairs <- choose(n = sum(countCtg), k = 2)
+  
+  return(correct_pairs <- pairs/total_correct_pairs)
+}
+```
+
+Compute number of possible wrong pairings
+```{r}
+wrong_pairings <- function(category, clustering) {
+  #Compute number of wrong pairings
+  pairs <- 0
+  size <- 0
+  for (num in min(clustering):max(clustering)){
+    count_wrong <- 0
+    clust_size <- 0
+    index <- 0
+    for (instance in clustering){
+      index = index + 1
+      if (instance == num){
+        clust_size = clust_size + 1
+        if (names(clustering[index]) %!in% category){
+          count_wrong = count_wrong + 1
+        }
+        else{
+          size = size + 1
+        }
+      }
+    }
+    pairs = pairs + ((clust_size - count_wrong) * count_wrong)
+  }
+  #Compute number of possible different pairings
+  total_wrong_pairs <- (length(clustering) - size) * size
+  
+  return(wrong_pairs <- pairs/total_wrong_pairs)
+}
+```
+
+Compute correct/wrong pairings for word2vec and explicit cues for ages 3-6
+Takes approx. 20 min to run when computing clusters
+```{r}
+unique_items <- readRDS("unique_items.rds")
+
+cluster_df <- data.frame(age = c(), category_name = c(), model = c(), correct = c(), score = c())
+txt_files <- c("all_utterances_3.txt", "all_utterances_4.txt", "all_utterances_5.txt", "all_utterances_6.txt")
+concept_files <- c("concept_and_instance_all_verbs_n=0_3.csv", "concept_and_instance_all_verbs_n=0_4.csv", "concept_and_instance_all_verbs_n=0_5.csv", "concept_and_instance_all_verbs_n=0_6.csv")
+cue_words <- unique_items[c("toys", "food_drink", "animals", "clothing", "furniture_rooms")]
+write("", file = "clusters.txt", append = FALSE)
+#optimal_clust_size <- 0
+
+for (age in 1:length(txt_files)){
+  title <- paste("W2V", toString(age + 2), sep = " ")
+  write(title, file = 'clusters.txt', append = TRUE)
+  #w2vClust <- w2v_clustering(filename = txt_files[age], age)
+  w2v_file <- paste(toString(age), "w2v.rds", sep="_")
+  w2vClust <- readRDS(w2v_file)
+  randomClust_w2v <- random_clustering(max(w2vClust), names(w2vClust))
+  
+  title <- paste("EXPLICIT", toString(age + 2), sep = " ")
+  write(title, file = 'clusters.txt', append = TRUE)
+  #explicitClust <- explicit_clustering(filename = concept_files[age], age)
+  explicit_file <- paste(toString(age), "explicit.rds", sep="_")
+  explicitClust <- readRDS(explicit_file)
+  randomClust_explicit <- random_clustering(max(explicitClust), names(explicitClust))
+  
+  for (cat in names(cue_words)){
+    temp = data.frame(age = age+2, category_name = c(cat), model = c("w2v"), correct = c("correct"), score = c(correct_pairings(category = cue_words[[cat]], clustering = w2vClust)))
+    cluster_df <- rbind(cluster_df, temp)
+    temp = data.frame(age = age+2, category_name = c(cat), model = c("w2v"), correct = c("wrong"), score = c(wrong_pairings(category = cue_words[[cat]], clustering = w2vClust)))
+    cluster_df <- rbind(cluster_df, temp)
+    temp = data.frame(age = age+2, category_name = c(cat), model = c("explicit"), correct = c("correct"), score = c(correct_pairings(category = cue_words[[cat]], clustering = explicitClust)))
+    cluster_df <- rbind(cluster_df, temp)
+    temp = data.frame(age = age+2, category_name = c(cat), model = c("explicit"), correct = c("wrong"), score = c(wrong_pairings(category = cue_words[[cat]], clustering = explicitClust)))
+    cluster_df <- rbind(cluster_df, temp)
+    temp = data.frame(age = age+2, category_name = c(cat), model = c("random_w2v"), correct = c("correct"), score = c(correct_pairings(category = cue_words[[cat]], clustering = randomClust_w2v)))
+    cluster_df <- rbind(cluster_df, temp)
+    temp = data.frame(age = age+2, category_name = c(cat), model = c("random_w2v"), correct = c("wrong"), score = c(wrong_pairings(category = cue_words[[cat]], clustering = randomClust_w2v)))
+    cluster_df <- rbind(cluster_df, temp)
+    temp = data.frame(age = age+2, category_name = c(cat), model = c("random_explicit"), correct = c("correct"), score = c(correct_pairings(category = cue_words[[cat]], clustering = randomClust_explicit)))
+    cluster_df <- rbind(cluster_df, temp)
+    temp = data.frame(age = age+2, category_name = c(cat), model = c("random_explicit"), correct = c("wrong"), score = c(wrong_pairings(category = cue_words[[cat]], clustering = randomClust_explicit)))
+    cluster_df <- rbind(cluster_df, temp)
+  }
+}
+
+write.csv(cluster_df, "cluster_df2.csv")
+```
+
+Plot goodness of clusters
+```{r}
+library(ggplot2)
+p <- ggplot(cluster_df, aes(age, score, colour=category_name)) + 
+    geom_line() + 
+    geom_point() + 
+    facet_grid(vars(correct), vars(model))
+p
+```
+
+Compute randomization for comparison
+```{r}
+#Randomly assign each member of category to cluster
+#Compute same correct/incorrect scorings
+#Use same number of clusters as w2v/explicit respectively
+random_clustering <- function(num, words){
+  clust <- rep(0, length(words))
+  for (val in 1:length(clust)){
+    clust[val] = sample(1:num, 1)
+  }
+  names(clust) = words
+  return(clust)
+}
+```
+
+TO DO:
+-see how different clusertings effect measurements to get understanding of extreme cases
+  especially figure out what happens if you vary the size of k
+  keep denominator constant
+  use cases of k that we already have and numbers of clusters that we have (keep in range of interest)
+  things we care about:
+    different sizes of k with the same cluster size
+    probably other things
+  is there a way to modify the correct function so that it can give us better intuition about the clustering?
+  incorrect measure is probably more stable
+-recompute number optimal clusterings each time to run (DONE)
+  
+-recompute clusters by hand to see how they work -> see if measurements make sense
+-normalize across categories to standardize size
+  #of non-x in cluster y/# of not x-> should be the same as calculating pairings for incorrect
+  incorrect is normalized across size
+  actually... idk think more about the formula and if its right for all cases
+-add output of categorizations to slack
+-add cluster sizes to the graph/some output?
+
+-random controls:
+  randomize once, then do same analysis
+  do a randomization for each clustering size
+  do like 10 randomizations and see how the analyses vary
+
+```{r}
+x <- c(25)
+y <- c(50)
+print(sum(x * (y - x))/(25 * (150 - 25)))
+x <- c(30, 30)
+y <- c(60, 60)
+print(sum(x * (y - x))/(60 * (150 - 60)))
+choose(10, 2) * 4/choose(40, 2)
+choose(1, 2)*40/choose(40, 2)
+
+#print(sum(x)/choose(50, 2))
+```
+
+Correctness measure--Measures how close things are to being in a single group. Best score is if everything is in one cluster, worst score is if everything is in its own cluster. Generally, the more evenly spread things are amongst clusters, the worse the score is. Scores are all dependent on the size of the gold-standard cluster too. The bigger a cluster is, the less concentrated its elements have to be in a single group to be scored highly (i.e. clusters of 39, 1 (for gold-standard size 40) will have a lower score than clusters 49, 1 (for gold-standard size 50)).
+
+Wrongness measure--Measures how pure clusters are. Best score is if no "wrong" elements are grouped with the "correct" elements (regardless of number of clusters, so having 40/40 elements in one cluster is as good as having 4 groups of with 10/10 elements each). Worst score is if there is only one cluster for all correct and incorrect elements. This measure also seems to be dependent on the size of the gold-standard cluster. If elements of a cluster are split evenly between two clusters and make up half the elements in each of those clusters, then there will be a better score if the gold-standard cluster is smaller. 
+
+It is super hard to interpret what an individual number means. And this math is totally outside of my capabilities. 
+
+How to normalize cluster sizes???
+
+Remove all category names?
+
 
