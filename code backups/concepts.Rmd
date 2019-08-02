@@ -177,12 +177,16 @@ optimal_nbcluster <- function(sim_data, dis){
 Compute explicit clustering
 ```{r}
 explicit_clustering <- function(filename, age){
+  
   df_0 <- read.csv(filename, header = FALSE)  %>%
     #should maybe change this line
-    mutate(age = cut(V6, c(0, 36))) %>% 
+    mutate(ageYr = cut(V6, c(0, age * 12 + 24))) %>% 
     mutate(wndw = 0) %>%
-    group_by(wndw, V1, V5, age) %>%
+    group_by(wndw, V1, V5, ageYr) %>%
     summarise(count=n())
+  
+  df_0 <- df_0[!is.na(df_0$ageYr), ]
+  
   dfMerge <- do.call("rbind", list(df_0))
   dfMerge <- mutate(dfMerge, weight = count * (1/(wndw + 1)))
   dfSum <- dfMerge %>% group_by(V1, V5) %>%
@@ -190,7 +194,8 @@ explicit_clustering <- function(filename, age){
   df <- spread(dfSum, V1, weight, fill=0)
   df <- df %>% remove_rownames %>% column_to_rownames(var="V5")
   cos_sim <- sim2(as.matrix(df), as.matrix(df), method="cosine")
-  
+  saveRDS(cos_sim, paste(toString(age), "cos_sim_noVerbs.rds", sep="_"))
+
   # Dissimilarity matrix
   d <- dist(cos_sim, method = "euclidean")
   # Hierarchical clustering using Complete Linkage
@@ -219,6 +224,7 @@ w2v_clustering <- function(filename, age){
   model_cue_cds <- model_cds[[which(rownames(model_cds) %in% cue_words), average=FALSE]]
   #model_target_cds <- model_cds[[which(rownames(model_cds) %in% target_words), average=FALSE]]
   cosSim_cds <- cosineSimilarity(model_cue_cds, model_cue_cds)
+  saveRDS(cosSim_cds, paste(toString(age), "cosSim.rds", sep="_"))
   
   # Hierarchical clustering using Complete Linkage
   # Dissimilarity matrix
@@ -296,7 +302,10 @@ unique_items <- readRDS("unique_items.rds")
 
 cluster_df <- data.frame(age = c(), category_name = c(), model = c(), correct = c(), score = c())
 txt_files <- c("all_utterances_3.txt", "all_utterances_4.txt", "all_utterances_5.txt", "all_utterances_6.txt")
-concept_files <- c("concept_and_instance_all_verbs_n=0_3.csv", "concept_and_instance_all_verbs_n=0_4.csv", "concept_and_instance_all_verbs_n=0_5.csv", "concept_and_instance_all_verbs_n=0_6.csv")
+#concept_files <- c("concept_and_instance_all_verbs_n=0_3.csv", "concept_and_instance_all_verbs_n=0_4.csv", "concept_and_instance_all_verbs_n=0_5.csv", "concept_and_instance_all_verbs_n=0_6.csv")
+
+concept_files <- c("concept_and_instance_all_n=0.csv", "concept_and_instance_all_n=0.csv", "concept_and_instance_all_n=0.csv", "concept_and_instance_all_n=0.csv")
+
 cue_words <- unique_items[c("toys", "food_drink", "animals", "clothing", "furniture_rooms")]
 write("", file = "clusters.txt", append = FALSE)
 #optimal_clust_size <- 0
@@ -307,14 +316,14 @@ for (age in 1:length(txt_files)){
   #w2vClust <- w2v_clustering(filename = txt_files[age], age)
   w2v_file <- paste(toString(age), "w2v.rds", sep="_")
   w2vClust <- readRDS(w2v_file)
-  randomClust_w2v <- random_clustering(max(w2vClust), names(w2vClust))
+  #randomClust_w2v <- random_clustering(max(w2vClust), names(w2vClust))
   
   title <- paste("EXPLICIT", toString(age + 2), sep = " ")
   write(title, file = 'clusters.txt', append = TRUE)
-  #explicitClust <- explicit_clustering(filename = concept_files[age], age)
-  explicit_file <- paste(toString(age), "explicit.rds", sep="_")
-  explicitClust <- readRDS(explicit_file)
-  randomClust_explicit <- random_clustering(max(explicitClust), names(explicitClust))
+  explicitClust <- explicit_clustering(filename = concept_files[age], age)
+  #explicit_file <- paste(toString(age), "explicit.rds", sep="_")
+  #explicitClust <- readRDS(explicit_file)
+  #randomClust_explicit <- random_clustering(max(explicitClust), names(explicitClust))
   
   for (cat in names(cue_words)){
     temp = data.frame(age = age+2, category_name = c(cat), model = c("w2v"), correct = c("correct"), score = c(correct_pairings(category = cue_words[[cat]], clustering = w2vClust)))
@@ -325,14 +334,16 @@ for (age in 1:length(txt_files)){
     cluster_df <- rbind(cluster_df, temp)
     temp = data.frame(age = age+2, category_name = c(cat), model = c("explicit"), correct = c("wrong"), score = c(wrong_pairings(category = cue_words[[cat]], clustering = explicitClust)))
     cluster_df <- rbind(cluster_df, temp)
-    temp = data.frame(age = age+2, category_name = c(cat), model = c("random_w2v"), correct = c("correct"), score = c(correct_pairings(category = cue_words[[cat]], clustering = randomClust_w2v)))
-    cluster_df <- rbind(cluster_df, temp)
-    temp = data.frame(age = age+2, category_name = c(cat), model = c("random_w2v"), correct = c("wrong"), score = c(wrong_pairings(category = cue_words[[cat]], clustering = randomClust_w2v)))
-    cluster_df <- rbind(cluster_df, temp)
-    temp = data.frame(age = age+2, category_name = c(cat), model = c("random_explicit"), correct = c("correct"), score = c(correct_pairings(category = cue_words[[cat]], clustering = randomClust_explicit)))
-    cluster_df <- rbind(cluster_df, temp)
-    temp = data.frame(age = age+2, category_name = c(cat), model = c("random_explicit"), correct = c("wrong"), score = c(wrong_pairings(category = cue_words[[cat]], clustering = randomClust_explicit)))
-    cluster_df <- rbind(cluster_df, temp)
+    
+    #Calculate random clusters for comparison
+    # temp = data.frame(age = age+2, category_name = c(cat), model = c("random_w2v"), correct = c("correct"), score = c(correct_pairings(category = cue_words[[cat]], clustering = randomClust_w2v)))
+    # cluster_df <- rbind(cluster_df, temp)
+    # temp = data.frame(age = age+2, category_name = c(cat), model = c("random_w2v"), correct = c("wrong"), score = c(wrong_pairings(category = cue_words[[cat]], clustering = randomClust_w2v)))
+    # cluster_df <- rbind(cluster_df, temp)
+    # temp = data.frame(age = age+2, category_name = c(cat), model = c("random_explicit"), correct = c("correct"), score = c(correct_pairings(category = cue_words[[cat]], clustering = randomClust_explicit)))
+    # cluster_df <- rbind(cluster_df, temp)
+    # temp = data.frame(age = age+2, category_name = c(cat), model = c("random_explicit"), correct = c("wrong"), score = c(wrong_pairings(category = cue_words[[cat]], clustering = randomClust_explicit)))
+    # cluster_df <- rbind(cluster_df, temp)
   }
 }
 
@@ -361,6 +372,14 @@ random_clustering <- function(num, words){
   }
   names(clust) = words
   return(clust)
+}
+```
+
+Compute F measure of clusters
+```{r}
+library(FlowSOM)
+f_measure <- function(){
+  
 }
 ```
 
@@ -402,14 +421,222 @@ choose(1, 2)*40/choose(40, 2)
 #print(sum(x)/choose(50, 2))
 ```
 
-Correctness measure--Measures how close things are to being in a single group. Best score is if everything is in one cluster, worst score is if everything is in its own cluster. Generally, the more evenly spread things are amongst clusters, the worse the score is. Scores are all dependent on the size of the gold-standard cluster too. The bigger a cluster is, the less concentrated its elements have to be in a single group to be scored highly (i.e. clusters of 39, 1 (for gold-standard size 40) will have a lower score than clusters 49, 1 (for gold-standard size 50)).
+Find clustering coefficient?
+```{r}
+library(graph)
+library(rlist)
 
-Wrongness measure--Measures how pure clusters are. Best score is if no "wrong" elements are grouped with the "correct" elements (regardless of number of clusters, so having 40/40 elements in one cluster is as good as having 4 groups of with 10/10 elements each). Worst score is if there is only one cluster for all correct and incorrect elements. This measure also seems to be dependent on the size of the gold-standard cluster. If elements of a cluster are split evenly between two clusters and make up half the elements in each of those clusters, then there will be a better score if the gold-standard cluster is smaller. 
+clust <- readRDS("4_w2v.rds")
+myList <- list()
+for (x in 1:max(clust)){
+  myList[[length(myList)+1]] <- clust[clust==x]
+}
+cG1 <- new("clusterGraph", clusters=myList)
 
-It is super hard to interpret what an individual number means. And this math is totally outside of my capabilities. 
+```
 
-How to normalize cluster sizes???
+Density plots
+```{r}
+library(reshape2)
+library(ggplot2)
 
-Remove all category names?
+#filenames <- c("1_cos_sim.rds", "2_cos_sim.rds", "3_cos_sim.rds", "4_cos_sim.rds")
+#filenames <- c("1_cosSim.rds", "2_cosSim.rds", "3_cosSim.rds", "4_cosSim.rds")
+filenames <- c("1_cos_sim_noVerbs.rds", "2_cos_sim_noVerbs.rds", "3_cos_sim_noVerbs.rds", "4_cos_sim_noVerbs.rds")
+
+density_df <- data.frame()
+
+for (file in filenames){
+  
+  sim <- readRDS(file)
+  sim_long <- melt(sim)
+  cat1 <- rep(NA, nrow(sim_long))
+  cat2 <- rep(NA, nrow(sim_long))
+  age <- rep(which(filenames == file) + 2, nrow(sim_long))
+  measure <- rep(NA, nrow(sim_long))
+  measure <- rep(NA, nrow(sim_long))
+  sim_long <- cbind(sim_long, cat1)
+  sim_long <- cbind(sim_long, cat2)
+  sim_long <- cbind(sim_long, measure)
+  sim_long <- cbind(sim_long, age)
+  
+  for (row in 1:nrow(sim_long)){
+    sim_long$cat1[row] <- names(cue_words)[sapply(seq_along(cue_words),function(x){sim_long$Var1[row] %in% cue_words[[x]]})]
+    sim_long$cat2[row] <- names(cue_words)[sapply(seq_along(cue_words),function(x){sim_long$Var2[row] %in% cue_words[[x]]})]
+    
+    #Trying to be clever here....
+    #sim_long$cat1["Var1" == sim_long$Var1[row]] <- sim_long$cat1[row]
+    #sim_long$cat2["Var2" == sim_long$Var2[row]] <- sim_long$cat2[row]
+  }
+  sim_long[sim_long$cat1 == sim_long$cat2, ]$measure <- "within"
+  sim_long[sim_long$cat1 != sim_long$cat2, ]$measure <- "between"
+  density_df <- rbind(density_df, sim_long)
+}
+
+#ggplot(density_df[density_df$cat1 == "food_drink", ], aes(value, fill = measure)) + geom_density(alpha = 0.2) + facet_wrap(vars(age, cat1), scales="free_y") +ggtitle("Explicit Cohesiveness (food_drink)")
+
+#food_df <- density_df[density_df$cat1 == "food_drink", ]
+
+ggplot(density_df, aes(value, fill = measure)) + geom_density(alpha = 0.2) + facet_wrap(vars(age, cat1), scales="free_y") +ggtitle("Explicit w/o Verbs Cohesiveness")
+
+```
+
+ROCs and AUCs
+```{r}
+library(pROC)
+auc_df <- data.frame(animals=numeric(4), food_drink=numeric(4), toys=numeric(4), furniture_rooms=numeric(4), clothing=numeric(4))
+
+for (var in unique(density_df$cat1)){
+  for (num in unique(density_df$age)){
+    
+    density_df2 <- density_df[density_df$cat1 == var & density_df$age == num, ]
+    density_df2$measure[density_df2$measure == "between"] <- 0
+    density_df2$measure[density_df2$measure == "within"] <- 1
+    density_df2$measure <- as.numeric(density_df2$measure)
+    
+    auc_df[num - 2, var] <- auc(response = density_df2$measure, predictor = density_df2$value)
+  }
+}
+
+rownames(auc_df) <- unique(density_df$age)
+auc_df
+
+```
+modularity- average of edge weights for in-group and across-group, normalize by number of possible edges?
+sum of edges/number of edges (within)
+also good to have some variance
+between 
+sum of between group connections/sum of total between group connections
+cohesiveness: w/b
+also plot distribution to see if there are any outliers- some way to do this in ggplot
+curvy plot, one for each category
+every category has within and between for same graph (within should be higher)
+use similarity matrix as "edge weights"
+
+potential problems:
+the ages are 3, 3-4, 3-5, 3-6. would it be better to look only at disjoint sets of ages?
+calculating distance twice?
+
+
+probability is proportional to the cosine similarity normalized for size of group
+sample as long as the second object in the category is the same as the first
+print count of objects
+sample and then compute probability in each iteration
+for each pair of categories--sample instances, sample item you start with, sample next item until you switch categories
+make a categorial distribution with cosine similarities and then sample from that
+maximum number of iterations is 4
+how many instances we should sample to get a stable distribution (start with around 100-200)
+start with only up to 3
+
+Feature values for verbs????
+
+Replicate experiment by sampling from categories, calculating mean run length...
+```{r replicate_experiment}
+library(extraDistr)
+
+#cosSim <- readRDS("1_cos_sim_explicit.rds")
+all_random <- list()
+
+for (concept1 in names(cue_words)){
+  catRun <- list()
+  for (concept2 in names(cue_words[ - which(names(cue_words) == concept1)])){
+    run <- as.numeric()
+    
+    for (i in 1:500){
+    count <- 0
+    
+    concept1words <- cue_words[[concept1]][which(cue_words[[concept1]] %in% row.names(cosSim))]
+    concept2words <- cue_words[[concept2]][which(cue_words[[concept2]] %in% row.names(cosSim))]
+    
+    sample_group <- c(sample(concept1words, 4), sample(concept2words, 4))
+    
+    #make a categorical distribution w/ cosine similarities as probabilities
+    count <- count + 1
+    first <- sample(sample_group, replace = FALSE, 1)
+    continue <- TRUE
+    
+    while(continue){
+      sample_group <- sample_group[sample_group != first]
+
+      # temp_probability <- c()
+      # for (instance in sample_group){
+      #   temp_probability <- c(temp_probability, 1 + cosSim[first, instance])
+      # }
+      # probability <- temp_probability/sum(temp_probability)
+      
+      probability <- rep(1/length(sample_group), length(sample_group))
+      
+      next_instance <- sample_group[rcat(1, probability)]
+      
+      #temp_cosSim <- select(as.data.frame(cosSim), one_of(sample_group))[first, ]
+      #next_instance <- colnames(temp_cosSim)[which.max(temp_cosSim)]
+      
+      #check if category of first and next are the same
+      if (first %in% cue_words[[concept1]] & next_instance %in% cue_words[[concept1]] | first %in% cue_words[[concept2]] & next_instance %in% cue_words[[concept2]]){
+        count <- count + 1
+        first <- next_instance
+        if (count == 4){
+          run <- c(run, count)
+          count <- 0
+          continue <- FALSE
+        }
+      }
+      else{
+        #first <- next_instance
+        run <- c(run, count)
+        count <- 0
+        continue <- FALSE
+      }
+    }
+    }
+    #catRun[[concept1]] <- rep(NA, 100)
+    catRun[[concept2]] <- run
+    catRun <- catRun[order(names(catRun))]
+  }
+  all_random[[concept1]] <- catRun
+}
+
+```
+
+
+Graph experiment results
+```{r}
+library(reshape2)
+library(ggplot2)
+
+experiment_df_w2v <- melt(all_w2v)
+mean_df_w2v <- aggregate(experiment_df_w2v$value, by=list(L1 = experiment_df_w2v$L1, L2 = experiment_df_w2v$L2), FUN = mean)
+  
+ggplot(experiment_df_w2v, mapping=aes(value)) + geom_density(alpha = 0.2) + facet_wrap(nrow= 4, vars(L2, L1)) + ggtitle("w2v experiment (deterministic)") + geom_vline(mean_df_w2v, mapping=aes(xintercept=x), color="blue", 
+                 linetype="dashed")
+
+experiment_df_explicit <- melt(all_explicit)
+mean_df_explicit <- aggregate(experiment_df_explicit$value, by=list(L1 = experiment_df_explicit$L1, L2 = experiment_df_explicit$L2), FUN = mean)
+  
+ggplot(experiment_df_explicit, mapping=aes(value)) + geom_density(alpha = 0.2) + facet_wrap(nrow= 4, vars(L2, L1)) + ggtitle("explicit experiment (deterministic)") + geom_vline(mean_df_explicit, mapping=aes(xintercept=x), color="blue", 
+                 linetype="dashed")
+
+experiment_df_random <- melt(all_random)
+mean_df_random <- aggregate(experiment_df_random$value, by=list(L1 = experiment_df_random$L1, L2 = experiment_df_random$L2), FUN = mean)
+  
+ggplot(experiment_df_explicit, mapping=aes(value)) + geom_density(alpha = 0.2) + facet_wrap(nrow= 4, vars(L2, L1)) + ggtitle("explicit experiment (deterministic)") + geom_vline(mean_df_explicit, mapping=aes(xintercept=x), color="blue", 
+                 linetype="dashed")
+
+experiment_df <- data.frame(L1 = experiment_df_explicit$L1, L2 = experiment_df_explicit$L2, explicit = experiment_df_explicit$value, w2v = experiment_df_w2v$value, random = experiment_df_random$value) %>% 
+  melt()
+
+experiment_df_mean <- data.frame(L1 = mean_df_explicit$L1, L2 = mean_df_explicit$L2, explicit = mean_df_explicit$x, w2v = mean_df_w2v$x, random = mean_df_random$x) %>% 
+  melt()
+
+
+ggplot(experiment_df_explicit, mapping=aes(value)) + geom_vline(mean_df_explicit, mapping=aes(xintercept=x), color="blue", linetype="dashed") + geom_vline(mean_df_w2v, mapping=aes(xintercept=x), color="red", linetype="dashed") + geom_vline(mean_df_random, mapping=aes(xintercept=x), color="gray", linetype="dashed") + facet_wrap(nrow= 4, vars(L2, L1)) + ggthemes::theme_few() + theme(legend.position="right")
+
+ggplot(experiment_df_mean) + geom_vline(aes(xintercept=value, colour=variable)) + scale_colour_manual(values=c("red","blue","black")) + theme(legend.position="right", panel.background = element_rect(fill = "white", color="gray")) + facet_wrap(nrow= 4, vars(L2, L1))
+
+```
+
+DATA FIXES:
+SHOULD COUNT VERBS AS CATEGORIZATION EVEN IF ITS INCORRECT
+
 
 
