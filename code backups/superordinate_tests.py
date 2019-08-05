@@ -5,6 +5,7 @@ from collections import defaultdict
 filename = 'child_utterances_age_corpus.csv'
 
 concepts = ["food", "clothes", "animal", "toy", "furniture"]
+conceptsDict = {"eat": "food", "wear": "clothes", "play": "toy", "clothing": "clothes", "food": "food", "clothes": "clothes", "animal": "animal", "toy": "toy", "furniture": "furniture"}
 
 data = {}
 
@@ -255,7 +256,7 @@ def extraction_with_rules():
 
 #If there is a mention of a concept, look at surrounding utterances for mention of instance
 
-n = 3
+n = 0
 all = True
 
 '''
@@ -277,7 +278,7 @@ def concept_and_instance(n, all):
         with open('all_utterances_3.csv', newline='') as f:
             reader = csv.reader(f)
 
-            with open('concept_and_instance_all_verbs_n=3.csv', 'w') as writeFile:
+            with open('concept_and_instance_all_verbs_n=0_3.csv', 'w') as writeFile:
                 writer = csv.writer(writeFile)
 
                 for i in range(n):
@@ -299,12 +300,10 @@ def concept_and_instance(n, all):
 
 def concept_and_instance_helper(i, curUtterances, conceptLists, writer, all):
     if all:
-        for concept in concepts:
-            if concept in curUtterances[i][0].split() or concept == "food" and "eat" in curUtterances[i][0].split() \
-                or concept == "clothes" and "wear" in curUtterances[i][0].split() \
-                    or concept == "toy" and "play" in curUtterances[i][0].split():
+        for concept in conceptsDict.keys():
+            if concept in curUtterances[i][0].split():
                 temp = []
-                temp.append(concept)
+                temp.append(conceptsDict[concept])
                 temp.append(" ")
                 temp.append((curUtterances[i][0], curUtterances[i][1]))
 
@@ -330,12 +329,10 @@ def concept_and_instance_helper(i, curUtterances, conceptLists, writer, all):
 
     #add something in here to know if utterance was a category utterance or verb utterance?
     else:
-        for concept in concepts:
-            if concept in curUtterances[i][0].split() or concept == "food" and "eat" in curUtterances[i][0].split() \
-                or concept == "clothes" and "wear" in curUtterances[i][0].split() \
-                    or concept == "toy" and "play" in curUtterances[i][0].split():
+        for concept in conceptsDict.keys():
+            if concept in curUtterances[i][0].split():
                 temp = []
-                temp.append(concept)
+                temp.append(conceptsDict[concept])
                 temp.append(" ")
                 temp.append((curUtterances[i][0], curUtterances[i][1]))
 
@@ -358,22 +355,20 @@ def concept_and_instance_helper(i, curUtterances, conceptLists, writer, all):
                             writer.writerow(temp)
                             temp = temp[:3]
 
-
+#row[8] if 3,6 and row[x+1] if 4,5
 def concept_and_instance_zero(conceptLists, all):
     with open('all_utterances_3.csv', newline='') as f:
         reader = csv.reader(f)
 
-        with open('concept_and_instance_all_verbs_n=0.csv', 'w') as writeFile:
+        with open('concept_and_instance_all_verbs_n=0_3.csv', 'w') as writeFile:
             writer = csv.writer(writeFile)
 
             if all:
                 for row in reader:
-                    for concept in concepts:
-                        if concept in row[8].split() or concept == "food" and "eat" in row[8].split() \
-                            or concept == "clothes" and "wear" in row[8].split() \
-                                or concept == "toy" and "play" in row[8].split():
+                    for concept in conceptsDict.keys():
+                        if concept in row[8].split():
                             temp = []
-                            temp.append(concept)
+                            temp.append(conceptsDict[concept])
                             temp.append(" ")
                             temp.append((row[8], row[12]))
 
@@ -417,13 +412,20 @@ def concept_and_instance_zero(conceptLists, all):
 '''
 Given CSV with categories and nouns from Wordbank, create a dictionary with all terms.
 '''
+temp = []
+
 def get_instances():
 
     with open('wb_nouns.csv', newline='') as f:
         reader = csv.reader(f)
 
         for row in reader:
-            data[row[1]] = [x for x in row[2:] if x != "" and x != "animal" and x != "toy" and x != "food"]
+            #data[row[1]] = [x for x in row[2:] if x != "" and x != "animal" and x != "toy" and x != "food"]
+            if row[1] in concepts:
+                temp.append([x for x in row[2:] if x != "" and x != "animal" and x != "toy" and x != "food"])
+
+        instances = [item for sublist in temp for item in sublist]
+        return instances
 
 
 #Takes a v long time to run
@@ -447,6 +449,7 @@ def miscategorization():
                             if concept in row[8].split() and instance in row[8].split():
                                 writer.writerow([concept, instance, row[8], row[12], row[14], row[16], row[25]])
 
+#row[8] for 3, 6 and row[9] for 4,5
 def utterances_to_txt():
     with open('all_utterances_3.csv', newline='') as f:
         reader = csv.reader(f)
@@ -459,6 +462,55 @@ def utterances_to_txt():
                 writeFile.write(row[8] + " ")
 
 
+verbs = {"eat": "food", "play with": "toy", "wear": "clothes"}
+
+
+def concepts_revised():
+    count = 0
+
+    with open('all_utterances_3.csv', newline='') as f:
+        reader = csv.reader(f)
+
+        with open('concepts_revised_3.csv', 'w') as writeFile:
+            writer = csv.writer(writeFile)
+
+            for row in reader:
+                utt = row[8].split()
+                if count % 10000 == 0:
+                    print(count)
+                count += 1
+                for instance in instances:
+                    if instance in utt:
+                        for concept in concepts:
+                            if concept in utt:
+                                temp = []
+                                temp.append(concept)
+                                temp.append(" ")
+                                temp.append((row[8], row[12]))
+                                temp.append([0, row[8]])
+                                temp.append(instance)
+                                temp.append(row[14])
+                                temp.append(row[16])
+                                temp.append(row[25])
+
+                                writer.writerow(temp)
+
+                    for verb in verbs.keys():
+                        if verb in utt and instance in utt:
+                            regex = "\\b" + verb + "\\b([a-z]*\\b){0,1}" + instance
+                            if re.search(regex, row[8]) is not None:
+                                temp = []
+                                temp.append(concept)
+                                temp.append(" ")
+                                temp.append((row[8], row[12]))
+                                temp.append([0, row[8]])
+                                temp.append(instance)
+                                temp.append(row[14])
+                                temp.append(row[16])
+                                temp.append(row[25])
+
+                                writer.writerow(temp)
+
 #count_concepts()
 #concept_utterances()
 #hearst_extraction()
@@ -466,10 +518,11 @@ def utterances_to_txt():
 #concept_utterances_books()
 #hearst_extraction_books()
 #extract_concepts_books()
-#get_instances()
+#instances = get_instances()
 #concept_and_instance(n, all)
 #miscategorization()
 utterances_to_txt()
+#concepts_revised()
 
 
 #More things to do:
@@ -502,3 +555,21 @@ utterances_to_txt()
 #run word2 vec training
 #heatmap
 #compare up to 3 and up to 5
+
+#hierarchical clustering to get graph (use modularity maximization for ideal/optimal level of clustering)
+#compare to gold standard of categories we already know
+#try to compute pairwise precision and recall for clusters using Isaacs code
+#Think more about how to compare single clusters
+#also pull data for up to 6 and compare (actually do this)
+
+#matching: #of correct pairings where things are in the same category/number total possible pairings -> should be high
+#separation: # of mixed (incorrect) pairs in all categories/# total incorrect pairings within the category -> should be low
+
+#compute for each cluster, word2vec and explicit cues
+#count the number of pairings within a category (find this function)
+#random clustering to compare with same number of clusters as source
+#do for 3, 4, 5, to get developmental comparison
+#xxo xt x match 1/6 separate 3/
+#4x4o4t
+
+#Target specific construction for verbs (verb + complement) -> use regular expression
