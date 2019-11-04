@@ -1,0 +1,396 @@
+---
+title: "concepts"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+
+library(childesr)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(tidyverse)
+library(text2vec)
+library(ggcorrplot)
+library(factoextra)
+library(cluster)
+library(wordVectors)
+library(reshape2)
+library(pROC)
+library(extraDistr)
+
+`%!in%` = Negate(`%in%`)
+```
+
+<!-- Need to add back code to get things from wordbank, childes, and getting concepts and instances in python! -->
+
+<!-- think more about chicken/fish problem--right now you just removed chicken from animal, and fish from food -->
+
+```{r include=FALSE}
+get_w2v_cosSim <- function(filename){
+  model = train_word2vec(filename,
+                         output="all_utterances_3_w2v.bin", threads = 4,
+                         vectors = 100, window=10, cbow=1, min_count = 10, force= TRUE)
+  
+  model_cds = read.vectors("all_utterances_3_w2v.bin")
+  
+  # cue_words <- c(unique_items$food_drink, unique_items$animals, unique_items$clothing, unique_items$furniture_rooms, unique_items$toys, unique_items$vehicles)
+  
+  model_cue_cds <- model_cds[[which(rownames(model_cds) %in% instances), average=FALSE]]
+  cosSim_cds <- cosineSimilarity(model_cue_cds, model_cue_cds)
+  return(cosSim_cds)
+}
+```
+
+```{r include=FALSE}
+#Could clean up this function
+
+get_explicit_cosSim <- function(filename){
+  
+    df_0 <- read.csv(filename, header = FALSE)  %>%
+    #should maybe change this line
+    #mutate(ageYr = cut(V6, c(0, age * 12 + 24))) %>% 
+    mutate(wndw = 0) %>%
+    #group_by(wndw, V1, V5, ageYr) %>%
+    group_by(wndw, V1, V5) %>%
+    summarise(count=n())
+  
+  #df_0 <- df_0[!is.na(df_0$ageYr), ]
+  
+  dfMerge <- do.call("rbind", list(df_0))
+  dfMerge <- mutate(dfMerge, weight = count * (1/(wndw + 1)))
+  dfSum <- dfMerge %>% group_by(V1, V5) %>%
+    summarise(weight = sum(weight))
+  df <- spread(dfSum, V1, weight, fill=0)
+  df <- df %>% remove_rownames %>% column_to_rownames(var="V5")
+  cos_sim <- sim2(as.matrix(df), as.matrix(df), method="cosine")
+  return(cos_sim)
+}
+```
+
+```{r include=FALSE}
+get_clust <- function(cosSim){
+  # Hierarchical clustering using Complete Linkage
+  # Dissimilarity matrix
+  d <- dist(cosSim, method = "euclidean")
+  
+  # Hierarchical clustering using Complete Linkage
+  hc1 <- hclust(d, method = "average" )
+  
+  #Figure out whether to superimpose cluster size or find optimal
+  #clust <- cutree(hc1, k = optimal_nbcluster(cosSim_cds, d))
+  clust <- cutree(hc1, k = 4)
+  
+  clust[order(as.numeric(names(clust)))]
+  return(clust)
+}
+```
+
+```{r include=FALSE}
+#Try to remember how tf this function works and CLEAN IT UP
+#Gives us the density of clusters based on cosSim
+
+within_between_measure <- function(cosSim, cue_words){
+  density_df <- data.frame()
+  
+  #cosSim <- readRDS(file)
+  sim_long <- melt(cosSim)
+  cat1 <- rep(NA, nrow(sim_long))
+  cat2 <- rep(NA, nrow(sim_long))
+  age <- rep(3, nrow(sim_long))
+  measure <- rep(NA, nrow(sim_long))
+  measure <- rep(NA, nrow(sim_long))
+  sim_long <- cbind(sim_long, cat1)
+  sim_long <- cbind(sim_long, cat2)
+  sim_long <- cbind(sim_long, measure)
+  sim_long <- cbind(sim_long, age)
+  
+  #This is just getting category names here, and you could probably do a better job aka make a list with a mapping
+  for (row in 1:nrow(sim_long)){
+    sim_long$cat1[row] <- names(cue_words)[sapply(seq_along(cue_words),function(x){sim_long$Var1[row] %in% cue_words[[x]]})]
+    sim_long$cat2[row] <- names(cue_words)[sapply(seq_along(cue_words),function(x){sim_long$Var2[row] %in% cue_words[[x]]})]
+    
+    # word1 <- sim_long$Var1[row]
+    # word2 <- sim_long$Var2[row]
+    # print(c(word1, word2))
+    # 
+    # sim_long$cat1[row] <- cue_words_df[word1, ]
+    # sim_long$cat2[row] <- cue_words_df[word2, ]
+    
+    #Trying to be clever here....
+    #sim_long$cat1["Var1" == sim_long$Var1[row]] <- sim_long$cat1[row]
+    #sim_long$cat2["Var2" == sim_long$Var2[row]] <- sim_long$cat2[row]
+  }
+  sim_long[sim_long$cat1 == sim_long$cat2, ]$measure <- "within"
+  sim_long[sim_long$cat1 != sim_long$cat2, ]$measure <- "between"
+  return(density_df <- rbind(density_df, sim_long))
+
+}
+```
+
+```{r include=FALSE}
+density_plot <- function(density_df){
+return(ggplot(density_df, aes(value, fill = measure)) + geom_density(alpha = 0.2) + facet_wrap(vars(age, cat1), scales="free_y"))
+}
+```
+
+```{r include=FALSE}
+#clean this function up as well
+auc_measure <- function(density_df, cue_words){
+
+auc_df <- data.frame(matrix(ncol = length(cue_words), nrow = 0))
+x <- names(cue_words)
+colnames(auc_df) <- x
+
+for (var in unique(density_df$cat1)){
+  for (num in unique(density_df$age)){
+    
+    density_df2 <- density_df[density_df$cat1 == var & density_df$age == num, ]
+    density_df2$measure[density_df2$measure == "between"] <- 0
+    density_df2$measure[density_df2$measure == "within"] <- 1
+    density_df2$measure <- as.numeric(density_df2$measure)
+    
+    auc_df[num - 2, var] <- auc(response = density_df2$measure, predictor = density_df2$value)
+  }
+}
+
+#rownames(auc_df) <- unique(density_df$age)
+return(auc_df)
+}
+```
+
+```{r replicate_experiment, include=FALSE}
+replicate_experiment <- function(cosSim){
+
+all_list <- list()
+
+for (concept1 in names(cue_words)){
+  catRun <- list()
+  for (concept2 in names(cue_words[ - which(names(cue_words) == concept1)])){
+    run <- as.numeric()
+    
+    for (i in 1:250){
+    count <- 0
+    
+    concept1words <- cue_words[[concept1]][which(cue_words[[concept1]] %in% row.names(cosSim))]
+    concept2words <- cue_words[[concept2]][which(cue_words[[concept2]] %in% row.names(cosSim))]
+    
+    sample_group <- c(sample(concept1words, 4), sample(concept2words, 4))
+    
+    #make a categorical distribution w/ cosine similarities as probabilities
+    count <- count + 1
+    first <- sample(sample_group, replace = FALSE, 1)
+    continue <- TRUE
+    
+    while(continue){
+      sample_group <- sample_group[sample_group != first]
+      
+      #Probabilistically choose the next instance
+      # temp_probability <- c()
+      # for (instance in sample_group){
+      #   temp_probability <- c(temp_probability, 1 + cosSim[first, instance])
+      # }
+      # probability <- temp_probability/sum(temp_probability)
+      #next_instance <- sample_group[rcat(1, probability)]
+      
+      #Deterministically choose next instance
+      temp_cosSim <- select(as.data.frame(cosSim), one_of(sample_group))[first, ]
+      next_instance <- colnames(temp_cosSim)[which.max(temp_cosSim)]
+      
+      #check if category of first and next are the same
+      if (first %in% cue_words[[concept1]] & next_instance %in% cue_words[[concept1]] | first %in% cue_words[[concept2]] & next_instance %in% cue_words[[concept2]]){
+        count <- count + 1
+        first <- next_instance
+        if (count == 4){
+          run <- c(run, count)
+          count <- 0
+          continue <- FALSE
+        }
+      }
+      else{
+        #first <- next_instance
+        run <- c(run, count)
+        count <- 0
+        continue <- FALSE
+      }
+    }
+    }
+    #catRun[[concept1]] <- rep(NA, 100)
+    catRun[[concept2]] <- run
+    catRun <- catRun[order(names(catRun))]
+  }
+  all_list[[concept1]] <- catRun
+}
+return(all_list)
+}
+
+```
+
+
+```{r randomize_experiment, include=FALSE}
+randomize_experiment <- function(cosSim){
+
+all_list <- list()
+
+for (concept1 in names(cue_words)){
+  catRun <- list()
+  for (concept2 in names(cue_words[ - which(names(cue_words) == concept1)])){
+    run <- as.numeric()
+    
+    for (i in 1:250){
+    count <- 0
+    concept1words <- cue_words[[concept1]][which(cue_words[[concept1]] %in% row.names(cosSim))]
+
+    concept2words <- cue_words[[concept2]][which(cue_words[[concept2]] %in% row.names(cosSim))]
+    
+    sample_group <- c(sample(concept1words, 4), sample(concept2words, 4))
+    
+    #make a categorical distribution w/ cosine similarities as probabilities
+    count <- count + 1
+    first <- sample(sample_group, replace = FALSE, 1)
+    continue <- TRUE
+    
+    while(continue){
+      sample_group <- sample_group[sample_group != first]
+      
+      #Randomly choose next instance
+      probability <- rep(1/length(sample_group), length(sample_group))
+      next_instance <- sample_group[rcat(1, probability)]
+      
+      #check if category of first and next are the same
+      if (first %in% cue_words[[concept1]] & next_instance %in% cue_words[[concept1]] | first %in% cue_words[[concept2]] & next_instance %in% cue_words[[concept2]]){
+        count <- count + 1
+        first <- next_instance
+        if (count == 4){
+          run <- c(run, count)
+          count <- 0
+          continue <- FALSE
+        }
+      }
+      else{
+        #first <- next_instance
+        run <- c(run, count)
+        count <- 0
+        continue <- FALSE
+      }
+    }
+    }
+    #catRun[[concept1]] <- rep(NA, 100)
+    catRun[[concept2]] <- run
+    catRun <- catRun[order(names(catRun))]
+  }
+  all_list[[concept1]] <- catRun
+}
+return(all_list)
+}
+```
+
+
+```{r experiment_plot, include=FALSE}
+#Graph experiment results
+experiment_plot <- function(w2v, explicit, random){
+experiment_df_w2v <- melt(w2v)
+mean_df_w2v <- aggregate(experiment_df_w2v$value, by=list(L1 = experiment_df_w2v$L1, L2 = experiment_df_w2v$L2), FUN = mean)
+  
+ggplot(experiment_df_w2v, mapping=aes(value)) + geom_density(alpha = 0.2) + facet_wrap(nrow= 4, vars(L2, L1)) + ggtitle("w2v experiment (deterministic)") + geom_vline(mean_df_w2v, mapping=aes(xintercept=x), color="blue", 
+                 linetype="dashed")
+
+experiment_df_explicit <- melt(explicit)
+mean_df_explicit <- aggregate(experiment_df_explicit$value, by=list(L1 = experiment_df_explicit$L1, L2 = experiment_df_explicit$L2), FUN = mean)
+  
+ggplot(experiment_df_explicit, mapping=aes(value)) + geom_density(alpha = 0.2) + facet_wrap(nrow= 4, vars(L2, L1)) + ggtitle("explicit experiment (deterministic)") + geom_vline(mean_df_explicit, mapping=aes(xintercept=x), color="blue", 
+                 linetype="dashed")
+
+experiment_df_random <- melt(random)
+mean_df_random <- aggregate(experiment_df_random$value, by=list(L1 = experiment_df_random$L1, L2 = experiment_df_random$L2), FUN = mean)
+  
+ggplot(experiment_df_explicit, mapping=aes(value)) + geom_density(alpha = 0.2) + facet_wrap(nrow= 4, vars(L2, L1)) + ggtitle("explicit experiment (deterministic)") + geom_vline(mean_df_explicit, mapping=aes(xintercept=x), color="blue", 
+                 linetype="dashed")
+
+experiment_df <- data.frame(L1 = experiment_df_explicit$L1, L2 = experiment_df_explicit$L2, explicit = experiment_df_explicit$value, w2v = experiment_df_w2v$value, random = experiment_df_random$value) %>% 
+  melt()
+
+experiment_df_mean <- data.frame(L1 = mean_df_explicit$L1, L2 = mean_df_explicit$L2, explicit = mean_df_explicit$x, w2v = mean_df_w2v$x, random = mean_df_random$x) %>% 
+  melt()
+
+ggplot(experiment_df_explicit, mapping=aes(value)) + geom_vline(mean_df_explicit, mapping=aes(xintercept=x), color="blue", linetype="dashed") + geom_vline(mean_df_w2v, mapping=aes(xintercept=x), color="red", linetype="dashed") + geom_vline(mean_df_random, mapping=aes(xintercept=x), color="gray", linetype="dashed") + facet_wrap(nrow= 4, vars(L2, L1)) + ggthemes::theme_few() + theme(legend.position="right")
+
+return(ggplot(experiment_df_mean) + geom_vline(aes(xintercept=value, colour=variable)) + scale_colour_manual(values=c("red","blue","black")) + theme(legend.position="right", panel.background = element_rect(fill = "white", color="gray")) + facet_wrap(nrow= 5, vars(L2, L1)))
+}
+```
+
+```{r main, include=FALSE}
+#Need to remove toy, animal, food, from unique items
+unique_items <- readRDS("unique_items.rds")
+categories <- c("toys", "food_drink", "animals", "clothing", "furniture_rooms", "vehicles")
+cue_words <- unique_items[categories]
+cue_words_df <- melt(cue_words) %>%
+      remove_rownames %>% column_to_rownames(var="value")
+instances <- unlist(cue_words)
+
+w2v_file <- c("all_utterances_3.txt")
+explicit_file <- c("concepts_and_instances_3.csv")
+
+#Getting cosine similarity and clusters
+# w2v_cosSim <- get_w2v_cosSim(w2v_file)
+# saveRDS(w2v_cosSim, "w2v_cosSim.rds")
+# w2v_clust <- get_clust(w2v_cosSim)
+# saveRDS(w2v_clust, "w2v_clust.rds")
+
+w2v_cosSim <- readRDS("w2v_cosSim.rds")
+w2v_clust <- readRDS("w2v_clust.rds")
+
+# explicit_cosSim <- get_explicit_cosSim(explicit_file)
+# saveRDS(explicit_cosSim, "explicit_cosSim.rds")
+# explicit_clust <- get_clust(explicit_cosSim)
+# saveRDS(explicit_clust, "explicit_clust.rds")
+
+explicit_cosSim <- readRDS("explicit_cosSim.rds")
+explicit_clust <- readRDS("explicit_clust.rds")
+```
+
+AUC to get cohesion of clusters
+```{r echo=FALSE}
+explicit_clust_measure <- within_between_measure(explicit_cosSim, cue_words)
+w2v_clust_measure <- within_between_measure(w2v_cosSim, cue_words)
+  
+plot(density_plot(explicit_clust_measure) + ggtitle("Explicit Cohesiveness"))
+plot(density_plot(w2v_clust_measure) + ggtitle("w2v Cohesiveness"))  
+
+explicit_cohesion <- auc_measure(explicit_clust_measure, cue_words) %>%
+  cbind(mode='explicit') %>% 
+  melt()
+w2v_cohesion <- auc_measure(w2v_clust_measure, cue_words) %>%
+  cbind(mode='w2v') %>% 
+  melt()
+
+plot(ggplot(data=rbind(explicit_cohesion, w2v_cohesion), aes(x=variable, y=value, fill=mode)) +
+  geom_bar(stat="identity", position=position_dodge()) + ylim(0, 1) + ggtitle("AUC") + scale_fill_manual("legend", values = c("darkcyan", "darkslateblue")))
+```
+
+Experiment replication
+```{r echo=FALSE}  
+w2v_experiment <- replicate_experiment(w2v_cosSim)
+explicit_experiment <- replicate_experiment(explicit_cosSim)
+random_experiment <- randomize_experiment(explicit_cosSim)
+
+plot(experiment_plot(w2v_experiment, explicit_experiment, random_experiment))
+```
+
+Implict categorization of more broad categories w/ no natural label
+```{r echo=FALSE}
+broad_categories <- c("biological", "artifact")
+broad_cue_words <- list(artifacts = c(cue_words$toys, cue_words$clothing, cue_words$furniture_rooms, cue_words$vehicles), biological = c(cue_words$food_drink, cue_words$animals))
+broad_cue_words_df <- melt(cue_words) %>%
+      remove_rownames %>% column_to_rownames(var="value")
+
+broad_w2v_clust_measure <- within_between_measure(w2v_cosSim, broad_cue_words)
+plot(density_plot(broad_w2v_clust_measure) + ggtitle("Broad w2v Cohesiveness"))  
+broad_w2v_cohesion <- auc_measure(broad_w2v_clust_measure, broad_cue_words)
+
+plot(ggplot(data=melt(broad_w2v_cohesion), aes(x=variable, y=value, fill=variable)) +
+  geom_bar(stat="identity") + ylim(0, 1) + ggtitle("Broad w2v AUC"))
+
+```
+
