@@ -37,19 +37,16 @@ get_childes_utterances <- function(){
   adult_utterances <- dplyr::filter(adult_utterances, target_child_age < 72)
   #write.csv(adult_utterances, "pydata/adult_utterances_6.csv")
   adult_utterances <- dplyr::filter(adult_utterances, target_child_age < 60)
-  #write.csv(adult_utterances, "pydata/adult_utteraces_5.csv")
+  #write.csv(adult_utterances, "pydata/adult_utterances_5.csv")
   adult_utterances <- dplyr::filter(adult_utterances, target_child_age < 48)
-  #write.csv(adult_utterances, "pydata/adult_utteraces_4.csv")
+  #write.csv(adult_utterances, "pydata/adult_utterances_4.csv")
   adult_utterances <- dplyr::filter(adult_utterances, target_child_age < 36)
-  #write.csv(adult_utterances, "pydata/adult_utteraces_3.csv")
+  #write.csv(adult_utterances, "pydata/adult_utterances_3.csv")
   return(adult_utterances)
 }
 
 #adult_utterances <- get_childes_utterances()
-```
 
-```{r}
-write.csv(explicit_cosSim, "pydata/test.csv")
 ```
 
 <!-- Need to add back code to get things from wordbank -->
