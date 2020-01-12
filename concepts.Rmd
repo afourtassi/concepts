@@ -62,7 +62,7 @@ print(c('Number of children:' , nrow(meta_child)))
 print(c('Number of transcripts:' , nrow(meta_transcript)))
 ```
 
-Calculate proportion of explicit categorization utterances relative to all utterances in a given category
+Calculate proportion of explicit (interactive) categorization utterances relative to all utterances in a given category
 ```{r}
 explicit_files = c("rdata/explicit_categorization_3.csv", "rdata/explicit_categorization_4.csv","rdata/explicit_categorization_5.csv", "rdata/explicit_categorization_6.csv")
 
@@ -76,8 +76,10 @@ for (age in 1:length(explicit_files)){
     explicit_categorization <- read.csv(explicit_files[age], header = FALSE)
     explicit_proportion <- count(explicit_categorization, V1)
     explicit_proportion <- cbind(explicit_proportion, Proportion = explicit_proportion$n/totals[[age]][names(totals[[age]]) == explicit_proportion$V1])
-    print(paste("Ratio of Explicit Categorization to Category Occurrences for Age < ", toString(age + 2)))
-    kable(explicit_proportion, digits = 5)
+    #print(paste("Ratio of Explicit Categorization to Category Occurrences for Age < ", toString(age + 2)))
+    comment(explicit_proportion) <-paste("Ratio of Explicit Categorization to Category Occurrences for Age < ", toString(age + 2))
+    print(explicit_proportion)
+    kable(explicit_proportion, digits = 5, caption = paste("Ratio of Explicit Categorization to Category Occurrences for Age < ", toString(age + 2)))
 }
 ```
 
@@ -436,10 +438,28 @@ for (age in 1:length(txt_files)){
   w2v_clust_measure <- within_between_measure(w2v_cosSim, cue_words_df)
   cooccurrence_clust_measure <- within_between_measure(cooccurrence_cosSim, cue_words_df)
   
-  #Will probably need to add titles later
   plot(density_plot(explicit_clust_measure) + ggtitle(paste("Density of Verb Categorization for Age < ", toString(age + 2))))
   plot(density_plot(w2v_clust_measure) + ggtitle(paste("Density of w2v Categorization for Age < ", toString(age + 2)))) 
   plot(density_plot(cooccurrence_clust_measure) + ggtitle(paste("Density of All Co-Occurrence Categorization for Age < ", toString(age + 2)))) 
+  
+  w2v_clust <- get_clust(w2v_cosSim)
+  w2v_clust_file <- paste("rdata/rds/", toString(age + 2), "_clust_w2v.rds", sep="")
+  saveRDS(w2v_clust, w2v_clust_file)
+  #w2v_clust <- readRDS(w2v_clust_file)
+
+  explicit_clust <- get_clust(explicit_cosSim)
+  explicit_clust_file <- paste("rdata/rds/", toString(age + 2), "_clust_explicit.rds", sep="")
+  saveRDS(explicit_clust, explicit_clust_file)
+  #explicit_clust <- readRDS(explicit_clust_file)
+
+  cooccurrence_clust <- get_clust(cooccurrence_cosSim)
+  cooccurrence_clust_file <- paste("rdata/rds/", toString(age + 2), "_clust_cooccurrence.rds", sep="")
+  saveRDS(cooccurrence_clust, cooccurrence_clust_file)
+  #cooccurrence_clust <- readRDS(cooccurrence_clust_file)
+
+  fviz_cluster(list(data = w2v_cosSim, cluster = w2v_clust), labelsize = 8, main = paste("w2v Cluster for Age < ", toString(age + 2))) 
+  fviz_cluster(list(data = explicit_cosSim, cluster = explicit_clust), labelsize = 8, main = paste("Verb Cluster for Age < ", toString(age + 2)))
+  fviz_cluster(list(data = cooccurrence_cosSim, cluster = cooccurrence_clust), labelsize = 8, main = paste("Co-Occurrence Cluster for Age < ", toString(age + 2))) 
   
   explicit_cohesion <- auc_measure(explicit_clust_measure, cue_words) %>%
     cbind(mode='verbs') %>% 
