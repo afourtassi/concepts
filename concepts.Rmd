@@ -24,6 +24,7 @@ library(reshape2)
 library(pROC)
 library(extraDistr)
 library(NbClust)
+library(knitr)
 
 `%!in%` = Negate(`%in%`)
 ```
@@ -50,6 +51,35 @@ get_childes_utterances <- function(){
 ```
 
 <!-- Need to add back code to get things from wordbank -->
+<!-- May need to reorganize top chunks of code -->
+
+Retrieve number of individual children and transcripts used in analysis
+```{r}
+adult_utterances_6 <- read_csv("pydata/adult_utterances_6.csv")
+meta_child <- count(adult_utterances_6, target_child_id)
+meta_transcript <- count(adult_utterances_6, transcript_id)
+print(c('Number of children:' , nrow(meta_child)))
+print(c('Number of transcripts:' , nrow(meta_transcript)))
+```
+
+Calculate proportion of explicit categorization utterances relative to all utterances in a given category
+```{r}
+explicit_files = c("rdata/explicit_categorization_3.csv", "rdata/explicit_categorization_4.csv","rdata/explicit_categorization_5.csv", "rdata/explicit_categorization_6.csv")
+
+totals3 = c("animal" = 3849, "toy" = 5515, "vehicle" = 157, "clothes" = 1942, "furniture"= 156, "food" = 2979)
+totals4 = c("animal" = 4961, "toy" = 7093, "vehicle" = 167, "clothes" = 2497, "furniture"= 243, "food" = 4017)
+totals5 = c("animal" = 5638, "toy" = 8334, "vehicle" = 187, "clothes" = 2777, "furniture"= 278, "food" = 4973)
+totals6 = c("animal" = 6110, "toy" = 8637, "vehicle" = 191, "clothes" = 2861, "furniture"= 284, "food" = 5309)
+totals <- list(totals3, totals4, totals5, totals6)
+
+for (age in 1:length(explicit_files)){
+    explicit_categorization <- read.csv(explicit_files[age], header = FALSE)
+    explicit_proportion <- count(explicit_categorization, V1)
+    explicit_proportion <- cbind(explicit_proportion, Proportion = explicit_proportion$n/totals[[age]][names(totals[[age]]) == explicit_proportion$V1])
+    print(paste("Ratio of Explicit Categorization to Category Occurrences for Age < ", toString(age + 2)))
+    kable(explicit_proportion, digits = 5)
+}
+```
 
 ##Explicit co-occurrences
 
@@ -378,8 +408,63 @@ cue_words_df <- melt(cue_words) %>%
 instances <- unlist(cue_words)
 ```
 
-Get the cosine similarities for both w2v and explicit cues. (Can be read from file or recalculated.)
+Get cosine similarity (density plot), AUC, development up to 6, and 2-dimensional plot for w2v, explicit verb co-occurrence, and general co-occurrence
 ```{r}
+txt_files <- c("rdata/adult_utterances_3.txt", "rdata/adult_utterances_4.txt", "rdata/adult_utterances_5.txt", "rdata/adult_utterances_6.txt")
+concept_files <- c("rdata/concepts_and_instances_all_3.csv", "rdata/concepts_and_instances_all_4.csv", "rdata/concepts_and_instances_all_5.csv", "rdata/concepts_and_instances_all_6.csv")
+cooccurrence_files <- c("rdata/broad_concepts_and_instances_3.csv", "rdata/broad_concepts_and_instances_4.csv", "rdata/broad_concepts_and_instances_5.csv", "rdata/broad_concepts_and_instances_6.csv")
+
+cohesion <- data.frame()
+
+for (age in 1:length(txt_files)){
+  #w2v_cosSim <- get_w2v_cosSim(txt_files[age], instances)
+  w2v_file <- paste("rdata/rds/", toString(age + 2), "_cosSim_w2v.rds", sep="")
+  #saveRDS(w2v_cosSim, w2v_file)
+  w2v_cosSim <- readRDS(w2v_file)
+  
+  #explicit_cosSim <- get_explicit_cosSim(concept_files[age])
+  explicit_file <- paste("rdata/rds/", toString(age + 2), "_cosSim_explicit.rds", sep="")
+  #saveRDS(explicit_cosSim, explicit_file)
+  explicit_cosSim <- readRDS(explicit_file)
+  
+  #cooccurrence_cosSim <- get_explicit_cosSim(cooccurrence_files[age])
+  cooccurrence_file <- paste("rdata/rds/", toString(age + 2), "_cosSim_cooccurrence.rds", sep="")
+  #saveRDS(cooccurrence_cosSim, cooccurrence_file)
+  cooccurrence_cosSim <- readRDS(cooccurrence_file)
+  
+  explicit_clust_measure <- within_between_measure(explicit_cosSim, cue_words_df)
+  w2v_clust_measure <- within_between_measure(w2v_cosSim, cue_words_df)
+  cooccurrence_clust_measure <- within_between_measure(cooccurrence_cosSim, cue_words_df)
+  
+  #Will probably need to add titles later
+  plot(density_plot(explicit_clust_measure) + ggtitle(paste("Density of Verb Categorization for Age < ", toString(age + 2))))
+  plot(density_plot(w2v_clust_measure) + ggtitle(paste("Density of w2v Categorization for Age < ", toString(age + 2)))) 
+  plot(density_plot(cooccurrence_clust_measure) + ggtitle(paste("Density of All Co-Occurrence Categorization for Age < ", toString(age + 2)))) 
+  
+  explicit_cohesion <- auc_measure(explicit_clust_measure, cue_words) %>%
+    cbind(mode='verbs') %>% 
+    melt() %>% 
+    cbind(yr=age+2)
+  w2v_cohesion <- auc_measure(w2v_clust_measure, cue_words) %>%
+    cbind(mode='w2v') %>% 
+    melt() %>% 
+    cbind(yr=age+2)
+  cooccurrence_cohesion <- auc_measure(cooccurrence_clust_measure, cue_words) %>%
+    cbind(mode='cooccurrence') %>% 
+    melt() %>% 
+    cbind(yr=age+2)
+  cohesion <- rbind(cohesion, explicit_cohesion, w2v_cohesion, cooccurrence_cohesion)
+  
+  plot(ggplot(data=cohesion, aes(x=variable, y=value, fill=mode)) +
+  geom_bar(stat="identity", position=position_dodge()) + ylim(0, 1) + ggtitle(paste("AUC for Age < ", toString(age + 2))) + scale_fill_manual("legend", values = c("darkcyan", "darkslateblue", "darkred")))
+}
+
+plot(ggplot(data=cohesion, aes(x=variable, y=value, fill=mode)) +
+  geom_bar(stat="identity", position=position_dodge()) + ylim(0, 1) + ggtitle("AUC across development") + scale_fill_manual("legend", values = c("darkcyan", "darkslateblue", "darkred")) + facet_grid(cols=vars(yr))+ theme(axis.text.x = element_text(angle = 90))) 
+```
+
+Get the cosine similarities for both w2v and explicit cues. (Can be read from file or recalculated.)
+```{r, eval=FALSE}
 w2v_file <- c("rdata/adult_utterances_3.txt")
 explicit_file <- c("rdata/concepts_and_instances_all_3.csv")
 
@@ -398,7 +483,7 @@ explicit_clust <- readRDS("rdata/rds/explicit_clust.rds")
 ```
 
 Get the within- and between- similarity densities for each category.
-```{r echo=FALSE}
+```{r, eval=FALSE}
 explicit_clust_measure <- within_between_measure(explicit_cosSim, cue_words_df)
 w2v_clust_measure <- within_between_measure(w2v_cosSim, cue_words_df)
   
@@ -407,7 +492,7 @@ plot(density_plot(w2v_clust_measure) + ggtitle("w2v Cohesiveness"))
 ```
 
 Using within- and between- similarities, calculate AUC for each of the categories.
-```{r}
+```{r, eval=FALSE}
 explicit_cohesion <- auc_measure(explicit_clust_measure, cue_words) %>%
   cbind(mode='explicit') %>% 
   cbind(type= NA) %>% 
@@ -440,7 +525,7 @@ plot(ggplot(data=cohesion, aes(x=variable, y=value, fill=mode, alpha=type=="func
 ```
 
 Calculate cosine similarity, within- and between- similarities, and AUC for explicit cues with only category co-occurrence and not verb co-occurrence.
-```{r}
+```{r, eval=FALSE}
 explicit_file <- c("rdata/concepts_and_instances_categoryOnly_3.csv")
 
 category_explicit_cosSim <- get_explicit_cosSim(explicit_file)
@@ -461,7 +546,7 @@ plot(ggplot(data=category_explicit_cohesion, aes(x=variable, y=value, fill=mode)
 ```
 
 Visualize explicit and w2v clusters from cosine similarities
-```{r}
+```{r, eval=FALSE}
 w2v_clust <- get_clust(w2v_cosSim)
 saveRDS(w2v_clust, "rdata/rds/w2v_clust.rds")
 #w2v_clust <- readRDS("rdata/rds/w2v_clust.rds")
@@ -470,40 +555,56 @@ explicit_clust <- get_clust(explicit_cosSim)
 saveRDS(explicit_clust, "rdata/rds/explicit_clust.rds")
 #explicit_clust <- readRDS("rdata/rds/explicit_clust.rds")
 
+cooccurrence_clust <- get_clust(cooccurrence_cosSim)
+saveRDS(cooccurrence_clust, "rdata/rds/cooccurrence_clust.rds")
+#cooccurrence_clust <- readRDS("rdata/rds/cooccurrence_clust.rds")
+
 fviz_cluster(list(data = w2v_cosSim, cluster = w2v_clust), labelsize = 8) 
 fviz_cluster(list(data = explicit_cosSim, cluster = explicit_clust), labelsize = 8) 
+fviz_cluster(list(data = cooccurrence_cosSim, cluster = cooccurrence_clust), labelsize = 8) 
 ```
 
 Calculate cosine similarity, within- and between- similarities, and AUC for different ages of children (right now does 3-6).
-```{r}
+```{r, eval=FALSE}
 txt_files <- c("rdata/adult_utterances_3.txt", "rdata/adult_utterances_4.txt", "rdata/adult_utterances_5.txt", "rdata/adult_utterances_6.txt")
 concept_files <- c("rdata/concepts_and_instances_all_3.csv", "rdata/concepts_and_instances_all_4.csv", "rdata/concepts_and_instances_all_5.csv", "rdata/concepts_and_instances_all_6.csv")
+cooccurrence_files <- c("rdata/broad_concepts_and_instances_3.csv", "rdata/broad_concepts_and_instances_4.csv", "rdata/broad_concepts_and_instances_5.csv", "rdata/broad_concepts_and_instances_6.csv")
 
 cohesion <- data.frame()
 
 for (age in 1:length(txt_files)){
-  #w2v_cosSim <- get_w2v_cosSim(txt_files[age], instances)
+  w2v_cosSim <- get_w2v_cosSim(txt_files[age], instances)
   w2v_file <- paste("rdata/rds/", toString(age + 2), "_cosSim_w2v.rds", sep="")
-  #saveRDS(w2v_cosSim, w2v_file)
-  w2v_cosSim <- readRDS(w2v_file)
+  saveRDS(w2v_cosSim, w2v_file)
+  #w2v_cosSim <- readRDS(w2v_file)
   
-  #explicit_cosSim <- get_explicit_cosSim(concept_files[age])
+  explicit_cosSim <- get_explicit_cosSim(concept_files[age])
   explicit_file <- paste("rdata/rds/", toString(age + 2), "_cosSim_explicit.rds", sep="")
-  #saveRDS(explicit_cosSim, explicit_file)
-  explicit_cosSim <- readRDS(explicit_file)
+  saveRDS(explicit_cosSim, explicit_file)
+  #explicit_cosSim <- readRDS(explicit_file)
+  
+  cooccurrence_cosSim <- get_explicit_cosSim(concept_files[age])
+  cooccurrence_file <- paste("rdata/rds/", toString(age + 2), "_cosSim_cooccurrence.rds", sep="")
+  saveRDS(cooccurrence_cosSim, cooccurrence_file)
+  #cooccurrence_cosSim <- readRDS(cooccurrence_file)
   
   explicit_clust_measure <- within_between_measure(explicit_cosSim, cue_words_df)
   w2v_clust_measure <- within_between_measure(w2v_cosSim, cue_words_df)
+  cooccurrence_clust_measure <- within_between_measure(cooccurrence_cosSim, cue_words_df)
   
   explicit_cohesion <- auc_measure(explicit_clust_measure, cue_words) %>%
-    cbind(mode='explicit') %>% 
+    cbind(mode='verbs') %>% 
     melt() %>% 
     cbind(yr=age+2)
   w2v_cohesion <- auc_measure(w2v_clust_measure, cue_words) %>%
     cbind(mode='w2v') %>% 
     melt() %>% 
     cbind(yr=age+2)
-  cohesion <- rbind(cohesion, explicit_cohesion, w2v_cohesion)
+  cooccurrence_cohesion <- auc_measure(cooccurrence_clust_measure, cue_words) %>%
+    cbind(mode='cooccurrence') %>% 
+    melt() %>% 
+    cbind(yr=age+2)
+  cohesion <- rbind(cohesion, explicit_cohesion, w2v_cohesion, cooccurrence_cohesion)
 }
 
 plot(ggplot(data=cohesion, aes(x=yr, y=value, col=variable)) + geom_line() + ylim(0, 1) + ggtitle("AUC across development") + facet_grid(cols=vars(mode)))
@@ -514,7 +615,7 @@ plot(ggplot(data=cohesion, aes(x=variable, y=value, fill=mode)) +
 ```
 
 Replicate experiment from Bornstein and Arteberry 2010 for explicit categories with verb and category co-occurrence and w2v co-occurrence.
-```{r echo=FALSE}  
+```{r, eval=FALSE}  
 w2v_experiment <- replicate_experiment(w2v_cosSim, cue_words)
 explicit_experiment <- replicate_experiment(explicit_cosSim, cue_words)
 random_experiment <- randomize_experiment(explicit_cosSim, cue_words)
@@ -522,9 +623,8 @@ random_experiment <- randomize_experiment(explicit_cosSim, cue_words)
 plot(experiment_plot(w2v_experiment, random_experiment, explicit_experiment))
 ```
 
-
 Construct "animals" and "artifacts" categories. Calculate cosine similarity, within- and between- similarities, and AUC for w2v categorization of these categories.
-```{r}
+```{r, eval=FALSE}
 broad_categories <- c("animal", "artifact")
 broad_cue_words <- list(artifacts = c(cue_words$toys, cue_words$furniture_rooms, cue_words$vehicles, cue_words$clothing), animals = c(cue_words$animals))
 broad_cue_words_df <- melt(broad_cue_words) %>%
@@ -551,7 +651,7 @@ plot(ggplot(data=broad_w2v_cohesion, aes(x=variable, y=value)) +
 ```
 
 Replicate experiment from Bornstein and Arteberry 2010 for "animal" and "artifacts" categories.
-```{r}
+```{r, eval=FALSE}
 
 broad_w2v_experiment <- replicate_experiment(broad_w2v_cosSim, broad_cue_words)
 broad_random_experiment <- randomize_experiment(broad_w2v_cosSim, broad_cue_words)
