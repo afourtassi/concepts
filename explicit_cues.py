@@ -186,10 +186,11 @@ concepts = ["animal", "toy", "vehicle", "clothes", "furniture", "food"]
 
 verbs = ["ride on", "ride in", "ride", "play", "play with", "use", "eat", "wear"]
 
+
+#broad_concepts_and_instances_age.csv = verb+compl
+#concepts_and_instances_all_age.csv = co-occurrence
+#explicit_categorization_age.csv = labeling
 files = ["pydata/adult_utterances_age.csv", "rdata/adult_utterances_age.txt", "rdata/broad_concepts_and_instances_age.csv", "rdata/concepts_and_instances_all_age.csv", "rdata/explicit_categorization_age.csv"]
-
-#fileDict = {"3": ["pydata/adult_utterances_3.csv", "rdata/adult_utterances_3.txt", "rdata/broad_concepts_and_instances_3.csv"], "4": ["pydata/adult_utterances_4.csv", "rdata/adult_utterances_4.txt", "rdata/broad_concepts_and_instances_4.csv"], "5": ["pydata/adult_utterances_5.csv", "rdata/adult_utterances_5.txt", "rdata/broad_concepts_and_instances_5.csv"], "6": ["pydata/adult_utterances_6.csv", "rdata/adult_utterances_6.txt", "rdata/broad_concepts_and_instances_6.csv"] }
-
 
 def get_instances():
     temp = []
@@ -239,7 +240,7 @@ def get_concept_cooccurrence(instances, readfile, write_broad_concept_file):
             writer = csv.writer(writeFile)
             
             for row in reader:
-                utt = row[8]
+                utt = row[8].split()
                 for instance in instances:
                     if instance in utt:
                         for concept in concepts:
@@ -276,7 +277,7 @@ def get_concept_verbs(instances, readfile, write_concept_file):
                      if instance in utt:
                         for verb in verbs:
                             if verb in row[8]:
-                                regex = verb + r' ([a-z]* ){0,1}' + instance
+                                regex = r'\b' + verb + r'\s([a-z]*\s){0,1}' + instance + r'\b'
                                 if re.search(regex, row[8]) is not None:
                                     temp = []
                                     temp.append(conceptsDict[verb])
@@ -318,6 +319,7 @@ def explicit_categorization(instances, readfile, writefile):
                         writer.writerow(temp)
                     
     print(str(count) + " instances found.")
+
     
 def main():
     instances = get_instances()
@@ -330,8 +332,8 @@ def main():
         #Add in error for unavailable age?
         readfile = files[0].replace("age", str(age))
         write_txt_file = files[1].replace("age", str(age))
-        write_broad_concept_file = files[2].replace("age", str(age))
-        write_concept_file = files[3].replace("age", str(age))
+        write_verb_file = files[2].replace("age", str(age))
+        write_cooccurrence_file = files[3].replace("age", str(age))
         write_explicit_categorization_file = files[4].replace("age", str(age))
         
         print("Getting explicit categorization for age < " + age + "...")
@@ -341,10 +343,10 @@ def main():
         utterances_to_txt(readfile, write_txt_file)
         
         print("Getting verb+compl for age < " + age + "...")
-        get_concept_verbs(instances, readfile, write_concept_file)
+        get_concept_verbs(instances, readfile, write_verb_file)
         
         print("Getting concept co-occurrences for age < " + age + "...")
-        get_concept_cooccurrence(instances, readfile, write_broad_concept_file)
+        get_concept_cooccurrence(instances, readfile, write_cooccurrence_file)
         
         print("Done with age < " + age)
 
