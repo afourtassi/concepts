@@ -294,7 +294,7 @@ def get_concept_verbs(instances, readfile, write_concept_file):
     f.close()
     writeFile.close()
     
-def explicit_categorization(instances, readfile, writefile):
+def all_explicit_categorization(instances, readfile, writefile):
     count = 0
     rowNum = 0
     with open(readfile, newline='') as f:
@@ -315,11 +315,21 @@ def explicit_categorization(instances, readfile, writefile):
                         temp.append(concept)
                         temp.append(row[8])
                         temp.append(row[6])
-                
                         writer.writerow(temp)
                     
     print(str(count) + " instances found.")
-
+    
+def explicit_categorization(instances, readfile):
+    with open(readfile, newline='') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            utt = row[8].split()
+            for concept in concepts:
+                for instance in instances:
+                    search1 = instance + " be a " + concept
+                    search2 = instance + " be a kind of " + concept
+                    if search1 in row[8] or search2 in row[8]:
+                        print(row[8], "//", row[6])
     
 def main():
     instances = get_instances()
@@ -337,7 +347,8 @@ def main():
         write_explicit_categorization_file = files[4].replace("age", str(age))
         
         print("Getting explicit categorization for age < " + age + "...")
-        explicit_categorization(instances, readfile, write_explicit_categorization_file)
+        all_explicit_categorization(instances, readfile, write_explicit_categorization_file)
+        explicit_categorization(instances, readfile)
         
         print("Getting text for age < " + age + "...")
         utterances_to_txt(readfile, write_txt_file)

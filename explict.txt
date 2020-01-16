@@ -1,0 +1,42 @@
+Getting explicit categorization for age < 3...
+oh baby elephant be a animal you right // oh baby elephant is an animal you're right
+oh baby elephant be a animal you right // oh baby elephant is an animal you're right
+animal the dog be a animal // animal the dog is an animal
+the horse be a animal // the horse is an animal
+that be a food grind // that is a food grinder
+190 instances found.
+Getting explicit categorization for age < 4...
+well yes a ball be a toy // well yes a ball is a toy
+oh baby elephant be a animal you right // oh baby elephant is an animal you're right
+oh baby elephant be a animal you right // oh baby elephant is an animal you're right
+Daddy you want be a animal // Daddy you wanna be an animal
+animal the dog be a animal // animal the dog is an animal
+the horse be a animal // the horse is an animal
+that be a food grind // that is a food grinder
+and that be a clothes basket // and that is a clothes basket
+273 instances found.
+Getting explicit categorization for age < 5...
+well yes a ball be a toy // well yes a ball is a toy
+oh baby elephant be a animal you right // oh baby elephant is an animal you're right
+oh baby elephant be a animal you right // oh baby elephant is an animal you're right
+Daddy you want be a animal // Daddy you wanna be an animal
+animal the dog be a animal // animal the dog is an animal
+the horse be a animal // the horse is an animal
+who know that be a toy just like that where you could pretend to shoot it out // who knew that was a toy just like that where you could pretend to shoot it out
+I do not know that be a toy like that // I did not know that was a toy like that
+that be a food grind // that is a food grinder
+and that be a clothes basket // and that is a clothes basket
+372 instances found.
+Getting explicit categorization for age < 6...
+well yes a ball be a toy // well yes a ball is a toy
+oh baby elephant be a animal you right // oh baby elephant is an animal you're right
+oh baby elephant be a animal you right // oh baby elephant is an animal you're right
+Daddy you want be a animal // Daddy you wanna be an animal
+animal the dog be a animal // animal the dog is an animal
+the horse be a animal // the horse is an animal
+who know that be a toy just like that where you could pretend to shoot it out // who knew that was a toy just like that where you could pretend to shoot it out
+I do not know that be a toy like that // I did not know that was a toy like that
+that be a food grind // that is a food grinder
+and that be a clothes basket // and that is a clothes basket
+443 instances found.
+(base) eduroam-171-12:concepts countrygirl411$ 
