@@ -93,14 +93,15 @@ To get co-occurrences of categories, run explicit_cues.py with files adult_utter
 
 Given word vectors from w2v and list of words, return cosine similarity of all word pairs.
 ```{r include=FALSE}
-get_w2v_cosSim <- function(filename, instances){
+get_w2v_cosSim <- function(filename, instances, age){
   model = train_word2vec(filename,
                          output="all_utterances_3_w2v.bin", threads = 4,
                          vectors = 100, window=10, cbow=1, min_count = 10, force= TRUE)
   
   model_cds = read.vectors("all_utterances_3_w2v.bin")
-  
   model_cue_cds <- model_cds[[which(rownames(model_cds) %in% instances), average=FALSE]]
+  w2v_filename <- paste("rdata/rds/", toString(age + 2), "_vectors_w2v.rds", sep="")
+  #saveRDS(model_cue_cds, file = w2v_filename)
   cosSim_cds <- cosineSimilarity(model_cue_cds, model_cue_cds)
   return(cosSim_cds)
 }
@@ -110,7 +111,7 @@ Given word vectors from explicit co-occurrence, return cosine similarity of all 
 ```{r include=FALSE}
 #Could clean up this function
 
-get_explicit_cosSim <- function(filename){
+get_explicit_cosSim <- function(filename, age, cue_type){
   
     df_0 <- read.csv(filename, header = FALSE)  %>%
     mutate(wndw = 0) %>%
@@ -122,6 +123,8 @@ get_explicit_cosSim <- function(filename){
   dfSum <- dfMerge %>% group_by(V1, V5) %>%
     summarise(weight = sum(weight))
   df <- spread(dfSum, V1, weight, fill=0)
+  df_filename <- paste("rdata/rds/", toString(age + 2), "_vectors_explicit.rds", sep="")
+  #saveRDS(df, file = df_filename)
   df <- df %>% remove_rownames %>% column_to_rownames(var="V5")
   cos_sim <- sim2(as.matrix(df), as.matrix(df), method="cosine")
   return(cos_sim)
@@ -419,17 +422,17 @@ cooccurrence_files <- c("rdata/broad_concepts_and_instances_3.csv", "rdata/broad
 cohesion <- data.frame()
 
 for (age in 1:length(txt_files)){
-  #w2v_cosSim <- get_w2v_cosSim(txt_files[age], instances)
+  #w2v_cosSim <- get_w2v_cosSim(txt_files[age], instances, age)
   w2v_file <- paste("rdata/rds/", toString(age + 2), "_cosSim_w2v.rds", sep="")
   #saveRDS(w2v_cosSim, w2v_file)
   w2v_cosSim <- readRDS(w2v_file)
   
-  #explicit_cosSim <- get_explicit_cosSim(concept_files[age])
+  #explicit_cosSim <- get_explicit_cosSim(concept_files[age], age)
   explicit_file <- paste("rdata/rds/", toString(age + 2), "_cosSim_explicit.rds", sep="")
   #saveRDS(explicit_cosSim, explicit_file)
   explicit_cosSim <- readRDS(explicit_file)
   
-  #cooccurrence_cosSim <- get_explicit_cosSim(cooccurrence_files[age])
+  #cooccurrence_cosSim <- get_explicit_cosSim(cooccurrence_files[age], age)
   cooccurrence_file <- paste("rdata/rds/", toString(age + 2), "_cosSim_cooccurrence.rds", sep="")
   #saveRDS(cooccurrence_cosSim, cooccurrence_file)
   cooccurrence_cosSim <- readRDS(cooccurrence_file)
