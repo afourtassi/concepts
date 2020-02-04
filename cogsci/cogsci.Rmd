@@ -15,7 +15,7 @@ author-information:
 
 abstract:
 
-    "In order for children to understand and reason about the world in a mature fashion, they need to learn that conceptual categories are organized in a hierachical fashion (e.g., a dog is also an animal). The caregiver lingusitic input can play an important role in this learing, and previous studies have documented several cues in parental talk that can help children learn a conceptual hierachy. However, these previous studies used different datasets and methods which made difficult the systematic comparison of these cues and the study of their relative contribution.  Here, we use a large-scale coprus of child-directed speech and a classificatin-based evaluation method which allowed us to investigate, within the same framework, various cues that varied radically in terms of how explicit the information they offer is. We found the most explcit cues to be too sparse or too noisy to support robust learning (though part of the noise may be due to imperfect operationalization). In contrast, the implicit cues offered, overall, a reliable source of information. Our work confirms the utility of caregiver talk for conveying conceptual  information. It provides a stepping stone towards a cognitive model that would use this information in a principled way, possibly leading to testable predictions about children's conceptual development"
+    "In order for children to understand and reason about the world in a mature fashion, they need to learn that conceptual categories are organized in a hierarchical fashion (e.g., a dog is also an animal). The caregiver linguistic input can play an important role in this learning, and previous studies have documented several cues in parental talk that can help children learn a conceptual hierarchy. However, these previous studies used different datasets and methods which made difficult the systematic comparison of these cues and the study of their relative contribution.  Here, we use a large-scale corpus of child-directed speech and a classification-based evaluation method which allowed us to investigate, within the same framework, various cues that varied radically in terms of how explicit the information they offer is. We found the most explicit cues to be too sparse or too noisy to support robust learning (though part of the noise may be due to imperfect operationalization). In contrast, the implicit cues offered, overall, a reliable source of information. Our work confirms the utility of caregiver talk for conveying conceptual information. It provides a stepping stone towards a cognitive model that would use this information in a principled way, possibly leading to testable predictions about children's conceptual development"
     
 keywords:
     "Conceptual learning, child-directed speech, language and cognition"
@@ -71,7 +71,7 @@ superordinate-level without also providing the basic level term [@callanan1985; 
 
 
 In a different line of research prompted by recent advances in data science [@landauer1997; @mikolov2013], researchers
-have found that the statistical distribution of basic-level terms in parental speech can lead to a coherent structures at the superordinate level [@huebner2018; @fourtassi2019]. To illustrate, one can learn that "horse" and "dog" are part of a higher-level category just by observing that these words co-occur in
+have found that the statistical distribution of basic-level terms in parental speech can lead to coherent structures at the superordinate level [@huebner2018; @fourtassi2019]. To illustrate, one can learn that "horse" and "dog" are part of a higher-level category just by observing that these words co-occur in
 similar contexts. This distributional co-occurrence cue can be a powerful source of conceptual hierarchy because it is based on pure co-occurrence and does not require
 the presence of a lexicalized label for the higher-level category. On this kind of account, categories emerge in a bottom-up fashion as a cluster of related words at
 the lower-level.
@@ -114,9 +114,9 @@ grid::grid.raster(img)
 
 We constructed a large-scale corpus by aggregating over all English-language transcripts from CHILDES [@macwhinney2014; @sanchez2019]. These transcripts involved the caregivers' speech addressed to children up to three years of age. We had a total of XXX transcripts, across XXXX unique children, yielding a total of XXX utterances.
 
-We decided to study the six following superordinate categories: "animal", "furniture", "clothes", "food", "toys" and "vehicles". For each of these categories, we used the corresponding basic-level terms available in the English-language MacArthur-Bates Communicative Inventory (CDI) [@fenson94], a parent-report instrument that provide a partial listing and categorization of words produced by children 18--30 months. These categories were chosen because they were the optimal set of
+We decided to study the six following superordinate categories: "animal", "furniture", "clothes", "food", "toys" and "vehicles". For each of these categories, we used the corresponding basic-level terms available in the English-language MacArthur-Bates Communicative Inventory (CDI) [@fenson94], a parent-report instrument that provides a partial listing and categorization of words produced by children 18--30 months. These categories were chosen because they were the optimal set of
 superordinate categories that had been studied previously and CDI data were available.
-Most previous experimental work (which we parlty reviewed above) used only a subset of these categories for a given study.
+Most previous experimental work (which we partly reviewed above) used only a subset of these categories for a given study.
 
 
 ## Cues to Conceptual Hierarchy and their Feature Vectors 
@@ -328,7 +328,7 @@ affordance of the superordinate category, i.e., "food", "clothes",
 category and can also be used with instances of the other categories.
 This fact increased the overall rate of false alarms. The accuracy for the
 "animal" category was low as it was not characterized
-by a single particular verb affordance.\footnote{At the same time, perfomance for this category was not totally random as animal instances tend to co-occur consistently with some verbs from other categories (e.g., "ride a horse", "play with the dog", and "eat the chicken").} Perhaps future work investigating a larger set of verbs, selected in a principled manner, could overcome these limitations as our results suggest that verb-based categorization is a promising method.
+by a single particular verb affordance.\footnote{At the same time, performance for this category was not totally random as animal instances tend to co-occur consistently with some verbs from other categories (e.g., "ride a horse", "play with the dog", and "eat the chicken").} Perhaps future work investigating a larger set of verbs, selected in a principled manner, could overcome these limitations as our results suggest that verb-based categorization is a promising method.
 
 
 
@@ -337,7 +337,7 @@ by a single particular verb affordance.\footnote{At the same time, perfomance fo
 
 The distributional semantic cue was the most implicit but also the most powerful. The AUC score for this method was generally high, including for the "animals" and "furniture"
 categories, which were not accurately captured with any of the previous
-cues. This finding means that for at least some categories, chilren could potentially
+cues. This finding means that for at least some categories, children could potentially
 learn their common high-level categorization through general patterns of their usage. This
 strategy seems even more plausible for high-level categories that do not
 have an explicit label, or for which the label could not be available to
@@ -363,7 +363,7 @@ remained stable across development, at least up to 6 years old.
 ### The cues provide non-redundant information 
 
 We explored the extent to which explicit and implicit cues provided
-complementary vs.~redundant information. To this end, we fit logistic
+complementary vs. redundant information. To this end, we fit logistic
 regressions predicting the binary classification of pairs of basic-level
 words as belonging to same or different superordinate categories. The
 predictors were the pairs' similarity measures derived from each cue (centered and scaled to maximize comparability; the is-a-kind-of cue was not included due to sparsity). The results of the regressions,
@@ -402,7 +402,6 @@ How do children acquire the complex hierarchical relationships that characterize
 This work takes a first step towards integrating different conceptual information sources from caregiver language, but it has a number of limitations that should be addressed in future work. First, we conducted our study in English with the data available in CHILDES, but cross-linguistic and cross-cultural work is necessary to understand variation in the way that caregivers' language specifies the categorical structure of the world [@medin2010]. Second, we used rough approximations of the potentially more subtle cues that we labeled "pragmatic" and "verb affordance" information. Capturing the structure of knowledge as it is used in natural language is an open computational challenge, but we could likely improve performance substantially by further refining these cues.
 
 Our work here suggests the presence of multiple information sources about conceptual structure in children's linguistic environment. Perhaps the most exciting future direction is the development of cognitive models that make use of this information in a principled way, and that synthesize it with knowledge gleaned from other modalities including children's direct observations of the world around them. Such a synthesis will be crucial in making progress on understanding children's conceptual structure. By refining our understanding of linguistic cues to conceptual hierarchy, we hope our work here helps take a first step in this broader project.
-
 
 <!--
 [Discuss the fact that previous studies found anchoring in parental speech, but not this studty]

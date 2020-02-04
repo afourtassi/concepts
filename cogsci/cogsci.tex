@@ -66,17 +66,17 @@ Child-Directed Speech}
 \begin{abstract}
 In order for children to understand and reason about the world in a
 mature fashion, they need to learn that conceptual categories are
-organized in a hierachical fashion (e.g., a dog is also an animal). The
-caregiver lingusitic input can play an important role in this learing,
+organized in a hierarchical fashion (e.g., a dog is also an animal). The
+caregiver linguistic input can play an important role in this learning,
 and previous studies have documented several cues in parental talk that
-can help children learn a conceptual hierachy. However, these previous
+can help children learn a conceptual hierarchy. However, these previous
 studies used different datasets and methods which made difficult the
 systematic comparison of these cues and the study of their relative
-contribution. Here, we use a large-scale coprus of child-directed speech
-and a classificatin-based evaluation method which allowed us to
+contribution. Here, we use a large-scale corpus of child-directed speech
+and a classification-based evaluation method which allowed us to
 investigate, within the same framework, various cues that varied
 radically in terms of how explicit the information they offer is. We
-found the most explcit cues to be too sparse or too noisy to support
+found the most explicit cues to be too sparse or too noisy to support
 robust learning (though part of the noise may be due to imperfect
 operationalization). In contrast, the implicit cues offered, overall, a
 reliable source of information. Our work confirms the utility of
@@ -134,16 +134,16 @@ hierarchical organization.
 In a different line of research prompted by recent advances in data
 science (Landauer \& Dumais, 1997; Mikolov, Sutskever, Chen, Corrado, \&
 Dean, 2013), researchers have found that the statistical distribution of
-basic-level terms in parental speech can lead to a coherent structures
-at the superordinate level (Fourtassi, Scheinfeld, \& Frank, 2019;
-Huebner \& Willits, 2018). To illustrate, one can learn that ``horse''
-and ``dog'' are part of a higher-level category just by observing that
-these words co-occur in similar contexts. This distributional
-co-occurrence cue can be a powerful source of conceptual hierarchy
-because it is based on pure co-occurrence and does not require the
-presence of a lexicalized label for the higher-level category. On this
-kind of account, categories emerge in a bottom-up fashion as a cluster
-of related words at the lower-level.
+basic-level terms in parental speech can lead to coherent structures at
+the superordinate level (Fourtassi, Scheinfeld, \& Frank, 2019; Huebner
+\& Willits, 2018). To illustrate, one can learn that ``horse'' and
+``dog'' are part of a higher-level category just by observing that these
+words co-occur in similar contexts. This distributional co-occurrence
+cue can be a powerful source of conceptual hierarchy because it is based
+on pure co-occurrence and does not require the presence of a lexicalized
+label for the higher-level category. On this kind of account, categories
+emerge in a bottom-up fashion as a cluster of related words at the
+lower-level.
 
 Both these cues -- explicit anchoring and implicit distributional
 co-occurrence learning -- could in principle be helpful for children. In
@@ -228,11 +228,11 @@ We decided to study the six following superordinate categories:
 ``vehicles''. For each of these categories, we used the corresponding
 basic-level terms available in the English-language MacArthur-Bates
 Communicative Inventory (CDI) (Fenson et al., 1994), a parent-report
-instrument that provide a partial listing and categorization of words
+instrument that provides a partial listing and categorization of words
 produced by children 18--30 months. These categories were chosen because
 they were the optimal set of superordinate categories that had been
 studied previously and CDI data were available. Most previous
-experimental work (which we parlty reviewed above) used only a subset of
+experimental work (which we partly reviewed above) used only a subset of
 these categories for a given study.
 
 \hypertarget{cues-to-conceptual-hierarchy-and-their-feature-vectors}{%
@@ -470,7 +470,7 @@ since the verb ``use'' is not exclusive to this category and can also be
 used with instances of the other categories. This fact increased the
 overall rate of false alarms. The accuracy for the ``animal'' category
 was low as it was not characterized by a single particular verb
-affordance.\footnote{At the same time, perfomance for this category was not totally random as animal instances tend to co-occur consistently with some verbs from other categories (e.g., "ride a horse", "play with the dog", and "eat the chicken").}
+affordance.\footnote{At the same time, performance for this category was not totally random as animal instances tend to co-occur consistently with some verbs from other categories (e.g., "ride a horse", "play with the dog", and "eat the chicken").}
 Perhaps future work investigating a larger set of verbs, selected in a
 principled manner, could overcome these limitations as our results
 suggest that verb-based categorization is a promising method.
@@ -483,8 +483,8 @@ The distributional semantic cue was the most implicit but also the most
 powerful. The AUC score for this method was generally high, including
 for the ``animals'' and ``furniture'' categories, which were not
 accurately captured with any of the previous cues. This finding means
-that for at least some categories, chilren could potentially learn their
-common high-level categorization through general patterns of their
+that for at least some categories, children could potentially learn
+their common high-level categorization through general patterns of their
 usage. This strategy seems even more plausible for high-level categories
 that do not have an explicit label, or for which the label could not be
 available to young learners (e.g., ``animate'' vs. ``inanimate'').
@@ -511,18 +511,18 @@ up to 6 years old.
 information}\label{the-cues-provide-non-redundant-information}}
 
 We explored the extent to which explicit and implicit cues provided
-complementary vs.\textasciitilde{}redundant information. To this end, we
-fit logistic regressions predicting the binary classification of pairs
-of basic-level words as belonging to same or different superordinate
-categories. The predictors were the pairs' similarity measures derived
-from each cue (centered and scaled to maximize comparability; the
-is-a-kind-of cue was not included due to sparsity). The results of the
-regressions, summarized in Table \ref{tab:regressions}, indicate that,
-overall, each cue remains highly significant when controlling for the
-other cues. Thus, although distributional cues were highest performing
-when alone, each cue type provided non-redundant information and the
-overall classification performance increased when multiple information
-sources were used.
+complementary vs.~redundant information. To this end, we fit logistic
+regressions predicting the binary classification of pairs of basic-level
+words as belonging to same or different superordinate categories. The
+predictors were the pairs' similarity measures derived from each cue
+(centered and scaled to maximize comparability; the is-a-kind-of cue was
+not included due to sparsity). The results of the regressions,
+summarized in Table \ref{tab:regressions}, indicate that, overall, each
+cue remains highly significant when controlling for the other cues.
+Thus, although distributional cues were highest performing when alone,
+each cue type provided non-redundant information and the overall
+classification performance increased when multiple information sources
+were used.
 
 \begin{CodeChunk}
 \begin{figure}[h]
