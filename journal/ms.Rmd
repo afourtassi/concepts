@@ -4,20 +4,20 @@ shorttitle        : "Continuous Development of Word Learning"
 #numbersections: true
 
 author: 
-  - name          : "Abdellah Fourtassi"
+  - name          : "xxx"
     affiliation   : "1"
-    corresponding : yes    # Define only one corresponding author
+    email         : "xx"
+    
+  - name          : "xx"
+    affiliation   : "1"
+    email         : "xx"
+    
+    
+  - name          : "xx"
+    affiliation   : "1"
+    email         : "xx"
     address       : "Postal address"
-    email         : "abdellah.fourtassi@univ-amu.fr"
-    
-  - name          : "Sophie Regan"
-    affiliation   : "1"
-    email         : "sregan20@stanford.edu"
-    
-    
-  - name          : "Michael C. Frank"
-    affiliation   : "1"
-    email         : "mcfrank@stanford.edu"
+    corresponding : yes    # Define only one corresponding author
 
 affiliation:
   - id            : "1"
