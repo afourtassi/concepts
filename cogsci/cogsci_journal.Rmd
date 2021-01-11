@@ -1,0 +1,569 @@
+---
+title             : "Discovering Conceptual Structure Through Explicit and Implicit Cues in Child-Directed Speech"
+shorttitle        : "Discovering Conceptual Structure"
+#numbersections: true
+
+author: 
+  - name          : "Abdellah Fourtassi"
+    affiliation   : "1"
+    email         : "xx"
+    
+  - name          : "Kyra Wilson"
+    affiliation   : "1"
+    email         : "xx"
+    
+    
+  - name          : "Michael C. Frank"
+    affiliation   : "1"
+    email         : "xx"
+    address       : "Postal address"
+    corresponding : yes    # Define only one corresponding author
+
+affiliation:
+  - id            : "1"
+    institution   : "Department of Psychology, Stanford University"
+    
+
+author_note: |
+
+  '***The experiment, sample size, exclusion criteria, and the model’s main predictions were preregistered at https://osf.io/942gv/'
+  
+  'All data and analytic code are available at https://github.com/afourtassi/concepts' 
+  
+  'None of the authors have any financial interest or a conflict of interest regarding this work and this submission.'
+
+abstract: |
+
+  "In order for children to understand and reason about the world in a mature fashion, they need to learn that conceptual categories are organized in a hierarchical fashion (e.g., a dog is also an animal). The caregiver linguistic input can play an important role in this learning, and previous studies have documented several cues in parental talk that can help children learn a conceptual hierarchy. However, these previous studies used different datasets and methods which made difficult the systematic comparison of these cues and the study of their relative contribution.  Here, we use a large-scale corpus of child-directed speech and a classification-based evaluation method which allowed us to investigate, within the same framework, various cues that varied radically in terms of how explicit the information they offer is. We found the most explicit cues to be too sparse or too noisy to support robust learning (though part of the noise may be due to imperfect operationalization). In contrast, the implicit cues offered, overall, a reliable source of information. Our work confirms the utility of caregiver talk for conveying conceptual information. It provides a stepping stone towards a cognitive model that would use this information in a principled way, possibly leading to testable predictions about children's conceptual development"
+ 
+keywords          : "Conceptual learning, child-directed speech, language and cognition"
+
+header-includes:
+   - \usepackage{tipa}
+   - \usepackage[sortcites=false,sorting=none]{biblatex}
+   
+
+bibliography      : ["library.bib"]
+
+figsintext        : yes
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+lineno            : no
+
+lang              : "english"
+class             : "man"
+output            : papaja::apa6_pdf 
+
+citation_package: biblatex
+
+---
+
+
+```{r}
+knitr::opts_chunk$set(echo=F, warning=F, cache=F, message=F, sanitize = T)
+```
+
+```{r load_packages, include = FALSE}
+library(papaja)
+library(png)
+library(grid)
+library(ggplot2)
+library(ggthemes)
+library(xtable)
+options(xtable.comment = FALSE)
+library(purrr)
+library(readr)
+library(ggplot2)
+#library(langcog)
+library(boot)
+#library(lazyeval)
+library(dplyr)
+library(tidyr)
+#library(wordbankr)
+library(directlabels)
+#library(scales)
+library(stringr)
+library(lmtest)
+#library(rwebppl)
+library(jsonlite)
+library(nlme)
+library(feather)
+library(broom)
+library(HDInterval)
+library(BBmisc)
+library(stargazer)
+library(lme4)
+library(kableExtra)
+
+library(childesr) 
+library(dplyr)
+library(plyr)
+library(ggplot2)
+library(tidyr)
+library(tidyverse)
+library(text2vec)
+library(ggcorrplot)
+library(factoextra)
+library(cluster)
+library(wordVectors)
+library(reshape2)
+library(pROC)
+library(extraDistr)
+library(NbClust)
+library(lme4)
+library(memisc)
+library(apsrtable)
+library(stargazer)
+library(ggthemes)
+rename <- dplyr::rename
+summarise <- dplyr::summarise
+select <- dplyr::select
+
+`%!in%` = Negate(`%in%`)
+
+options(tinytex.verbose = TRUE)
+```
+
+# Introduction
+
+A hallmark of conceptual knowledge is its hierarchical organization. For example, a husky can be categorized as a dog, but it can also be categorized as a mammal, an animal, or a living being. Hierarchical organization is fundamental to human cognition as it allows, among other things, the generalization of knowledge through inference. For example,
+upon learning that all living beings are made out of cells, one can conclude that dogs are made of cells, too.
+
+How do children acquire conceptual hierarchy? Early accounts considered
+conceptual hierarchy to be the consequence of the emergence of a
+domain-general logic of class-inclusion -- in other words grasping the idea that one category can be part of a larger one
+[@inhelder2013; @sloutsky2015]. Children can acquire hierarchy in a specific domain before mastering the domain-general logic of classes, however [@chi1989; @carey1987; @inagaki2002; @keil1981], suggesting that category-specific input may play a role in this development.
+
+There are signs that children as young as 3 years old show hierarchical knowledge in various domains (e.g., animals, clothes, and food). Such
+signs include using superordinate words like "food" and "animal" according to parental report [@fenson94], using different
+words to label the same object at different levels of conceptual hierarchy [@clark1997], and being able to extend the meaning of novel words to superordinate categories even controlling for perceptual similarity [@liu2001].
+
+Do children learn conceptual hierarchy from the language that they hear? Analyses of parent-child interactions have shown that parents rarely introduce words at the
+superordinate-level without also providing the basic level term [@callanan1985; @blewitt1983; @shipley1983]. For example, parents rarely point to an object and say "this is an animal!". Instead, they usually anchor the superordinate word "animal" at the basic level by saying something along the lines of "This is a duck; a duck is a kind of animal." Such an anchoring strategy provides children with a categorization of the same object at different levels, which may help children understand the underlying hierarchical organization. 
+
+
+In a different line of research prompted by recent advances in data science [@landauer1997; @mikolov2013], researchers
+have found that the statistical distribution of basic-level terms in parental speech can lead to coherent structures at the superordinate level [@huebner2018; @fourtassi2019]. To illustrate, one can learn that "horse" and "dog" are part of a higher-level category just by observing that these words co-occur in
+similar contexts. This distributional co-occurrence cue can be a powerful source of conceptual hierarchy because it is based on pure co-occurrence and does not require
+the presence of a lexicalized label for the higher-level category. On this kind of account, categories emerge in a bottom-up fashion as a cluster of related words at
+the lower-level.
+
+Both these cues -- explicit anchoring and implicit distributional co-occurrence learning -- could in principle be helpful for children. In the case of
+the "is-a-kind-of" anchoring, there is evidence that preschool children ably use this cue to interpret the meaning of a novel word at the superordinate level [@callanan1989]. In the case of pure co-occurrence, extensive research in the last couple of decades has shown that children are capable of tracking distributional statistics of various linguistic units [@saffran1996]. Further, children appear to rely on the way words co-occur in speech to make conceptual generalizations [@fisher2011; @matlen2015].
+
+
+The cues reviewed above can be thought of as ends in a continuum that varies from explicit to implicit. The "is-a-kind-of" cue is the most explicit cue since both the terms (i.e., the basic and superordinate labels) and their hierarchical relationship are explicitly stated. The pure co-occurrence cue is the most implicit cue since, on the one hand,
+the superordinate term is not required and, on the other hand, the hierarchical relationship (that is, the fact that co-occurring basic level terms are part of a higher-level category) can only be induced.
+
+While previous studies have focused on these extremes, other cues are available that have an intermediate status on this continuum. Here, we examine the way parents hint at the hierarchical relationship between two concepts pragmatically without using an explicit inclusion expression. For example, instead of saying "a cow is a kind of animal" parents can say the following (e.g., in the context of a play session): "Do you want a cow or do you want another animal?" (see Table 1 for more examples). We also study whether action affordances provide another -- perhaps more explicit, but still distributional -- cue for category membership. For example, food items could be identified as members of a category by virtue of their compatibility with the verb "eat" and clothing items by their compatibility with "wear."
+
+Previous studies examining individual cues to categorization vary in terms of both the datasets and methods they have used, which makes comparison difficult. Implicit cues have
+generally been studied using large-scale data and have been evaluated based on their ability to provide an accurate similarity space for words. In contrast, explicit cues have been studied mainly in the context of small-scale experiments and have been tested mainly through counting the frequency of a given linguistic expression (e.g., "X is a
+kind of Y").
+
+In this work, we make a systematic comparison of explicit and implicit cues using similar methods. Such comparison is crucial as it allows us, for instance, to quantify the relative role that each cue could play in development. More precisely, we take a classification approach: We operationalize different cues as features that can be used to compute similarity. We then evaluate this continuous similarity measure by using it for a classification task, deciding whether different basic-level
+categories are part of the same superordinate category. Thus we can assign a classification accuracy to each cue type. We begin by introducing our dataset and the set of conceptual cues we consider; we then present results from this classification task.
+
+
+<!--While the anchoring mechanism can be effective as an explicit teaching mechanism (see for example Callanan XX), it is unclear whether parents spontaneously use this strategy when introducing super-ordinate terms in a natural context, i.e., in a context where parents are not necessarily aware of the task fixed by the experimenters. In the latter, parents may use what they think is the best teaching strategy to optimize the short-term outcome, rather than reproducing the natural behavior that they use in their spontanepous intercation with children. 
+
+In this work, we explore if the anchoring mechanim scales up to a large corpus of child-directed speech obtained by aggregating transcriptions of parent-child interactions in various contexts. We study many variants of this strategy and we comapre it to another strategy wh
+
+n general, we found little instances of parents anchorinfg super-ordinate terms explicitly at the basic level. We expand the definition of anchoring to include any instance of co-occurrence of X and Y in the same utterance...
+
+-->
+
+<!--- As we indicated above, one of the goals of this work is to test the extent to which parents' bahvior in a controlled context generalizes to a variety of other life situations -->
+```{r task, fig.env = "figure*", fig.pos = "h", fig.align = "center", fig.width=7, fig.height=3, fig.cap = "\\label{fig:task} A schematic description of the task. For each basic-level word (here, 'cow') a feature vector is derived from child-directed speech based on how the cue is defined. Here, the vector cells correspond to the superordinate categories. The entry in a given cell (e.g., animal) is incremented when the word 'cow' co-occurs with the corresponding category label. The cue is evaluated based on its ability to classify pairs of words into 'same' or 'different' superordinate categories. Here, the pair 'cow'-'horse' belongs to the same category. The corresponding vectors should be closer to each other than the vectors of a pair that belongs to different categories (e.g., 'cow'-'shirt'). This evaluation is quantified by a standard measure in signal detection theory called the Area Under the ROC Curve (AUC)."}
+
+img <- png::readPNG("figs/task.png")
+grid::grid.raster(img)
+```
+
+# Analyses
+
+## Data
+
+We constructed a large-scale corpus by aggregating over all English-language transcripts from CHILDES [@macwhinney2014; @sanchez2019]. These transcripts involved the caregivers' speech addressed to children up to three years of age. We had a total of 8,654 transcripts, across 1,046 chil-dren.
+
+We decided to study the six following superordinate categories: "animal", "furniture", "clothes", "food", "toys" and "vehicles". For each of these categories, we used the corresponding basic-level terms available in the English-language MacArthur-Bates Communicative Inventory (CDI) [@fenson94], a parent-report instrument that provides a partial listing and categorization of words produced by children 18--30 months. These categories were chosen because they were the optimal set of
+superordinate categories that had been studied previously and CDI data were available.
+Most previous experimental work (which we partly reviewed above) used only a subset of these categories for a given study.
+
+
+## Cues to Conceptual Hierarchy and their Feature Vectors 
+
+As indicated above, we explored four cues to conceptual hierarchy: "is-a-kind-of", pragmatic, verb affordance-based, and pure co-occurrence cues.
+We represented each cue as a set of features and we tested how these features allow us to classify basic-level terms into superordinate
+categories. To this end, we started by using each cue to derive a feature vector for each basic-level word in the CDI lexicon. In the case where the cue relied on an explicit category marker (i.e., the first three cues), the feature vectors were based on the superordinate categories introduced above. Otherwise (e.g., the fourth cue), the feature vector was an embedding in a high dimensional space derived based on the words' pattern of co-occurrence only. In the following, we explain how we computed the feature vectors for each cue (see also Figure \ref{fig:task}).
+
+### Is-a-kind-of
+
+This cue tests the extent to which parents use explicit expressions of class inclusion [@callanan1985]. For each word at the basic label, X,
+we construct a feature vector of length 6, where every cell corresponds to a superordinate category, Y, and the entry in each cell corresponds to the frequency with which X appears with Y is in one of the following expressions: "X is a/an Y" and "X is a kind of Y" (we kept the same expressions used in previous studies).
+
+\begin{table}[!htbp] \centering 
+\begin{tabular}{l p{.35\textwidth}}
+\hline
+
+\textbf{Animals} & Do you want a cow or do you want another animal?\\
+
+\textbf{Furniture} & Furniture means sofa and chair and...\\
+
+\textbf{Clothes} & This is another clothes. See, it's just like this shirt.\\
+
+\textbf{Food}   & She asks Lily what her favorite food is. If Lily says chocolate I am in trouble. \\
+
+\textbf{Toys} & You close the book and get another toy because I think we are tired of this.\\
+
+\textbf{Vehicles} & The only vehicle you cut out so far is the train.\\
+
+\hline
+\end{tabular}
+\caption{\label{tab:pragmatic} Examples of utterances from CHILDES where parents hint at a hierachical relations between basic- and superordinate- level terms.}
+\end{table}
+
+### Pragmatic
+
+Parents can express conceptual hierarchy between X and Y without
+necessarily using an "is-a-kind-of" expression. In many cases, parents
+can hint at this hierarchy using a wide diversity of
+linguistic expressions (Table 1). Detecting these expressions at scale is a challenge given their complexity, so as a first attempt to capture this diversity, we relax
+grammatical constraints between X to Y, and we keep only the requirement
+that X and Y should co-occur.
+
+More concretely, we represent each basic-level term, X, with a feature
+vector where each entry represents the frequency with which X co-occurs
+with the corresponding superordinate term Y. This co-occurrence is
+determined using a fixed window of \(k\) utterances. Values of \(k > 1\)
+allow us to capture the case where a relationship between X and Y is
+established across more than one utterance. For example:
+
+  -- Mother : What kind of animal is this?
+  
+  -- Mother : It's a giraffe!
+
+### Affordance-based 
+
+The super-ordinate label is not the only category marker that can cue conceptual hierarchy for a basic level term, especially when this category can be characterized by an affordance. For example, "food" can be characterized as the category of things we eat and "clothes" as things we wear. Thus, children can learn that some concepts (e.g., "apple" and "bread") are parts of a higher-level category ("things we eat") by observing how these concepts co-vary with a cue of their common affordance (i.e., the verb "eat").
+
+We computed the feature vectors for this cue as follows. In a first step, we tried to find a single verb that could be used as an affordance marker for an entire category.  We used "eat" for food, "wear" for clothes, "play" for toys, and "ride" for vehicles. The category "furniture" has no such obvious function verb.  We decided to use the verb “use” because if there were a verb that could fit every member of the category of furniture, it would be that (even though it can also fit things that are not members of the category). For the animal category, we could find no verb that could categorize the instances.
+
+We detected the concept-affordance relationship, syntactically, based on their occurrence in a verb-complement structure.\footnote{There are more complex structures that could, in principle, be used by parents. We used the simplest as a first approximation, though the performance of this cue could likely be enhanced by considering a wider variety of constructions.} For example, in the utterance "the bird eats the berries", the word "berries" was categorized as "eat"-able. For each basic-level term, we computed a feature vector where entries correspond to the frequency with which this term occurs in a verb-complement relationship with the verb/affordance at hand.
+
+<!-- Besides these "declarative" strategies, our examination of the data showed that parents also use an "interactive" strategy where they ask their children questions such as "What kind of animal is it?" and the child is supposed to respond with a basic-level term. Thus, we also looked for structures of the form "what kind of X", where X is a super-ordinate label.
+As is standard in vectorial word representations, we use the cosine between two word vectors as a measure of their similarity. 
+-->
+
+### Pure Co-occurrence 
+
+Unlike the first three cues, the pure co-occurrence cue is not based on an explicit category marker at the superordinate level. It is based,
+instead, on the way basic-level terms are distributed together in speech [@harris1957]. Following previous research [@fourtassi2019], we quantified this cue using the word embedding model Word2Vec [@mikolov2013]. We used this model to represent basic-level words as vectors in a high-dimensional space, representing the distribution of these words in a latent semantic structure.
+
+## Task and Evaluation
+
+Above, we characterized all cues in a vectorial framework. This
+framework allows us to directly compare the cues in terms of how they
+quantify the similarity between words (defined as the cosine of the
+angle formed by their vectors). Based on this similarity, we test the
+ability of each cue to predict which pairs of words belong to the same
+superordinate category (e.g., "apple" and "bread") and which pairs
+of words belong to different categories (e.g., "apple", "horse")
+(Figure \ref{fig:task}).
+
+
+
+```{r data-all, fig.env = "figure*", fig.pos = "h", fig.align = "center", fig.width=7, fig.height=3, fig.cap = "\\label{fig:data-all} The Area Under the ROC Curve (AUC) scores for each cue across all categories ('ALL') and for each category. A value of 0.5 represents pure chance, and a value of 1 represents perfect performance. The AUC score can be interpreted as the probability that, given two pairs of basic-level words, of which one is from the same superordinate category, the pairs are correctly classified using their  cue-based similarity."}
+
+
+auc_all <- feather::read_feather("../saved/auc_combined.feather") %>%
+  rename(category = variable,
+           AUC = value,
+           cue = mode) %>%
+  select(-yr)
+
+auc_all$cue <- mapvalues(auc_all$cue, from = c("w2v", "cooccurrence", "verbs"), to = c("Co-occurrence", "Pragmatic", "Affordance"))
+auc_all$category <- mapvalues(auc_all$category, from = c("food_drink", "furniture_rooms", "toys", "animals", "clothing", "vehicles"), to = c("food", "furniture", "toys", "animals", "clothes", "vehicles"))
+
+dev <- feather::read_feather("../saved/aggregate.feather") 
+
+auc_all <- auc_all %>%
+  bind_rows(dev %>% 
+              filter(age == 3) %>%
+              select(-age) %>%
+              mutate(category = "ALL"))
+  
+
+auc_all$cue <- factor(auc_all$cue, levels = c("Pragmatic", "Affordance", "Co-occurrence"))
+
+
+ggplot(data=filter(auc_all, category !='ALL'), aes(x=category, y=AUC, fill=cue)) +
+  geom_bar(stat="identity", position=position_dodge()) +
+  geom_bar(data = filter(auc_all, category =='ALL'), stat="identity", position=position_dodge(), alpha=0.5)+
+    ylim(0, 1) + 
+  geom_hline(yintercept=0.5, linetype = "dashed") +
+    theme_few()+
+    theme(legend.title = element_text(size=11),
+      legend.text=element_text(size=11),
+      axis.text = element_text(size = 11, angle = 45))
+ 
+    
+```
+
+We listed all pairs of basic-level words in the CDI dataset and their cosine similarity (according to each cue).
+Then, we evaluated the ability of the similarity measures to accurately
+predict whether the pairs belonged to "same" or "different"
+categories, across the full range of possible discrimination thresholds.
+We quantified performance in the task using the standard Area Under the ROC curve (hereafter AUC).
+The AUC score can be interpreted as the probability that, given two pairs of words, of which one is from the
+same category, the pairs are correctly classified based on the
+similarity. For each cue, we derived both a global AUC score across all
+categories and a category-specific AUC score where we evaluated only the
+subset of pairs of words that contained at least an instance of a target
+category.
+
+
+<!--basic-level terms of different super-ordinate categories (the noise). To this end, we evalute the binary classifier that takes as input a list of pairs of basic-level terms and their cosine similarity, and which returns, as output, a score (called the AUROC) which quantifies the accuracy of the cosine similarity, that is, the extent to which it ranks pairs from the same super-ordinate category ("dog", "cat") higher than pairs from different categories ("dog", "chair").-->
+
+
+
+# Results and Discussion
+
+## Individual Cue Results
+
+### The "is-a-kind-of" cue is rare
+
+Instances of our most explicit cue type, the "is-a-kind-of" cue, were so rare that we could not even build feature vectors for basic-level words. In total, we found only four instances, all of them characterizing the "animal" category.
+This finding contrasts with previous studies that found this cue in parental
+speech [@callanan1985; @blewitt1983; @shipley1983].
+This contrast can be explained by the fact that these previous
+studies were done in the context of a controlled experiment and parents
+were aware of the task (e.g., teaching words at the superordinate
+level), whereas here we tested a large-scale corpus containing a
+diversity of situations. Thus, it is possible that, in these previous
+studies, parents used a teaching strategy that they thought could
+optimize the short-term outcome (as determined by the experimenter),
+rather than a strategy that reflects their spontaneous interaction with
+children in daily life.
+
+
+### The pragmatic cue is noisy
+
+Figure \ref{fig:data-all} shows the global AUC score across categories as well as the AUC
+scores specific to each category. The accuracy of the pragmatic cue was
+generally low. The reason this cue performed so poorly is primarily due
+to the fact that we relaxed explicit grammatical constraints. While this
+operationalization allowed us to capture all possible ways the
+hierarchical relation between two concepts can be expressed
+linguistically, it also made the representation susceptible to errors,
+mainly by increasing the rate of false alarms: A basic level term (e.g.,
+"juice") can also co-occur with a superordinate label of which it is
+not an instance (e.g., "Don't pour the juice on your clothes!").
+
+
+
+\footnote{Increasing the size $k$ of the sliding window (i.e., the number
+of adjacent utterances within which the basic- and superordinate-level
+terms should co-occur) did not improve the performance of this cue.}.
+
+\begin{table}[!htbp] \centering 
+\caption{\label{tab:regressions} Logistic regressions predicting the binary classification of pairs of basic-level words as belonging to same or different superordiante categories. The predictors are the pairs' similarity measures derived from each cue. We fit a different regression for each superodinate category.} 
+\label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcccccc} 
+\hline 
+ & \multicolumn{6}{c}{} \\
+ & Animals & Furniture & Toys & Food & Clothing & Vehicles \\ 
+\hline \\[-1.8ex] 
+ (Intercept) & $-$2.741$^{***}$ & $-$3.195$^{***}$ & $-$3.244$^{***}$ & $-$2.616$^{***}$ & $-$3.101$^{***}$ & $-$4.663$^{***}$ \\ 
+  & (0.085) & (0.138) & (0.155) & (0.112) & (0.183) & (0.348) \\ 
+  & & & & & & \\ 
+ Co-occurrence & 2.285$^{***}$ & 2.040$^{***}$ & 1.178$^{***}$ & 0.905$^{***}$ & 1.644$^{***}$ & 1.249$^{***}$ \\ 
+  & (0.074) & (0.127) & (0.136) & (0.060) & (0.171) & (0.193) \\ 
+  & & & & & & \\ 
+ Affordance & 0.022 & 0.547$^{***}$ & 0.620$^{***}$ & 2.112$^{***}$ & 1.535$^{***}$ & 2.211$^{***}$ \\ 
+  & (0.057) & (0.094) & (0.113) & (0.092) & (0.153) & (0.245) \\ 
+  & & & & & & \\ 
+ Pragmatic & 0.179$^{***}$ & $-$0.104 & 0.722$^{***}$ & 0.325$^{***}$ & 0.359$^{*}$ & 0.159 \\ 
+  & (0.050) & (0.080) & (0.120) & (0.059) & (0.146) & (0.138) \\ 
+  & & & & & & \\ 
+ \\[-1.8ex] 
+
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{6}{r}{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001} \\ 
+\end{tabular} 
+\end{table}
+
+### The affordance-based cue is more accurate but not universal
+
+<!--Thus, this cue can only be informative statistically, i.e., if words from a given super-ordinate category (e.g., "Juice")  co-occur more with the label of this category (i.e., "food") than they do with the label of another category (e.g., "clothes"). -->
+
+The accuracy of this cue was relatively high for a subset of categories, those in which we had an obvious verb to cue the
+affordance of the superordinate category, i.e., "food", "clothes",
+"vehicles", and "toys". The accuracy was low in the case of the
+"furniture" category since the verb "use" is not exclusive to this
+category and can also be used with instances of the other categories.
+This fact increased the overall rate of false alarms. The accuracy for the
+"animal" category was low as it was not characterized
+by a single particular verb affordance.\footnote{At the same time, performance for this category was not totally random as animal instances tend to co-occur consistently with some verbs from other categories (e.g., "ride a horse", "play with the dog", and "eat the chicken").} Perhaps future work investigating a larger set of verbs, selected in a principled manner, could overcome these limitations as our results suggest that verb-based categorization is a promising method.
+
+
+
+
+### The pure co-occurrence cue is the most reliable
+
+The distributional semantic cue was the most implicit but also the most powerful. The AUC score for this method was generally high, including for the "animals" and "furniture"
+categories, which were not accurately captured with any of the previous
+cues. This finding means that for at least some categories, children could potentially
+learn their common high-level categorization through general patterns of their usage. This
+strategy seems even more plausible for high-level categories that do not
+have an explicit label, or for which the label could not be available to
+young learners (e.g., "animate" vs. "inanimate").
+
+
+
+## Cross-cue Results
+
+### The cues are stable across development 
+
+The results we showed concern cues derived from parental speech to children up to 3
+years old, as this is the age when signs of conceptual hierarchy start
+to emerge in the developmental literature. But we were also interested
+in how information in these cues may change as children grow older.
+For this analysis, we followed the same approach as above but included progressively more data in the corpus from older children. Results of this analysis, presented in Figure \ref{fig:dev}, show that the performance of all cues
+remained stable across development, at least up to 6 years old.
+
+
+
+
+
+### The cues provide non-redundant information 
+
+We explored the extent to which explicit and implicit cues provided
+complementary vs. redundant information. To this end, we fit logistic
+regressions predicting the binary classification of pairs of basic-level
+words as belonging to same or different superordinate categories. The
+predictors were the pairs' similarity measures derived from each cue (centered and scaled to maximize comparability; the is-a-kind-of cue was not included due to sparsity). The results of the regressions,
+summarized in Table \ref{tab:regressions}, indicate that, overall, each cue remains highly significant when controlling for the other cues. Thus, although distributional cues were highest performing when alone, each cue type provided non-redundant information and the overall classification performance increased when multiple information sources were used.
+
+
+```{r dev, fig.env = "figure", fig.pos = "h", fig.align = "center", fig.width=3, fig.height=3, fig.cap = "\\label{fig:dev} The Area Under the ROC Curve (AUC) scores for each cue (across all categories) using speech heard by children up to a particular age. A value of 0.5 represents pure chance, and a value of 1 represents perfect performance."}
+
+dev <- feather::read_feather("../saved/aggregate.feather") 
+
+ggplot(data=dev, aes(x=age, y=AUC, col=cue)) +
+  geom_point(position=position_dodge()) +
+    geom_line() +
+    ylim(0, 1) + 
+  geom_hline(yintercept=0.5, linetype = "dashed") +
+    theme_few()+
+    theme(
+      aspect.ratio=0.7,
+      legend.title = element_text(size=7),
+      legend.text=element_text(size=7),
+      axis.text = element_text(size = 11)
+      ) +
+    theme(legend.position = c(0.99, 0.01),
+      legend.justification = c("right", "bottom"),
+      legend.key.size = unit(0, 'lines'))
+
+```
+
+
+# General Discussion
+
+
+
+How do children acquire the complex hierarchical relationships that characterize mature human conceptual knowledge? In both its explicit statements and implicit distributional structure, caregiver talk provides a rich source of information about conceptual relationships. Here we used a distributional approach to compare the relative importance of different information sources in categorization of six common superordinate categories. We found that distributional information (as captured by Word2Vec models) and verb affordances were effective and that -- to a lesser extent -- sentential co-occurrence with superordinate labels also contributed positively to classification. Thus, at a high level, our study confirms the utility of caregiver talk for conveying conceptual information and suggests that a rich range of linguistic cues may be available to children in learning category structure.
+
+This work takes a first step towards integrating different conceptual information sources from caregiver language, but it has a number of limitations that should be addressed in future work. First, we conducted our study in English with the data available in CHILDES, but cross-linguistic and cross-cultural work is necessary to understand variation in the way that caregivers' language specifies the categorical structure of the world [@medin2010]. Second, we used rough approximations of the potentially more subtle cues that we labeled "pragmatic" and "verb affordance" information. Capturing the structure of knowledge as it is used in natural language is an open computational challenge, but we could likely improve performance substantially by further refining these cues.
+
+Our work here suggests the presence of multiple information sources about conceptual structure in children's linguistic environment. Perhaps the most exciting future direction is the development of cognitive models that make use of this information in a principled way, and that synthesize it with knowledge gleaned from other modalities including children's direct observations of the world around them. Such a synthesis will be crucial in making progress on understanding children's conceptual structure. By refining our understanding of linguistic cues to conceptual hierarchy, we hope our work here helps take a first step in this broader project.
+
+<!--
+[Discuss the fact that previous studies found anchoring in parental speech, but not this studty]
+The goal of this preliminary analysis was to explore the extent to which parents' anchoring strategies reported in previous reseach (typically in a controlled context) generalize to a large scale corpus which contains a variety of situations. In a controlled context, parents are explicitly asked to teach their children instances of conceptual hierachy. While this situation allows us to make precise causal inference, it may prompt parents to use a teaching strategy that optimizes the short-term outcome, rather than a strategy that reflects their spontanepous interaction with children in daily life. They showed that the cues 
+
+The genaral conclusion: Anchoring, when narrowly defined, is not frequent enough, and when braodly defined, is too noisy. 
+This does not prove that anchoring is not a valid cue, it is possible that children use an intermediate strategy which accept some expressions of anchoring and rejects others as non-informative, thus increasing the coverage while avoiding noise. This is left for further research.
+
+
+Along the x-axis we have the categories, and on the y-axis is the AUC value for the category. A value of 1 means the model can classify the categories perfectly, while a value of 0.5 means it has no separative capacity.
+
+
+In many cases, it may not even be necessary to explicitly mention the superordinate category label,
+
+he intuition behind this formalizton is that words from a given super-ordinate category (e.g., "apple") should co-occur more with the label of this category (i.e., "food") than they do with the label of another category (i.e., "toys"), and thius 
+
+
+should be more similar to each other than they are to words form another category, i.e.,
+
+(which, in addition, allows us to use)
+
+To determine whether anchoring is a viable cue for the acqusition of conceptual hoerachy, we need to show that the probability of the occurrence of a given super-ordiante categories (e.g., "food") should be higher with their basic-level instances (e.g., "apple") than with instances of different category (e.g., "dog"). Using terms from signal detection theory, the anchoring "signal" should be above "noise".
+
+To conrtrol for this confound (This choice was also motivated by our desire to compare anchoring strategies with bottom-up strategies) We represent each basic-level term with a vector. The dimension of this vector is 5; corresponding to the 5 super-ordinate categories. Each entry in the vector correponds to the frequency with which the basic-level term co-occurs with the super-ordinate term at hand. As is standard in the literature on vectorial word representations, we use the cosine between two vectors (i.e.,  their normalized dot product) as a measure of their similarity. 
+
+
+
+We quantify the anchoring strategy by its ability to distinguish basic-level terms of the same super-ordinate category (the signal) from basic-level terms of different super-ordinate categories (the noise). To this end, we evalute the binary classifier that takes as input a list of pairs of basic-level terms and their cosine similarity, and which returns, as output, a score (called the AUROC) which quantifies the accuracy of the cosine similarity, that is, the extent to which it ranks pairs from the same super-ordinate category ("dog", "cat") higher than pairs from different categories ("dog", "chair").
+
+Along the x-axis we have the categories, and on the y-axis is the AUC value for the category. A value of 1 means the model can classify the categories perfectly, while a value of 0.5 means it has no separative capacity.
+
+The genaral conclusion: Anchoring, when narrowly defined, is not frequent enough, and when braodly defined, is too noisy. 
+This does not prove that anchoring is not a valid cue, it is possible that children use an intermediate strategy which accept some expressions of anchoring and rejects others as non-informative, thus increasing the coverage while avoiding noise. This is left for further research.
+--->
+
+```{r }
+density_pragmatic <- feather::read_feather("../saved/density_pragmatic.feather")
+density_verb <- feather::read_feather("../saved/density_verb.feather")
+density_w2v <- feather::read_feather("../saved/density_w2v.feather")
+
+cues_all <- density_w2v %>%
+  rename(cooccurrence = value) %>%
+  left_join(density_verb) %>%
+  rename(affordance = value) %>%
+  left_join(density_pragmatic) %>%
+  rename(pragmatic = value) %>%
+  mutate(gold = ifelse(measure == "within", 1, 0)) %>%
+  filter(!(Var1 == Var2)) %>%
+  mutate_at(c('cooccurrence', 'affordance', 'pragmatic'), funs(as.numeric(scale(.)))) 
+
+model_all <- glm(gold ~ cooccurrence  + affordance + pragmatic, family=binomial, data = cues_all)
+
+model_animal <- glm(gold ~ cooccurrence  + affordance + pragmatic, family= binomial, data = filter(cues_all, cat1 == "animals"))
+model_furniture <- glm(gold ~ cooccurrence  + affordance + pragmatic, family= binomial, data = filter(cues_all, cat1 == "furniture_rooms"))
+model_toy <- glm(gold ~ cooccurrence  + affordance + pragmatic, family= binomial, data = filter(cues_all, cat1 == "toys"))
+model_food <- glm(gold ~cooccurrence  + affordance + pragmatic, family= binomial, data = filter(cues_all, cat1 == "food_drink"))
+model_clothing <- glm(gold ~ cooccurrence  + affordance + pragmatic, family= binomial, data = filter(cues_all, cat1 == "clothing"))
+model_vehicle <- glm(gold ~ cooccurrence  + affordance + pragmatic, family= binomial, data = filter(cues_all, cat1 == "vehicles"))
+```
+
+
+```{r results='asis', include =F}
+mytable <- stargazer(model_animal, model_furniture, model_toy, model_food, model_clothing, model_vehicle, keep.stat="n",
+          omit.stat = c( "n"),
+          
+          title            = "Logistic regressions predicting category membership as a function of speech-derived cues.",
+          dep.var.labels.include = FALSE,
+          #style = "qje",
+          model.numbers          = FALSE,
+          intercept.bottom = FALSE,
+          star.cutoffs = c(0.05, 0.01, 0.001),
+          column.labels = c("Animals", "Furniture", "Toys", "Food", "Clothing", "Vehicles")
+          )
+```
+
+
+# References
+```{r create_r-references}
+r_refs(file = "library.bib")
+```
+
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+
+
+
+
