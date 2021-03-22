@@ -4,11 +4,11 @@ shorttitle        : "Discovering Conceptual Structure"
 #numbersections: true
 
 author: 
-  - name          : "Abdellah Fourtassi"
+  - name          : "Kyra Wilson"
     affiliation   : "1"
     email         : "xx"
     
-  - name          : "Kyra Wilson"
+  - name          : "Abdellah Fourtass"
     affiliation   : "1"
     email         : "xx"
     

@@ -1,6 +1,3 @@
-\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
-\PassOptionsToPackage{hyphens}{url}
-%
 \documentclass[english,,man,floatsintext]{apa6}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
@@ -9,32 +6,34 @@
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provides euro and other symbols
 \else % if luatex or xelatex
-  \usepackage{unicode-math}
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 \fi
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
 \IfFileExists{microtype.sty}{%
-\usepackage[]{microtype}
+\usepackage{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
 \usepackage{hyperref}
-\hypersetup{
+\hypersetup{unicode=true,
             pdftitle={Discovering Conceptual Structure Through Explicit and Implicit Cues in Child-Directed Speech},
-            pdfauthor={Abdellah Fourtassi1, Kyra Wilson1, \& Michael C. Frank1},
             pdfkeywords={Conceptual learning, child-directed speech, language and cognition},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[shorthands=off,main=english]{babel}
+\else
+  \usepackage{polyglossia}
+  \setmainlanguage[]{english}
+\fi
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -44,16 +43,26 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{0}
 
-% set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
 
+
+  \title{Discovering Conceptual Structure Through Explicit and Implicit Cues in Child-Directed Speech}
+    \author{true \\ true \\ true}
+    \date{}
+  
 % Manuscript styling
 \usepackage{upgreek}
 \captionsetup{font=singlespacing,justification=justified}
@@ -90,36 +99,29 @@
   {\section{\normalfont\normalsize\abstractname}}
   {\section*{\normalfont\normalsize\abstractname}}
   {}{\typeout{Failed to patch abstract.}}
-\patchcmd{\HyOrg@maketitle}
-  {\section{\protect\normalfont{\@title}}}
-  {\section*{\protect\normalfont{\@title}}}
-  {}{\typeout{Failed to patch title.}}
 \makeatother
 \shorttitle{Discovering Conceptual Structure}
+\author{Abdellah Fourtassi\textsuperscript{1}, Kyra Wilson\textsuperscript{1}, \& Michael C. Frank\textsuperscript{1}}
+\affiliation{
+\vspace{0.5cm}
+\textsuperscript{1} Department of Psychology, Stanford University}
+\authornote{
+'***The experiment, sample size, exclusion criteria, and the model’s main predictions were preregistered at https://osf.io/942gv/'
+
+'All data and analytic code are available at https://github.com/afourtassi/concepts' 
+
+'None of the authors have any financial interest or a conflict of interest regarding this work and this submission.'
+
+
+Correspondence concerning this article should be addressed to Michael C. Frank, Postal address. E-mail: xx}
 \keywords{Conceptual learning, child-directed speech, language and cognition}
 \usepackage{csquotes}
 \usepackage{tipa}
 \usepackage[sortcites=false,sorting=none]{biblatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \usepackage[shorthands=off,main=english]{babel}
-\else
-  % load polyglossia as late as possible as it *could* call bidi if RTL lang (e.g. Hebrew or Arabic)
-  \usepackage{polyglossia}
-  \setmainlanguage[]{english}
-\fi
-
-\title{Discovering Conceptual Structure Through Explicit and Implicit Cues in Child-Directed Speech}
-\author{Abdellah Fourtassi\textsuperscript{1}, Kyra Wilson\textsuperscript{1}, \& Michael C. Frank\textsuperscript{1}}
-\date{}
-
-
-\affiliation{\vspace{0.5cm}\textsuperscript{1} Department of Psychology, Stanford University}
 
 \abstract{
 ``In order for children to understand and reason about the world in a mature fashion, they need to learn that conceptual categories are organized in a hierarchical fashion (e.g., a dog is also an animal). The caregiver linguistic input can play an important role in this learning, and previous studies have documented several cues in parental talk that can help children learn a conceptual hierarchy. However, these previous studies used different datasets and methods which made difficult the systematic comparison of these cues and the study of their relative contribution. Here, we use a large-scale corpus of child-directed speech and a classification-based evaluation method which allowed us to investigate, within the same framework, various cues that varied radically in terms of how explicit the information they offer is. We found the most explicit cues to be too sparse or too noisy to support robust learning (though part of the noise may be due to imperfect operationalization). In contrast, the implicit cues offered, overall, a reliable source of information. Our work confirms the utility of caregiver talk for conveying conceptual information. It provides a stepping stone towards a cognitive model that would use this information in a principled way, possibly leading to testable predictions about children's conceptual development''
 }
-
-
 
 \begin{document}
 \maketitle
@@ -425,6 +427,78 @@ Our work here suggests the presence of multiple information sources about concep
 \setlength{\leftskip}{0.5in}
 
 \hypertarget{refs}{}
+\leavevmode\hypertarget{ref-blewitt1983}{}%
+Blewitt, P. (1983). Dog versus collie: Vocabulary in speech to young children. \emph{Developmental Psychology}, \emph{19}(4).
+
+\leavevmode\hypertarget{ref-callanan1985}{}%
+Callanan, M. A. (1985). How parents label objects for young children: The role of input in the acquisition of category hierarchies. \emph{Child Development}, 508--523.
+
+\leavevmode\hypertarget{ref-callanan1989}{}%
+Callanan, M. A. (1989). Development of object categories and inclusion relations: Preschoolers' hypotheses about word meanings. \emph{Developmental Psychology}, \emph{25}(2).
+
+\leavevmode\hypertarget{ref-carey1987}{}%
+Carey, S. (1987). \emph{Conceptual change in childhood}. MIT Press.
+
+\leavevmode\hypertarget{ref-chi1989}{}%
+Chi, M. T., Hutchinson, J. E., \& Robin, A. F. (1989). How inferences about novel domain-related concepts can be constrained by structured knowledge. \emph{Merrill-Palmer Quarterly (1982-)}, 27--62.
+
+\leavevmode\hypertarget{ref-clark1997}{}%
+Clark, E. V. (1997). Conceptual perspective and lexical choice in acquisition. \emph{Cognition}, \emph{64}(1), 1--37.
+
+\leavevmode\hypertarget{ref-fenson94}{}%
+Fenson, L., Dale, P. S., Reznick, J. S., Bates, E., Thal, D. J., Pethick, S. J., \ldots{} Stiles, J. (1994). Variability in early communicative development. \emph{Monographs of the Society for Research in Child Development}, \emph{59}(5), i--185.
+
+\leavevmode\hypertarget{ref-fisher2011}{}%
+Fisher, A. V., Matlen, B. J., \& Godwin, K. E. (2011). Semantic similarity of labels and inductive generalization: Taking a second look. \emph{Cognition}, \emph{118}(3).
+
+\leavevmode\hypertarget{ref-fourtassi2019}{}%
+Fourtassi, A., Scheinfeld, I., \& Frank, M. C. (2019). The development of abstract concepts in children's early lexical networks. In \emph{Proceedings of the workshop on cognitive modeling and computational linguistics} (pp. 129--133).
+
+\leavevmode\hypertarget{ref-harris1957}{}%
+Harris, Z. S. (1957). Co-occurrence and transformation in linguistic structure. \emph{Language}, \emph{33}(3).
+
+\leavevmode\hypertarget{ref-huebner2018}{}%
+Huebner, P. A., \& Willits, J. A. (2018). Structured semantic knowledge can emerge automatically from predicting word sequences in child-directed speech. \emph{Frontiers in Psychology}, \emph{9}, 133.
+
+\leavevmode\hypertarget{ref-inagaki2002}{}%
+Inagaki, K., \& Hatano, Giyoo. (2002). \emph{Young children's naive thinking about the biological world}. New York : Psychology Press.
+
+\leavevmode\hypertarget{ref-inhelder2013}{}%
+Inhelder, B., \& Piaget, J. (2013). \emph{The early growth of logic in the child: Classification and seriation}. Routledge.
+
+\leavevmode\hypertarget{ref-keil1981}{}%
+Keil, F. C. (1981). Constraints on knowledge and cognitive development. \emph{Psychological Review}, \emph{88}(3).
+
+\leavevmode\hypertarget{ref-landauer1997}{}%
+Landauer, T. K., \& Dumais, S. T. (1997). A solution to plato's problem: The latent semantic analysis theory of acquisition, induction, and representation of knowledge. \emph{Psychological Review}, \emph{104}(2).
+
+\leavevmode\hypertarget{ref-liu2001}{}%
+Liu, J., Golinkoff, R. M., \& Sak, K. (2001). One cow does not an animal make: Young children can extend novel words at the superordinate level. \emph{Child Development}, \emph{72}(6), 1674--1694.
+
+\leavevmode\hypertarget{ref-macwhinney2014}{}%
+MacWhinney, B. (2014). \emph{The childes project: Tools for analyzing talk, volume ii: The database}. Psychology Press.
+
+\leavevmode\hypertarget{ref-matlen2015}{}%
+Matlen, B. J., Fisher, A. V., \& Godwin, K. E. (2015). The influence of label co-occurrence and semantic similarity on children's inductive generalization. \emph{Frontiers in Psychology}, \emph{6}.
+
+\leavevmode\hypertarget{ref-medin2010}{}%
+Medin, D., Bennis, W., \& Chandler, M. (2010). Culture and the home-field disadvantage. \emph{Perspectives on Psychological Science}, \emph{5}(6).
+
+\leavevmode\hypertarget{ref-mikolov2013}{}%
+Mikolov, T., Sutskever, I., Chen, K., Corrado, G. S., \& Dean, J. (2013). Distributed representations of words and phrases and their compositionality. In \emph{Advances in neural information processing systems} (pp. 3111--3119).
+
+\leavevmode\hypertarget{ref-saffran1996}{}%
+Saffran, J. R., Aslin, R. N., \& Newport, E. L. (1996). Statistical learning by 8-month-old infants. \emph{Science}, \emph{274}(5294), 1926--1928.
+
+\leavevmode\hypertarget{ref-sanchez2019}{}%
+Sanchez, A., Meylan, S. C., Braginsky, M., MacDonald, K. E., Yurovsky, D., \& Frank, M. C. (2019). Childes-db: A flexible and reproducible interface to the child language data exchange system. \emph{Behavior Research Methods}, \emph{51}(4), 1928--1941.
+
+\leavevmode\hypertarget{ref-shipley1983}{}%
+Shipley, E. F., Kuhn, I. F., \& Madden, E. C. (1983). Mothers' use of superordinate category terms. \emph{Journal of Child Language}, \emph{10}(3).
+
+\leavevmode\hypertarget{ref-sloutsky2015}{}%
+Sloutsky, V. (2015). Conceptual development. \emph{Handbook of Child Psychology and Developmental Science}, 1--50.
+
 \leavevmode\hypertarget{ref-blewitt1983}{}%
 Blewitt, P. (1983). Dog versus collie: Vocabulary in speech to young children. \emph{Developmental Psychology}, \emph{19}(4).
 
