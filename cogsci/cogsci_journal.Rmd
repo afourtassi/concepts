@@ -43,6 +43,7 @@ keywords          : "Conceptual learning, child-directed speech, language and co
 header-includes:
    - \usepackage{tipa}
    - \usepackage[sortcites=false,sorting=none]{biblatex}
+   - \usepackage{tabularx}
    
 
 bibliography      : ["library.bib"]
@@ -187,7 +188,7 @@ grid::grid.raster(img)
 
 ## Data
 
-We constructed a large-scale corpus by aggregating over all English-language transcripts from CHILDES [@macwhinney2000; @sanchez2019]. These transcripts involved the caregivers' speech addressed to children up to three years of age. We had a total of 8,654 transcripts, across 1,046 chil-dren.
+We constructed a large-scale corpus by aggregating over all English-language transcripts from CHILDES [@macwhinney2000; @sanchez2019]. We selected all utterances in which the speaker was not tagged as "Child" or "Target_Child" and which were addressed to children up to three years of age. The final corpus contained 1.9 million utterances and 7.9 million words from a collection of 4,939 transcripts across 660 children with an average age of 26.8 months.
 
 We decided to study the six following superordinate categories: "animal", "furniture", "clothes", "food", "toys" and "vehicles". For each of these categories, we used the corresponding basic-level terms available in the English-language MacArthur-Bates Communicative Inventory (CDI) [@fenson94], a parent-report instrument that provides a partial listing and categorization of words produced by children 18--30 months. This set of categories was chosen because it combines all sets of
 superordinate categories that had been studied previously and for which CDI data were available.
@@ -206,23 +207,25 @@ This cue tests the extent to which parents use explicit expressions of class inc
 we construct a feature vector of length 6, where every cell corresponds to a superordinate category, Y, and the entry in each cell corresponds to the frequency with which X appears with Y is in one of the following expressions: "X is a/an Y" and "X is a kind of Y" (we kept the same expressions used in previous studies).
 
 \begin{table}[!htbp] \centering 
-\begin{tabular}{l p{.35\textwidth}}
+\begin{tabularx}{\linewidth}{cXXc}
+\hline
+\textbf{Category} & Utterance & & Corpus\\
 \hline
 
-\textbf{Animals} & Do you want a cow or do you want another animal?\\
+\textbf{Animals} & Do you want a cow or do you want a different animal? & Mother to Max, 30 months & EllisWeismer\\
 
-\textbf{Furniture} & Furniture means sofa and chair and...\\
+\textbf{Furniture} & Furniture means sofas and chairs and... & Mother to Naima, 23 months & Providence\\
 
-\textbf{Clothes} & This is another clothes. See, it's just like this shirt.\\
+\textbf{Clothes} & This is another clothes. See it's just like this shirt. & Investigator to Shem, 30 months & Clark\\
 
-\textbf{Food}   & She asks Lily what her favorite food is. If Lily says chocolate I am in trouble. \\
+\textbf{Food} & She asked Lily what her favorite food was. If Lily says chocolate I am in trouble. & Mother about Lily, 24 months & Providence\\
 
-\textbf{Toys} & You close the book and get another toy because I think we are tired of this.\\
+\textbf{Toys} & You close the book and we'll get a different toy cause I think you're tired of this. & Mother to child, 13 months & Ambrose\\
 
-\textbf{Vehicles} & The only vehicle you cut out so far is the train.\\
+\textbf{Vehicles} & The only vehicle you cut out so far is the train. & Mother to Warren, 30 months & Manchester\\
 
 \hline
-\end{tabular}
+\end{tabularx}
 \caption{\label{tab:pragmatic} Examples of utterances from CHILDES where parents hint at a hierachical relations between basic- and superordinate- level terms.}
 \end{table}
 
@@ -336,26 +339,59 @@ Instances of our most explicit cue type, the *"is-a-kind-of" cue*, were so rare 
 
 The accuracy of the *pragmatic cue* was generally low. For this cue, we only report the results with $k=1$, which captures relations between basic- and  superrodinate words within a single utterance. Increasing the value of $k$ lead to worse, noisier performance. Regarding the *affordance-based cue*, the accuracy was relatively high for some categories, i.e., "food", "clothes", "vehicles", and "toys" and low for others, i.e., "furniture" and "animal." Finally, the *pure co-occurrence cue* lead to the best overall results across most superordinate categories.
 
+<!-- \begin{table}[!htbp] \centering  -->
+<!-- \caption{\label{tab:regressions} Logistic regressions predicting the binary classification of pairs of basic-level words as belonging to same or different superordiante categories. The predictors are the pairs' similarity measures derived from each cue. We fit a different regression for each superodinate category.}  -->
+<!-- \label{}  -->
+<!-- \begin{tabular}{@{\extracolsep{5pt}}lcccccc}  -->
+<!-- \hline  -->
+<!--  & \multicolumn{6}{c}{} \\ -->
+<!--  & Animals & Furniture & Toys & Food & Clothing & Vehicles \\  -->
+<!-- \hline \\[-1.8ex]  -->
+<!--  (Intercept) & $-$2.741$^{***}$ & $-$3.195$^{***}$ & $-$3.244$^{***}$ & $-$2.616$^{***}$ & $-$3.101$^{***}$ & $-$4.663$^{***}$ \\  -->
+<!--   & (0.085) & (0.138) & (0.155) & (0.112) & (0.183) & (0.348) \\  -->
+<!--   & & & & & & \\  -->
+<!--  Co-occurrence & 2.285$^{***}$ & 2.040$^{***}$ & 1.178$^{***}$ & 0.905$^{***}$ & 1.644$^{***}$ & 1.249$^{***}$ \\  -->
+<!--   & (0.074) & (0.127) & (0.136) & (0.060) & (0.171) & (0.193) \\  -->
+<!--   & & & & & & \\  -->
+<!--  Affordance & 0.022 & 0.547$^{***}$ & 0.620$^{***}$ & 2.112$^{***}$ & 1.535$^{***}$ & 2.211$^{***}$ \\  -->
+<!--   & (0.057) & (0.094) & (0.113) & (0.092) & (0.153) & (0.245) \\  -->
+<!--   & & & & & & \\  -->
+<!--  Pragmatic & 0.179$^{***}$ & $-$0.104 & 0.722$^{***}$ & 0.325$^{***}$ & 0.359$^{*}$ & 0.159 \\  -->
+<!--   & (0.050) & (0.080) & (0.120) & (0.059) & (0.146) & (0.138) \\  -->
+<!--   & & & & & & \\  -->
+<!--  \\[-1.8ex]  -->
+
+<!-- \hline \\[-1.8ex]  -->
+<!-- \textit{Note:}  & \multicolumn{6}{r}{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001} \\  -->
+<!-- \end{tabular}  -->
+<!-- \end{table} -->
+
 \begin{table}[!htbp] \centering 
 \caption{\label{tab:regressions} Logistic regressions predicting the binary classification of pairs of basic-level words as belonging to same or different superordiante categories. The predictors are the pairs' similarity measures derived from each cue. We fit a different regression for each superodinate category.} 
 \label{} 
 \begin{tabular}{@{\extracolsep{5pt}}lcccccc} 
 \hline 
- & \multicolumn{6}{c}{} \\
- & Animals & Furniture & Toys & Food & Clothing & Vehicles \\ 
+ & \multicolumn{4}{c}{} \\
+ & (Intercept) & Co-occurrence & Affordance & Pragmatic \\ 
 \hline \\[-1.8ex] 
- (Intercept) & $-$2.741$^{***}$ & $-$3.195$^{***}$ & $-$3.244$^{***}$ & $-$2.616$^{***}$ & $-$3.101$^{***}$ & $-$4.663$^{***}$ \\ 
-  & (0.085) & (0.138) & (0.155) & (0.112) & (0.183) & (0.348) \\ 
-  & & & & & & \\ 
- Co-occurrence & 2.285$^{***}$ & 2.040$^{***}$ & 1.178$^{***}$ & 0.905$^{***}$ & 1.644$^{***}$ & 1.249$^{***}$ \\ 
-  & (0.074) & (0.127) & (0.136) & (0.060) & (0.171) & (0.193) \\ 
-  & & & & & & \\ 
- Affordance & 0.022 & 0.547$^{***}$ & 0.620$^{***}$ & 2.112$^{***}$ & 1.535$^{***}$ & 2.211$^{***}$ \\ 
-  & (0.057) & (0.094) & (0.113) & (0.092) & (0.153) & (0.245) \\ 
-  & & & & & & \\ 
- Pragmatic & 0.179$^{***}$ & $-$0.104 & 0.722$^{***}$ & 0.325$^{***}$ & 0.359$^{*}$ & 0.159 \\ 
-  & (0.050) & (0.080) & (0.120) & (0.059) & (0.146) & (0.138) \\ 
-  & & & & & & \\ 
+  Animals & $-$2.741$^{***}$ & 2.285$^{***}$ & 0.022 & 0.179$^{***}$\\
+  & (0.085) & (0.074) & (0.057) & (0.050)\\
+  & & & & & & \\
+  Furniture & $-$3.195$^{***}$ & 2.040$^{***}$ & 0.547$^{***}$ & $-$0.104\\
+  & (0.138) & (0.127) & (0.094) & (0.080) &\\
+  & & & & & & \\
+  Toys & $-$3.244$^{***}$ & 1.178$^{***}$ &  0.620$^{***}$ & 0.722$^{***}$\\
+  & (0.155) & (0.136) & (0.113) & (0.120) &\\
+  & & & & & & \\
+  Food & $-$2.616$^{***}$ & 0.905$^{***}$ & 2.112$^{***}$ & 0.325$^{***}$\\
+  & (0.112) & (0.060) & (0.092) & (0.059)\\
+  & & & & & & \\
+  Clothing & $-$3.101$^{***}$ & 1.644$^{***}$ & 1.535$^{***}$ & 0.359$^{*}$\\
+  & (0.183) & (0.171) & (0.153) & (0.146)\\
+  & & & & & & \\
+  Vehicles & $-$4.663$^{***}$ & 1.249$^{***}$ & 2.211$^{***}$ & 0.159\\
+  & (0.348) & (0.193) & (0.245) & (0.138)\\
+  & & & & & & \\
  \\[-1.8ex] 
 
 \hline \\[-1.8ex] 
@@ -368,11 +404,28 @@ The accuracy of the *pragmatic cue* was generally low. For this cue, we only rep
 
 ## Developmental change
 
+\begin{table}[!htbp] \centering 
+\begin{tabularx}{\linewidth}{cXccXX}
+
+\textbf{Age} & Avg. Age (months) & Children & Transcripts & Utterances (millions) & Words (millions)\\
+\hline
+
+\textbf{\textless4} & 30.1 & 843 & 6,750 & 2.657 & 10.827\\
+
+\textbf{\textless5} & 33.5 & 971 & 7,889 & 3.093 & 12.807\\
+
+\textbf{\textless6} & 34.8 & 1,046 & 8,654 & 3.221 & 13.325\\
+
+\hline
+\end{tabularx}
+\caption{\label{tab:development} Information about the corpora used in the analysis of developmental change.}
+\end{table}
+
 The results we showed concern cues derived from parental speech to children up to 3
 years old, as this is the age when signs of conceptual hierarchy start
 to emerge in the developmental literature. But we were also interested
 in how information in these cues may change as children grow older.
-For this analysis, we followed the same approach as above but included progressively more data in the corpus from older children. Results of this analysis, presented in Figure \ref{fig:dev}, show that the performance of all cues remained stable across development, at least up to 6 years old.
+For this analysis, we followed the same approach as above but included progressively more data in the corpus by adding utterances addressed to older children (Table \ref{tab:development}). Results of this analysis, presented in Figure \ref{fig:dev}, show that the performance of all cues remained stable across development, at least up to 6 years old.
 
 
 ## Cross-cue results 
