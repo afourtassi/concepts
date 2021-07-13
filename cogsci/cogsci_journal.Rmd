@@ -204,7 +204,7 @@ categories. To this end, we started by using each cue to derive a feature vector
 ### Is-a-kind-of
 
 This cue tests the extent to which parents use explicit expressions of class inclusion [@callanan1985]. For each word at the basic label, X,
-we construct a feature vector of length 6, where every cell corresponds to a superordinate category, Y, and the entry in each cell corresponds to the frequency with which X appears with Y is in one of the following expressions: "X is a/an Y" and "X is a kind of Y" (we kept the same expressions used in previous studies).
+we construct a feature vector of length 6, where every cell corresponds to a superordinate category, Y, and the entry in each cell corresponds to the frequency with which X appears with Y is in one of the following expressions: "X is a/an Y" or "X is a kind/type/sort of Y" (we kept the same expressions used in previous studies).
 
 \begin{table}[!htbp] \centering 
 \begin{tabularx}{\linewidth}{cXXc}
