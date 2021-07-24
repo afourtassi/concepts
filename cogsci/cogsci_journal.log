@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.7.8)  13 JUL 2021 06:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.7.8)  24 JUL 2021 21:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1070,43 +1070,49 @@ Underfull \hbox (badness 5147) in paragraph at lines 223--223
 
 [8] [9]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 255.
+(Font)              <10> on input line 257.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 255.
+(Font)              <7> on input line 257.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 255.
+(Font)              <5> on input line 257.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[10] [11]
+[10]
+Underfull \vbox (badness 3758) has occurred while \output is active []
 
-LaTeX Warning: Float too large for page by 20.26485pt on input line 335.
+[11]
+
+LaTeX Warning: Float too large for page by 20.26485pt on input line 337.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--353
+Underfull \hbox (badness 10000) in paragraph at lines 355--355
 []|\T1/lmr/m/n/12 Avg. Age
  []
 
 
-Underfull \hbox (badness 4266) in paragraph at lines 353--353
+Underfull \hbox (badness 4266) in paragraph at lines 355--355
 []|\T1/lmr/m/n/12 Utterances (mil-
  []
 
-<cogsci_journal_files/figure-latex/dev-1.pdf, id=147, 216.81pt x 216.81pt>
+
+Underfull \vbox (badness 2173) has occurred while \output is active []
+
+[12] [13]
+<cogsci_journal_files/figure-latex/dev-1.pdf, id=164, 216.81pt x 216.81pt>
 File: cogsci_journal_files/figure-latex/dev-1.pdf Graphic file (type pdf)
 <use cogsci_journal_files/figure-latex/dev-1.pdf>
 Package pdftex.def Info: cogsci_journal_files/figure-latex/dev-1.pdf  used on i
-nput line 375.
+nput line 377.
 (pdftex.def)             Requested size: 216.81938pt x 216.81938pt.
-[12] [13]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14] [15 <./cogsci_journal_files/figure-latex/dev-1.pdf>] [16]
-Underfull \vbox (badness 3977) has occurred while \output is active []
+[14] [15 <./cogsci_journal_files/figure-latex/dev-1.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[17]
-Underfull \vbox (badness 3977) has occurred while \output is active []
+[16] [17]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [18] [19] [20] [21] [22] AED endfloat: Processing end Figures and Tables [23] (
 ./cogsci_journal.fff
@@ -1161,7 +1167,7 @@ ts/type1/public/lm/lmr8.pfb></Users/countrygirl411/Library/TinyTeX/texmf-dist/f
 onts/type1/public/lm/lmri12.pfb></Users/countrygirl411/Library/TinyTeX/texmf-di
 st/fonts/type1/public/lm/lmsy10.pfb></Users/countrygirl411/Library/TinyTeX/texm
 f-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on cogsci_journal.pdf (25 pages, 303585 bytes).
+Output written on cogsci_journal.pdf (25 pages, 303937 bytes).
 PDF statistics:
  361 PDF objects out of 1000 (max. 8388607)
  304 compressed objects within 4 object streams
