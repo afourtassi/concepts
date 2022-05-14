@@ -1,15 +1,5 @@
 \begin{figure*}[h]
 
-{\centering \includegraphics{cogsci_journal_files/figure-latex/task-1}
-
-}
-
-\caption{\label{fig:task} A schematic description of the task. For each basic-level word (here, 'cow') a feature vector is derived from child-directed speech based on how the cue is defined. Here, the vector cells correspond to the superordinate categories. The entry in a given cell (e.g., animal) is incremented when the word 'cow' co-occurs with the corresponding category label. The cue is evaluated based on its ability to classify pairs of words into 'same' or 'different' superordinate categories. Here, the pair 'cow'-'horse' belongs to the same category. The corresponding vectors should be closer to each other than the vectors of a pair that belongs to different categories (e.g., 'cow'-'shirt'). This evaluation is quantified by a standard measure in signal detection theory called the Area Under the ROC Curve (AUC).}\label{fig:task}
-\end{figure*}
-\efloatseparator
- 
-\begin{figure*}[h]
-
 {\centering \includegraphics{cogsci_journal_files/figure-latex/data-all-1}
 
 }
