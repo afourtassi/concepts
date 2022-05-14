@@ -28,7 +28,6 @@ affiliation:
 
 author_note: |
 
-  '***The experiment, sample size, exclusion criteria, and the model’s main predictions were preregistered at https://osf.io/942gv/'
   
   'All data and analytic code are available at https://github.com/afourtassi/concepts' 
   
