@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.4)  14 MAY 2022 17:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.4)  14 MAY 2022 17:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -908,36 +908,36 @@ LaTeX Warning: Label `fig:dev' multiply defined.
 )
 \openout1 = `cogsci_journal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 127.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 127.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 126.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 126.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 127.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 127.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 126.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 126.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 127.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 126.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1013,7 +1013,7 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2018/08/26 v1.4-95 longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \microtypecontext on input line 127.
+LaTeX Info: Redefining \microtypecontext on input line 126.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
@@ -1028,7 +1028,7 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 \AtBeginShipoutBox=\box40
-Package hyperref Info: Link coloring OFF on input line 127.
+Package hyperref Info: Link coloring OFF on input line 126.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1036,9 +1036,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count338
 )
-LaTeX Info: Redefining \ref on input line 127.
-LaTeX Info: Redefining \pageref on input line 127.
-LaTeX Info: Redefining \nameref on input line 127.
+LaTeX Info: Redefining \ref on input line 126.
+LaTeX Info: Redefining \pageref on input line 126.
+LaTeX Info: Redefining \nameref on input line 126.
 (./cogsci_journal.out) (./cogsci_journal.out)
 \@outlinefile=\write6
 \openout6 = `cogsci_journal.out'.
@@ -1051,41 +1051,41 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'cogsci_journal.bbl' not found.
 No file cogsci_journal.bbl.
-Package biblatex Info: Reference section=0 on input line 127.
-Package biblatex Info: Reference segment=0 on input line 127.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 129.
+Package biblatex Info: Reference section=0 on input line 126.
+Package biblatex Info: Reference segment=0 on input line 126.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 128.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 129.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 128.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 129
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 128
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 129
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 128
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 129.
+(Font)              <12> on input line 128.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 129.
+(Font)              <8> on input line 128.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 129.
-LaTeX Font Info:    Try loading font information for U+msa on input line 129.
+(Font)              <6> on input line 128.
+LaTeX Font Info:    Try loading font information for U+msa on input line 128.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 129.
+LaTeX Font Info:    Try loading font information for U+msb on input line 128.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -1099,26 +1099,26 @@ File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 File: cogsci_journal_files/figure-latex/cues-1.pdf Graphic file (type pdf)
 <use cogsci_journal_files/figure-latex/cues-1.pdf>
 Package pdftex.def Info: cogsci_journal_files/figure-latex/cues-1.pdf  used on 
-input line 157.
+input line 156.
 (pdftex.def)             Requested size: 469.76265pt x 85.7503pt.
 [6 <./cogsci_journal_files/figure-latex/cues-1.pdf>] [7] [8]
-Underfull \hbox (badness 3954) in paragraph at lines 240--240
+Underfull \hbox (badness 3954) in paragraph at lines 239--239
 []|\T1/lmr/m/n/12 (+20) Investigator to Shem, 30
  []
 
 [9]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 253.
+(Font)              <10> on input line 252.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 253.
+(Font)              <7> on input line 252.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 253.
+(Font)              <5> on input line 252.
 [10]
 <cogsci_journal_files/figure-latex/task-1.pdf, id=147, 505.89pt x 178.6675pt>
 File: cogsci_journal_files/figure-latex/task-1.pdf Graphic file (type pdf)
 <use cogsci_journal_files/figure-latex/task-1.pdf>
 Package pdftex.def Info: cogsci_journal_files/figure-latex/task-1.pdf  used on 
-input line 280.
+input line 279.
 (pdftex.def)             Requested size: 469.76265pt x 165.90823pt.
 
 Underfull \vbox (badness 1838) has occurred while \output is active []
@@ -1129,7 +1129,7 @@ Underfull \vbox (badness 1838) has occurred while \output is active []
 File: cogsci_journal_files/figure-latex/data-all-1.pdf Graphic file (type pdf)
 <use cogsci_journal_files/figure-latex/data-all-1.pdf>
 Package pdftex.def Info: cogsci_journal_files/figure-latex/data-all-1.pdf  used
- on input line 297.
+ on input line 296.
 (pdftex.def)             Requested size: 469.76015pt x 197.74297pt.
 [12 <./cogsci_journal_files/figure-latex/task-1.pdf>] [13 <./cogsci_journal_fil
 es/figure-latex/data-all-1.pdf>]
@@ -1137,11 +1137,11 @@ es/figure-latex/data-all-1.pdf>]
 File: cogsci_journal_files/figure-latex/dev-1.pdf Graphic file (type pdf)
 <use cogsci_journal_files/figure-latex/dev-1.pdf>
 Package pdftex.def Info: cogsci_journal_files/figure-latex/dev-1.pdf  used on i
-nput line 334.
+nput line 333.
 (pdftex.def)             Requested size: 206.77199pt x 146.54712pt.
 [14 <./cogsci_journal_files/figure-latex/dev-1.pdf>]
 
-LaTeX Warning: Float too large for page by 20.26485pt on input line 382.
+LaTeX Warning: Float too large for page by 20.26485pt on input line 381.
 
 [15] [16] [17]
 Underfull \vbox (badness 1009) has occurred while \output is active []
@@ -1151,308 +1151,308 @@ ame identifier (name{ref-andrews2014}) has been already used, duplicate ignored
 
 <to be read again> 
                    \relax 
-l.570 \leavevmode\hypertarget{ref-andrews2014}{}
+l.569 \leavevmode\hypertarget{ref-andrews2014}{}
                                                 %pdfTeX warning (ext4): destina
 tion with the same identifier (name{ref-bannard2008}) has been already used, du
 plicate ignored
 <to be read again> 
                    \relax 
-l.573 \leavevmode\hypertarget{ref-bannard2008}{}
+l.572 \leavevmode\hypertarget{ref-bannard2008}{}
                                                 %pdfTeX warning (ext4): destina
 tion with the same identifier (name{ref-blewitt1983}) has been already used, du
 plicate ignored
 <to be read again> 
                    \relax 
-l.576 \leavevmode\hypertarget{ref-blewitt1983}{}
+l.575 \leavevmode\hypertarget{ref-blewitt1983}{}
                                                 %pdfTeX warning (ext4): destina
 tion with the same identifier (name{ref-bruni2014}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.579 \leavevmode\hypertarget{ref-bruni2014}{}
+l.578 \leavevmode\hypertarget{ref-bruni2014}{}
                                               %pdfTeX warning (ext4): destinati
 on with the same identifier (name{ref-callanan1985}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.582 \leavevmode\hypertarget{ref-callanan1985}{}
+l.581 \leavevmode\hypertarget{ref-callanan1985}{}
                                                  % [25]pdfTeX warning (ext4): d
 estination with the same identifier (name{ref-callanan1989}) has been already u
 sed, duplicate ignored
 <to be read again> 
                    \relax 
-l.585 \leavevmode\hypertarget{ref-callanan1989}{}
+l.584 \leavevmode\hypertarget{ref-callanan1989}{}
                                                  %pdfTeX warning (ext4): destin
 ation with the same identifier (name{ref-carey1987}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.588 \leavevmode\hypertarget{ref-carey1987}{}
+l.587 \leavevmode\hypertarget{ref-carey1987}{}
                                               %pdfTeX warning (ext4): destinati
 on with the same identifier (name{ref-chi1989}) has been already used, duplicat
 e ignored
 <to be read again> 
                    \relax 
-l.591 \leavevmode\hypertarget{ref-chi1989}{}
+l.590 \leavevmode\hypertarget{ref-chi1989}{}
                                             %pdfTeX warning (ext4): destination
  with the same identifier (name{ref-clark1997}) has been already used, duplicat
 e ignored
 <to be read again> 
                    \relax 
-l.594 \leavevmode\hypertarget{ref-clark1997}{}
+l.593 \leavevmode\hypertarget{ref-clark1997}{}
                                               %pdfTeX warning (ext4): destinati
 on with the same identifier (name{ref-csibra2009}) has been already used, dupli
 cate ignored
 <to be read again> 
                    \relax 
-l.597 \leavevmode\hypertarget{ref-csibra2009}{}
+l.596 \leavevmode\hypertarget{ref-csibra2009}{}
                                                %pdfTeX warning (ext4): destinat
 ion with the same identifier (name{ref-fenson94}) has been already used, duplic
 ate ignored
 <to be read again> 
                    \relax 
-l.600 \leavevmode\hypertarget{ref-fenson94}{}
+l.599 \leavevmode\hypertarget{ref-fenson94}{}
                                              %pdfTeX warning (ext4): destinatio
 n with the same identifier (name{ref-fisher2011}) has been already used, duplic
 ate ignored
 <to be read again> 
                    \relax 
-l.603 \leavevmode\hypertarget{ref-fisher2011}{}
+l.602 \leavevmode\hypertarget{ref-fisher2011}{}
                                                %pdfTeX warning (ext4): destinat
 ion with the same identifier (name{ref-fourtassi2014}) has been already used, d
 uplicate ignored
 <to be read again> 
                    \relax 
-l.606 \leavevmode\hypertarget{ref-fourtassi2014}{}
+l.605 \leavevmode\hypertarget{ref-fourtassi2014}{}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{ref-fourtassi2013}) has been already used
 , duplicate ignored
 <to be read again> 
                    \relax 
-l.609 \leavevmode\hypertarget{ref-fourtassi2013}{}
+l.608 \leavevmode\hypertarget{ref-fourtassi2013}{}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{ref-fourtassi2019}) has been already used
 , duplicate ignored
 <to be read again> 
                    \relax 
-l.612 \leavevmode\hypertarget{ref-fourtassi2019}{}
+l.611 \leavevmode\hypertarget{ref-fourtassi2019}{}
                                                   % [26]pdfTeX warning (ext4): 
 destination with the same identifier (name{ref-frermann2016}) has been already 
 used, duplicate ignored
 <to be read again> 
                    \relax 
-l.615 \leavevmode\hypertarget{ref-frermann2016}{}
+l.614 \leavevmode\hypertarget{ref-frermann2016}{}
                                                  %pdfTeX warning (ext4): destin
 ation with the same identifier (name{ref-gelman2009}) has been already used, du
 plicate ignored
 <to be read again> 
                    \relax 
-l.618 \leavevmode\hypertarget{ref-gelman2009}{}
+l.617 \leavevmode\hypertarget{ref-gelman2009}{}
                                                %pdfTeX warning (ext4): destinat
 ion with the same identifier (name{ref-gelman1988}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.621 \leavevmode\hypertarget{ref-gelman1988}{}
+l.620 \leavevmode\hypertarget{ref-gelman1988}{}
                                                %pdfTeX warning (ext4): destinat
 ion with the same identifier (name{ref-harris2012}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.624 \leavevmode\hypertarget{ref-harris2012}{}
+l.623 \leavevmode\hypertarget{ref-harris2012}{}
                                                %pdfTeX warning (ext4): destinat
 ion with the same identifier (name{ref-harris1957}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.627 \leavevmode\hypertarget{ref-harris1957}{}
+l.626 \leavevmode\hypertarget{ref-harris1957}{}
                                                %pdfTeX warning (ext4): destinat
 ion with the same identifier (name{ref-huebner2018}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.630 \leavevmode\hypertarget{ref-huebner2018}{}
+l.629 \leavevmode\hypertarget{ref-huebner2018}{}
                                                 %pdfTeX warning (ext4): destina
 tion with the same identifier (name{ref-inagaki2002}) has been already used, du
 plicate ignored
 <to be read again> 
                    \relax 
-l.633 \leavevmode\hypertarget{ref-inagaki2002}{}
+l.632 \leavevmode\hypertarget{ref-inagaki2002}{}
                                                 %pdfTeX warning (ext4): destina
 tion with the same identifier (name{ref-inhelder2013}) has been already used, d
 uplicate ignored
 <to be read again> 
                    \relax 
-l.636 \leavevmode\hypertarget{ref-inhelder2013}{}
+l.635 \leavevmode\hypertarget{ref-inhelder2013}{}
                                                  %pdfTeX warning (ext4): destin
 ation with the same identifier (name{ref-keil1981}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.639 \leavevmode\hypertarget{ref-keil1981}{}
+l.638 \leavevmode\hypertarget{ref-keil1981}{}
                                              %pdfTeX warning (ext4): destinatio
 n with the same identifier (name{ref-kim2019}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.642 \leavevmode\hypertarget{ref-kim2019}{}
+l.641 \leavevmode\hypertarget{ref-kim2019}{}
                                             % [27]pdfTeX warning (ext4): destin
 ation with the same identifier (name{ref-landauer1997}) has been already used, 
 duplicate ignored
 <to be read again> 
                    \relax 
-l.645 \leavevmode\hypertarget{ref-landauer1997}{}
+l.644 \leavevmode\hypertarget{ref-landauer1997}{}
                                                  %pdfTeX warning (ext4): destin
 ation with the same identifier (name{ref-lany2011}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.648 \leavevmode\hypertarget{ref-lany2011}{}
+l.647 \leavevmode\hypertarget{ref-lany2011}{}
                                              %pdfTeX warning (ext4): destinatio
 n with the same identifier (name{ref-lewis2019}) has been already used, duplica
 te ignored
 <to be read again> 
                    \relax 
-l.651 \leavevmode\hypertarget{ref-lewis2019}{}
+l.650 \leavevmode\hypertarget{ref-lewis2019}{}
                                               %pdfTeX warning (ext4): destinati
 on with the same identifier (name{ref-liu2001}) has been already used, duplicat
 e ignored
 <to be read again> 
                    \relax 
-l.654 \leavevmode\hypertarget{ref-liu2001}{}
+l.653 \leavevmode\hypertarget{ref-liu2001}{}
                                             %pdfTeX warning (ext4): destination
  with the same identifier (name{ref-macwhinney2000}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.657 ...vevmode\hypertarget{ref-macwhinney2000}{}
+l.656 ...vevmode\hypertarget{ref-macwhinney2000}{}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{ref-madole1999}) has been already used, d
 uplicate ignored
 <to be read again> 
                    \relax 
-l.660 \leavevmode\hypertarget{ref-madole1999}{}
+l.659 \leavevmode\hypertarget{ref-madole1999}{}
                                                %pdfTeX warning (ext4): destinat
 ion with the same identifier (name{ref-markman1989}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.663 \leavevmode\hypertarget{ref-markman1989}{}
+l.662 \leavevmode\hypertarget{ref-markman1989}{}
                                                 %pdfTeX warning (ext4): destina
 tion with the same identifier (name{ref-marr1982}) has been already used, dupli
 cate ignored
 <to be read again> 
                    \relax 
-l.666 \leavevmode\hypertarget{ref-marr1982}{}
+l.665 \leavevmode\hypertarget{ref-marr1982}{}
                                              %pdfTeX warning (ext4): destinatio
 n with the same identifier (name{ref-matlen2015}) has been already used, duplic
 ate ignored
 <to be read again> 
                    \relax 
-l.669 \leavevmode\hypertarget{ref-matlen2015}{}
+l.668 \leavevmode\hypertarget{ref-matlen2015}{}
                                                % [28]pdfTeX warning (ext4): des
 tination with the same identifier (name{ref-mcclelland2003}) has been already u
 sed, duplicate ignored
 <to be read again> 
                    \relax 
-l.672 ...vevmode\hypertarget{ref-mcclelland2003}{}
+l.671 ...vevmode\hypertarget{ref-mcclelland2003}{}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{ref-medin2010}) has been already used, du
 plicate ignored
 <to be read again> 
                    \relax 
-l.675 \leavevmode\hypertarget{ref-medin2010}{}
+l.674 \leavevmode\hypertarget{ref-medin2010}{}
                                               %pdfTeX warning (ext4): destinati
 on with the same identifier (name{ref-mikolov2013}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.678 \leavevmode\hypertarget{ref-mikolov2013}{}
+l.677 \leavevmode\hypertarget{ref-mikolov2013}{}
                                                 %pdfTeX warning (ext4): destina
 tion with the same identifier (name{ref-quinn2000}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.681 \leavevmode\hypertarget{ref-quinn2000}{}
+l.680 \leavevmode\hypertarget{ref-quinn2000}{}
                                               %pdfTeX warning (ext4): destinati
 on with the same identifier (name{ref-rogoff2018}) has been already used, dupli
 cate ignored
 <to be read again> 
                    \relax 
-l.684 \leavevmode\hypertarget{ref-rogoff2018}{}
+l.683 \leavevmode\hypertarget{ref-rogoff2018}{}
                                                %pdfTeX warning (ext4): destinat
 ion with the same identifier (name{ref-sadeghi2015}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.687 \leavevmode\hypertarget{ref-sadeghi2015}{}
+l.686 \leavevmode\hypertarget{ref-sadeghi2015}{}
                                                 %pdfTeX warning (ext4): destina
 tion with the same identifier (name{ref-saffran1996}) has been already used, du
 plicate ignored
 <to be read again> 
                    \relax 
-l.690 \leavevmode\hypertarget{ref-saffran1996}{}
+l.689 \leavevmode\hypertarget{ref-saffran1996}{}
                                                 %pdfTeX warning (ext4): destina
 tion with the same identifier (name{ref-sanchez2019}) has been already used, du
 plicate ignored
 <to be read again> 
                    \relax 
-l.693 \leavevmode\hypertarget{ref-sanchez2019}{}
+l.692 \leavevmode\hypertarget{ref-sanchez2019}{}
                                                 %pdfTeX warning (ext4): destina
 tion with the same identifier (name{ref-shipley1983}) has been already used, du
 plicate ignored
 <to be read again> 
                    \relax 
-l.696 \leavevmode\hypertarget{ref-shipley1983}{}
+l.695 \leavevmode\hypertarget{ref-shipley1983}{}
                                                 % [29]pdfTeX warning (ext4): de
 stination with the same identifier (name{ref-sloutsky2015}) has been already us
 ed, duplicate ignored
 <to be read again> 
                    \relax 
-l.699 \leavevmode\hypertarget{ref-sloutsky2015}{}
+l.698 \leavevmode\hypertarget{ref-sloutsky2015}{}
                                                  %pdfTeX warning (ext4): destin
 ation with the same identifier (name{ref-sloutsky2010}) has been already used, 
 duplicate ignored
 <to be read again> 
                    \relax 
-l.702 \leavevmode\hypertarget{ref-sloutsky2010}{}
+l.701 \leavevmode\hypertarget{ref-sloutsky2010}{}
                                                  %pdfTeX warning (ext4): destin
 ation with the same identifier (name{ref-sloutsky2017}) has been already used, 
 duplicate ignored
 <to be read again> 
                    \relax 
-l.705 \leavevmode\hypertarget{ref-sloutsky2017}{}
+l.704 \leavevmode\hypertarget{ref-sloutsky2017}{}
                                                  %pdfTeX warning (ext4): destin
 ation with the same identifier (name{ref-smith1992}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.708 \leavevmode\hypertarget{ref-smith1992}{}
+l.707 \leavevmode\hypertarget{ref-smith1992}{}
                                               %pdfTeX warning (ext4): destinati
 on with the same identifier (name{ref-unger2021}) has been already used, duplic
 ate ignored
 <to be read again> 
                    \relax 
-l.711 \leavevmode\hypertarget{ref-unger2021}{}
+l.710 \leavevmode\hypertarget{ref-unger2021}{}
                                               %pdfTeX warning (ext4): destinati
 on with the same identifier (name{ref-waddy1982}) has been already used, duplic
 ate ignored
 <to be read again> 
                    \relax 
-l.714 \leavevmode\hypertarget{ref-waddy1982}{}
+l.713 \leavevmode\hypertarget{ref-waddy1982}{}
                                               %pdfTeX warning (ext4): destinati
 on with the same identifier (name{ref-wojcik2015}) has been already used, dupli
 cate ignored
 <to be read again> 
                    \relax 
-l.717 \leavevmode\hypertarget{ref-wojcik2015}{}
+l.716 \leavevmode\hypertarget{ref-wojcik2015}{}
                                                % AED endfloat: Processing end F
 igures and Tables [30]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 721.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 721.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 720.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 720.
 (./cogsci_journal.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 721.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 721.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 720.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 720.
 Package rerunfilecheck Info: File `cogsci_journal.out' has not changed.
 (rerunfilecheck)             Checksum: 2CA2C4BEF6D7CC15DEBA0162C362717D;2406.
 
@@ -1465,7 +1465,7 @@ Package logreq Info: Writing requests to 'cogsci_journal.run.xml'.
 Here is how much of TeX's memory you used:
  22714 strings out of 492616
  362758 string characters out of 6129482
- 845853 words of memory out of 5000000
+ 845720 words of memory out of 5000000
  26081 multiletter control sequences out of 15000+600000
  80737 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1482,7 +1482,7 @@ al/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2
 st/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
 ype1/public/lm/lmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publi
 c/lm/lmsy8.pfb>
-Output written on cogsci_journal.pdf (30 pages, 356089 bytes).
+Output written on cogsci_journal.pdf (30 pages, 355769 bytes).
 PDF statistics:
  391 PDF objects out of 1000 (max. 8388607)
  332 compressed objects within 4 object streams
