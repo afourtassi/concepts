@@ -101,7 +101,7 @@
   {}{\typeout{Failed to patch abstract.}}
 \makeatother
 \shorttitle{Conceptual Hierarchy in CDS}
-\author{Kyra Wilson\textsuperscript{1}, Michael C. Frank\textsuperscript{1}, \& Abdellah Fourtassi\textsuperscript{2}}
+\author{Kyra WILSON\textsuperscript{1}, Michael C. FRANK\textsuperscript{1}, \& Abdellah FOURTASSI\textsuperscript{2}}
 \affiliation{
 \vspace{0.5cm}
 \textsuperscript{1} Department of Psychology, Stanford University\\\textsuperscript{2} Department of Computer Science, Aix-Marseille University}
@@ -112,7 +112,7 @@
 'None of the authors have any financial interest or a conflict of interest regarding this work and this submission.'
 
 
-Correspondence concerning this article should be addressed to Abdellah Fourtassi, Postal address. E-mail: abellah.fourtassi@univ-amu.fr}
+Correspondence concerning this article should be addressed to Abdellah FOURTASSI, Postal address. E-mail: abellah.fourtassi@univ-amu.fr}
 \keywords{Conceptual learning, child-directed speech, language and cognition}
 \usepackage{csquotes}
 \usepackage{tipa}
@@ -120,7 +120,7 @@ Correspondence concerning this article should be addressed to Abdellah Fourtassi
 \usepackage{tabularx}
 
 \abstract{
-``In order for children to understand and reason about the world in an adult-like fashion, they need to learn that conceptual categories are organized in a hierarchical fashion (e.g., a dog is also an animal). The caregiver's linguistic input can play an important role in this learning, and previous studies have documented several cues in parental talk that can help children learn the conceptual hierarchy. However, these previous studies used different datasets and methods which made difficult the systematic comparison of these cues and the study of their relative contribution. Here, we use a large-scale corpus of child-directed speech and a classification-based evaluation method which allowed us to investigate, within the same framework, various cues that vary radically in terms of how explicit the information they offer is. We found the most explicit cues to be too sparse or too noisy to support robust learning. In contrast, the implicit cues offered, overall, a reliable source of information. Our work confirms the utility of caregiver talk for conveying conceptual information. It provides a stepping stone towards a cognitive model that would use this information in a principled way, leading to testable predictions about children's conceptual development.''
+``For children to reason about the world in an adult-like fashion, they need to learn that concepts are organized into a hierarchy. The caregiver's linguistic cues can play an important role in this learning. Previous studies used different datasets and methods which made difficult the systematic comparison of these cues and the study of their relative contribution. Our work addresses this gap in the literature. We found explicit cues to be too sparse to support robust learning. In contrast, implicit cues offered, overall, a reliable source of information. Our work confirms the utility of caregiver talk for conveying conceptual information.''
 }
 
 \begin{document}
@@ -129,31 +129,31 @@ Correspondence concerning this article should be addressed to Abdellah Fourtassi
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-A hallmark of conceptual knowledge is its hierarchical organization. For example, a husky can be categorized as a dog, but it can also be categorized as a mammal, an animal, or a living being. Hierarchical organization is fundamental to human cognition as it allows, among other things, the generalization of knowledge through inference. For example, upon learning that all living beings are made out of cells, one can conclude that dogs are made of cells, too (e.g., Gelman \& O'Reilly, 1988; Markman, 1989).
+A hallmark of conceptual knowledge is its hierarchical organization. For example, a husky can be categorized as a dog, but it can also be categorized as a mammal, an animal, or a living being. Hierarchical organization is fundamental to human cognition as it allows, among other things, the generalization of knowledge through inference. For example, upon learning that all living beings are made out of cells, one can conclude that dogs are made of cells, too (e.g., Markman, 1989).
 
 There are signs that children as young as 3 years old show hierarchical knowledge in various domains (e.g., animals, clothes, and food). Such signs include using superordinate words like \enquote{food} and \enquote{animal} according to parental reports (Fenson et al., 1994), using different words to label the same object at different levels of conceptual hierarchy (Clark, 1997), and being able to extend the meaning of novel words to superordinate categories even controlling for perceptual similarity (Liu, Golinkoff, \& Sak, 2001).
 
 How do children acquire conceptual hierarchy? Early accounts considered
 conceptual hierarchy to be the consequence of the emergence of a
-domain-general logic of class inclusion -- in other words grasping the idea that one category can be part of a larger one (Inhelder \& Piaget, 2013; Sloutsky, 2015). Children can acquire hierarchy in a specific domain before mastering the domain-general logic of classes, however (Carey, 1987; Chi, Hutchinson, \& Robin, 1989; Inagaki \& Hatano, 2002; Keil, 1981), suggesting that category-specific input may play a role in this development.
+domain-general logic of class inclusion -- that one category can be part of a larger one (Inhelder \& Piaget, 2013). Children can acquire hierarchy in a specific domain before mastering the domain-general logic of classes, however (Carey, 1987; Chi, Hutchinson, \& Robin, 1989; Inagaki \& Hatano, 2002), suggesting that category-specific input may play a role in this development.
 
-Further, a large body of work has focused on children's \emph{sensorimotor} experience to account for the development of hierarchical knowledge in a specific domain (e.g., Madole \& Oakes, 1999; McClelland \& Rogers, 2003; Quinn \& Eimas, 2000; Sloutsky, 2010; Smith \& Heise, 1992). For example, children may learn that \enquote{pigeon} and \enquote{raven} are both members of the same category because they look similar. However sensorimotor experience is not the only source of information people use to glean conceptual knowledge. A striking example is the fact that \enquote{visual} semantic knowledge in congenitally blind individuals is very similar to that of sighted individuals (e.g., Kim, Elli, \& Bedny, 2019; Lewis, Zettersten, \& Lupyan, 2019).
+Further, a large body of work has focused on children's \emph{sensorimotor} experience to account for the development of hierarchical knowledge in a specific domain (e.g., Madole \& Oakes, 1999; McClelland \& Rogers, 2003; Quinn \& Eimas, 2000; Sloutsky, 2010; Smith \& Heise, 1992). For example, children may learn that \enquote{pigeon} and \enquote{raven} are both members of the same category because they look similar. However sensorimotor experience is not the only source of information people use to glean conceptual knowledge. For example, \enquote{visual} semantic knowledge in congenitally blind individuals is very similar to that of sighted individuals (e.g., Kim, Elli, \& Bedny, 2019).
 
 In addition, sensorimotor experience alone may not be sufficient to account for the entire richness of taxonomic knowledge: Instances of superordinate categories do not necessarily share similar --- sensory accessible --- features, and their learning may require additional, culture-specific information. For example, the categories \enquote{animal} and \enquote{plants} are organized for Groote Eylandt Australian aborigines into three categories: \enquote{biological}, \enquote{food}, and \enquote{totemic} (Waddy, 1982). Thus children may need additional input, beyond sensory data, to learn about the superordinate categories of their linguistic community.
 
-Previous research has shown that children also learn about the world from the \emph{language} they hear around them for language can provide children with information beyond what they can obtain through sensorimotor experience alone, especially when learning about categories beyond the here and now such as abstract entities (Csibra \& Gergely, 2009; Gelman, 2009; Harris, 2012).
+Previous research has shown that children also learn about the world from the \emph{language} they hear around them for language can provide children with information beyond what they can obtain through sensorimotor experience alone, especially when learning about categories beyond the here and now such as abstract entities (Gelman, 2009; Harris, 2012).
 
-Following this research, the current study tests the extent to which child-directed speech contains cues that could help children learn conceptual hierarchy. Some previous studies analyzed parent-child interactions and observed that when parents introduce words at the superordinate level, they typically also provide the basic level term (Blewitt, 1983; Callanan, 1985; Shipley, Kuhn, \& Madden, 1983). For example, parents rarely point to an object and say \enquote{this is an animal!} Instead, they usually \emph{anchor} the superordinate word \enquote{animal} at the basic level by saying something along the lines of \enquote{This is a duck; a duck is a kind of animal.} Such an anchoring strategy provides children with a categorization of the same object at different levels, which may help children understand the underlying hierarchical organization.
+Following this research, the current study tests the extent to which child-directed speech contains cues that could help children learn conceptual hierarchy. Some previous studies observed that when parents introduce words at the superordinate level, they typically also provide the basic level term (Callanan, 1985; Shipley, Kuhn, \& Madden, 1983). For example, parents rarely point to an object and say \enquote{this is an animal!} Instead, they usually \emph{anchor} the superordinate word \enquote{animal} at the basic level by saying, e.g., \enquote{This is a duck; a duck is a kind of animal.} Such an anchoring strategy provides children with a categorization of the same object at different levels, which may help them understand the hierarchical organization.
 
-More recent research, prompted by advances in machine learning (Landauer \& Dumais, 1997; Mikolov, Sutskever, Chen, Corrado, \& Dean, 2013), found that the statistical distribution of basic-level terms in parental speech can lead to coherent structures at the superordinate level (Fourtassi, Scheinfeld, \& Frank, 2019, Frermann and Lapata (2016); Huebner \& Willits, 2018). For example, though \enquote{fish} and \enquote{bird} do not look very similar, people talk about them in similar linguistic contexts, typically leading to similar distributions in speech. Having a shared pattern of co-occurrence (i.e., a shared distribution) can cue taxonomic relationships (e.g., Sloutsky, Yim, Yao, \& Dennis, 2017). Such distributional information can be a powerful source of conceptual knowledge because it does not require the presence of a lexicalized label for the higher-level category. On this kind of account, categories emerge in a bottom-up fashion as a cluster of related words at the lower level.
+More recent research, prompted by advances in machine learning (Mikolov, Sutskever, Chen, Corrado, \& Dean, 2013), found that the statistical distribution of basic-level terms in parental speech can lead to coherent structures at the superordinate level (Fourtassi, Scheinfeld, \& Frank, 2019, Frermann and Lapata (2016); Huebner \& Willits, 2018). For example, though \enquote{fish} and \enquote{bird} do not look very similar, people talk about them in similar linguistic contexts, typically leading to similar distributions in speech. Having a shared pattern of co-occurrence (i.e., a shared distribution) can cue taxonomic relationships (e.g., Sloutsky, Yim, Yao, \& Dennis, 2017). Such distributional information can be a powerful source of conceptual knowledge because it does not require the presence of a lexicalized label for the higher-level category. On this kind of account, categories emerge in a bottom-up fashion as a cluster of related words at the lower level.
 
-The linguistic cues reviewed above can be thought of as ends in a continuum that varies from explicit to implicit. The \enquote{is-a-kind-of} cue is the most explicit cue since both the terms (i.e., the basic and superordinate labels) and their hierarchical relationship are explicitly stated. The pure distributional cue is the most implicit cue since, on the one hand, the superordinate term is not required and, on the other hand, the hierarchical relationship (that is, the fact that co-occurring basic level terms are part of a higher-level category) can only be induced.
+The linguistic cues can be thought of as ends in a continuum that varies from explicit to implicit. The \enquote{is-a-kind-of} cue is the most explicit cue since both the terms (i.e., the basic and superordinate labels) and their hierarchical relationship are explicitly stated. The distributional cue is the most implicit cue since, on the one hand, the superordinate term is not required and, on the other hand, the hierarchical relationship (that is, the fact that co-occurring basic level terms are part of a higher-level category) can only be induced.
 
-While previous studies have focused on these extremes, other cues are available that have an intermediate status on this continuum. Here, we examine the way parents hint at the hierarchical relationship between two concepts pragmatically without using an explicit inclusion expression. For example, instead of saying \enquote{a cow is a kind of animal} parents can say the following (e.g., in the context of a play session): \enquote{Do you want a cow or do you want another animal?} (see Table 1 for more examples). We also study whether action affordances provide another -- perhaps more implicit -- cue for category membership. For example, food items could be identified as members of a category by virtue of their compatibility with the verb \enquote{eat} and clothing items by their compatibility with \enquote{wear.} (see Figure \ref{fig:cues}).
+While previous studies have focused on these extremes, other cues are available that have an intermediate status on this continuum. Here, we examine the way parents hint at the hierarchical relationship between two concepts pragmatically without using an explicit inclusion expression. For example, instead of saying \enquote{a cow is a kind of animal} parents can say the following: \enquote{Do you want a cow or do you want another animal?} (see Table 1). We also study whether action affordances provide another -- perhaps more implicit -- cue for category membership. For example, food items could be identified as members of a category by virtue of their compatibility with the verb \enquote{eat} and clothing items by their compatibility with \enquote{wear.} (see Figure \ref{fig:cues}).
 
 \begin{figure}[h]
 
-{\centering \includegraphics{cogsci_journal_files/figure-latex/cues-1} 
+{\centering \includegraphics{child_language_journal_files/figure-latex/cues-1} 
 
 }
 
@@ -167,8 +167,6 @@ Previous studies examining individual cues to categorization vary in terms of bo
 generally been studied using large-scale data and have been evaluated based on their ability to provide an accurate similarity space for words. In contrast, explicit cues have been studied mainly in the context of small-scale experiments and have been tested mainly by counting the frequency of a given linguistic expression (e.g., \enquote{X is a kind of Y}).
 
 In this work, we make a systematic comparison of explicit and implicit cues using similar methods. In particular, we are interested in quantifying the information provided by each of these cues in spontaneous (rather than scripted) child-directed speech, using language data from naturalistic child-caregiver interactions (CHILDES 2018.1, MacWhinney, 2000; Sanchez et al., 2019), tested across the entire normative vocabulary. Such comparison is crucial as it allows us, for instance, to formulate hypotheses about the relative role each cue could play in development and about the ability of these cues to scale up to naturalistic data.
-
-To this end, we take a classification approach: We operationalize different cues as features that can be used to compute similarity. We then evaluate this continuous similarity measure by using it for a classification task, deciding whether different basic-level categories are part of the same superordinate category. Thus we can assign a classification accuracy to each cue type.
 
 The paper is organized as follows. We begin by introducing our child-directed data and the set of conceptual cues we consider. We then explain the task and evaluation methods that we use to study and compare the cues. Next, we present the results quantifying the role of each of the four cues and their relative informativeness across development. Finally, we discuss our findings in the light of the literature on early linguistic and conceptual development.
 
@@ -218,6 +216,9 @@ established across more than one utterance. For example:
 -- Mother: It's a giraffe!
 
 \begin{table}[!htbp] \centering 
+
+\caption{\label{tab:pragmatic} Examples of utterances from CHILDES where parents hint at hierachical relations between basic- and superordinate- level terms.}
+
 \begin{tabularx}{\linewidth}{cXXc}
 \hline
 \textbf{Category} & Utterance & Interlocutors & Corpus\\
@@ -237,7 +238,7 @@ established across more than one utterance. For example:
 
 \hline
 \end{tabularx}
-\caption{\label{tab:pragmatic} Examples of utterances from CHILDES where parents hint at hierachical relations between basic- and superordinate- level terms.}
+
 \end{table}
 
 \hypertarget{affordance-based}{%
@@ -276,7 +277,7 @@ category (see Figure \ref{fig:task}).\footnote{A similar task and evaluation met
 
 \begin{figure}[h]
 
-{\centering \includegraphics{cogsci_journal_files/figure-latex/task-1} 
+{\centering \includegraphics{child_language_journal_files/figure-latex/task-1} 
 
 }
 
@@ -293,7 +294,7 @@ Instances of our most explicit cue type, the \emph{\enquote{is-a-kind-of} cue}, 
 
 \begin{figure}[h]
 
-{\centering \includegraphics{cogsci_journal_files/figure-latex/data-all-1} 
+{\centering \includegraphics{child_language_journal_files/figure-latex/data-all-1} 
 
 }
 
@@ -305,13 +306,11 @@ The accuracy of the \emph{pragmatic cue} was generally low. For this cue, we onl
 \hypertarget{developmental-change}{%
 \subsection{Developmental change?}\label{developmental-change}}
 
-The results we showed concern cues derived from parental speech to children up to 3
-years old, as this is the age when signs of conceptual hierarchy start
-to emerge in the developmental literature. But we were also interested
-in how information in these cues may change as children grow older.
+We were also interested in how information in these cues may change as children grow older.
 For this analysis, we followed the same approach as above but included progressively more data in the corpus by adding utterances addressed to older children (Table \ref{tab:development}). Results of this analysis, presented in Figure \ref{fig:dev}, show that the performance of all cues remained stable across development, at least up to 6 years old.
 
 \begin{table}[!htbp] \centering 
+\caption{\label{tab:development} Information about the corpora used in the analysis of developmental change.}
 \begin{tabularx}{\linewidth}{cXccXX}
 
 \textbf{Age} & Age (months) & Children & Transcripts & Utterances & Words \\
@@ -325,12 +324,12 @@ For this analysis, we followed the same approach as above but included progressi
 
 \hline
 \end{tabularx}
-\caption{\label{tab:development} Information about the corpora used in the analysis of developmental change.}
+
 \end{table}
 
 \begin{figure}[!htbp]
 
-{\centering \includegraphics{cogsci_journal_files/figure-latex/dev-1} 
+{\centering \includegraphics{child_language_journal_files/figure-latex/dev-1} 
 
 }
 
@@ -344,11 +343,11 @@ Here we explored the extent to which explicit and implicit cues provided
 complementary vs.~redundant information. To this end, we fit logistic
 regressions predicting the binary classification of pairs of basic-level
 words as belonging to same or different superordinate categories. The
-predictors were the pairs' similarity measures derived from each cue (centered and scaled to maximize comparability; the is-a-kind-of cue was not included due to sparsity). The results of the regressions,
-summarized in Table \ref{tab:regressions}, indicate that, overall, each cue remains highly significant when controlling for the other cues. Thus, although distributional cues were highest performing when alone, each cue type provided \emph{non-redundant} information and the overall classification performance increased when multiple information sources were used.
+predictors were the pairs' similarity measures derived from each cue. The results of the regressions,
+summarized in Table \ref{tab:regressions}, indicate that, overall, each cue remains highly significant when controlling for the other cues. Thus, although the distributional cue were highest performing when alone, each cue type provided \emph{non-redundant} information;
 
 \begin{table}[!htbp] \centering 
-\caption{\label{tab:regressions} Logistic regressions predicting the binary classification of pairs of basic-level words as belonging to same or different superordinate categories. The predictors are the pairs' similarity measures derived from each cue. We fit a different regression for each superordinate category.} 
+\caption{\label{tab:regressions} Logistic regressions predicting the binary classification of pairs of basic-level words as belonging to same or different superordinate categories. The predictors are the pairs' similarity measures derived from each cue. We fit a different regression for each superordinate category. The predictors were centered and scaled for comparability.} 
 \label{} 
 \begin{tabular}{@{\extracolsep{5pt}}lcccccc} 
 \hline 
@@ -383,11 +382,11 @@ summarized in Table \ref{tab:regressions}, indicate that, overall, each cue rema
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
 
-A crucial question in the study of cognitive development is understanding how children acquire the complex hierarchical relationships that characterize mature human conceptual knowledge. A particularly challenging task is learning how basic-level categories are grouped into abstract superordinate categories. The difficulty of this task stems from the fact that sensorimotor experience does not always provide direct evidence for learning. Here we build on and extend previous work investigating the role of \emph{language} in learning about abstract concepts (Csibra \& Gergely, 2009; Gelman, 2009; Harris, 2012). The novelty of our work is that we used a unified computational framework that has allowed us to directly compare the relative importance of different linguistic cues present in child-directed speech with respect to their ability to help categorize six common superordinate categories. Overall, we found that caregiver talk provides a rich source of information, especially in its implicit form, that children may use in learning category structure.
+A crucial question in the study of cognitive development is understanding how children acquire the complex hierarchical relationships that characterize mature human conceptual knowledge. A particularly challenging task is learning how basic-level categories are grouped into abstract superordinate categories. The difficulty of this task stems from the fact that sensorimotor experience does not always provide direct evidence for learning. Here we build on and extend previous work investigating the role of \emph{language} in learning about abstract concepts (Gelman, 2009; Harris, 2012). The novelty of our work is that we used a unified computational framework that has allowed us to directly compare the relative importance of different linguistic cues present in child-directed speech with respect to their ability to help categorize six common superordinate categories.
 
-The most explicit cue --- where caregivers state the relationship between a basic-level term and its superordinate category label (e.g., \enquote{a dog is a kind of animal}) --- did not scale up well to the naturalistic dataset we used. This finding contrasts with previous work that found this cue in parental speech (Blewitt, 1983; Callanan, 1985; Shipley et al., 1983). This contrast can be explained by the fact that these previous studies were done in the context of rather controlled settings and parents were aware of the task (e.g., teaching words at the superordinate level), whereas here we tested a large-scale corpus containing a diversity of situations. Thus, it is possible that, in these previous studies, parents used a teaching strategy that they thought could optimize the short-term outcome (as determined by the experimenter), rather than a strategy that reflects their spontaneous interaction with children in daily life.
+The most explicit cue --- where caregivers state the relationship between a basic-level term and its superordinate category label (e.g., \enquote{a dog is a kind of animal}) --- did not scale up well to the naturalistic dataset we used. This finding contrasts with previous work that found this cue in parental speech (Callanan, 1985; Shipley et al., 1983). This contrast can be explained by the fact that these previous studies were done in the context of rather controlled settings and parents were aware of the task (e.g., teaching words at the superordinate level), whereas here we tested a large-scale corpus containing a diversity of situations.
 
-Caregivers can hint at conceptual hierarchy without necessarily stating it explicitly, however (Table 1). To capture this pragmatic cue, we quantified the co-occurrence between basic-level and superordinate terms within utterances. While this simple operationalization was meant to capture all possible ways the hierarchical relationship between two concepts can be expressed linguistically, it also made the representation susceptible to errors, mainly by increasing the rate of false alarms: A basic level term (e.g., \enquote{juice}) can also co-occur with a superordinate label of which it is not an instance (e.g., \enquote{Don't pour the juice on your clothes!}). The rate of such false alarms was quite high, which explains to overall low --- though not random --- scores of this cue. From a developmental point of view, this finding highlights the limitation (at scale) of a simple co-occurrence-based strategy: A deeper understanding of the utterance is necessary if children are to learn conceptual hierarchy from pragmatic cues while avoiding false alarms. Future work can aim at quantifying such deeper understanding. That said, this is not an easy task since an \emph{automatic} method that ``understands'' how words are related both semantically and pragmatically is an open computational question.
+Caregivers can hint at conceptual hierarchy without necessarily stating it explicitly, however (Table 1). To capture this pragmatic cue, we quantified the co-occurrence between basic-level and superordinate terms within utterances. While this simple operationalization was meant to capture all possible ways the hierarchical relationship between two concepts can be expressed linguistically, it also made the representation susceptible to errors, mainly by increasing the rate of false alarms: A basic level term (e.g., \enquote{juice}) can also co-occur with a superordinate label of which it is not an instance (e.g., \enquote{Don't pour the juice on your clothes!}). The rate of such false alarms was quite high, which explains to overall low --- though not random --- scores of this cue. From a developmental point of view, this finding highlights the limitation (at scale) of a simple co-occurrence-based strategy: A deeper understanding of the utterance is necessary if children are to learn conceptual hierarchy from pragmatic cues while avoiding false alarms.
 
 Another linguistic cue was based on verb affordance (e.g., basic-level terms for food can all occur as the grammatical object of the verb \enquote{eat}). The accuracy of the affordance-based cue was relatively high for the categories which had an obvious verb to cue its affordance, i.e., \enquote{food} (eat), \enquote{clothes} (wear), \enquote{vehicles} (ride), and \enquote{toys} (play). The accuracy was low in the case of \enquote{furniture} since the verb \enquote{use} is not exclusive to this category and can also be used with instances of other categories, leading to false alarms. The accuracy for
 \enquote{animal} was also low as it was not characterized by any particular affordance verb. \footnote{At the same time, the performance of the cue on this category was not totally random as animal instances tend to co-occur consistently with some verbs from other categories (e.g., "ride a horse", "play with the dog", and "eat the chicken").}
@@ -399,15 +398,13 @@ An important finding was that the linguistic cues were largely non-redundant acr
 
 For all the cues discussed above, our goal was to test their ability to provide a reliable source of information in child-directed speech. However, our instantiation of the cues abstracted away from the children's cognitive and information processing limitations, providing only an \enquote{ideal observer} point of view (Marr, 1982). That said, previous experimental work has provided evidence for the cognitive plausibility of the learning mechanisms that underly each of these cues.
 
-For instance, preschool children ably use the \enquote{is-a-kind-of} cue to interpret the meaning of a novel word at the superordinate level (Callanan, 1989) (though the current study shows this cue not to be pervasive in the natural input). Both the pragmatic cue and affordance-based cue rely on the ability to track co-occurrence between pairs of words. Extensive research in the last couple of decades has shown that even infants are capable of tracking distributional statistics of various linguistic units (Saffran, Aslin, \& Newport, 1996). In particular, Bannard \& Matthews (2008) have shown toddlers encode together in memory collocational words such as \enquote{sit} and \enquote{chair} and Wojcik \& Saffran (2015) have shown that they encode relationships between novel words co-occurring in a sentence. Previous work also provided evidence showing that patterns of co-occurrence do influence children's conceptual associations and inference (Fisher, Matlen, \& Godwin, 2011; Matlen, Fisher, \& Godwin, 2015).
+For instance, preschool children ably use the \enquote{is-a-kind-of} cue to interpret the meaning of a novel word at the superordinate level (Callanan, 1989) (though the current study shows this cue not to be pervasive in the natural input). Both the pragmatic cue and affordance-based cue rely on the ability to track co-occurrence between pairs of words. Extensive research in the last couple of decades has shown that even infants are capable of tracking distributional statistics of various linguistic units (Saffran, Aslin, \& Newport, 1996). In particular, Bannard \& Matthews (2008) have shown toddlers encode together in memory collocational words such as \enquote{sit} and \enquote{chair} and Wojcik \& Saffran (2015) have shown that they encode relationships between novel words co-occurring in a sentence. Previous work also provided evidence showing that patterns of co-occurrence do influence children's conceptual associations and inference (Fisher, Matlen, \& Godwin, 2011).
 
-The distributional cue requires not only sensitivity to co-occurrence but also sensitivity to their \emph{shared} patterns of co-occurrence. For example, learners should be sensitive to the fact that \enquote{raven} and \enquote{salmon} co-occur with similar words and phrases such as \enquote{lay egg}, \enquote{live,} and \enquote{reproduce}, although the pair of words \enquote{raven} and \enquote{salmon} may not themselves co-occur with each other. There is evidence that even infants are sensitive to shared patterns of co-occurrence (e.g., Lany \& Saffran (2011)), although the mechanism by which this sensitivity shapes conceptual knowledge emerges slowly and continues developing through middle childhood (see review by Unger \& Fisher, 2021).
+The distributional cue requires not only sensitivity to co-occurrence but also sensitivity to their \emph{shared} patterns of co-occurrence. For example, learners should be sensitive to the fact that \enquote{raven} and \enquote{salmon} co-occur with similar words and phrases such as \enquote{lay egg}, \enquote{live,} and \enquote{reproduce}, although the pair of words \enquote{raven} and \enquote{salmon} may not themselves co-occur with each other. There is evidence that even infants are sensitive to shared patterns of co-occurrence (e.g., Lany \& Saffran, 2011), although the mechanism by which this sensitivity shapes conceptual knowledge emerges slowly and continues developing through middle childhood (see review by Unger \& Fisher, 2021).
 
-This work takes a first step towards integrating different cues to conceptual hierarchy from caregiver language. Future work should go further by also considering the role of sensorimotor data (Andrews, Frank, \& Vigliocco, 2014; Bruni, Tran, \& Baroni, 2014; Sadeghi, McClelland, \& Hoffman, 2015). Ultimately, the goal would be to integrate both sources into a \emph{cognitive} model that uses these cues in a principle way. Such a model should make precise developmental predictions about how the cues interact and how their role in learning changes across development.
+This work takes a first step towards integrating different cues to conceptual hierarchy from caregiver language. Future work should go further by also considering the role of sensorimotor data (Andrews, Frank, \& Vigliocco, 2014; Bruni, Tran, \& Baroni, 2014). Ultimately, the goal would be to integrate both sources into a \emph{cognitive} model that uses these cues in a principle way. Such a model should make precise developmental predictions about how the cues interact and how their role in learning changes across development.
 
-Another direction for future work is to compare the findings we obtained with data in English to other languages. Understanding variation in children's experiences allows us to determine which aspects of development are universal and which are culture-specific (Medin, Bennis, \& Chandler, 2010; Rogoff, Dahl, \& Callanan, 2018). The case of learning abstract, superordinate categories is an excellent case where such comparison could be very enlightening as we know such categories have both similarities and differences across cultures (e.g. Waddy (1982)). Thus, it is crucial that we investigate whether and how variation in caregivers' language induces variations in children's categorical structure of the world.
-
-To conclude, our work here suggests the presence of multiple information sources about conceptual structure in children's linguistic environment. Perhaps the most exciting future direction is to synthesize it with knowledge gleaned from children's sensory experience of the world. Such a synthesis will be crucial in making progress in understanding children's conceptual structure. By refining our understanding of linguistic cues to conceptual hierarchy, we hope our work here helps take a first step in this broader project.
+Another direction for future work is to compare the findings we obtained with data in English to other languages. Understanding variation in children's experiences allows us to determine which aspects of development are universal and which are culture-specific (Rogoff, Dahl, \& Callanan, 2018). The case of learning abstract, superordinate categories is an excellent case where such comparison could be very enlightening as we know such categories have both similarities and differences across cultures (e.g. Waddy, 1982). Thus, it is crucial that we investigate whether and how variation in caregivers' language induces variations in children's categorical structure of the world.
 
 \hypertarget{references}{%
 \section{References}\label{references}}
@@ -421,9 +418,6 @@ Andrews, M., Frank, S., \& Vigliocco, G. (2014). Reconciling embodied and distri
 
 \leavevmode\hypertarget{ref-bannard2008}{}%
 Bannard, C., \& Matthews, D. (2008). Stored word sequences in language learning: The effect of familiarity on children's repetition of four-word combinations. \emph{Psychological Science}, \emph{19}(3), 241--248.
-
-\leavevmode\hypertarget{ref-blewitt1983}{}%
-Blewitt, P. (1983). Dog versus collie: Vocabulary in speech to young children. \emph{Developmental Psychology}, \emph{19}(4).
 
 \leavevmode\hypertarget{ref-bruni2014}{}%
 Bruni, E., Tran, N.-K., \& Baroni, M. (2014). Multimodal distributional semantics. \emph{Journal of Artificial Intelligence Research}, \emph{49}, 1--47.
@@ -442,9 +436,6 @@ Chi, M. T., Hutchinson, J. E., \& Robin, A. F. (1989). How inferences about nove
 
 \leavevmode\hypertarget{ref-clark1997}{}%
 Clark, E. V. (1997). Conceptual perspective and lexical choice in acquisition. \emph{Cognition}, \emph{64}(1), 1--37.
-
-\leavevmode\hypertarget{ref-csibra2009}{}%
-Csibra, G., \& Gergely, G. (2009). Natural pedagogy. \emph{Trends in Cognitive Sciences}, \emph{13}(4), 148--153.
 
 \leavevmode\hypertarget{ref-fenson94}{}%
 Fenson, L., Dale, P. S., Reznick, J. S., Bates, E., Thal, D. J., Pethick, S. J., \ldots{} Stiles, J. (1994). Variability in early communicative development. \emph{Monographs of the Society for Research in Child Development}, \emph{59}(5), i--185.
@@ -467,9 +458,6 @@ Frermann, L., \& Lapata, M. (2016). Incremental bayesian category learning from 
 \leavevmode\hypertarget{ref-gelman2009}{}%
 Gelman, S. A. (2009). Learning from others: Children's construction of concepts. \emph{Annual Review of Psychology}, \emph{60}, 115--140.
 
-\leavevmode\hypertarget{ref-gelman1988}{}%
-Gelman, S. A., \& O'Reilly, A. W. (1988). Children's inductive inferences within superordinate categories: The role of language and category structure. \emph{Child Development}, 876--887.
-
 \leavevmode\hypertarget{ref-harris2012}{}%
 Harris, P. L. (2012). \emph{Trusting what you're told}. Harvard University Press.
 
@@ -485,20 +473,11 @@ Inagaki, K., \& Hatano, Giyoo. (2002). \emph{Young children's naive thinking abo
 \leavevmode\hypertarget{ref-inhelder2013}{}%
 Inhelder, B., \& Piaget, J. (2013). \emph{The early growth of logic in the child: Classification and seriation}. Routledge.
 
-\leavevmode\hypertarget{ref-keil1981}{}%
-Keil, F. C. (1981). Constraints on knowledge and cognitive development. \emph{Psychological Review}, \emph{88}(3).
-
 \leavevmode\hypertarget{ref-kim2019}{}%
 Kim, J. S., Elli, G. V., \& Bedny, M. (2019). Knowledge of animal appearance among sighted and blind adults. \emph{Proceedings of the National Academy of Sciences}, \emph{116}(23), 11213--11222.
 
-\leavevmode\hypertarget{ref-landauer1997}{}%
-Landauer, T. K., \& Dumais, S. T. (1997). A solution to plato's problem: The latent semantic analysis theory of acquisition, induction, and representation of knowledge. \emph{Psychological Review}, \emph{104}(2).
-
 \leavevmode\hypertarget{ref-lany2011}{}%
 Lany, J., \& Saffran, J. R. (2011). Interactions between statistical and semantic information in infant language development. \emph{Developmental Science}, \emph{14}(5), 1207--1219.
-
-\leavevmode\hypertarget{ref-lewis2019}{}%
-Lewis, M., Zettersten, M., \& Lupyan, G. (2019). Distributional semantics as a source of visual knowledge. \emph{Proceedings of the National Academy of Sciences}, \emph{116}(39), 19237--19238.
 
 \leavevmode\hypertarget{ref-liu2001}{}%
 Liu, J., Golinkoff, R. M., \& Sak, K. (2001). One cow does not an animal make: Young children can extend novel words at the superordinate level. \emph{Child Development}, \emph{72}(6), 1674--1694.
@@ -515,14 +494,8 @@ Markman, E. M. (1989). \emph{Categorization and naming in children: Problems of 
 \leavevmode\hypertarget{ref-marr1982}{}%
 Marr, D. (1982). \emph{Vision: A computational investigation into the human representation and processing of visual information}. Henry Holt; Co., Inc.
 
-\leavevmode\hypertarget{ref-matlen2015}{}%
-Matlen, B. J., Fisher, A. V., \& Godwin, K. E. (2015). The influence of label co-occurrence and semantic similarity on children's inductive generalization. \emph{Frontiers in Psychology}, \emph{6}.
-
 \leavevmode\hypertarget{ref-mcclelland2003}{}%
 McClelland, J. L., \& Rogers, T. T. (2003). The parallel distributed processing approach to semantic cognition. \emph{Nature Reviews Neuroscience}, \emph{4}(4), 310--322.
-
-\leavevmode\hypertarget{ref-medin2010}{}%
-Medin, D., Bennis, W., \& Chandler, M. (2010). Culture and the home-field disadvantage. \emph{Perspectives on Psychological Science}, \emph{5}(6).
 
 \leavevmode\hypertarget{ref-mikolov2013}{}%
 Mikolov, T., Sutskever, I., Chen, K., Corrado, G. S., \& Dean, J. (2013). Distributed representations of words and phrases and their compositionality. In \emph{Advances in neural information processing systems} (pp. 3111--3119).
@@ -533,9 +506,6 @@ Quinn, P. C., \& Eimas, P. D. (2000). The emergence of category representations 
 \leavevmode\hypertarget{ref-rogoff2018}{}%
 Rogoff, B., Dahl, A., \& Callanan, M. (2018). The importance of understanding children's lived experience. \emph{Developmental Review}, \emph{50}, 5--15.
 
-\leavevmode\hypertarget{ref-sadeghi2015}{}%
-Sadeghi, Z., McClelland, J. L., \& Hoffman, P. (2015). You shall know an object by the company it keeps: An investigation of semantic representations derived from object co-occurrence in visual scenes. \emph{Neuropsychologia}, \emph{76}, 52--61.
-
 \leavevmode\hypertarget{ref-saffran1996}{}%
 Saffran, J. R., Aslin, R. N., \& Newport, E. L. (1996). Statistical learning by 8-month-old infants. \emph{Science}, \emph{274}(5294), 1926--1928.
 
@@ -544,9 +514,6 @@ Sanchez, A., Meylan, S. C., Braginsky, M., MacDonald, K. E., Yurovsky, D., \& Fr
 
 \leavevmode\hypertarget{ref-shipley1983}{}%
 Shipley, E. F., Kuhn, I. F., \& Madden, E. C. (1983). Mothers' use of superordinate category terms. \emph{Journal of Child Language}, \emph{10}(3).
-
-\leavevmode\hypertarget{ref-sloutsky2015}{}%
-Sloutsky, V. (2015). Conceptual development. \emph{Handbook of Child Psychology and Developmental Science}, 1--50.
 
 \leavevmode\hypertarget{ref-sloutsky2010}{}%
 Sloutsky, V. M. (2010). From perceptual categories to concepts: What develops? \emph{Cognitive Science}, \emph{34}(7), 1244--1286.
@@ -572,9 +539,6 @@ Andrews, M., Frank, S., \& Vigliocco, G. (2014). Reconciling embodied and distri
 \leavevmode\hypertarget{ref-bannard2008}{}%
 Bannard, C., \& Matthews, D. (2008). Stored word sequences in language learning: The effect of familiarity on children's repetition of four-word combinations. \emph{Psychological Science}, \emph{19}(3), 241--248.
 
-\leavevmode\hypertarget{ref-blewitt1983}{}%
-Blewitt, P. (1983). Dog versus collie: Vocabulary in speech to young children. \emph{Developmental Psychology}, \emph{19}(4).
-
 \leavevmode\hypertarget{ref-bruni2014}{}%
 Bruni, E., Tran, N.-K., \& Baroni, M. (2014). Multimodal distributional semantics. \emph{Journal of Artificial Intelligence Research}, \emph{49}, 1--47.
 
@@ -592,9 +556,6 @@ Chi, M. T., Hutchinson, J. E., \& Robin, A. F. (1989). How inferences about nove
 
 \leavevmode\hypertarget{ref-clark1997}{}%
 Clark, E. V. (1997). Conceptual perspective and lexical choice in acquisition. \emph{Cognition}, \emph{64}(1), 1--37.
-
-\leavevmode\hypertarget{ref-csibra2009}{}%
-Csibra, G., \& Gergely, G. (2009). Natural pedagogy. \emph{Trends in Cognitive Sciences}, \emph{13}(4), 148--153.
 
 \leavevmode\hypertarget{ref-fenson94}{}%
 Fenson, L., Dale, P. S., Reznick, J. S., Bates, E., Thal, D. J., Pethick, S. J., \ldots{} Stiles, J. (1994). Variability in early communicative development. \emph{Monographs of the Society for Research in Child Development}, \emph{59}(5), i--185.
@@ -617,9 +578,6 @@ Frermann, L., \& Lapata, M. (2016). Incremental bayesian category learning from 
 \leavevmode\hypertarget{ref-gelman2009}{}%
 Gelman, S. A. (2009). Learning from others: Children's construction of concepts. \emph{Annual Review of Psychology}, \emph{60}, 115--140.
 
-\leavevmode\hypertarget{ref-gelman1988}{}%
-Gelman, S. A., \& O'Reilly, A. W. (1988). Children's inductive inferences within superordinate categories: The role of language and category structure. \emph{Child Development}, 876--887.
-
 \leavevmode\hypertarget{ref-harris2012}{}%
 Harris, P. L. (2012). \emph{Trusting what you're told}. Harvard University Press.
 
@@ -635,20 +593,11 @@ Inagaki, K., \& Hatano, Giyoo. (2002). \emph{Young children's naive thinking abo
 \leavevmode\hypertarget{ref-inhelder2013}{}%
 Inhelder, B., \& Piaget, J. (2013). \emph{The early growth of logic in the child: Classification and seriation}. Routledge.
 
-\leavevmode\hypertarget{ref-keil1981}{}%
-Keil, F. C. (1981). Constraints on knowledge and cognitive development. \emph{Psychological Review}, \emph{88}(3).
-
 \leavevmode\hypertarget{ref-kim2019}{}%
 Kim, J. S., Elli, G. V., \& Bedny, M. (2019). Knowledge of animal appearance among sighted and blind adults. \emph{Proceedings of the National Academy of Sciences}, \emph{116}(23), 11213--11222.
 
-\leavevmode\hypertarget{ref-landauer1997}{}%
-Landauer, T. K., \& Dumais, S. T. (1997). A solution to plato's problem: The latent semantic analysis theory of acquisition, induction, and representation of knowledge. \emph{Psychological Review}, \emph{104}(2).
-
 \leavevmode\hypertarget{ref-lany2011}{}%
 Lany, J., \& Saffran, J. R. (2011). Interactions between statistical and semantic information in infant language development. \emph{Developmental Science}, \emph{14}(5), 1207--1219.
-
-\leavevmode\hypertarget{ref-lewis2019}{}%
-Lewis, M., Zettersten, M., \& Lupyan, G. (2019). Distributional semantics as a source of visual knowledge. \emph{Proceedings of the National Academy of Sciences}, \emph{116}(39), 19237--19238.
 
 \leavevmode\hypertarget{ref-liu2001}{}%
 Liu, J., Golinkoff, R. M., \& Sak, K. (2001). One cow does not an animal make: Young children can extend novel words at the superordinate level. \emph{Child Development}, \emph{72}(6), 1674--1694.
@@ -665,14 +614,8 @@ Markman, E. M. (1989). \emph{Categorization and naming in children: Problems of 
 \leavevmode\hypertarget{ref-marr1982}{}%
 Marr, D. (1982). \emph{Vision: A computational investigation into the human representation and processing of visual information}. Henry Holt; Co., Inc.
 
-\leavevmode\hypertarget{ref-matlen2015}{}%
-Matlen, B. J., Fisher, A. V., \& Godwin, K. E. (2015). The influence of label co-occurrence and semantic similarity on children's inductive generalization. \emph{Frontiers in Psychology}, \emph{6}.
-
 \leavevmode\hypertarget{ref-mcclelland2003}{}%
 McClelland, J. L., \& Rogers, T. T. (2003). The parallel distributed processing approach to semantic cognition. \emph{Nature Reviews Neuroscience}, \emph{4}(4), 310--322.
-
-\leavevmode\hypertarget{ref-medin2010}{}%
-Medin, D., Bennis, W., \& Chandler, M. (2010). Culture and the home-field disadvantage. \emph{Perspectives on Psychological Science}, \emph{5}(6).
 
 \leavevmode\hypertarget{ref-mikolov2013}{}%
 Mikolov, T., Sutskever, I., Chen, K., Corrado, G. S., \& Dean, J. (2013). Distributed representations of words and phrases and their compositionality. In \emph{Advances in neural information processing systems} (pp. 3111--3119).
@@ -683,9 +626,6 @@ Quinn, P. C., \& Eimas, P. D. (2000). The emergence of category representations 
 \leavevmode\hypertarget{ref-rogoff2018}{}%
 Rogoff, B., Dahl, A., \& Callanan, M. (2018). The importance of understanding children's lived experience. \emph{Developmental Review}, \emph{50}, 5--15.
 
-\leavevmode\hypertarget{ref-sadeghi2015}{}%
-Sadeghi, Z., McClelland, J. L., \& Hoffman, P. (2015). You shall know an object by the company it keeps: An investigation of semantic representations derived from object co-occurrence in visual scenes. \emph{Neuropsychologia}, \emph{76}, 52--61.
-
 \leavevmode\hypertarget{ref-saffran1996}{}%
 Saffran, J. R., Aslin, R. N., \& Newport, E. L. (1996). Statistical learning by 8-month-old infants. \emph{Science}, \emph{274}(5294), 1926--1928.
 
@@ -694,9 +634,6 @@ Sanchez, A., Meylan, S. C., Braginsky, M., MacDonald, K. E., Yurovsky, D., \& Fr
 
 \leavevmode\hypertarget{ref-shipley1983}{}%
 Shipley, E. F., Kuhn, I. F., \& Madden, E. C. (1983). Mothers' use of superordinate category terms. \emph{Journal of Child Language}, \emph{10}(3).
-
-\leavevmode\hypertarget{ref-sloutsky2015}{}%
-Sloutsky, V. (2015). Conceptual development. \emph{Handbook of Child Psychology and Developmental Science}, 1--50.
 
 \leavevmode\hypertarget{ref-sloutsky2010}{}%
 Sloutsky, V. M. (2010). From perceptual categories to concepts: What develops? \emph{Cognitive Science}, \emph{34}(7), 1244--1286.
