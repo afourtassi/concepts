@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.4)  14 MAY 2022 17:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.4)  16 MAY 2022 11:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1463,11 +1463,11 @@ Package logreq Info: Writing requests to 'cogsci_journal.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22714 strings out of 492616
- 362758 string characters out of 6129482
- 845720 words of memory out of 5000000
+ 22710 strings out of 492616
+ 362712 string characters out of 6129482
+ 845725 words of memory out of 5000000
  26081 multiletter control sequences out of 15000+600000
- 80737 words of font info for 124 fonts, out of 8000000 for 9000
+ 80479 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,11n,47p,2253b,1615s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/lo
@@ -1482,7 +1482,7 @@ al/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2
 st/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
 ype1/public/lm/lmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publi
 c/lm/lmsy8.pfb>
-Output written on cogsci_journal.pdf (30 pages, 355769 bytes).
+Output written on cogsci_journal.pdf (30 pages, 355405 bytes).
 PDF statistics:
  391 PDF objects out of 1000 (max. 8388607)
  332 compressed objects within 4 object streams
