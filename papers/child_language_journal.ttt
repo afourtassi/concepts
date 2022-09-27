@@ -1,0 +1,80 @@
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[!htbp] \centering
+
+\caption{\label{tab:pragmatic} Examples of utterances from CHILDES where parents hint at hierachical relations between basic- and superordinate- level terms.}
+
+\begin{tabularx}{\linewidth}{cXXc}
+\hline
+\textbf{Category} & Utterance & Interlocutors & Corpus\\
+\hline
+
+\textbf{Animals} & Do you want a cow or do you want a different animal? & Mother to Max, 30 months & EllisWeismer\\
+
+\textbf{Furniture} & Furniture means sofas and chairs and... & Mother to Naima, 23 months & Providence\\
+
+\textbf{Clothes} & This is another clothes. See it's just like this shirt. & Investigator to Shem, 30 months & Clark\\
+
+\textbf{Food} & She asked Lily what her favorite food was. If Lily says chocolate I am in trouble. & Mother about Lily, 24 months & Providence\\
+
+\textbf{Toys} & You close the book and we'll get a different toy cause I think you're tired of this. & Mother to child, 13 months & Ambrose\\
+
+\textbf{Vehicles} & The only vehicle you cut out so far is the train. & Mother to Warren, 30 months & Manchester\\
+
+\hline
+\end{tabularx}
+
+\end{table*}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[!htbp] \centering
+\caption{\label{tab:development} Information about the corpora used in the analysis of developmental change.}
+\begin{tabularx}{\linewidth}{cXccXX}
+
+\textbf{Age} & Age (months) & Children & Transcripts & Utterances & Words \\
+\hline
+
+\textbf{\textless4} & 30.1 & 843 & 6,750 & 2.657 M & 10.827 M\\
+
+\textbf{\textless5} & 33.5 & 971 & 7,889 & 3.093 M & 12.807 M\\
+
+\textbf{\textless6} & 34.8 & 1,046 & 8,654 & 3.221 M & 13.325 M\\
+
+\hline
+\end{tabularx}
+
+\end{table*}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[!htbp] \centering
+\caption{\label{tab:regressions} Logistic regressions predicting the binary classification of pairs of basic-level words as belonging to same or different superordinate categories. The predictors are the pairs' similarity measures derived from each cue. We fit a different regression for each superordinate category. The predictors were centered and scaled for comparability.}
+\label{}
+\begin{tabular}{@{\extracolsep{5pt}}lcccccc}
+\hline
+ & \multicolumn{4}{c}{} \\
+ & (Intercept) & Distributional & Affordance & Pragmatic \\
+\hline \\[-1.8ex]
+  Animals & $-$2.741$^{***}$ & 2.285$^{***}$ & 0.022 & 0.179$^{***}$\\
+  & (0.085) & (0.074) & (0.057) & (0.050)\\
+  & & & & & & \\
+  Furniture & $-$3.195$^{***}$ & 2.040$^{***}$ & 0.547$^{***}$ & $-$0.104\\
+  & (0.138) & (0.127) & (0.094) & (0.080) &\\
+  & & & & & & \\
+  Toys & $-$3.244$^{***}$ & 1.178$^{***}$ &  0.620$^{***}$ & 0.722$^{***}$\\
+  & (0.155) & (0.136) & (0.113) & (0.120) &\\
+  & & & & & & \\
+  Food & $-$2.616$^{***}$ & 0.905$^{***}$ & 2.112$^{***}$ & 0.325$^{***}$\\
+  & (0.112) & (0.060) & (0.092) & (0.059)\\
+  & & & & & & \\
+  Clothing & $-$3.101$^{***}$ & 1.644$^{***}$ & 1.535$^{***}$ & 0.359$^{*}$\\
+  & (0.183) & (0.171) & (0.153) & (0.146)\\
+  & & & & & & \\
+  Vehicles & $-$4.663$^{***}$ & 1.249$^{***}$ & 2.211$^{***}$ & 0.159\\
+  & (0.348) & (0.193) & (0.245) & (0.138)\\
+  & & & & & & \\
+ \\[-1.8ex]
+
+\hline \\[-1.8ex]
+\textit{Note:}  & \multicolumn{6}{r}{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001} \\
+\end{tabular}
+\end{table*}

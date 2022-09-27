@@ -1,0 +1,40 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[h]
+
+{\centering \includegraphics{child_language_journal_files/figure-latex/cues-1}
+
+}
+
+\caption{\label{fig:cues} The cues to conceptual hierarchy in the linguistic input can be understood as falling on a continuum from most explicit to most implicit.}\label{fig:cues}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[h]
+
+{\centering \includegraphics{child_language_journal_files/figure-latex/task-1}
+
+}
+
+\caption{\label{fig:task} A schematic description of the task. For each basic-level word (here, `cow') a feature vector is derived from child-directed speech based on how the cue is defined. Here, the vector cells correspond to the superordinate categories. The entry in a given cell (e.g., animal) is incremented when the word `cow' co-occurs with the corresponding category label. The cue is evaluated based on its ability to classify pairs of words into 'same' or 'different' superordinate categories. Here, the pair `cow'-`horse' belongs to the same category. The corresponding vectors should be closer to each other than the vectors of a pair that belongs to different categories (e.g., `cow'-`shirt'). This evaluation is quantified by a standard measure in signal detection theory called the Area Under the ROC Curve (AUC).}\label{fig:task}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[h]
+
+{\centering \includegraphics{child_language_journal_files/figure-latex/data-all-1}
+
+}
+
+\caption{\label{fig:data-all} The Area Under the ROC Curve (AUC) scores of the cues for each category and across all categories ('ALL'). A value of 0.5 represents pure chance, and a value of 1 represents perfect performance. The AUC score can be interpreted as the probability that, given two pairs of basic-level words, of which one is from the same superordinate category, the pairs are correctly classified using their  cue-based similarity.}\label{fig:data-all}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[!htbp]
+
+{\centering \includegraphics{child_language_journal_files/figure-latex/dev-1}
+
+}
+
+\caption{\label{fig:dev} The Area Under the ROC Curve (AUC) scores for each cue (across all categories) using speech heard by children up to a particular age. A value of 0.5 represents pure chance, and a value of 1 represents perfect performance.}\label{fig:dev}
+\end{figure*}
