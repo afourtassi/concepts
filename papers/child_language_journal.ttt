@@ -2,7 +2,7 @@
 \ifnextchar[{\eatarg}{}
 [!htbp] \centering
 
-\caption{\label{tab:pragmatic} Examples of utterances from CHILDES where parents hint at hierachical relations between basic- and superordinate- level terms.}
+\caption{\label{tab:pragmatic} Examples of utterances from CHILDES where parents hint at hierarchical relations between basic- and superordinate-level terms.}
 
 \begin{tabularx}{\linewidth}{cXXc}
 \hline

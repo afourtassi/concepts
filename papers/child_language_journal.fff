@@ -26,7 +26,7 @@
 
 }
 
-\caption{\label{fig:data-all} The Area Under the ROC Curve (AUC) scores of the cues for each category and across all categories ('ALL'). A value of 0.5 represents pure chance, and a value of 1 represents perfect performance. The AUC score can be interpreted as the probability that, given two pairs of basic-level words, of which one is from the same superordinate category, the pairs are correctly classified using their  cue-based similarity.}\label{fig:data-all}
+\caption{\label{fig:data-all} The Area Under the ROC Curve (AUC) scores of the cues for each category and across all categories ('ALL'). A value of 0.5 represents pure chance, and a value of 1 represents perfect performance.}\label{fig:data-all}
 \end{figure*}
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
