@@ -5,6 +5,7 @@ Kyra Wilson
 How to run: explicit_cues.py followed by ages (<3, <4, <5, or <6) you want to get data for
 
 Ex: "explicit_cues.py 3 4" will get co-occurrences for all utterances for children under 3 and all utterances for children under 4
+    "explicit_cues.py 3-4 will get co-occurrences for all utterances for children between ages 3-4"
 
 TODO:
 *make total number of occurrences (caculated in utterances_to_txt) a csv instead of just print statement
@@ -205,7 +206,7 @@ def get_instances():
                 temp.append([x for x in row[2:] if x != "" and x != "animal" and x != "toy" and x != "food"])
 
         instances = [item for sublist in temp for item in sublist]
-        
+
         f.close()
         return instances
 
@@ -225,11 +226,11 @@ def utterances_to_txt(readfile, write_txt_file):
                         utt = re.sub(word, "", utt)
                         total_categories[word] += 1
                 writeFile.write(utt + " ")
-    
+
     print(total_categories)
     f.close()
     writeFile.close()
-    
+
 # Get co-occurrence of concepts and instances
 # Output = concept_and_instance_all_age.csv
 def get_concept_cooccurrence(instances, readfile, write_broad_concept_file):
@@ -238,7 +239,7 @@ def get_concept_cooccurrence(instances, readfile, write_broad_concept_file):
 
         with open(write_broad_concept_file, 'w') as writeFile:
             writer = csv.writer(writeFile)
-            
+
             for row in reader:
                 utt = row[8].split()
                 for instance in instances:
@@ -263,7 +264,7 @@ def get_concept_cooccurrence(instances, readfile, write_broad_concept_file):
 #  Output = broad_concepts_and_instances_age.csv
 def get_concept_verbs(instances, readfile, write_concept_file):
     count = 0
-    
+
     with open(readfile, newline='') as f:
         reader = csv.reader(f)
 
@@ -288,12 +289,12 @@ def get_concept_verbs(instances, readfile, write_concept_file):
                                     temp.append(row[14])
                                     temp.append(row[16])
                                     temp.append(row[25])
-                
+
                                     writer.writerow(temp)
-                    
+
     f.close()
     writeFile.close()
-    
+
 def all_explicit_categorization(instances, readfile, writefile):
     count = 0
     rowNum = 0
@@ -302,7 +303,7 @@ def all_explicit_categorization(instances, readfile, writefile):
 
         with open(writefile, 'w') as writeFile:
             writer = csv.writer(writeFile)
-            
+
             for row in reader:
                 rowNum += 1
                 utt = row[8].split()
@@ -316,9 +317,10 @@ def all_explicit_categorization(instances, readfile, writefile):
                         temp.append(row[8])
                         temp.append(row[6])
                         writer.writerow(temp)
-                    
+
+    print(rowNum)
     print(str(count) + " instances found.")
-    
+
 def explicit_categorization(instances, readfile):
     with open(readfile, newline='') as f:
         reader = csv.reader(f)
@@ -330,14 +332,14 @@ def explicit_categorization(instances, readfile):
                     search2 = instance + " be a kind of " + concept
                     if search1 in row[8] or search2 in row[8]:
                         print(row[8], "//", row[6])
-    
+
 def main():
     instances = get_instances()
-    
+
     if len(sys.argv) == 1:
         print("Please include required ages")
         sys.exit(0)
-        
+
     for age in sys.argv[1:]:
         #Add in error for unavailable age?
         readfile = files[0].replace("age", str(age))
@@ -345,24 +347,22 @@ def main():
         write_verb_file = files[2].replace("age", str(age))
         write_cooccurrence_file = files[3].replace("age", str(age))
         write_explicit_categorization_file = files[4].replace("age", str(age))
-        
+
         print("Getting explicit categorization for age < " + age + "...")
         all_explicit_categorization(instances, readfile, write_explicit_categorization_file)
         explicit_categorization(instances, readfile)
-        
+
         print("Getting text for age < " + age + "...")
         utterances_to_txt(readfile, write_txt_file)
-        
+
         print("Getting verb+compl for age < " + age + "...")
         get_concept_verbs(instances, readfile, write_verb_file)
-        
+
         print("Getting concept co-occurrences for age < " + age + "...")
         get_concept_cooccurrence(instances, readfile, write_cooccurrence_file)
-        
+
         print("Done with age < " + age)
 
 
 if __name__ == '__main__':
     main()
-    
-

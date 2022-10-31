@@ -1,0 +1,434 @@
+animal, ,"('first let get all the animal around the table okay', 'Investigator')","[0, 'first let get all the animal around the table okay']",table,37.1650341896137,male,Clark
+animal, ,"('okay but first you have_to decide where you want all the animal to be around the table and then you hafta put them there', 'Investigator')","[0, 'okay but first you have_to decide where you want all the animal to be around the table and then you hafta put them there']",table,37.1650341896137,male,Clark
+animal, ,"('oh I say you hafta put all these animal up next_to the table', 'Investigator')","[0, 'oh I say you hafta put all these animal up next_to the table']",table,37.1650341896137,male,Clark
+animal, ,"('animal can smell thing that you can smell sometimes they can tell where man and other animal be watch a dog sniff in the wind', 'Investigator')","[0, 'animal can smell thing that you can smell sometimes they can tell where man and other animal be watch a dog sniff in the wind']",dog,38.0664900716647,male,Clark
+clothes, ,"('the king be in his count house count out his money the queen be in the parlor eat bread and honey the maid be in the garden hang out the clothes there come a little and snip off her nose', 'Investigator')","[0, 'the king be in his count house count out his money the queen be in the parlor eat bread and honey the maid be in the garden hang out the clothes there come a little and snip off her nose']",bread,36.1650136553112,male,Clark
+food, ,"('why do she have food on her hat', 'Investigator')","[0, 'why do she have food on her hat']",hat,36.1650136553112,male,Clark
+clothes, ,"('the cow do have his clothes on', 'Adult')","[0, 'the cow do have his clothes on']",cow,45.0009240436149,male,VanKleeck
+food, ,"('that a stove that not the food', 'Adult')","[0, 'that a stove that not the food']",stove,47.00096511222,male,VanKleeck
+food, ,"('do a duck drop his food out like that', 'Mother')","[0, 'do a duck drop his food out like that']",duck,37.2964537259492,male,Brown
+animal, ,"('it might hurt the animal because the tractor so big', 'Mother')","[0, 'it might hurt the animal because the tractor so big']",tractor,44.8551304954927,male,Brown
+food, ,"('what about some dog food', 'Investigator')","[0, 'what about some dog food']",dog,38.6907328692581,male,Brown
+food, ,"('oh the duck be go to cook the food with his mouth', 'Mother')","[0, 'oh the duck be go to cook the food with his mouth']",duck,39.5921887513091,male,Brown
+toy, ,"('a toy car', 'Investigator')","[0, 'a toy car']",car,39.132220374135,male,Brown
+toy, ,"('well yes a ball be a toy', 'Mother')","[0, 'well yes a ball be a toy']",ball,45.5266021889567,male,Brown
+animal, ,"('can you tell me a story about the animal', 'Investigator')","[0, 'can you tell me a story about the animal']",story,37.5592927986201,female,Brown
+clothes, ,"('every time I dress her you take her clothes off', 'Mother')","[0, 'every time I dress her you take her clothes off']",dress,37.3293086100331,female,Brown
+clothes, ,"('that the one with all the doll clothes', 'Mother')","[0, 'that the one with all the doll clothes']",doll,40.5264995174439,female,Brown
+toy, ,"('do forget you gonna have_to pack your suitcase you know get all your toy together and all your book', 'Mother')","[0, 'do forget you gonna have_to pack your suitcase you know get all your toy together and all your book']",book,47.2966590689747,female,Brown
+food, ,"('Kennel Ration dog food', 'Mother')","[0, 'Kennel Ration dog food']",dog,47.5266432575618,female,Brown
+clothes, ,"('cause it will get our clothes all wet and also it will get the inside of uncle Craig car all wet too', 'Father')","[0, 'cause it will get our clothes all wet and also it will get the inside of uncle Craig car all wet too']",car,47.8880469824842,male,Demetras1
+food, ,"('in horse food', 'Father')","[0, 'in horse food']",horse,46.7566069118462,male,Demetras1
+animal, ,"('okay I think I can make up a animal game', 'Father')","[0, 'okay I think I can make up a animal game']",game,37.0336146532783,male,Kuczaj
+animal, ,"('you tell me about each animal in this book okay', 'Father')","[0, 'you tell me about each animal in this book okay']",book,37.2635988418653,male,Kuczaj
+animal, ,"('a animal book', 'Father')","[0, 'a animal book']",book,38.230764492084,male,Kuczaj
+toy, ,"('they just toy duck huh', 'Father')","[0, 'they just toy duck huh']",duck,42.7236698905522,male,Kuczaj
+toy, ,"('there be hat and coat and jacket and galoshes and glove and his old stuff toy elephant but no rubber duck', 'Mother')","[0, 'there be hat and coat and jacket and galoshes and glove and his old stuff toy elephant but no rubber duck']",duck,44.8222756114089,female,HSLLD
+toy, ,"('there be hat and coat and jacket and galoshes and glove and his old stuff toy elephant but no rubber duck', 'Mother')","[0, 'there be hat and coat and jacket and galoshes and glove and his old stuff toy elephant but no rubber duck']",elephant,44.8222756114089,female,HSLLD
+toy, ,"('there be hat and coat and jacket and galoshes and glove and his old stuff toy elephant but no rubber duck', 'Mother')","[0, 'there be hat and coat and jacket and galoshes and glove and his old stuff toy elephant but no rubber duck']",coat,44.8222756114089,female,HSLLD
+toy, ,"('there be hat and coat and jacket and galoshes and glove and his old stuff toy elephant but no rubber duck', 'Mother')","[0, 'there be hat and coat and jacket and galoshes and glove and his old stuff toy elephant but no rubber duck']",hat,44.8222756114089,female,HSLLD
+toy, ,"('there be hat and coat and jacket and galoshes and glove and his old stuff toy elephant but no rubber duck', 'Mother')","[0, 'there be hat and coat and jacket and galoshes and glove and his old stuff toy elephant but no rubber duck']",jacket,44.8222756114089,female,HSLLD
+toy, ,"('look at this he have get roll skate he have get toy he have get bird seed he have get marble nothing red', 'Mother')","[0, 'look at this he have get roll skate he have get toy he have get bird seed he have get marble nothing red']",bird,43.7565453089386,female,HSLLD
+toy, ,"('we need you to finish the book and then we have a toy play we need to do', 'Investigator')","[0, 'we need you to finish the book and then we have a toy play we need to do']",book,44.1323230456478,female,HSLLD
+toy, ,"('and a little toy house and a young mouse', 'Mother')","[0, 'and a little toy house and a young mouse']",mouse,45.7894412616275,female,HSLLD
+animal, ,"('we have block crayon paint paper doll stuff animal', 'Mother')","[0, 'we have block crayon paint paper doll stuff animal']",block,46.7894617959301,female,HSLLD
+animal, ,"('we have block crayon paint paper doll stuff animal', 'Mother')","[0, 'we have block crayon paint paper doll stuff animal']",crayon,46.7894617959301,female,HSLLD
+animal, ,"('we have block crayon paint paper doll stuff animal', 'Mother')","[0, 'we have block crayon paint paper doll stuff animal']",doll,46.7894617959301,female,HSLLD
+toy, ,"('she make her bed she put her toy away', 'Mother')","[0, 'she make her bed she put her toy away']",bed,45.3294728844535,female,HSLLD
+toy, ,"('what that ask Ernie point to a window fill with toy and book', 'Mother')","[0, 'what that ask Ernie point to a window fill with toy and book']",window,46.7894617959301,female,HSLLD
+toy, ,"('what that ask Ernie point to a window fill with toy and book', 'Mother')","[0, 'what that ask Ernie point to a window fill with toy and book']",book,46.7894617959301,female,HSLLD
+animal, ,"('squirrel skunk rabbit and other animal run past', 'Mother')","[0, 'squirrel skunk rabbit and other animal run past']",squirrel,46.4609129550915,female,HSLLD
+toy, ,"('she make her bed she put her toy away', 'Mother')","[0, 'she make her bed she put her toy away']",bed,45.3294728844535,female,HSLLD
+toy, ,"('a toy boat', 'Mother')","[0, 'a toy boat']",boat,47.5594981416456,female,HSLLD
+food, ,"('drink his orange juice and be through his monster berry crunch when sudden he stop eat and put down his food', 'Mother')","[0, 'drink his orange juice and be through his monster berry crunch when sudden he stop eat and put down his food']",drink,43.0337378590936,female,HSLLD
+food, ,"('drink his orange juice and be through his monster berry crunch when sudden he stop eat and put down his food', 'Mother')","[0, 'drink his orange juice and be through his monster berry crunch when sudden he stop eat and put down his food']",juice,43.0337378590936,female,HSLLD
+food, ,"('drink his orange juice and be through his monster berry crunch when sudden he stop eat and put down his food', 'Mother')","[0, 'drink his orange juice and be through his monster berry crunch when sudden he stop eat and put down his food']",orange,43.0337378590936,female,HSLLD
+toy, ,"('Peanut you can look at toy and a book too', 'Mother')","[0, 'Peanut you can look at toy and a book too']",book,45.4937473048728,female,HSLLD
+toy, ,"('we let you play with the toy pretty soon but we gotta have you read the book first', 'Investigator')","[0, 'we let you play with the toy pretty soon but we gotta have you read the book first']",book,45.4937473048728,female,HSLLD
+food, ,"('can you believe this teeny little bug eat all that food', 'Mother')","[0, 'can you believe this teeny little bug eat all that food']",bug,42.9536540791392,female,HSLLD
+animal, ,"('then the bird fly off and all the little animal follow them Snow White come along too put her arm around the neck of a gentle mother deer', 'Mother')","[0, 'then the bird fly off and all the little animal follow them Snow White come along too put her arm around the neck of a gentle mother deer']",bird,47.6909176779811,female,HSLLD
+animal, ,"('then the bird fly off and all the little animal follow them Snow White come along too put her arm around the neck of a gentle mother deer', 'Mother')","[0, 'then the bird fly off and all the little animal follow them Snow White come along too put her arm around the neck of a gentle mother deer']",deer,47.6909176779811,female,HSLLD
+clothes, ,"('then she wash all the crumple little clothes and set a kettle of soup on the heat', 'Mother')","[0, 'then she wash all the crumple little clothes and set a kettle of soup on the heat']",soup,47.6909176779811,female,HSLLD
+animal, ,"('the little bird and animal begin peck and paw at the queen but Snow White do not understand', 'Mother')","[0, 'the little bird and animal begin peck and paw at the queen but Snow White do not understand']",bird,47.6909176779811,female,HSLLD
+animal, ,"('the frantic bird and animal hurry off to find the seven dwarf who be hard at work on the mine', 'Mother')","[0, 'the frantic bird and animal hurry off to find the seven dwarf who be hard at work on the mine']",bird,47.6909176779811,female,HSLLD
+animal, ,"('the little man look up in surprise at the bird and animal crowd around them but first they do not understand then they realize that Snow White must be in danger', 'Mother')","[0, 'the little man look up in surprise at the bird and animal crowd around them but first they do not understand then they realize that Snow White must be in danger']",bird,47.6909176779811,female,HSLLD
+food, ,"('and what do you do with the food remember Mama bring for the fish', 'Mother')","[0, 'and what do you do with the food remember Mama bring for the fish']",fish,45.9865705661307,female,HSLLD
+food, ,"('and what do you do with the food remember Mama bring for the fish', 'Mother')","[0, 'and what do you do with the food remember Mama bring for the fish']",fish,45.9865705661307,female,HSLLD
+food, ,"('yeah eat some of your food then you can have some more to drink', 'Mother')","[0, 'yeah eat some of your food then you can have some more to drink']",drink,43.9208197293579,female,HSLLD
+clothes, ,"('we get food on the table clothes on your back somewhere to sleep', 'Mother')","[0, 'we get food on the table clothes on your back somewhere to sleep']",table,47.8223372143165,female,HSLLD
+food, ,"('we get food on the table clothes on your back somewhere to sleep', 'Mother')","[0, 'we get food on the table clothes on your back somewhere to sleep']",table,47.8223372143165,female,HSLLD
+food, ,"('and maybe if you sit at the table talk and eat your food and probable can have some ice cream afterwards', 'Grandmother')","[0, 'and maybe if you sit at the table talk and eat your food and probable can have some ice cream afterwards']",ice,43.8551099611902,female,HSLLD
+food, ,"('and maybe if you sit at the table talk and eat your food and probable can have some ice cream afterwards', 'Grandmother')","[0, 'and maybe if you sit at the table talk and eat your food and probable can have some ice cream afterwards']",table,43.8551099611902,female,HSLLD
+toy, ,"('no toy at our table', 'Father')","[0, 'no toy at our table']",table,45.4608924207889,female,HSLLD
+toy, ,"('no toy at our table', 'Father')","[0, 'no toy at our table']",table,45.4608924207889,female,HSLLD
+toy, ,"('I do want any toy at the table Munchkin', 'Father')","[0, 'I do want any toy at the table Munchkin']",table,45.4608924207889,female,HSLLD
+toy, ,"('I do want any toy at the table Munchkin', 'Father')","[0, 'I do want any toy at the table Munchkin']",table,45.4608924207889,female,HSLLD
+food, ,"('I think I have a can of cat food I buy for Brook and I have that present that I get him', 'Mother')","[0, 'I think I have a can of cat food I buy for Brook and I have that present that I get him']",cat,45.4608924207889,female,HSLLD
+food, ,"('I think I have a can of cat food I buy for Brook and I have that present that I get him', 'Mother')","[0, 'I think I have a can of cat food I buy for Brook and I have that present that I get him']",present,45.4608924207889,female,HSLLD
+food, ,"('no it cat food', 'Mother')","[0, 'no it cat food']",cat,45.4608924207889,female,HSLLD
+food, ,"('okay we not gonna get a dog the dog eat dog food so we put the dog outside in the dog house right there', 'Grandmother')","[0, 'okay we not gonna get a dog the dog eat dog food so we put the dog outside in the dog house right there']",dog,43.8551099611902,female,HSLLD
+food, ,"('I eat my cat food', 'Brother')","[0, 'I eat my cat food']",cat,43.1980122795129,female,HSLLD
+food, ,"('why will you eat cat food man', 'Mother')","[0, 'why will you eat cat food man']",cat,43.1980122795129,female,HSLLD
+food, ,"('he be eat no cat food', 'Mother')","[0, 'he be eat no cat food']",cat,43.1980122795129,female,HSLLD
+food, ,"('I eat cat food', 'Brother')","[0, 'I eat cat food']",cat,43.1980122795129,female,HSLLD
+food, ,"('I eat cat food', 'Brother')","[0, 'I eat cat food']",cat,43.1980122795129,female,HSLLD
+food, ,"('I eat cat food', 'Brother')","[0, 'I eat cat food']",cat,43.1980122795129,female,HSLLD
+food, ,"('I say you get to drink plenty of water eat your food take your vitamin', 'Mother')","[0, 'I say you get to drink plenty of water eat your food take your vitamin']",drink,45.920860797963,female,HSLLD
+food, ,"('I say you get to drink plenty of water eat your food take your vitamin', 'Mother')","[0, 'I say you get to drink plenty of water eat your food take your vitamin']",water,45.920860797963,female,HSLLD
+toy, ,"('we gonna stop now though and then I have a special present for you for play with my toy', 'Investigator')","[0, 'we gonna stop now though and then I have a special present for you for play with my toy']",present,43.657980656687,female,HSLLD
+toy, ,"('I see my book and some toy and oh I see Sara', 'Mother')","[0, 'I see my book and some toy and oh I see Sara']",book,45.9865705661307,female,HSLLD
+toy, ,"('no no Bro let your brother toy all the person out the bus and you have got_to to make sure you put them in there and when you put them in there there seat belt like you do', 'Mother')","[0, 'no no Bro let your brother toy all the person out the bus and you have got_to to make sure you put them in there and when you put them in there there seat belt like you do']",belt,45.4937473048728,female,HSLLD
+toy, ,"('no no Bro let your brother toy all the person out the bus and you have got_to to make sure you put them in there and when you put them in there there seat belt like you do', 'Mother')","[0, 'no no Bro let your brother toy all the person out the bus and you have got_to to make sure you put them in there and when you put them in there there seat belt like you do']",bus,45.4937473048728,female,HSLLD
+toy, ,"('wait a minute finish eat how come you play and we do finish remember what I say about no toy at the table', 'Mother')","[0, 'wait a minute finish eat how come you play and we do finish remember what I say about no toy at the table']",table,46.5266227232592,female,HSLLD
+food, ,"('this be the food gather and bless the corn and the sweet berry the wild turkey dress', 'Mother')","[0, 'this be the food gather and bless the corn and the sweet berry the wild turkey dress']",turkey,39.0336557218834,male,Providence
+food, ,"('this be the food gather and bless the corn and the sweet berry the wild turkey dress', 'Mother')","[0, 'this be the food gather and bless the corn and the sweet berry the wild turkey dress']",dress,39.0336557218834,male,Providence
+food, ,"('this be the food gather and bless the corn and the sweet berry the wild turkey dress', 'Mother')","[0, 'this be the food gather and bless the corn and the sweet berry the wild turkey dress']",corn,39.0336557218834,male,Providence
+food, ,"('hey sweetie you want look at my food book with me', 'Mother')","[0, 'hey sweetie you want look at my food book with me']",book,36.3292880757305,female,Providence
+animal, ,"('yeah I need some stuff animal in that crib', 'Mother')","[0, 'yeah I need some stuff animal in that crib']",crib,36.0993038871435,female,Providence
+toy, ,"('be there a place for Amanda to sit on the purple couch or do you have lots_of toy there should we go see', 'Mother')","[0, 'be there a place for Amanda to sit on the purple couch or do you have lots_of toy there should we go see']",couch,39.7564631717284,female,Providence
+animal, ,"('the animal and bird of the forest love Snow White kind and gentle nature', 'Mother')","[0, 'the animal and bird of the forest love Snow White kind and gentle nature']",bird,37.0007597691944,female,Providence
+animal, ,"('sweetie will you like to read your prehistoric animal book', 'Mother')","[0, 'sweetie will you like to read your prehistoric animal book']",book,36.0993038871435,female,Providence
+toy, ,"('Max say Ruby your pillow be in your toy chest and your toy be in your bed', 'Mother')","[0, 'Max say Ruby your pillow be in your toy chest and your toy be in your bed']",bed,36.8221113369884,female,Providence
+toy, ,"('Ruby put all the toy in the toy chest she line up the Santas and the doll', 'Mother')","[0, 'Ruby put all the toy in the toy chest she line up the Santas and the doll']",doll,36.8221113369884,female,Providence
+food, ,"('so when the return to get their food we will scare them by crawl inside the bird and fly it right at them', 'Mother')","[0, 'so when the return to get their food we will scare them by crawl inside the bird and fly it right at them']",bird,40.6579190537793,female,Providence
+animal, ,"('the seven dwarf and the bird and animal that meet Snow White love her dear', 'Mother')","[0, 'the seven dwarf and the bird and animal that meet Snow White love her dear']",bird,37.0007597691944,female,Providence
+animal, ,"('the prehistoric animal include in this book be just a few of the strange and interest creature that once roam our planet', 'Mother')","[0, 'the prehistoric animal include in this book be just a few of the strange and interest creature that once roam our planet']",book,36.0993038871435,female,Providence
+animal, ,"('and do we see some of the other animal in your other prehistoric book', 'Mother')","[0, 'and do we see some of the other animal in your other prehistoric book']",book,41.9207786607528,female,Providence
+animal, ,"('you remember what the other animal be which be the tiger with the very big tooth', 'Mother')","[0, 'you remember what the other animal be which be the tiger with the very big tooth']",tiger,41.9207786607528,female,Providence
+food, ,"('it long curve tusk enable it to find food by clearing away snow and ice', 'Mother')","[0, 'it long curve tusk enable it to find food by clearing away snow and ice']",ice,36.0993038871435,female,Providence
+animal, ,"('these cat be carnivore or meat eat and use their sharp sharp tooth to pierce the thick skin of the plant eat animal', 'Mother')","[0, 'these cat be carnivore or meat eat and use their sharp sharp tooth to pierce the thick skin of the plant eat animal']",cat,36.0993038871435,female,Providence
+animal, ,"('these cat be carnivore or meat eat and use their sharp sharp tooth to pierce the thick skin of the plant eat animal', 'Mother')","[0, 'these cat be carnivore or meat eat and use their sharp sharp tooth to pierce the thick skin of the plant eat animal']",meat,36.0993038871435,female,Providence
+food, ,"('it will have use its trunk as a elephant do today to obtain food and water', 'Mother')","[0, 'it will have use its trunk as a elephant do today to obtain food and water']",elephant,36.0993038871435,female,Providence
+food, ,"('it will have use its trunk as a elephant do today to obtain food and water', 'Mother')","[0, 'it will have use its trunk as a elephant do today to obtain food and water']",water,36.0993038871435,female,Providence
+toy, ,"('be that a bug or be that a toy', 'Mother')","[0, 'be that a bug or be that a toy']",bug,40.6579190537793,female,Providence
+animal, ,"('Cinderella have no money to spend on clothes so her animal friend help her to patch up a simple dress a apron each morning and shine her wear out shoe', 'Mother')","[0, 'Cinderella have no money to spend on clothes so her animal friend help her to patch up a simple dress a apron each morning and shine her wear out shoe']",dress,37.0007597691944,female,Providence
+clothes, ,"('Cinderella have no money to spend on clothes so her animal friend help her to patch up a simple dress a apron each morning and shine her wear out shoe', 'Mother')","[0, 'Cinderella have no money to spend on clothes so her animal friend help her to patch up a simple dress a apron each morning and shine her wear out shoe']",dress,37.0007597691944,female,Providence
+animal, ,"('Cinderella have no money to spend on clothes so her animal friend help her to patch up a simple dress a apron each morning and shine her wear out shoe', 'Mother')","[0, 'Cinderella have no money to spend on clothes so her animal friend help her to patch up a simple dress a apron each morning and shine her wear out shoe']",shoe,37.0007597691944,female,Providence
+clothes, ,"('Cinderella have no money to spend on clothes so her animal friend help her to patch up a simple dress a apron each morning and shine her wear out shoe', 'Mother')","[0, 'Cinderella have no money to spend on clothes so her animal friend help her to patch up a simple dress a apron each morning and shine her wear out shoe']",shoe,37.0007597691944,female,Providence
+animal, ,"('every morning Cinderella feed the animal before she take breakfast to her mother in bed', 'Mother')","[0, 'every morning Cinderella feed the animal before she take breakfast to her mother in bed']",bed,37.0007597691944,female,Providence
+food, ,"('it it be a food book what do we call the food book', 'Mother')","[0, 'it it be a food book what do we call the food book']",book,45.8880059138791,female,Providence
+animal, ,"('on the bus our teach tell us about some of the animal exhibit that we should see', 'Mother')","[0, 'on the bus our teach tell us about some of the animal exhibit that we should see']",bus,37.6907123349555,female,Providence
+animal, ,"('meat mean animal', 'Mother')","[0, 'meat mean animal']",meat,41.9207786607528,female,Providence
+clothes, ,"('it autumn now and we have some summer clothes in the drawer and we have some winter clothes in the drawer', 'Mother')","[0, 'it autumn now and we have some summer clothes in the drawer and we have some winter clothes in the drawer']",drawer,42.756524774636,female,Providence
+food, ,"('the bear say Mommy I do want come back here they do have any of my favorite food', 'Mother')","[0, 'the bear say Mommy I do want come back here they do have any of my favorite food']",bear,46.329493418756,female,Providence
+clothes, ,"('I just go finish put these book away then we should put some clothes on and go out', 'Mother')","[0, 'I just go finish put these book away then we should put some clothes on and go out']",book,38.6250231010904,female,Providence
+food, ,"('Naima you only can have the water if you do not put your spoon or your hand or your finger into it or any food into it', 'Mother')","[0, 'Naima you only can have the water if you do not put your spoon or your hand or your finger into it or any food into it']",water,37.0336146532783,female,Providence
+animal, ,"('puppy will happy bond with other animal', 'Mother')","[0, 'puppy will happy bond with other animal']",puppy,46.329493418756,female,Providence
+food, ,"('that the opposite of what go on at the Minnesota zoo where Ross Taylor encourage tiger to play with their food', 'Mother')","[0, 'that the opposite of what go on at the Minnesota zoo where Ross Taylor encourage tiger to play with their food']",tiger,42.6908150064683,female,Providence
+food, ,"('this be one tiger that prefer fast food', 'Mother')","[0, 'this be one tiger that prefer fast food']",tiger,42.6908150064683,female,Providence
+animal, ,"('do you know that the African bull elephant be the large land animal live today', 'Mother')","[0, 'do you know that the African bull elephant be the large land animal live today']",elephant,40.7893385901148,female,Providence
+animal, ,"('the small airplane the slow animal in the world be the three toe', 'Mother')","[0, 'the small airplane the slow animal in the world be the three toe']",airplane,40.7893385901148,female,Providence
+food, ,"('sometime later water begin appear in Loki food bowl', 'Mother')","[0, 'sometime later water begin appear in Loki food bowl']",water,42.6908150064683,female,Providence
+food, ,"('curious about how water be get into Loki dry food Cole set up video camera to find out', 'Mother')","[0, 'curious about how water be get into Loki dry food Cole set up video camera to find out']",water,42.6908150064683,female,Providence
+food, ,"('crow like their food moisten so the brain bird use the frisbee to scoop water out of his bath pan and carry it to his food bowl where he pour it onto his chow', 'Mother')","[0, 'crow like their food moisten so the brain bird use the frisbee to scoop water out of his bath pan and carry it to his food bowl where he pour it onto his chow']",bird,42.6908150064683,female,Providence
+food, ,"('crow like their food moisten so the brain bird use the frisbee to scoop water out of his bath pan and carry it to his food bowl where he pour it onto his chow', 'Mother')","[0, 'crow like their food moisten so the brain bird use the frisbee to scoop water out of his bath pan and carry it to his food bowl where he pour it onto his chow']",water,42.6908150064683,female,Providence
+food, ,"('in the wild these bear browse for their food sniff out the fruit they like to eat and climb tree to get them', 'Mother')","[0, 'in the wild these bear browse for their food sniff out the fruit they like to eat and climb tree to get them']",bear,42.6908150064683,female,Providence
+toy, ,"('the toy book', 'Mother')","[0, 'the toy book']",book,44.7565658432411,female,Providence
+animal, ,"('the giraffe be the tall animal on Earth it can grow to be nineteen foot tall', 'Mother')","[0, 'the giraffe be the tall animal on Earth it can grow to be nineteen foot tall']",giraffe,40.7893385901148,female,Providence
+toy, ,"('he be her favorite toy and she take him to bed every night', 'Mother')","[0, 'he be her favorite toy and she take him to bed every night']",bed,44.7565658432411,female,Providence
+toy, ,"('Sophie tiny doll dash out of the and the toy that have be put into the jump down from it', 'Mother')","[0, 'Sophie tiny doll dash out of the and the toy that have be put into the jump down from it']",doll,44.7565658432411,female,Providence
+toy, ,"('as she play game with her toy will you like to do that Violet', 'Mother')","[0, 'as she play game with her toy will you like to do that Violet']",game,44.7565658432411,female,Providence
+clothes, ,"('okay Max let go and get dress clothes down here', 'Father')","[0, 'okay Max let go and get dress clothes down here']",dress,37.6250025667878,female,Providence
+animal, ,"('and it go be like a animal party so if he can come dress as a animal', 'Mother')","[0, 'and it go be like a animal party so if he can come dress as a animal']",dress,47.7894823302327,female,Providence
+animal, ,"('yeah because when we be plan I say okay Violet we go you list everybody you want and then when she come up with the idea of like okay everybody should dress as animal and you know we take turn being the and', 'Mother')","[0, 'yeah because when we be plan I say okay Violet we go you list everybody you want and then when she come up with the idea of like okay everybody should dress as animal and you know we take turn being the and']",dress,47.7894823302327,female,Providence
+food, ,"('I get this horrible feel that you watch a awful lot of tv and eat and awful lot of food on the couch with Sue', 'Mother')","[0, 'I get this horrible feel that you watch a awful lot of tv and eat and awful lot of food on the couch with Sue']",couch,36.92067598924,male,Providence
+food, ,"('I get this horrible feel that you watch a awful lot of tv and eat and awful lot of food on the couch with Sue', 'Mother')","[0, 'I get this horrible feel that you watch a awful lot of tv and eat and awful lot of food on the couch with Sue']",tv,36.92067598924,male,Providence
+animal, ,"('you feed bread to animal', 'Investigator')","[0, 'you feed bread to animal']",bread,40.7236288219471,female,VanHouten
+food, ,"('they in the closet where the cat food be', 'Father')","[0, 'they in the closet where the cat food be']",cat,38.4278937965872,male,MacWhinney
+food, ,"('they in the closet where the cat food be', 'Father')","[0, 'they in the closet where the cat food be']",closet,38.4278937965872,male,MacWhinney
+clothes, ,"('we not go to let you come to the breakfast table without any clothes on when you get to be a big boy', 'Father')","[0, 'we not go to let you come to the breakfast table without any clothes on when you get to be a big boy']",table,41.8550688925851,male,MacWhinney
+clothes, ,"('cat do wear any clothes', 'Father')","[0, 'cat do wear any clothes']",cat,41.8550688925851,male,MacWhinney
+food, ,"('I do have any duck food', 'Father')","[0, 'I do have any duck food']",duck,42.0665722088749,male,MacWhinney
+food, ,"('he have not eat food all day and he have have have anything to drink and when he be finish he be both hungry and thirst', 'Father')","[0, 'he have not eat food all day and he have have have anything to drink and when he be finish he be both hungry and thirst']",drink,46.0337994620013,male,MacWhinney
+toy, ,"('you go to have a bag of toy that you go on the airplane with okay', 'Father')","[0, 'you go to have a bag of toy that you go on the airplane with okay']",airplane,44.1651779297316,male,MacWhinney
+clothes, ,"('we have_to get the rest of the clothes from the drawer honey', 'Father')","[0, 'we have_to get the rest of the clothes from the drawer honey']",drawer,46.6251873755108,male,MacWhinney
+toy, ,"('you sink our toy ship', 'Mother')","[0, 'you sink our toy ship']",sink,37.1978890736976,male,Snow
+toy, ,"('because we have_to put all your toy away before we can go and get you ready for bed', 'Mother')","[0, 'because we have_to put all your toy away before we can go and get you ready for bed']",bed,38.7892975215097,male,Snow
+toy, ,"('yes it a special pick up the toy truck', 'Mother')","[0, 'yes it a special pick up the toy truck']",truck,37.1978890736976,male,Snow
+toy, ,"('it a pick up the toy car', 'Mother')","[0, 'it a pick up the toy car']",car,37.1978890736976,male,Snow
+toy, ,"('if she all dress and have have breakfast already she might be play with her toy', 'Mother')","[0, 'if she all dress and have have breakfast already she might be play with her toy']",dress,36.690691800653,male,Snow
+food, ,"('there be so much food on the table it be hard to find Peter', 'Father')","[0, 'there be so much food on the table it be hard to find Peter']",table,40.263660444773,male,Snow
+food, ,"('where your favorite food on the table', 'Father')","[0, 'where your favorite food on the table']",table,40.263660444773,male,Snow
+food, ,"('there so much food on the table it hard to find Peter', 'Mother')","[0, 'there so much food on the table it hard to find Peter']",table,38.7892975215097,male,Snow
+food, ,"('now they home and they eat all the food that Ma pig buy at the market', 'Mother')","[0, 'now they home and they eat all the food that Ma pig buy at the market']",pig,40.3293702129407,male,Snow
+food, ,"('so much food on the table that it hard to find Peter pig', 'Mother')","[0, 'so much food on the table that it hard to find Peter pig']",pig,40.3293702129407,male,Snow
+food, ,"('so much food on the table that it hard to find Peter pig', 'Mother')","[0, 'so much food on the table that it hard to find Peter pig']",table,40.3293702129407,male,Snow
+food, ,"('there so much food on the table it hard to find Peter', 'Mother')","[0, 'there so much food on the table it hard to find Peter']",table,40.3293702129407,male,Snow
+animal, ,"('because it time for all the animal to go to bed', 'Mother')","[0, 'because it time for all the animal to go to bed']",bed,38.7892975215097,male,Snow
+toy, ,"('golf club and tennis racquet and ball and toy', 'Mother')","[0, 'golf club and tennis racquet and ball and toy']",ball,45.0666338117826,male,Snow
+food, ,"('why do you think mama has_to put the food on top of the tv', 'Mother')","[0, 'why do you think mama has_to put the food on top of the tv']",tv,40.2965153288569,male,Snow
+toy, ,"('do you wanna look at a book first or play with the toy first or play store', 'Mother')","[0, 'do you wanna look at a book first or play with the toy first or play store']",book,42.2308466292942,female,Gleason
+clothes, ,"('and she look like she dress up in some of her mother clothes or something', 'Mother')","[0, 'and she look like she dress up in some of her mother clothes or something']",dress,43.8222550771063,female,Gleason
+animal, ,"('I do think it a squirrel but I do know what kind of animal it be', 'Mother')","[0, 'I do think it a squirrel but I do know what kind of animal it be']",squirrel,36.7892564529046,female,Suppes
+toy, ,"('chocolate toy', 'Mother')","[0, 'chocolate toy']",chocolate,36.3292880757305,female,Suppes
+toy, ,"('or what toy do they get in their present', 'Mother')","[0, 'or what toy do they get in their present']",present,37.1321793055299,female,Suppes
+food, ,"('do you play some game or eat some food at the', 'Mother')","[0, 'do you play some game or eat some food at the']",game,37.1321793055299,female,Suppes
+animal, ,"('what animal be on your crib', 'Mother')","[0, 'what animal be on your crib']",crib,36.0993038871435,female,Suppes
+food, ,"('train be food', 'Mother')","[0, 'train be food']",train,37.1321793055299,female,Suppes
+animal, ,"('maybe the deer will like to meet your other animal', 'Mother')","[0, 'maybe the deer will like to meet your other animal']",deer,37.1321793055299,female,Suppes
+animal, ,"('what animal be in his car', 'Mother')","[0, 'what animal be in his car']",car,36.3292880757305,female,Suppes
+furniture, ,"('he give her some doll house furniture', 'Mother')","[0, 'he give her some doll house furniture']",doll,37.1978890736976,female,Suppes
+animal, ,"('hey turtle Nina and I and Lawny and Barbara and Joe and rob we all go for a long hike and we see some animal', 'Mother')","[0, 'hey turtle Nina and I and Lawny and Barbara and Joe and rob we all go for a long hike and we see some animal']",turtle,36.0993038871435,female,Suppes
+food, ,"('apple food', 'Mother')","[0, 'apple food']",apple,36.0993038871435,female,Suppes
+clothes, ,"('take her somewhere in her dress and then we change her clothes', 'Mother')","[0, 'take her somewhere in her dress and then we change her clothes']",dress,38.5264584488388,female,Suppes
+animal, ,"('I think that there a great big with horse on it and maybe different animal', 'Mother')","[0, 'I think that there a great big with horse on it and maybe different animal']",horse,39.0336557218834,female,Suppes
+food, ,"('you bring the doll to the table and you can give them some food at restaurant', 'Mother')","[0, 'you bring the doll to the table and you can give them some food at restaurant']",table,39.2636399104704,female,Suppes
+food, ,"('you bring the doll to the table and you can give them some food at restaurant', 'Mother')","[0, 'you bring the doll to the table and you can give them some food at restaurant']",doll,39.2636399104704,female,Suppes
+food, ,"('dog I think like to eat dog food do they', 'Mother')","[0, 'dog I think like to eat dog food do they']",dog,39.6907534035606,female,Suppes
+clothes, ,"('put all the clothes in the dryer', 'Mother')","[0, 'put all the clothes in the dryer']",dryer,39.6907534035606,female,Suppes
+clothes, ,"('do kitty wear clothes', 'Mother')","[0, 'do kitty wear clothes']",kitty,38.5264584488388,female,Suppes
+clothes, ,"('kitty do wear clothes', 'Mother')","[0, 'kitty do wear clothes']",kitty,38.5264584488388,female,Suppes
+animal, ,"('be person gonna go on the train to take care of the animal', 'Mother')","[0, 'be person gonna go on the train to take care of the animal']",train,39.6907534035606,female,Suppes
+toy, ,"('oh one of the cat toy', 'Investigator')","[0, 'oh one of the cat toy']",cat,40.2965153288569,female,Weist
+food, ,"('some horse food and cat food', 'Father')","[0, 'some horse food and cat food']",cat,36.0993038871435,female,Weist
+food, ,"('some horse food and cat food', 'Father')","[0, 'some horse food and cat food']",horse,36.0993038871435,female,Weist
+animal, ,"('because like the other animal that he be hang around not lion', 'Father')","[0, 'because like the other animal that he be hang around not lion']",lion,44.7237109591573,female,Weist
+animal, ,"('so which animal do you like you say the horse', 'Investigator')","[0, 'so which animal do you like you say the horse']",horse,43.6908355407709,female,Weist
+food, ,"('do you have any elephant do you get any elephant food', 'Father')","[0, 'do you have any elephant do you get any elephant food']",elephant,44.7237109591573,female,Weist
+animal, ,"('the lion roar you right he do but now we see him sleep well which animal roar when you go with James and mommy and Eileen and Gordon then who be roar', 'Mother')","[0, 'the lion roar you right he do but now we see him sleep well which animal roar when you go with James and mommy and Eileen and Gordon then who be roar']",lion,36.0664490030596,male,Weist
+animal, ,"('you like the elephant oh elephant any other animal you like', 'Mother')","[0, 'you like the elephant oh elephant any other animal you like']",elephant,36.0664490030596,male,Weist
+toy, ,"('you wanna see if one of your toy car can do it', 'Mother')","[0, 'you wanna see if one of your toy car can do it']",car,43.4279964681,male,Weist
+toy, ,"('where your toy car', 'Mother')","[0, 'where your toy car']",car,43.4279964681,male,Weist
+food, ,"('thank you be this ant food', 'Mother')","[0, 'thank you be this ant food']",ant,37.9535514076264,male,Weist
+food, ,"('bunny food oh yeah because you be just a ant yesterday', 'Mother')","[0, 'bunny food oh yeah because you be just a ant yesterday']",ant,37.9535514076264,male,Weist
+food, ,"('bunny food oh yeah because you be just a ant yesterday', 'Mother')","[0, 'bunny food oh yeah because you be just a ant yesterday']",bunny,37.9535514076264,male,Weist
+furniture, ,"('look like there plenty of furniture and plenty of toast', 'Mother')","[0, 'look like there plenty of furniture and plenty of toast']",toast,46.6908971436785,male,Weist
+animal, ,"('remember that day and we make some thing for the bird and animal', 'Mother')","[0, 'remember that day and we make some thing for the bird and animal']",bird,43.887964845274,male,Weist
+animal, ,"('what other what other kind what animal do a zebra look like', 'Investigator')","[0, 'what other what other kind what animal do a zebra look like']",zebra,39.7564631717284,male,Weist
+animal, ,"('oh you want to play the pet store game again with lot and lots_of animal', 'Mother')","[0, 'oh you want to play the pet store game again with lot and lots_of animal']",game,44.3294523501509,male,Weist
+food, ,"('there some food for dog at the barn over there', 'Mother')","[0, 'there some food for dog at the barn over there']",dog,44.3294523501509,male,Weist
+animal, ,"('oh you like to play the game where he choose animal okay', 'Mother')","[0, 'oh you like to play the game where he choose animal okay']",game,44.3294523501509,male,Weist
+food, ,"('dog food for fish', 'Mother')","[0, 'dog food for fish']",dog,41.9536335448366,male,Weist
+food, ,"('dog food for fish', 'Mother')","[0, 'dog food for fish']",fish,41.9536335448366,male,Weist
+food, ,"('dog food for fish', 'Mother')","[0, 'dog food for fish']",fish,41.9536335448366,male,Weist
+food, ,"('you know why because spider like to eat bug for food', 'Father')","[0, 'you know why because spider like to eat bug for food']",bug,41.0336967904885,male,Weist
+animal, ,"('can you tell me a story about your animal', 'Investigator')","[0, 'can you tell me a story about your animal']",story,45.8222961457114,male,Weist
+toy, ,"('do you want to show Angela some toy or some book', 'Mother')","[0, 'do you want to show Angela some toy or some book']",book,36.0007392348919,male,Bohannon
+toy, ,"('you can ride on the toy the car will go', 'Adult')","[0, 'you can ride on the toy the car will go']",car,36.0007392348919,male,Bohannon
+animal, ,"('you get all your animal over there on the table', 'Mother')","[0, 'you get all your animal over there on the table']",table,36.0007392348919,male,Bohannon
+toy, ,"('do you want to play ball some more and play with your toy', 'Adult')","[0, 'do you want to play ball some more and play with your toy']",ball,36.0007392348919,male,Bohannon
+toy, ,"('do you have a toy name a a dog', 'Visitor')","[0, 'do you have a toy name a a dog']",dog,36.0007392348919,male,Bohannon
+food, ,"('dog food', 'Visitor')","[0, 'dog food']",dog,36.0007392348919,male,Bohannon
+toy, ,"('but it a nice toy monkey', 'Visitor')","[0, 'but it a nice toy monkey']",monkey,36.0007392348919,male,Bohannon
+toy, ,"('be this a nice toy monkey', 'Visitor')","[0, 'be this a nice toy monkey']",monkey,36.0007392348919,male,Bohannon
+animal, ,"('maybe maybe monkey can share the hat with the other animal', 'Mother')","[0, 'maybe maybe monkey can share the hat with the other animal']",monkey,36.0007392348919,male,Bohannon
+animal, ,"('maybe maybe monkey can share the hat with the other animal', 'Mother')","[0, 'maybe maybe monkey can share the hat with the other animal']",hat,36.0007392348919,male,Bohannon
+animal, ,"('well we wait a second we make a hat for this animal', 'Visitor')","[0, 'well we wait a second we make a hat for this animal']",hat,36.0007392348919,male,Bohannon
+animal, ,"('maybe it will be good if monkey share the hat with the other animal then Harvey will have_to make more', 'Mother')","[0, 'maybe it will be good if monkey share the hat with the other animal then Harvey will have_to make more']",monkey,36.0007392348919,male,Bohannon
+animal, ,"('maybe it will be good if monkey share the hat with the other animal then Harvey will have_to make more', 'Mother')","[0, 'maybe it will be good if monkey share the hat with the other animal then Harvey will have_to make more']",hat,36.0007392348919,male,Bohannon
+animal, ,"('I tell you I make you pick out you favorite animal other than monkey', 'Visitor')","[0, 'I tell you I make you pick out you favorite animal other than monkey']",monkey,36.0007392348919,male,Bohannon
+toy, ,"('the bicycle pump be a toy', 'Mother')","[0, 'the bicycle pump be a toy']",bicycle,42.5593954701329,female,Braunwald
+food, ,"('do drop that food on the table', 'Mother')","[0, 'do drop that food on the table']",table,37.822131871291,female,Braunwald
+toy, ,"('what your new toy cat name', 'Mother')","[0, 'what your new toy cat name']",cat,43.0008829750098,female,Braunwald
+furniture, ,"('dog not allow on the furniture', 'Father')","[0, 'dog not allow on the furniture']",dog,39.0008008377995,NA,Morisset
+toy, ,"('here a toy duck', 'Mother')","[0, 'here a toy duck']",duck,39.0008008377995,male,Morisset
+clothes, ,"('yes he get cake on his clothes', 'Mother')","[0, 'yes he get cake on his clothes']",cake,39.0008008377995,female,Morisset
+animal, ,"('here where the gentle animal come down to drink', 'Mother')","[0, 'here where the gentle animal come down to drink']",drink,36.8221113369884,male,Conti
+animal, ,"('that all the animal and elephant', 'Mother')","[0, 'that all the animal and elephant']",elephant,36.8221113369884,male,Conti
+toy, ,"('some more toy under your bed now', 'Mother')","[0, 'some more toy under your bed now']",bed,41.3622456313271,male,Conti
+animal, ,"('that for water so the animal can have a drink', 'Mother')","[0, 'that for water so the animal can have a drink']",drink,47.1323846485554,male,Conti
+animal, ,"('that for water so the animal can have a drink', 'Mother')","[0, 'that for water so the animal can have a drink']",water,47.1323846485554,male,Conti
+animal, ,"('so all the animal can have a drink in that one', 'Mother')","[0, 'so all the animal can have a drink in that one']",drink,47.1323846485554,male,Conti
+toy, ,"('train have she go to the toy department', 'Mother')","[0, 'train have she go to the toy department']",train,45.0994886958664,male,Conti
+animal, ,"('you want put all the car away and we look at the animal', 'Mother')","[0, 'you want put all the car away and we look at the animal']",car,36.4935624961498,male,Flusberg
+animal, ,"('want put the animal and the train in the box too', 'Mother')","[0, 'want put the animal and the train in the box too']",train,41.2965358631594,male,Flusberg
+food, ,"('okay time to get out_of the car put the food away', 'Mother')","[0, 'okay time to get out_of the car put the food away']",car,45.6580217252921,male,Flusberg
+animal, ,"('let put the animal away and we play with these color ball okay', 'Mother')","[0, 'let put the animal away and we play with these color ball okay']",ball,41.2965358631594,male,Flusberg
+clothes, ,"('you want put the shirt in the clothes basket like mommy have', 'Mother')","[0, 'you want put the shirt in the clothes basket like mommy have']",shirt,39.6578985194768,NA,Feldman
+food, ,"('and eat food on the airplane', 'Mother')","[0, 'and eat food on the airplane']",airplane,36.3621429598144,NA,Feldman
+toy, ,"('put the toy away and we can read the book', 'Mother')","[0, 'put the toy away and we can read the book']",book,36.3949978438982,NA,Feldman
+toy, ,"('put those toy back in the bag and you can have a cookie', 'Investigator')","[0, 'put those toy back in the bag and you can have a cookie']",cookie,37.0007597691944,NA,Feldman
+clothes, ,"('we forget to put his clothes on underneath his coat', 'Mother')","[0, 'we forget to put his clothes on underneath his coat']",coat,39.2964947945543,NA,Feldman
+animal, ,"('well that look more like a prehistoric animal than a alligator but that be it', 'Father')","[0, 'well that look more like a prehistoric animal than a alligator but that be it']",alligator,42.3294112815458,NA,Feldman
+animal, ,"('that be where they keep the corn to feed all of the animal', 'Mother')","[0, 'that be where they keep the corn to feed all of the animal']",corn,39.5593338672252,NA,Feldman
+clothes, ,"('I think that shirt you have before go on the clothes line', 'Investigator')","[0, 'I think that shirt you have before go on the clothes line']",shirt,37.7892769872071,NA,Feldman
+toy, ,"('what color be the kitty we see in the toy', 'Father')","[0, 'what color be the kitty we see in the toy']",kitty,40.0665311402698,NA,Feldman
+animal, ,"('we come back and look at the animal after the bus', 'Mother')","[0, 'we come back and look at the animal after the bus']",bus,41.8550688925851,NA,Feldman
+clothes, ,"('get this doll clothes out', 'Mother')","[0, 'get this doll clothes out']",doll,36.1978685393951,NA,Feldman
+clothes, ,"('now take out the clothes and dress this', 'Mother')","[0, 'now take out the clothes and dress this']",dress,36.1978685393951,NA,Feldman
+clothes, ,"('he be in his dress clothes', 'Mother')","[0, 'he be in his dress clothes']",dress,42.0008624407072,NA,Feldman
+toy, ,"('look at your book for a couple of minute and you can help me get the next toy', 'Investigator')","[0, 'look at your book for a couple of minute and you can help me get the next toy']",book,42.0008624407072,NA,Feldman
+animal, ,"('obvious I never open a box of animal cracker before', 'Mother')","[0, 'obvious I never open a box of animal cracker before']",cracker,43.1651573954291,female,Nicholas
+toy, ,"('why do we come over here and sit down at the table and we get some different toy in a few minute', 'Mother')","[0, 'why do we come over here and sit down at the table and we get some different toy in a few minute']",table,36.2307234234789,male,Nicholas
+food, ,"('when we get food at our airplane', 'Mother')","[0, 'when we get food at our airplane']",airplane,36.9863857574077,male,Nicholas
+toy, ,"('your coat make you think we have more toy', 'Mother')","[0, 'your coat make you think we have more toy']",coat,36.2307234234789,male,Nicholas
+animal, ,"('those be call animal cracker', 'Mother')","[0, 'those be call animal cracker']",cracker,36.5921271484014,male,Nicholas
+food, ,"('the table get food on it', 'Mother')","[0, 'the table get food on it']",table,42.296556397462,male,Nicholas
+food, ,"('he has_to ride back there with all the monkey food', 'Mother')","[0, 'he has_to ride back there with all the monkey food']",monkey,42.6251052383006,male,Nicholas
+toy, ,"('well do you see any toy on the table that might be good for use in the', 'Mother')","[0, 'well do you see any toy on the table that might be good for use in the']",table,47.0995297644715,male,Nicholas
+toy, ,"('you sink our toy ship you sink it deep in the cake', 'Narrator')","[0, 'you sink our toy ship you sink it deep in the cake']",cake,37.0007597691944,female,Hooshyar
+toy, ,"('you sink our toy ship you sink it deep in the cake', 'Narrator')","[0, 'you sink our toy ship you sink it deep in the cake']",sink,37.0007597691944,female,Hooshyar
+toy, ,"('and a little toy house and a little young mouse', 'Narrator')","[0, 'and a little toy house and a little young mouse']",mouse,45.0009240436149,male,Hooshyar
+animal, ,"('do you remember this book animal sound', 'Mother')","[0, 'do you remember this book animal sound']",book,40.5922092856116,male,Hooshyar
+toy, ,"('all the diaper and the toy be in there', 'Investigator')","[0, 'all the diaper and the toy be in there']",diaper,43.0008829750098,female,EllisWeismer
+toy, ,"('it have toy on it that hang above the crib so the baby can look at them', 'Investigator')","[0, 'it have toy on it that hang above the crib so the baby can look at them']",crib,42.0008624407072,male,EllisWeismer
+food, ,"('here kitty go in the kitchen and have some food', 'Investigator')","[0, 'here kitty go in the kitchen and have some food']",kitty,43.0008829750098,female,EllisWeismer
+food, ,"('but cake be food', 'Investigator')","[0, 'but cake be food']",cake,42.0008624407072,female,EllisWeismer
+food, ,"('cake be food', 'Investigator')","[0, 'cake be food']",cake,42.0008624407072,female,EllisWeismer
+food, ,"('oh a food table', 'Investigator')","[0, 'oh a food table']",table,42.0008624407072,male,EllisWeismer
+food, ,"('hm I think the only food we real have be this cake', 'Investigator')","[0, 'hm I think the only food we real have be this cake']",cake,43.0008829750098,female,EllisWeismer
+animal, ,"('so I do know if the other animal eat pumpkin', 'Mother')","[0, 'so I do know if the other animal eat pumpkin']",pumpkin,42.0008624407072,male,EllisWeismer
+animal, ,"('and he be put all the animal back in their little pen', 'Mother')","[0, 'and he be put all the animal back in their little pen']",pen,42.0008624407072,female,EllisWeismer
+animal, ,"('I think that book they be all the animal be awake during the day', 'Mother')","[0, 'I think that book they be all the animal be awake during the day']",book,42.0008624407072,female,EllisWeismer
+food, ,"('maybe we should share some of the food with the pig', 'Mother')","[0, 'maybe we should share some of the food with the pig']",pig,42.0008624407072,male,EllisWeismer
+animal, ,"('the person be inside the pen and the animal be on the outside', 'Mother')","[0, 'the person be inside the pen and the animal be on the outside']",pen,42.0008624407072,male,EllisWeismer
+toy, ,"('whenever I see a Mr_Potato_Head make me think of in toy story', 'Mother')","[0, 'whenever I see a Mr_Potato_Head make me think of in toy story']",story,43.0008829750098,male,EllisWeismer
+food, ,"('pig food', 'Mother')","[0, 'pig food']",pig,42.0008624407072,female,EllisWeismer
+animal, ,"('which animal do you think will eat the corn', 'Mother')","[0, 'which animal do you think will eat the corn']",corn,44.0009035093123,male,EllisWeismer
+animal, ,"('can you choose some animal that can go in that pen', 'Mother')","[0, 'can you choose some animal that can go in that pen']",pen,44.0009035093123,female,EllisWeismer
+food, ,"('oh here some food for the sheep', 'Mother')","[0, 'oh here some food for the sheep']",sheep,42.0008624407072,female,EllisWeismer
+animal, ,"('and then we can make a pen for the animal', 'Mother')","[0, 'and then we can make a pen for the animal']",pen,42.0008624407072,female,EllisWeismer
+toy, ,"('be they in the toy story', 'Mother')","[0, 'be they in the toy story']",story,41.0008419064046,female,EllisWeismer
+toy, ,"('they in the toy story movie', 'Mother')","[0, 'they in the toy story movie']",story,41.0008419064046,female,EllisWeismer
+animal, ,"('all the animal be well there some in here and then you have the cow already', 'Mother')","[0, 'all the animal be well there some in here and then you have the cow already']",cow,42.0008624407072,female,EllisWeismer
+animal, ,"('these guy be go in the animal pen', 'Mother')","[0, 'these guy be go in the animal pen']",pen,42.0008624407072,female,EllisWeismer
+animal, ,"('do I get any animal besides that bird', 'Mother')","[0, 'do I get any animal besides that bird']",bird,42.0008624407072,female,EllisWeismer
+animal, ,"('you want the pig out there with the other animal', 'Mother')","[0, 'you want the pig out there with the other animal']",pig,42.0008624407072,female,EllisWeismer
+food, ,"('that look like food for the sheep', 'Mother')","[0, 'that look like food for the sheep']",sheep,42.0008624407072,female,EllisWeismer
+animal, ,"('get off of the bus now and line up to see the animal', 'Mother')","[0, 'get off of the bus now and line up to see the animal']",bus,36.0007392348919,female,Ambrose
+animal, ,"('hey Devin push the button over there and tell me what animal say that', 'Mother')","[0, 'hey Devin push the button over there and tell me what animal say that']",button,36.0007392348919,female,Ambrose
+food, ,"('you probable need a big belt because of all this party food later on will you', 'Mother')","[0, 'you probable need a big belt because of all this party food later on will you']",belt,36.0007392348919,male,Thomas
+animal, ,"('there be elephant and all sort of animal in the room', 'Mother')","[0, 'there be elephant and all sort of animal in the room']",elephant,36.460707612066,male,Thomas
+clothes, ,"('she wash them and dress them in beautiful clothes', 'Mother')","[0, 'she wash them and dress them in beautiful clothes']",dress,36.0007392348919,male,Thomas
+animal, ,"('in the video child will love see all the animal include rabbit cow sheep pig chicken goat and so much more', 'Mother')","[0, 'in the video child will love see all the animal include rabbit cow sheep pig chicken goat and so much more']",chicken,36.0993038871435,male,Thomas
+animal, ,"('in the video child will love see all the animal include rabbit cow sheep pig chicken goat and so much more', 'Mother')","[0, 'in the video child will love see all the animal include rabbit cow sheep pig chicken goat and so much more']",cow,36.0993038871435,male,Thomas
+animal, ,"('in the video child will love see all the animal include rabbit cow sheep pig chicken goat and so much more', 'Mother')","[0, 'in the video child will love see all the animal include rabbit cow sheep pig chicken goat and so much more']",pig,36.0993038871435,male,Thomas
+animal, ,"('in the video child will love see all the animal include rabbit cow sheep pig chicken goat and so much more', 'Mother')","[0, 'in the video child will love see all the animal include rabbit cow sheep pig chicken goat and so much more']",sheep,36.0993038871435,male,Thomas
+animal, ,"('in the video child will love see all the animal include rabbit cow sheep pig chicken goat and so much more', 'Mother')","[0, 'in the video child will love see all the animal include rabbit cow sheep pig chicken goat and so much more']",chicken,36.0993038871435,male,Thomas
+animal, ,"('they ride on the farm tractor and join in with favorite animal song include Old_MacDonald_had_a_farm', 'Mother')","[0, 'they ride on the farm tractor and join in with favorite animal song include Old_MacDonald_had_a_farm']",tractor,36.0993038871435,male,Thomas
+animal, ,"('watch the pony ride and lots_of cuddle baby animal bottle feed the lamb', 'Mother')","[0, 'watch the pony ride and lots_of cuddle baby animal bottle feed the lamb']",lamb,36.0993038871435,male,Thomas
+animal, ,"('watch the pony ride and lots_of cuddle baby animal bottle feed the lamb', 'Mother')","[0, 'watch the pony ride and lots_of cuddle baby animal bottle feed the lamb']",pony,36.0993038871435,male,Thomas
+food, ,"('oh baby duck always take food from Mummy duck', 'Mother')","[0, 'oh baby duck always take food from Mummy duck']",duck,36.7235466847369,male,Thomas
+animal, ,"('and she have a choice of different animal but I choose the red one with a elephant on it because you and Grandma like elephant do you', 'Mother')","[0, 'and she have a choice of different animal but I choose the red one with a elephant on it because you and Grandma like elephant do you']",elephant,36.8549662210723,male,Thomas
+food, ,"('cat food', 'Mother')","[0, 'cat food']",cat,37.0007597691944,male,Thomas
+toy, ,"('I actual take all the toy out of my car now', 'Investigator')","[0, 'I actual take all the toy out of my car now']",car,36.4935624961498,male,Thomas
+animal, ,"('or a dog or any type of animal you want to look after it', 'Mother')","[0, 'or a dog or any type of animal you want to look after it']",dog,36.5921271484014,male,Thomas
+food, ,"('chicken food', 'Mother')","[0, 'chicken food']",chicken,36.3292880757305,male,Thomas
+food, ,"('chicken food', 'Mother')","[0, 'chicken food']",chicken,36.3292880757305,male,Thomas
+food, ,"('cat food', 'Mother')","[0, 'cat food']",cat,37.0336146532783,male,Thomas
+toy, ,"('the chemist on Queensway sell sweet and toy and book and game do it', 'Mother')","[0, 'the chemist on Queensway sell sweet and toy and book and game do it']",book,37.099324421446,male,Thomas
+toy, ,"('the chemist on Queensway sell sweet and toy and book and game do it', 'Mother')","[0, 'the chemist on Queensway sell sweet and toy and book and game do it']",game,37.099324421446,male,Thomas
+toy, ,"('in fact you should have toy at the table at all should you', 'Mother')","[0, 'in fact you should have toy at the table at all should you']",table,36.7892564529046,male,Thomas
+toy, ,"('and I be point out bird nest in the tree and you be say it be a bag of toy', 'Mother')","[0, 'and I be point out bird nest in the tree and you be say it be a bag of toy']",bird,36.3292880757305,male,Thomas
+toy, ,"('I shall always think of bird nest be bag of toy Thomas from now on', 'Mother')","[0, 'I shall always think of bird nest be bag of toy Thomas from now on']",bird,36.3292880757305,male,Thomas
+food, ,"('pussy cat we give you some biscuit in that food', 'Mother')","[0, 'pussy cat we give you some biscuit in that food']",cat,37.0007597691944,male,Thomas
+toy, ,"('on your chair you find a stamp and some money from your toy shop and some pasta', 'Mother')","[0, 'on your chair you find a stamp and some money from your toy shop and some pasta']",pasta,36.7564015688207,male,Thomas
+toy, ,"('on your chair you find a stamp and some money from your toy shop and some pasta', 'Mother')","[0, 'on your chair you find a stamp and some money from your toy shop and some pasta']",chair,36.7564015688207,male,Thomas
+food, ,"('well normal we give the pussy cat Purdie food but we have actual get any biscuit for Purdie at the moment Thomas', 'Mother')","[0, 'well normal we give the pussy cat Purdie food but we have actual get any biscuit for Purdie at the moment Thomas']",cat,37.4278732622846,male,Thomas
+food, ,"('shall we give this pussy cat some food', 'Mother')","[0, 'shall we give this pussy cat some food']",cat,37.4278732622846,male,Thomas
+food, ,"('will you like to give some pussy cat bowl of food', 'Mother')","[0, 'will you like to give some pussy cat bowl of food']",cat,37.4278732622846,male,Thomas
+food, ,"('there a door for person in the shop to open to buy food', 'Mother')","[0, 'there a door for person in the shop to open to buy food']",door,36.7235466847369,male,Thomas
+food, ,"('and there a door at the back for the so that he can stock the shop up with food', 'Mother')","[0, 'and there a door at the back for the so that he can stock the shop up with food']",door,36.7235466847369,male,Thomas
+food, ,"('it say this huge truck be carry food to the shop', 'Mother')","[0, 'it say this huge truck be carry food to the shop']",truck,37.099324421446,male,Thomas
+toy, ,"('do you want some more toy to give the other cat', 'Mother')","[0, 'do you want some more toy to give the other cat']",cat,37.4278732622846,male,Thomas
+toy, ,"('then any pussy cat that have get something to play with or it get bore with the toy it have get it can play with a different one', 'Mother')","[0, 'then any pussy cat that have get something to play with or it get bore with the toy it have get it can play with a different one']",cat,37.4278732622846,male,Thomas
+toy, ,"('any more toy for that sad pussy cat', 'Mother')","[0, 'any more toy for that sad pussy cat']",cat,37.4278732622846,male,Thomas
+toy, ,"('you should real have toy at the table should you', 'Mother')","[0, 'you should real have toy at the table should you']",table,37.7564221031233,male,Thomas
+toy, ,"('oh this be why I say no toy at the table', 'Mother')","[0, 'oh this be why I say no toy at the table']",table,37.7564221031233,male,Thomas
+food, ,"('town mouse say I do not like the food in the country', 'Mother')","[0, 'town mouse say I do not like the food in the country']",mouse,37.4935830304524,male,Thomas
+toy, ,"('Thomas the lion and the crocodile say they want to tidy up your toy', 'Investigator')","[0, 'Thomas the lion and the crocodile say they want to tidy up your toy']",lion,37.0664695373622,male,Thomas
+food, ,"('country mouse have to look for food', 'Mother')","[0, 'country mouse have to look for food']",mouse,37.4935830304524,male,Thomas
+food, ,"('he say to town mouse come and look for food', 'Mother')","[0, 'he say to town mouse come and look for food']",mouse,37.4935830304524,male,Thomas
+food, ,"('country mouse say I do not like the food in the town', 'Mother')","[0, 'country mouse say I do not like the food in the town']",mouse,37.4935830304524,male,Thomas
+toy, ,"('it toy time on the table', 'Mother')","[0, 'it toy time on the table']",table,37.7564221031233,male,Thomas
+toy, ,"('this be why I do like toy on the table with you Thomas', 'Mother')","[0, 'this be why I do like toy on the table with you Thomas']",table,37.6250025667878,male,Thomas
+food, ,"('like you stack up the cat food', 'Mother')","[0, 'like you stack up the cat food']",cat,39.0993654900511,male,Thomas
+food, ,"('fish food', 'Mother')","[0, 'fish food']",fish,37.9206965235426,male,Thomas
+food, ,"('fish food', 'Mother')","[0, 'fish food']",fish,37.9206965235426,male,Thomas
+food, ,"('she can buy lots_of nice cat food', 'Investigator')","[0, 'she can buy lots_of nice cat food']",cat,38.1650547239163,male,Thomas
+food, ,"('no because that the food processor and the juice extractor', 'Mother')","[0, 'no because that the food processor and the juice extractor']",juice,39.0993654900511,male,Thomas
+animal, ,"('tractor carry food for all the animal on the farm', 'Mother')","[0, 'tractor carry food for all the animal on the farm']",tractor,39.0665106059673,male,Thomas
+food, ,"('tractor carry food for all the animal on the farm', 'Mother')","[0, 'tractor carry food for all the animal on the farm']",tractor,39.0665106059673,male,Thomas
+clothes, ,"('you do just dress and throw your clothes on the floor', 'Mother')","[0, 'you do just dress and throw your clothes on the floor']",dress,39.1979301423027,male,Thomas
+toy, ,"('it ask again which toy and game you like play with good', 'Mother')","[0, 'it ask again which toy and game you like play with good']",game,41.0665516745724,male,Thomas
+toy, ,"('look like she have get a toy bus on a string', 'Mother')","[0, 'look like she have get a toy bus on a string']",bus,42.0008624407072,male,Thomas
+clothes, ,"('because often it head make out of straw and it dress in old clothes', 'Mother')","[0, 'because often it head make out of straw and it dress in old clothes']",dress,43.0665927431775,male,Thomas
+toy, ,"('you get a lot of soft toy in the and I tire of have to move them everytime I make the bed', 'Mother')","[0, 'you get a lot of soft toy in the and I tire of have to move them everytime I make the bed']",bed,42.0337173247911,male,Thomas
+animal, ,"('when I go to pick you up they have get lots_of farm animal on the table', 'Mother')","[0, 'when I go to pick you up they have get lots_of farm animal on the table']",table,41.1322614427401,male,Thomas
+animal, ,"('have you be play with the tractor and the trailer and the farm animal', 'Mother')","[0, 'have you be play with the tractor and the trailer and the farm animal']",tractor,41.1322614427401,male,Thomas
+animal, ,"('do you know what animal milk come from', 'Investigator')","[0, 'do you know what animal milk come from']",milk,40.1322409084375,male,Thomas
+food, ,"('tin of food milk', 'Mother')","[0, 'tin of food milk']",milk,42.0994270929588,male,Thomas
+toy, ,"('it be February when you first start call bird nest bag of toy', 'Mother')","[0, 'it be February when you first start call bird nest bag of toy']",bird,43.0994476272613,male,Thomas
+clothes, ,"('please keep it on the table because it make a mess if it get tread into the carpet or onto your clothes', 'Mother')","[0, 'please keep it on the table because it make a mess if it get tread into the carpet or onto your clothes']",table,43.0665927431775,male,Thomas
+toy, ,"('because you eat the egg and inside be a yellow egg and you open it and there a toy inside', 'Investigator')","[0, 'because you eat the egg and inside be a yellow egg and you open it and there a toy inside']",egg,40.1322409084375,male,Thomas
+food, ,"('all the food in the fridge be go to frost because the door be leave open', 'Mother')","[0, 'all the food in the fridge be go to frost because the door be leave open']",door,41.165116326824,male,Thomas
+animal, ,"('well this real be Noahs_Ark and the ladder be to lean against the boat so that the animal can go in two by two be it', 'Mother')","[0, 'well this real be Noahs_Ark and the ladder be to lean against the boat so that the animal can go in two by two be it']",boat,43.0337378590936,male,Thomas
+clothes, ,"('you know like we have a clothes horse for dry the', 'Mother')","[0, 'you know like we have a clothes horse for dry the']",horse,43.0337378590936,male,Thomas
+clothes, ,"('so we have a clothes horse for dry our clothes on', 'Mother')","[0, 'so we have a clothes horse for dry our clothes on']",horse,43.0337378590936,male,Thomas
+food, ,"('Auntie_Janet dog use to eat cat food', 'Mother')","[0, 'Auntie_Janet dog use to eat cat food']",cat,44.1651779297316,male,Thomas
+food, ,"('Auntie_Janet dog use to eat cat food', 'Mother')","[0, 'Auntie_Janet dog use to eat cat food']",dog,44.1651779297316,male,Thomas
+food, ,"('I not sure whether the cat eat dog food', 'Mother')","[0, 'I not sure whether the cat eat dog food']",cat,44.1651779297316,male,Thomas
+food, ,"('I not sure whether the cat eat dog food', 'Mother')","[0, 'I not sure whether the cat eat dog food']",dog,44.1651779297316,male,Thomas
+food, ,"('when you get your mouth full of food you have a job to breath be you because your nose be so block', 'Mother')","[0, 'when you get your mouth full of food you have a job to breath be you because your nose be so block']",block,45.1651984640342,male,Thomas
+toy, ,"('play with that in the garage and all your toy because that truck a little bit noise', 'Mother')","[0, 'play with that in the garage and all your toy because that truck a little bit noise']",truck,46.1323641142529,male,Thomas
+furniture, ,"('wooden furniture and they be show how the tree be knock down to make table and chair', 'Mother')","[0, 'wooden furniture and they be show how the tree be knock down to make table and chair']",chair,45.0666338117826,male,Thomas
+furniture, ,"('wooden furniture and they be show how the tree be knock down to make table and chair', 'Mother')","[0, 'wooden furniture and they be show how the tree be knock down to make table and chair']",table,45.0666338117826,male,Thomas
+food, ,"('when you say a big Tesco truck be you think of the very big truck that deliver to Tesco or be you think of the little van that come round if we order food over Daddy compute', 'Mother')","[0, 'when you say a big Tesco truck be you think of the very big truck that deliver to Tesco or be you think of the little van that come round if we order food over Daddy compute']",truck,46.0337994620013,male,Thomas
+food, ,"('I go to take all those bread crust and put them in the food processor and press the button and it will go and they be turn into fine bread crumb', 'Mother')","[0, 'I go to take all those bread crust and put them in the food processor and press the button and it will go and they be turn into fine bread crumb']",button,47.0666748803877,male,Thomas
+food, ,"('I go to take all those bread crust and put them in the food processor and press the button and it will go and they be turn into fine bread crumb', 'Mother')","[0, 'I go to take all those bread crust and put them in the food processor and press the button and it will go and they be turn into fine bread crumb']",bread,47.0666748803877,male,Thomas
+toy, ,"('sometimes it be true he do chase mouse but maybe because it be Christmas or maybe because he be remember the time when he have play with the child by the Christmas tree he say the mouse could borrow his toy', 'Mother')","[0, 'sometimes it be true he do chase mouse but maybe because it be Christmas or maybe because he be remember the time when he have play with the child by the Christmas tree he say the mouse could borrow his toy']",mouse,45.1651984640342,male,Thomas
+food, ,"('and I could say excuse me Mr_Waiter please could I have a bowl of cat food for my pussy cat and you give it to me and I could put it outside for her', 'Mother')","[0, 'and I could say excuse me Mr_Waiter please could I have a bowl of cat food for my pussy cat and you give it to me and I could put it outside for her']",cat,47.0666748803877,male,Thomas
+clothes, ,"('go up and find her doll clothes in her box upstairs', 'Mother')","[0, 'go up and find her doll clothes in her box upstairs']",doll,41.8550688925851,female,Wells
+clothes, ,"('the little doll clothes', 'Mother')","[0, 'the little doll clothes']",doll,41.8550688925851,female,Wells
+furniture, ,"('that these the bed the chair be all furniture be they', 'Mother')","[0, 'that these the bed the chair be all furniture be they']",bed,42.0008624407072,NA,Tommerdahl
+furniture, ,"('that these the bed the chair be all furniture be they', 'Mother')","[0, 'that these the bed the chair be all furniture be they']",chair,42.0008624407072,NA,Tommerdahl
+animal, ,"('oh be you put the animal to bed be they tire', 'Mother')","[0, 'oh be you put the animal to bed be they tire']",bed,42.0008624407072,NA,Tommerdahl
+toy, ,"('some toy car', 'Investigator')","[0, 'some toy car']",car,36.0007392348919,male,Fletcher
+toy, ,"('have you get a toy car', 'Investigator')","[0, 'have you get a toy car']",car,36.0007392348919,male,Fletcher
+toy, ,"('do you not like sleep in your own bed with all your toy', 'Investigator')","[0, 'do you not like sleep in your own bed with all your toy']",bed,36.3621429598144,female,MPI-EVA-Manchester
+food, ,"('have it get dog food', 'Investigator')","[0, 'have it get dog food']",dog,36.5921271484014,female,MPI-EVA-Manchester
+animal, ,"('and elephant be big animal', 'Mother')","[0, 'and elephant be big animal']",elephant,36.5264173802337,female,MPI-EVA-Manchester
+food, ,"('you mean you give someone else the dog food', 'Investigator')","[0, 'you mean you give someone else the dog food']",dog,36.5921271484014,female,MPI-EVA-Manchester
+animal, ,"('I think lion fight with those animal in Lion_king', 'Father')","[0, 'I think lion fight with those animal in Lion_king']",lion,36.5264173802337,female,MPI-EVA-Manchester
+toy, ,"('one evening when Eleanor be go to bed she look in her toy cupboard', 'Mother')","[0, 'one evening when Eleanor be go to bed she look in her toy cupboard']",bed,36.7892564529046,female,MPI-EVA-Manchester
+toy, ,"('well go and play in your room with your book and toy', 'Mother')","[0, 'well go and play in your room with your book and toy']",book,36.7892564529046,female,MPI-EVA-Manchester
+animal, ,"('in your stick animal book', 'Mother')","[0, 'in your stick animal book']",book,36.1650136553112,male,MPI-EVA-Manchester
+animal, ,"('in your stick animal book', 'Mother')","[0, 'in your stick animal book']",book,36.1978685393951,male,MPI-EVA-Manchester
+toy, ,"('it not a game it just a toy Fraser', 'Mother')","[0, 'it not a game it just a toy Fraser']",game,36.0664490030596,male,MPI-EVA-Manchester
+animal, ,"('those be your squeak animal book be they', 'Mother')","[0, 'those be your squeak animal book be they']",book,36.3292880757305,male,MPI-EVA-Manchester
+animal, ,"('you get the squeak animal book then', 'Mother')","[0, 'you get the squeak animal book then']",book,36.3292880757305,male,MPI-EVA-Manchester
+animal, ,"('animal that begin with that letter because that the alphabet book be it', 'Mother')","[0, 'animal that begin with that letter because that the alphabet book be it']",book,36.3292880757305,male,MPI-EVA-Manchester
+toy, ,"('you know that toy that you get downstairs with the dinosaur and the egg', 'Mother')","[0, 'you know that toy that you get downstairs with the dinosaur and the egg']",egg,36.2635783075628,male,MPI-EVA-Manchester
+animal, ,"('ah be all the animal go to bed', 'Mother')","[0, 'ah be all the animal go to bed']",bed,36.3292880757305,male,MPI-EVA-Manchester
+clothes, ,"('we have to change your clothes and Daddy give you a shower', 'Mother')","[0, 'we have to change your clothes and Daddy give you a shower']",shower,36.6249820324853,male,MPI-EVA-Manchester
+food, ,"('it eat our cat food', 'Mother')","[0, 'it eat our cat food']",cat,36.3621429598144,male,MPI-EVA-Manchester
+food, ,"('I do think it eat cat food', 'Mother')","[0, 'I do think it eat cat food']",cat,36.3621429598144,male,MPI-EVA-Manchester
+food, ,"('no I do think they eat cat food', 'Mother')","[0, 'no I do think they eat cat food']",cat,36.3621429598144,male,MPI-EVA-Manchester
+toy, ,"('but the duck do say anything because it a toy be it', 'Mother')","[0, 'but the duck do say anything because it a toy be it']",duck,36.3292880757305,male,MPI-EVA-Manchester
+animal, ,"('lot of animal that live in the sea they eat fish do they', 'Mother')","[0, 'lot of animal that live in the sea they eat fish do they']",fish,36.3621429598144,male,MPI-EVA-Manchester
+animal, ,"('lot of animal that live in the sea they eat fish do they', 'Mother')","[0, 'lot of animal that live in the sea they eat fish do they']",fish,36.3621429598144,male,MPI-EVA-Manchester
+clothes, ,"('you put your shoe there Lwww and you can hang your clothes on there', 'Mother')","[0, 'you put your shoe there Lwww and you can hang your clothes on there']",shoe,36.8878211051562,male,MPI-EVA-Manchester
+toy, ,"('all the toy have to go to bed now because they tire', 'Mother')","[0, 'all the toy have to go to bed now because they tire']",bed,36.690691800653,male,MPI-EVA-Manchester
+animal, ,"('he cracker about animal and want you to join him on his adventure', 'Mother')","[0, 'he cracker about animal and want you to join him on his adventure']",cracker,36.8549662210723,male,MPI-EVA-Manchester
+animal, ,"('there some fun animal in this book be there', 'Father')","[0, 'there some fun animal in this book be there']",book,36.7564015688207,male,MPI-EVA-Manchester
+food, ,"('look there his food on the table', 'Mother')","[0, 'look there his food on the table']",table,36.9863857574077,male,MPI-EVA-Manchester
+food, ,"('you go and get that basket of food and the toast and we all make toast', 'Mother')","[0, 'you go and get that basket of food and the toast and we all make toast']",toast,36.1978685393951,female,Lara
+toy, ,"('you get all these toy and you want my shoe', 'Mother')","[0, 'you get all these toy and you want my shoe']",shoe,36.1978685393951,female,Lara
+toy, ,"('I not play with your toy while you sit on the sofa', 'Mother')","[0, 'I not play with your toy while you sit on the sofa']",sofa,36.9535308733239,female,Lara
+clothes, ,"('a bib because she dribble on her clothes', 'Mother')","[0, 'a bib because she dribble on her clothes']",bib,39.2964947945543,female,Lara
+animal, ,"('I get the animal and the fish', 'Mother')","[0, 'I get the animal and the fish']",fish,37.4278732622846,female,Lara
+animal, ,"('I get the animal and the fish', 'Mother')","[0, 'I get the animal and the fish']",fish,37.4278732622846,female,Lara
+animal, ,"('I do think animal like cake', 'Mother')","[0, 'I do think animal like cake']",cake,36.9535308733239,female,Lara
+clothes, ,"('you only take your clothes off for go in water do you', 'Mother')","[0, 'you only take your clothes off for go in water do you']",water,36.5264173802337,female,Lara
+animal, ,"('and all the little animal and bird very much oblige', 'Mother')","[0, 'and all the little animal and bird very much oblige']",bird,36.1978685393951,female,Lara
+food, ,"('we forget to buy any food for the sheep', 'Mother')","[0, 'we forget to buy any food for the sheep']",sheep,36.9535308733239,female,Lara
+food, ,"('you go to get food for the horse', 'Mother')","[0, 'you go to get food for the horse']",horse,36.9535308733239,female,Lara
+food, ,"('let move the horse sheep dog and whatever food', 'Mother')","[0, 'let move the horse sheep dog and whatever food']",dog,36.9535308733239,female,Lara
+food, ,"('let move the horse sheep dog and whatever food', 'Mother')","[0, 'let move the horse sheep dog and whatever food']",horse,36.9535308733239,female,Lara
+food, ,"('let move the horse sheep dog and whatever food', 'Mother')","[0, 'let move the horse sheep dog and whatever food']",sheep,36.9535308733239,female,Lara
+food, ,"('he can take all the food back on his car', 'Mother')","[0, 'he can take all the food back on his car']",car,37.3950183782008,female,Lara
+clothes, ,"('I go to go and get your clothes for bed', 'Mother')","[0, 'I go to go and get your clothes for bed']",bed,38.6250231010904,female,Lara
+clothes, ,"('Mrs_Tabitha dress Moppet and Mittens in clean pinafore and tuck and then she take all sort of comfort clothes out of the chest of draw in order to dress up her son Thomas', 'Mother')","[0, 'Mrs_Tabitha dress Moppet and Mittens in clean pinafore and tuck and then she take all sort of comfort clothes out of the chest of draw in order to dress up her son Thomas']",dress,36.9535308733239,female,Lara
+animal, ,"('why do you get out and fill the car with animal', 'Mother')","[0, 'why do you get out and fill the car with animal']",car,37.3950183782008,female,Lara
+clothes, ,"('the clothes all come off because there be no button', 'Mother')","[0, 'the clothes all come off because there be no button']",button,36.9535308733239,female,Lara
+toy, ,"('it just literal a settee the tv and the toy and in it', 'Mother')","[0, 'it just literal a settee the tv and the toy and in it']",tv,43.4279964681,female,Belfast
+food, ,"('I actual go in to being sick at a dog food commercial on the television', 'Investigator')","[0, 'I actual go in to being sick at a dog food commercial on the television']",dog,44.4608718864864,male,Belfast
+toy, ,"('and imagine you be travel all night leave present for sad and lone child and child who have hard any toy at all', 'Mother')","[0, 'and imagine you be travel all night leave present for sad and lone child and child who have hard any toy at all']",present,40.6579190537793,female,Belfast
+toy, ,"('be that the toy doll house', 'Investigator')","[0, 'be that the toy doll house']",doll,42.296556397462,female,Belfast
+clothes, ,"('and I not go to take that off and start change bed clothes every morning', 'Investigator')","[0, 'and I not go to take that off and start change bed clothes every morning']",bed,43.4279964681,female,Belfast
+food, ,"('it probable a wee bit of toast or something a wee bit of food stick on with paint', 'Investigator')","[0, 'it probable a wee bit of toast or something a wee bit of food stick on with paint']",toast,45.3294728844535,female,Belfast
+toy, ,"('your toy box and all your teddy and your doll and all in it', 'Investigator')","[0, 'your toy box and all your teddy and your doll and all in it']",doll,38.6250231010904,female,Belfast
+furniture, ,"('and I can just picture her while we move bed and furniture up the stair', 'Mother')","[0, 'and I can just picture her while we move bed and furniture up the stair']",bed,41.7893591244173,male,Belfast
+animal, ,"('this be a animal story book wait until you see', 'Investigator')","[0, 'this be a animal story book wait until you see']",book,43.9865294975256,male,Belfast
+animal, ,"('this be a animal story book wait until you see', 'Investigator')","[0, 'this be a animal story book wait until you see']",story,43.9865294975256,male,Belfast
+clothes, ,"('oh I think they go to the shop now to get some shoe some clothes', 'Investigator')","[0, 'oh I think they go to the shop now to get some shoe some clothes']",shoe,43.9865294975256,male,Belfast

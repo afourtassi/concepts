@@ -1,0 +1,483 @@
+food, ,"('do your tiger eat orange', 'Investigator')","[0, 'do your tiger eat orange']",orange,62.3955317357646,male,Brown
+toy, ,"('I do understand how to play that game', 'Mother')","[0, 'I do understand how to play that game']",game,62.3955317357646,male,Brown
+furniture, ,"('I can use my pencil', 'Investigator')","[0, 'I can use my pencil']",pencil,60.5269102034949,female,Brown
+toy, ,"('who teach you how to play this game', 'Investigator')","[0, 'who teach you how to play this game']",game,60.8226041602497,female,Brown
+food, ,"('the child eat the candy', 'Investigator')","[0, 'the child eat the candy']",candy,61.1983818969589,female,Brown
+food, ,"('Bumper eat your toast ma say', 'Mother')","[0, 'Bumper eat your toast ma say']",toast,60.264071130824,female,HSLLD
+food, ,"('no egg say Bumper I eat my toast', 'Mother')","[0, 'no egg say Bumper I eat my toast']",toast,60.264071130824,female,HSLLD
+food, ,"('I think he be eat toast when it come out', 'Mother')","[0, 'I think he be eat toast when it come out']",toast,60.264071130824,female,HSLLD
+toy, ,"('we go play play car', 'Mother')","[0, 'we go play play car']",car,60.264071130824,female,HSLLD
+food, ,"('I eat my tuna fish', 'Mother')","[0, 'I eat my tuna fish']",tuna,64.2641532680342,female,HSLLD
+food, ,"('he rush around all morning and then rush home and have a quick bite to eat a sandwich without bread and then rush off again and then rush around all afternoon', 'Mother')","[0, 'he rush around all morning and then rush home and have a quick bite to eat a sandwich without bread and then rush off again and then rush around all afternoon']",sandwich,64.2641532680342,female,HSLLD
+food, ,"('oh he shoulda eat soup', 'Mother')","[0, 'oh he shoulda eat soup']",soup,61.4283660855459,female,HSLLD
+food, ,"('the king be in the count house count out his money the queen be in the parlor eat bread and honey', 'Mother')","[0, 'the king be in the count house count out his money the queen be in the parlor eat bread and honey']",bread,60.5597650875788,female,HSLLD
+food, ,"('he eat through apple the pear orange and all that', 'Mother')","[0, 'he eat through apple the pear orange and all that']",apple,61.165527012875,female,HSLLD
+food, ,"('on Thursday he eat four strawberry he say mm but he be still hungry', 'Mother')","[0, 'on Thursday he eat four strawberry he say mm but he be still hungry']",strawberry,68.2313805211606,female,HSLLD
+food, ,"('on Friday he eat five orange he say they be juice too but he be still hungry', 'Mother')","[0, 'on Friday he eat five orange he say they be juice too but he be still hungry']",orange,68.2313805211606,female,HSLLD
+clothes, ,"('the girl who wear this slipper be the girl I want to marry say the prince', 'Mother')","[0, 'the girl who wear this slipper be the girl I want to marry say the prince']",slipper,62.0012731267582,female,HSLLD
+furniture, ,"('they must use butter for mayonnaise', 'Mother')","[0, 'they must use butter for mayonnaise']",butter,68.2313805211606,female,HSLLD
+food, ,"('you do have_to eat your potato', 'Mother')","[0, 'you do have_to eat your potato']",potato,61.4283660855459,female,HSLLD
+food, ,"('you do eat butter like that', 'Mother')","[0, 'you do eat butter like that']",butter,65.1984640341691,female,HSLLD
+food, ,"('you not eat any potato tonight huh', 'Grandfather')","[0, 'you not eat any potato tonight huh']",potato,64.2641532680342,female,HSLLD
+food, ,"('eat your potato', 'Father')","[0, 'eat your potato']",potato,65.1984640341691,female,HSLLD
+food, ,"('you gonna eat your bread too', 'Mother')","[0, 'you gonna eat your bread too']",bread,61.1983818969589,female,HSLLD
+food, ,"('no Sis if you do eat your meat I gonna eat it on you', 'Mother')","[0, 'no Sis if you do eat your meat I gonna eat it on you']",meat,60.5269102034949,female,HSLLD
+food, ,"('Sis if you do eat your meat mommy gonna eat it and then you have nothing', 'Mother')","[0, 'Sis if you do eat your meat mommy gonna eat it and then you have nothing']",meat,60.5269102034949,female,HSLLD
+toy, ,"('that what happen when you play with your soup', 'Aunt')","[0, 'that what happen when you play with your soup']",soup,61.1983818969589,female,HSLLD
+food, ,"('do you eat your sandwich Mommy make', 'Mother')","[0, 'do you eat your sandwich Mommy make']",sandwich,60.5269102034949,female,HSLLD
+food, ,"('when I eat toast and I be still count', 'Sister')","[0, 'when I eat toast and I be still count']",toast,62.0012731267582,female,HSLLD
+food, ,"('that not how you eat chicken', 'Mother')","[0, 'that not how you eat chicken']",chicken,66.822727366065,female,HSLLD
+food, ,"('that not how you eat chicken', 'Mother')","[0, 'that not how you eat chicken']",chicken,66.822727366065,female,HSLLD
+toy, ,"('just read and play game', 'Mother')","[0, 'just read and play game']",game,68.2313805211606,female,HSLLD
+toy, ,"('you listen to story and play puzzle', 'Mother')","[0, 'you listen to story and play puzzle']",puzzle,68.2313805211606,female,HSLLD
+food, ,"('eat your sandwich', 'Mother')","[0, 'eat your sandwich']",sandwich,61.1983818969589,female,HSLLD
+vehicle, ,"('they go for a ride on the bus', 'Mother')","[0, 'they go for a ride on the bus']",bus,60.5597650875788,female,HSLLD
+furniture, ,"('koolaid will taste to good if you use salt', 'Mother')","[0, 'koolaid will taste to good if you use salt']",salt,61.1983818969589,female,HSLLD
+toy, ,"('let play with the block', 'Sister')","[0, 'let play with the block']",block,60.5597650875788,female,HSLLD
+furniture, ,"('you can use crayon', 'Mother')","[0, 'you can use crayon']",crayon,68.2313805211606,female,HSLLD
+toy, ,"('how about if we play a puzzle', 'Mother')","[0, 'how about if we play a puzzle']",puzzle,61.5269307377975,female,HSLLD
+clothes, ,"('who wear those hat', 'Mother')","[0, 'who wear those hat']",hat,61.5269307377975,female,HSLLD
+clothes, ,"('you want to wear the necklace Bro', 'Mother')","[0, 'you want to wear the necklace Bro']",necklace,69.03427175096,female,HSLLD
+toy, ,"('okay you want to play the bus', 'Mother')","[0, 'okay you want to play the bus']",bus,60.2312162467402,female,HSLLD
+toy, ,"('want to play the bus thing', 'Mother')","[0, 'want to play the bus thing']",bus,60.2312162467402,female,HSLLD
+toy, ,"('you want to play tea or you want to play block', 'Mother')","[0, 'you want to play tea or you want to play block']",block,60.2312162467402,female,HSLLD
+food, ,"('you think he could eat five orange', 'Mother')","[0, 'you think he could eat five orange']",orange,70.6913899669398,female,HSLLD
+food, ,"('okay there a bear eat a cookie and he drink orange juice', 'Grandmother')","[0, 'okay there a bear eat a cookie and he drink orange juice']",cookie,64.8555411815438,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,67.6584734799483,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,66.7570175978973,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,67.5270539436128,female,HSLLD
+vehicle, ,"('will want to ride a elephant', 'Mother')","[0, 'will want to ride a elephant']",elephant,65.5598677590916,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,65.5598677590916,female,HSLLD
+food, ,"('elephant do not eat meat', 'Grandmother')","[0, 'elephant do not eat meat']",meat,64.8555411815438,female,HSLLD
+vehicle, ,"('see they ride on the elephant back', 'Grandmother')","[0, 'see they ride on the elephant back']",elephant,64.8555411815438,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,66.3627589888909,female,HSLLD
+food, ,"('elephant do not eat meat they eat grass leave fruit and bark', 'Mother')","[0, 'elephant do not eat meat they eat grass leave fruit and bark']",meat,69.6256596644695,female,HSLLD
+food, ,"('they eat salt', 'Mother')","[0, 'they eat salt']",salt,69.6256596644695,female,HSLLD
+food, ,"('we will eat any elephant burger', 'Mother')","[0, 'we will eat any elephant burger']",elephant,65.9541263680979,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,71.527136080823,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,64.4612825725374,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,69.4613852440502,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,68.3299451734122,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,63.5269718064026,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,70.6585350828559,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,63.5269718064026,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,65.9541263680979,female,HSLLD
+food, ,"('they do eat any meat', 'Mother')","[0, 'they do eat any meat']",meat,65.9541263680979,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,69.3956754758825,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,68.3956549415799,female,HSLLD
+food, ,"('why will he want to eat salt', 'Mother')","[0, 'why will he want to eat salt']",salt,65.9541263680979,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,67.4284892913612,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,67.954167436703,female,HSLLD
+food, ,"('Thursday he eat strawberry hungry', 'Sister')","[0, 'Thursday he eat strawberry hungry']",strawberry,67.0342306823549,female,HSLLD
+food, ,"('oh they do eat no meat', 'Mother')","[0, 'oh they do eat no meat']",meat,67.954167436703,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,69.8884987371404,female,HSLLD
+food, ,"('Thursday he eat strawberry hungry', 'Sister')","[0, 'Thursday he eat strawberry hungry']",strawberry,67.0342306823549,female,HSLLD
+food, ,"('eat one apple', 'Sister')","[0, 'eat one apple']",apple,67.6584734799483,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,65.3627384545884,female,HSLLD
+food, ,"('and he eat my sandwich and he leave', 'Investigator')","[0, 'and he eat my sandwich and he leave']",sandwich,67.0342306823549,female,HSLLD
+food, ,"('I be walk down the street and I be eat a sandwich', 'Investigator')","[0, 'I be walk down the street and I be eat a sandwich']",sandwich,70.7242448510236,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,69.4613852440502,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,69.9542085053081,female,HSLLD
+food, ,"('I turn around and he jump on top on of me and he eat my sandwich', 'Investigator')","[0, 'I turn around and he jump on top on of me and he eat my sandwich']",sandwich,70.7242448510236,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,67.6584734799483,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,70.5271155465205,female,HSLLD
+vehicle, ,"('person ride on the elephant', 'Mother')","[0, 'person ride on the elephant']",elephant,69.4613852440502,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,67.8227479003676,female,HSLLD
+food, ,"('so then I fumble with the key to try to get the key into the door lock and then he come right up on top of me and I be right against the door and he eat my sandwich', 'Investigator')","[0, 'so then I fumble with the key to try to get the key into the door lock and then he come right up on top of me and I be right against the door and he eat my sandwich']",sandwich,67.2642148709419,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,67.0342306823549,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,67.0342306823549,female,HSLLD
+food, ,"('elephant do not eat meat', 'Mother')","[0, 'elephant do not eat meat']",meat,71.4285714285714,female,HSLLD
+food, ,"('he come right up to me he come on top of me and he eat my sandwich', 'Investigator')","[0, 'he come right up to me he come on top of me and he eat my sandwich']",sandwich,71.9542495739132,female,HSLLD
+food, ,"('I be walk down the street yesterday and I be eat a sandwich and it be a peanut butter and jelly sandwich and all of a sudden I hear these footstep behind me', 'Investigator')","[0, 'I be walk down the street yesterday and I be eat a sandwich and it be a peanut butter and jelly sandwich and all of a sudden I hear these footstep behind me']",sandwich,66.6584529456457,female,HSLLD
+food, ,"('oh Chi another thing that happen to me that be scare the other day be I be walk down the street and I be do anything I be just eat my sandwich while I be just walk down the street', 'Investigator')","[0, 'oh Chi another thing that happen to me that be scare the other day be I be walk down the street and I be do anything I be just eat my sandwich while I be just walk down the street']",sandwich,63.198422965564,female,HSLLD
+food, ,"('and then he come right up on top of me and he eat my sandwich', 'Investigator')","[0, 'and then he come right up on top of me and he eat my sandwich']",sandwich,66.6584529456457,female,HSLLD
+food, ,"('he just lick my face and eat my sandwich', 'Investigator')","[0, 'he just lick my face and eat my sandwich']",sandwich,63.198422965564,female,HSLLD
+food, ,"('it scare me it sound like the dog that eat my sandwich', 'Investigator')","[0, 'it scare me it sound like the dog that eat my sandwich']",sandwich,66.6584529456457,female,HSLLD
+food, ,"('and then I start to run and then he start to run after me and then I jump over a fence then he jump over a fence and then I trip and fall and he get on top of me and he eat my sandwich', 'Investigator')","[0, 'and then I start to run and then he start to run after me and then I jump over a fence then he jump over a fence and then I trip and fall and he get on top of me and he eat my sandwich']",sandwich,64.6255569929567,female,HSLLD
+food, ,"('the dog come right up on top of me and he eat my sandwich', 'Investigator')","[0, 'the dog come right up on top of me and he eat my sandwich']",sandwich,64.6912667611245,female,HSLLD
+food, ,"('the dog jump right on top of me and then he eat my sandwich', 'Investigator')","[0, 'the dog jump right on top of me and then he eat my sandwich']",sandwich,66.1984845684716,female,HSLLD
+food, ,"('and so then I try to get my key in the door and I could get my key in the door fast enough and the dog just go right up on top of me open his mouth and then he eat my sandwich', 'Investigator')","[0, 'and so then I try to get my key in the door and I could get my key in the door fast enough and the dog just go right up on top of me open his mouth and then he eat my sandwich']",sandwich,71.1328774718167,female,HSLLD
+toy, ,"('you just in time to play game', 'Mother')","[0, 'you just in time to play game']",game,69.4613852440502,female,HSLLD
+toy, ,"('play game', 'Mother')","[0, 'play game']",game,69.4613852440502,female,HSLLD
+furniture, ,"('let Chi use the ball first', 'Mother')","[0, 'let Chi use the ball first']",ball,67.0342306823549,female,HSLLD
+furniture, ,"('let Chi use the ball first', 'Mother')","[0, 'let Chi use the ball first']",ball,67.0342306823549,female,HSLLD
+food, ,"('you gonna eat your chicken', 'Mother')","[0, 'you gonna eat your chicken']",chicken,62.4283866198485,female,HSLLD
+food, ,"('you gonna eat your chicken', 'Mother')","[0, 'you gonna eat your chicken']",chicken,62.4283866198485,female,HSLLD
+food, ,"('you eat your apple sauce first if your stuff still hot the french fry everything hot', 'Mother')","[0, 'you eat your apple sauce first if your stuff still hot the french fry everything hot']",apple,62.2641121994291,female,HSLLD
+food, ,"('you eat your soup', 'Mother')","[0, 'you eat your soup']",soup,62.4283866198485,female,HSLLD
+food, ,"('you do eat nothing they eat cereal', 'Mother')","[0, 'you do eat nothing they eat cereal']",cereal,67.5270539436128,female,HSLLD
+food, ,"('Bro eat the raisin bran', 'Mother')","[0, 'Bro eat the raisin bran']",raisin,69.7899340848888,female,HSLLD
+food, ,"('eat your potato salad Bro', 'Mother')","[0, 'eat your potato salad Bro']",potato,71.5599909649069,female,HSLLD
+food, ,"('eat your chicken', 'Father')","[0, 'eat your chicken']",chicken,65.1656091500852,female,HSLLD
+food, ,"('eat your chicken', 'Father')","[0, 'eat your chicken']",chicken,65.1656091500852,female,HSLLD
+food, ,"('eat my chicken', 'Sister')","[0, 'eat my chicken']",chicken,70.6913899669398,female,HSLLD
+food, ,"('eat my chicken', 'Sister')","[0, 'eat my chicken']",chicken,70.6913899669398,female,HSLLD
+food, ,"('you use to eat chicken all the time', 'Mother')","[0, 'you use to eat chicken all the time']",chicken,70.6913899669398,female,HSLLD
+food, ,"('you use to eat chicken all the time', 'Mother')","[0, 'you use to eat chicken all the time']",chicken,70.6913899669398,female,HSLLD
+food, ,"('oh wow you eat your potato already you', 'Mother')","[0, 'oh wow you eat your potato already you']",potato,66.4284687570587,female,HSLLD
+food, ,"('Chi I already tell you either you eat raisin bran first and then that other cereal', 'Mother')","[0, 'Chi I already tell you either you eat raisin bran first and then that other cereal']",raisin,69.7899340848888,female,HSLLD
+food, ,"('no you eat your potato and your meat then you can have more of that', 'Mother')","[0, 'no you eat your potato and your meat then you can have more of that']",potato,63.7241011109058,female,HSLLD
+food, ,"('that because he eat his chicken and drink his milk', 'Father')","[0, 'that because he eat his chicken and drink his milk']",chicken,70.6913899669398,female,HSLLD
+food, ,"('that because he eat his chicken and drink his milk', 'Father')","[0, 'that because he eat his chicken and drink his milk']",chicken,70.6913899669398,female,HSLLD
+food, ,"('no you eat your potato first', 'Mother')","[0, 'no you eat your potato first']",potato,63.7241011109058,female,HSLLD
+food, ,"('I do think a paper bag monster can eat chicken', 'Mother')","[0, 'I do think a paper bag monster can eat chicken']",chicken,67.0670855664387,female,HSLLD
+food, ,"('I do think a paper bag monster can eat chicken', 'Mother')","[0, 'I do think a paper bag monster can eat chicken']",chicken,67.0670855664387,female,HSLLD
+food, ,"('now you eat your potato', 'Mother')","[0, 'now you eat your potato']",potato,63.7241011109058,female,HSLLD
+toy, ,"('no play with paper airplane while you suppose to be eat please', 'Mother')","[0, 'no play with paper airplane while you suppose to be eat please']",airplane,63.5269718064026,female,HSLLD
+food, ,"('eat more egg', 'Father')","[0, 'eat more egg']",egg,69.6256596644695,female,HSLLD
+food, ,"('eat more egg', 'Father')","[0, 'eat more egg']",egg,69.6256596644695,female,HSLLD
+toy, ,"('and so after breakfast the next morning Timmy and Lassie play ball', 'Mother')","[0, 'and so after breakfast the next morning Timmy and Lassie play ball']",ball,64.4612825725374,female,HSLLD
+food, ,"('we never eat chocolate yogurt honey', 'Mother')","[0, 'we never eat chocolate yogurt honey']",chocolate,66.7570175978973,female,HSLLD
+food, ,"('we never eat chocolate yogurt honey', 'Mother')","[0, 'we never eat chocolate yogurt honey']",yogurt,66.7570175978973,female,HSLLD
+food, ,"('eat your potato salad and your cabbage', 'Mother')","[0, 'eat your potato salad and your cabbage']",potato,64.8555411815438,female,HSLLD
+food, ,"('eat your potato salad Chi', 'Mother')","[0, 'eat your potato salad Chi']",potato,71.5599909649069,female,HSLLD
+food, ,"('eat bubble gum', 'Brother')","[0, 'eat bubble gum']",gum,62.2641121994291,female,HSLLD
+food, ,"('can you eat the pickle right Bro please', 'Mother')","[0, 'can you eat the pickle right Bro please']",pickle,64.3627179202858,female,HSLLD
+food, ,"('you may have one more yes you eat the fish good', 'Mother')","[0, 'you may have one more yes you eat the fish good']",fish,66.6584529456457,female,HSLLD
+food, ,"('you may have one more yes you eat the fish good', 'Mother')","[0, 'you may have one more yes you eat the fish good']",fish,66.6584529456457,female,HSLLD
+food, ,"('you good eat that meat', 'Mother')","[0, 'you good eat that meat']",meat,63.198422965564,female,HSLLD
+food, ,"('come on I want you to eat chicken too', 'Mother')","[0, 'come on I want you to eat chicken too']",chicken,67.3627795231935,female,HSLLD
+food, ,"('come on I want you to eat chicken too', 'Mother')","[0, 'come on I want you to eat chicken too']",chicken,67.3627795231935,female,HSLLD
+food, ,"('why be you eat toast Chi', 'Mother')","[0, 'why be you eat toast Chi']",toast,69.3956754758825,female,HSLLD
+food, ,"('I already eat some chicken', 'Sister')","[0, 'I already eat some chicken']",chicken,67.3627795231935,female,HSLLD
+food, ,"('I already eat some chicken', 'Sister')","[0, 'I already eat some chicken']",chicken,67.3627795231935,female,HSLLD
+food, ,"('and why be you eat your toast', 'Mother')","[0, 'and why be you eat your toast']",toast,69.3956754758825,female,HSLLD
+food, ,"('why be you eat your toast', 'Mother')","[0, 'why be you eat your toast']",toast,69.3956754758825,female,HSLLD
+food, ,"('do he eat strawberry', 'Mother')","[0, 'do he eat strawberry']",strawberry,63.7241011109058,female,HSLLD
+toy, ,"('I might want to go play a game before we go', 'Brother')","[0, 'I might want to go play a game before we go']",game,64.3627179202858,female,HSLLD
+toy, ,"('come on do play game because we have_to get wash up', 'Mother')","[0, 'come on do play game because we have_to get wash up']",game,67.3627795231935,female,HSLLD
+food, ,"('you need to eat your sandwich first', 'Mother')","[0, 'you need to eat your sandwich first']",sandwich,64.3627179202858,female,HSLLD
+food, ,"('you gonna eat this meat toots', 'Mother')","[0, 'you gonna eat this meat toots']",meat,63.198422965564,female,HSLLD
+food, ,"('honey do play with your hair when you eat chicken or anything real', 'Mother')","[0, 'honey do play with your hair when you eat chicken or anything real']",chicken,67.0670855664387,female,HSLLD
+food, ,"('honey do play with your hair when you eat chicken or anything real', 'Mother')","[0, 'honey do play with your hair when you eat chicken or anything real']",chicken,67.0670855664387,female,HSLLD
+toy, ,"('you know the lady that come and play the game with you', 'Mother')","[0, 'you know the lady that come and play the game with you']",game,66.3627589888909,female,HSLLD
+food, ,"('eat your chicken', 'Mother')","[0, 'eat your chicken']",chicken,67.3627795231935,female,HSLLD
+food, ,"('eat your chicken', 'Mother')","[0, 'eat your chicken']",chicken,67.3627795231935,female,HSLLD
+food, ,"('before you eat your apple', 'Mother')","[0, 'before you eat your apple']",apple,64.3627179202858,female,HSLLD
+clothes, ,"('she can wear those shorts', 'Cousin')","[0, 'she can wear those shorts']",shorts,68.8227684346701,female,HSLLD
+toy, ,"('play a game', 'Mother')","[0, 'play a game']",game,66.6584529456457,female,HSLLD
+food, ,"('please eat the apple right', 'Mother')","[0, 'please eat the apple right']",apple,64.3627179202858,female,HSLLD
+food, ,"('before you eat the apple', 'Mother')","[0, 'before you eat the apple']",apple,64.3627179202858,female,HSLLD
+clothes, ,"('do wear my sneaker', 'Brother')","[0, 'do wear my sneaker']",sneaker,67.0670855664387,female,HSLLD
+food, ,"('so eat your meat', 'Father')","[0, 'so eat your meat']",meat,64.7569765292922,female,HSLLD
+food, ,"('Bro eat your apple please', 'Mother')","[0, 'Bro eat your apple please']",apple,64.3627179202858,female,HSLLD
+food, ,"('be you gonna eat your cereal', 'Mother')","[0, 'be you gonna eat your cereal']",cereal,67.4284892913612,female,HSLLD
+toy, ,"('come on stop play game and eat', 'Mother')","[0, 'come on stop play game and eat']",game,66.6255980615618,female,HSLLD
+furniture, ,"('I do even use the salt or pepper and I start sneeze', 'Aunt')","[0, 'I do even use the salt or pepper and I start sneeze']",salt,65.3627384545884,female,HSLLD
+food, ,"('eat your cereal', 'Mother')","[0, 'eat your cereal']",cereal,67.4284892913612,female,HSLLD
+toy, ,"('stop play game and eat', 'Mother')","[0, 'stop play game and eat']",game,66.6255980615618,female,HSLLD
+toy, ,"('no I watch Jessica and you guy play game', 'Mother')","[0, 'no I watch Jessica and you guy play game']",game,65.3627384545884,female,HSLLD
+food, ,"('do you like to eat pig', 'Sister')","[0, 'do you like to eat pig']",pig,66.9212920183166,female,HSLLD
+toy, ,"('well I watch Chi play duck hunt', 'Mother')","[0, 'well I watch Chi play duck hunt']",duck,65.3627384545884,female,HSLLD
+toy, ,"('Chi we do play with the cat at the table honey', 'Grandmother')","[0, 'Chi we do play with the cat at the table honey']",cat,65.3627384545884,female,HSLLD
+furniture, ,"('who use for egg', 'Mother')","[0, 'who use for egg']",egg,70.6913899669398,female,HSLLD
+furniture, ,"('Chi what can we use for egg', 'Mother')","[0, 'Chi what can we use for egg']",egg,70.6913899669398,female,HSLLD
+food, ,"('I want you to eat the egg', 'Mother')","[0, 'I want you to eat the egg']",egg,70.6913899669398,female,HSLLD
+furniture, ,"('oh and then use the car', 'Mother')","[0, 'oh and then use the car']",car,65.1656091500852,female,HSLLD
+furniture, ,"('what do I do I use a coat hang and I go in through the window', 'Mother')","[0, 'what do I do I use a coat hang and I go in through the window']",coat,71.5599909649069,female,HSLLD
+toy, ,"('do you like to play with car', 'Mother')","[0, 'do you like to play with car']",car,70.5271155465205,female,HSLLD
+toy, ,"('do you like to play with car', 'Mother')","[0, 'do you like to play with car']",car,70.5271155465205,female,HSLLD
+food, ,"('should be eat your corn', 'Mother')","[0, 'should be eat your corn']",corn,70.5271155465205,female,HSLLD
+food, ,"('I all do eat my cake', 'Mother')","[0, 'I all do eat my cake']",cake,68.8227684346701,female,HSLLD
+food, ,"('eat your chicken now', 'Mother')","[0, 'eat your chicken now']",chicken,65.5598677590916,female,HSLLD
+food, ,"('eat your chicken now', 'Mother')","[0, 'eat your chicken now']",chicken,65.5598677590916,female,HSLLD
+furniture, ,"('what do I do I use a coat hang and I go in through the window', 'Mother')","[0, 'what do I do I use a coat hang and I go in through the window']",coat,71.5599909649069,female,HSLLD
+toy, ,"('do we have_to play that car crash race again', 'Mother')","[0, 'do we have_to play that car crash race again']",car,65.9541263680979,female,HSLLD
+toy, ,"('you want to play block huh', 'Mother')","[0, 'you want to play block huh']",block,64.3627179202858,female,HSLLD
+toy, ,"('wanna play with the car', 'Mother')","[0, 'wanna play with the car']",car,68.3956549415799,female,HSLLD
+furniture, ,"('Chi what be you use the block', 'Mother')","[0, 'Chi what be you use the block']",block,68.3956549415799,female,HSLLD
+toy, ,"('okay do you wanna play a game', 'Mother')","[0, 'okay do you wanna play a game']",game,70.6585350828559,female,HSLLD
+toy, ,"('you wanna play a game', 'Mother')","[0, 'you wanna play a game']",game,70.6585350828559,female,HSLLD
+toy, ,"('you like to play car', 'Mother')","[0, 'you like to play car']",car,70.6585350828559,female,HSLLD
+toy, ,"('wanna play car', 'Mother')","[0, 'wanna play car']",car,64.789831413376,female,HSLLD
+toy, ,"('gonna build a house or something that you can play with the car', 'Mother')","[0, 'gonna build a house or something that you can play with the car']",car,70.6585350828559,female,HSLLD
+toy, ,"('can play with car see', 'Mother')","[0, 'can play with car see']",car,70.6585350828559,female,HSLLD
+toy, ,"('can play with car see', 'Mother')","[0, 'can play with car see']",car,70.6585350828559,female,HSLLD
+furniture, ,"('tell you what I use the car while you over there', 'Father')","[0, 'tell you what I use the car while you over there']",car,67.0670855664387,female,HSLLD
+toy, ,"('let play the game', 'Mother')","[0, 'let play the game']",game,69.9542085053081,female,HSLLD
+toy, ,"('what will you play with when you be play game', 'Mother')","[0, 'what will you play with when you be play game']",game,71.1328774718167,female,HSLLD
+toy, ,"('do you wanna play dress up', 'Mother')","[0, 'do you wanna play dress up']",dress,71.1328774718167,female,HSLLD
+toy, ,"('do you wanna play dress up now', 'Mother')","[0, 'do you wanna play dress up now']",dress,71.1328774718167,female,HSLLD
+toy, ,"('you do wanna play dress up now', 'Mother')","[0, 'you do wanna play dress up now']",dress,71.1328774718167,female,HSLLD
+toy, ,"('you want to play block', 'Mother')","[0, 'you want to play block']",block,71.1328774718167,female,HSLLD
+toy, ,"('will you like to play block', 'Mother')","[0, 'will you like to play block']",block,71.1328774718167,female,HSLLD
+food, ,"('come on Chi just eat the meat', 'Mother')","[0, 'come on Chi just eat the meat']",meat,66.9541469024005,female,HSLLD
+food, ,"('come on Chi you just got_to eat the meat', 'Mother')","[0, 'come on Chi you just got_to eat the meat']",meat,66.9541469024005,female,HSLLD
+food, ,"('but you not gonna have anymore cucumber unless you eat the meat', 'Mother')","[0, 'but you not gonna have anymore cucumber unless you eat the meat']",meat,66.9541469024005,female,HSLLD
+food, ,"('have you have anything to eat or drink this morning', 'Nurse')","[0, 'have you have anything to eat or drink this morning']",drink,60.0012320581531,male,Cornell
+food, ,"('I think he too eat and drink', 'Father')","[0, 'I think he too eat and drink']",drink,60.0012320581531,male,Cornell
+vehicle, ,"('and then can you ride on the pony', 'Father')","[0, 'and then can you ride on the pony']",pony,63.2969876178156,male,MacWhinney
+toy, ,"('do you play that game too Mark up in the Rec Room', 'Father')","[0, 'do you play that game too Mark up in the Rec Room']",game,63.2969876178156,male,MacWhinney
+food, ,"('you have_to eat your cereal before you get', 'Father')","[0, 'you have_to eat your cereal before you get']",cereal,63.2969876178156,male,MacWhinney
+toy, ,"('you just go to play in bed some more', 'Father')","[0, 'you just go to play in bed some more']",bed,61.6583502741329,male,MacWhinney
+toy, ,"('well you can go ahead and start play that game if you want to', 'Investigator')","[0, 'well you can go ahead and start play that game if you want to']",game,69.0014168668761,male,Warren
+furniture, ,"('I can use milk', 'Father')","[0, 'I can use milk']",milk,62.3298219675969,male,Gleason
+toy, ,"('then we play with this truck', 'Mother')","[0, 'then we play with this truck']",truck,62.0012731267582,male,Gleason
+toy, ,"('see then we play with the truck', 'Mother')","[0, 'see then we play with the truck']",truck,62.0012731267582,male,Gleason
+food, ,"('oh I do know if I want any egg because I have a little boy that do eat any egg', 'Mother')","[0, 'oh I do know if I want any egg because I have a little boy that do eat any egg']",egg,62.0012731267582,male,Gleason
+toy, ,"('we play we play this game it be call kick the can', 'Mother')","[0, 'we play we play this game it be call kick the can']",game,60.1655064785725,male,Weist
+toy, ,"('now you know what she from Iceland so she do even probable know how to play pin the tail on the donkey can we tell her how to play the game', 'Mother')","[0, 'now you know what she from Iceland so she do even probable know how to play pin the tail on the donkey can we tell her how to play the game']",game,60.1655064785725,male,Weist
+furniture, ,"('how about if I use the oven you do the mix', 'Clinician')","[0, 'how about if I use the oven you do the mix']",oven,64.0013141953633,female,Bliss
+furniture, ,"('oh so you have_to roll your sleeve up when you use the oven', 'Clinician')","[0, 'oh so you have_to roll your sleeve up when you use the oven']",oven,64.0013141953633,female,Bliss
+furniture, ,"('okay now how about do you use a chair to stand on normal', 'Clinician')","[0, 'okay now how about do you use a chair to stand on normal']",chair,64.0013141953633,female,Bliss
+furniture, ,"('it say we should use a cookie sheet and put the cookie on the cookie sheet to bake', 'Clinician')","[0, 'it say we should use a cookie sheet and put the cookie on the cookie sheet to bake']",cookie,64.0013141953633,female,Bliss
+food, ,"('from eat candy too much huh', 'Investigator')","[0, 'from eat candy too much huh']",candy,60.0012320581531,female,PetersonMcCabe
+food, ,"('you have to take it out Monday and eat candy', 'Investigator')","[0, 'you have to take it out Monday and eat candy']",candy,60.0012320581531,female,PetersonMcCabe
+toy, ,"('you be play with the pen you bring', 'Investigator')","[0, 'you be play with the pen you bring']",pen,66.0013552639685,female,PetersonMcCabe
+food, ,"('who eat a apple', 'Mother')","[0, 'who eat a apple']",apple,65.0013347296659,male,Rondal
+food, ,"('and when she eat the apple what happen', 'Mother')","[0, 'and when she eat the apple what happen']",apple,65.0013347296659,male,Rondal
+vehicle, ,"('and do he ride a horse', 'Mother')","[0, 'and do he ride a horse']",horse,65.0013347296659,male,Rondal
+toy, ,"('oh you play game with me', 'Mother')","[0, 'oh you play game with me']",game,65.0013347296659,male,Rondal
+toy, ,"('you play game', 'Mother')","[0, 'you play game']",game,65.0013347296659,male,Rondal
+toy, ,"('your play a game again', 'Mother')","[0, 'your play a game again']",game,65.0013347296659,male,Rondal
+food, ,"('they might have get scare in the forest but I think they want to eat the cereal', 'Mother')","[0, 'they might have get scare in the forest but I think they want to eat the cereal']",cereal,65.0013347296659,male,Rondal
+toy, ,"('that a good boy you you play with the pony', 'Mother')","[0, 'that a good boy you you play with the pony']",pony,67.1985051027742,male,Conti
+food, ,"('breakfast for snake do they eat toast', 'Investigator')","[0, 'breakfast for snake do they eat toast']",toast,60.034086942237,female,Conti
+toy, ,"('he want to play with the chicken', 'Investigator')","[0, 'he want to play with the chicken']",chicken,60.8883139284174,female,Conti
+toy, ,"('he want to play with the chicken', 'Investigator')","[0, 'he want to play with the chicken']",chicken,60.8883139284174,female,Conti
+toy, ,"('oh right do he want to play with the bunny', 'Investigator')","[0, 'oh right do he want to play with the bunny']",bunny,60.8883139284174,female,Conti
+toy, ,"('you do want to play with the book no more', 'Mother')","[0, 'you do want to play with the book no more']",book,64.9212509497115,male,Flusberg
+toy, ,"('want play with your horse', 'Mother')","[0, 'want play with your horse']",horse,69.0671266350438,male,Flusberg
+toy, ,"('want play with the doll again', 'Mother')","[0, 'want play with the doll again']",doll,69.0671266350438,male,Flusberg
+toy, ,"('here let play with the puzzle some more okay', 'Mother')","[0, 'here let play with the puzzle some more okay']",puzzle,71.1657323559005,male,Flusberg
+toy, ,"('do you want play with the penguin', 'Mother')","[0, 'do you want play with the penguin']",penguin,71.1657323559005,male,Flusberg
+vehicle, ,"('can I ride in the car', 'Mother')","[0, 'can I ride in the car']",car,67.001375798271,male,Flusberg
+vehicle, ,"('can I ride in the car too', 'Mother')","[0, 'can I ride in the car too']",car,67.001375798271,male,Flusberg
+toy, ,"('oh want play some car', 'Mother')","[0, 'oh want play some car']",car,71.1657323559005,male,Flusberg
+toy, ,"('come here let play car', 'Mother')","[0, 'come here let play car']",car,71.1657323559005,male,Flusberg
+toy, ,"('you want play with your puzzle again', 'Mother')","[0, 'you want play with your puzzle again']",puzzle,71.1657323559005,male,Flusberg
+toy, ,"('you want play with your hamburger', 'Mother')","[0, 'you want play with your hamburger']",hamburger,67.001375798271,male,Flusberg
+toy, ,"('let play with the car again', 'Mother')","[0, 'let play with the car again']",car,71.1657323559005,male,Flusberg
+toy, ,"('want play car', 'Mother')","[0, 'want play car']",car,67.001375798271,male,Flusberg
+toy, ,"('want play with that car', 'Mother')","[0, 'want play with that car']",car,67.001375798271,male,Flusberg
+food, ,"('I can eat my potato', 'Mother')","[0, 'I can eat my potato']",potato,67.001375798271,male,Flusberg
+toy, ,"('let play with the puzzle again', 'Mother')","[0, 'let play with the puzzle again']",puzzle,71.1657323559005,male,Flusberg
+food, ,"('shall I eat my sandwich with a spoon', 'Mother')","[0, 'shall I eat my sandwich with a spoon']",sandwich,64.0013141953633,male,Flusberg
+food, ,"('eat the cheese with a spoon', 'Mother')","[0, 'eat the cheese with a spoon']",cheese,64.0013141953633,male,Flusberg
+food, ,"('I eat my donut', 'Mother')","[0, 'I eat my donut']",donut,64.0013141953633,male,Flusberg
+food, ,"('you eat your and I eat my cookie', 'Mother')","[0, 'you eat your and I eat my cookie']",cookie,64.0013141953633,male,Flusberg
+clothes, ,"('do you want to wear a necklace', 'Mother')","[0, 'do you want to wear a necklace']",necklace,68.1656707529929,male,Flusberg
+toy, ,"('and we come home and we play a game', 'Father')","[0, 'and we come home and we play a game']",game,66.8884371342327,female,Flusberg
+clothes, ,"('at five thirty and wear your bunny suit', 'Mother')","[0, 'at five thirty and wear your bunny suit']",bunny,61.0012525924557,female,Flusberg
+toy, ,"('do you want to play a game or', 'Mother')","[0, 'do you want to play a game or']",game,71.8556849216616,female,Flusberg
+clothes, ,"('and you need to wear your sweater', 'Mother')","[0, 'and you need to wear your sweater']",sweater,63.1655680814801,female,Flusberg
+food, ,"('eat the cookie', 'Mother')","[0, 'eat the cookie']",cookie,64.0013141953633,male,Flusberg
+food, ,"('Cookie_Monster eat the donut too', 'Mother')","[0, 'Cookie_Monster eat the donut too']",donut,64.0013141953633,male,Flusberg
+toy, ,"('you want to play with the ball', 'Mother')","[0, 'you want to play with the ball']",ball,70.3299862420173,male,Flusberg
+toy, ,"('want play ball', 'Mother')","[0, 'want play ball']",ball,64.0013141953633,male,Flusberg
+toy, ,"('will you like to play ball with me', 'Mother')","[0, 'will you like to play ball with me']",ball,64.0013141953633,male,Flusberg
+toy, ,"('let play ball', 'Mother')","[0, 'let play ball']",ball,64.0013141953633,male,Flusberg
+toy, ,"('want sit down and play ball', 'Mother')","[0, 'want sit down and play ball']",ball,64.0013141953633,male,Flusberg
+vehicle, ,"('be they go go for a ride in the truck', 'Mother')","[0, 'be they go go for a ride in the truck']",truck,66.1984845684716,male,Flusberg
+toy, ,"('how do you play the game', 'Investigator')","[0, 'how do you play the game']",game,61.7240600423007,NA,Feldman
+toy, ,"('I want hear how you play this game', 'Investigator')","[0, 'I want hear how you play this game']",game,61.7240600423007,NA,Feldman
+vehicle, ,"('so the farm be ride the horse', 'Investigator')","[0, 'so the farm be ride the horse']",horse,60.0012320581531,NA,Feldman
+food, ,"('so you get your food you eat you drink and then', 'Investigator')","[0, 'so you get your food you eat you drink and then']",drink,60.7240395079981,NA,Feldman
+food, ,"('you eat gum but Bro eat candy', 'Investigator')","[0, 'you eat gum but Bro eat candy']",candy,61.6583502741329,NA,Feldman
+food, ,"('you eat gum but Bro eat candy', 'Investigator')","[0, 'you eat gum but Bro eat candy']",gum,61.6583502741329,NA,Feldman
+food, ,"('he go eat the horse', 'Investigator')","[0, 'he go eat the horse']",horse,61.0012525924557,NA,Feldman
+food, ,"('oh my_goodness the horse be eat the mouse yuck', 'Investigator')","[0, 'oh my_goodness the horse be eat the mouse yuck']",mouse,61.0012525924557,NA,Feldman
+food, ,"('the horse be go eat the monkey', 'Investigator')","[0, 'the horse be go eat the monkey']",monkey,61.0012525924557,NA,Feldman
+furniture, ,"('the only time you use a bib be when you eat what', 'Mother')","[0, 'the only time you use a bib be when you eat what']",bib,65.0013347296659,male,Hooshyar
+clothes, ,"('what do you eat at ma house and wear a bib', 'Mother')","[0, 'what do you eat at ma house and wear a bib']",bib,65.0013347296659,male,Hooshyar
+food, ,"('will you please eat your sandwich', 'Mother')","[0, 'will you please eat your sandwich']",sandwich,65.0013347296659,male,Hooshyar
+food, ,"('say we eat pizza', 'Mother')","[0, 'say we eat pizza']",pizza,65.0013347296659,male,Hooshyar
+toy, ,"('you play some game', 'Mother')","[0, 'you play some game']",game,65.0013347296659,male,Hooshyar
+toy, ,"('want play another game', 'Mother')","[0, 'want play another game']",game,65.0013347296659,male,Hooshyar
+food, ,"('Eric do eat your shoe', 'Mother')","[0, 'Eric do eat your shoe']",shoe,65.0013347296659,male,Hooshyar
+toy, ,"('let play a game', 'Clinician')","[0, 'let play a game']",game,69.0014168668761,male,Bliss
+toy, ,"('yes you can play with the car and the garage too', 'Clinician')","[0, 'yes you can play with the car and the garage too']",car,69.0014168668761,male,Bliss
+toy, ,"('I wonder if you play game or', 'Investigator')","[0, 'I wonder if you play game or']",game,66.0013552639685,female,EllisWeismer
+toy, ,"('you play horse', 'Investigator')","[0, 'you play horse']",horse,66.0013552639685,female,EllisWeismer
+clothes, ,"('or do you just wear your pajamas', 'Investigator')","[0, 'or do you just wear your pajamas']",pajamas,66.0013552639685,female,EllisWeismer
+clothes, ,"('do you wear special shoe', 'Investigator')","[0, 'do you wear special shoe']",shoe,66.0013552639685,female,EllisWeismer
+toy, ,"('now I bet you play some game in your', 'Investigator')","[0, 'now I bet you play some game in your']",game,66.0013552639685,female,EllisWeismer
+furniture, ,"('now do you use a pencil to do your math or do you use like block', 'Investigator')","[0, 'now do you use a pencil to do your math or do you use like block']",block,67.001375798271,male,EllisWeismer
+furniture, ,"('now do you use a pencil to do your math or do you use like block', 'Investigator')","[0, 'now do you use a pencil to do your math or do you use like block']",pencil,67.001375798271,male,EllisWeismer
+toy, ,"('now I bet you play some game at school too', 'Investigator')","[0, 'now I bet you play some game at school too']",game,67.001375798271,male,EllisWeismer
+toy, ,"('so you play game with your family', 'Investigator')","[0, 'so you play game with your family']",game,66.0013552639685,female,EllisWeismer
+toy, ,"('I remember I use to play game like kickball or like tag or like stuff like that', 'Investigator')","[0, 'I remember I use to play game like kickball or like tag or like stuff like that']",game,66.0013552639685,female,EllisWeismer
+toy, ,"('I bet that you do just play block when you in your', 'Investigator')","[0, 'I bet that you do just play block when you in your']",block,66.0013552639685,male,EllisWeismer
+toy, ,"('I mean do you guy play sport or play with truck', 'Investigator')","[0, 'I mean do you guy play sport or play with truck']",truck,65.0013347296659,male,EllisWeismer
+toy, ,"('I mean do you guy play sport or play with truck', 'Investigator')","[0, 'I mean do you guy play sport or play with truck']",truck,65.0013347296659,male,EllisWeismer
+vehicle, ,"('sometimes I like it but sometimes I do real like ride the bus', 'Investigator')","[0, 'sometimes I like it but sometimes I do real like ride the bus']",bus,66.0013552639685,female,EllisWeismer
+vehicle, ,"('do you ride the bus to school', 'Investigator')","[0, 'do you ride the bus to school']",bus,66.0013552639685,female,EllisWeismer
+vehicle, ,"('be that like ride in a car', 'Investigator')","[0, 'be that like ride in a car']",car,67.001375798271,male,EllisWeismer
+furniture, ,"('I remember I use to glue and write', 'Investigator')","[0, 'I remember I use to glue and write']",glue,67.001375798271,male,EllisWeismer
+vehicle, ,"('do you have_to ride the bus to school or do your mom or dad take you', 'Investigator')","[0, 'do you have_to ride the bus to school or do your mom or dad take you']",bus,65.0013347296659,male,EllisWeismer
+toy, ,"('so do you ever play game inside your', 'Investigator')","[0, 'so do you ever play game inside your']",game,67.001375798271,male,EllisWeismer
+toy, ,"('you never play the game', 'Investigator')","[0, 'you never play the game']",game,67.001375798271,male,EllisWeismer
+toy, ,"('so you never play those game inside your school huh', 'Investigator')","[0, 'so you never play those game inside your school huh']",game,67.001375798271,male,EllisWeismer
+toy, ,"('play with my dog', 'Investigator')","[0, 'play with my dog']",dog,66.0013552639685,female,EllisWeismer
+vehicle, ,"('now do you walk to school or ride a bus', 'Investigator')","[0, 'now do you walk to school or ride a bus']",bus,66.0013552639685,female,EllisWeismer
+vehicle, ,"('what that like ride a bus', 'Investigator')","[0, 'what that like ride a bus']",bus,66.0013552639685,female,EllisWeismer
+toy, ,"('do you ever play game or draw picture', 'Investigator')","[0, 'do you ever play game or draw picture']",game,65.0013347296659,male,EllisWeismer
+toy, ,"('so you play with your dog', 'Investigator')","[0, 'so you play with your dog']",dog,66.0013552639685,female,EllisWeismer
+vehicle, ,"('now in the morning when you go to school do you ride the bus', 'Investigator')","[0, 'now in the morning when you go to school do you ride the bus']",bus,66.0013552639685,female,EllisWeismer
+toy, ,"('and I play with my cat by throw a little stuff toy', 'Investigator')","[0, 'and I play with my cat by throw a little stuff toy']",cat,67.001375798271,male,EllisWeismer
+vehicle, ,"('so you get to ride the bus with her too', 'Investigator')","[0, 'so you get to ride the bus with her too']",bus,66.0013552639685,female,EllisWeismer
+vehicle, ,"('so you and Rachel and Teresa ride the bus to school', 'Investigator')","[0, 'so you and Rachel and Teresa ride the bus to school']",bus,66.0013552639685,female,EllisWeismer
+clothes, ,"('you have_to wear life jacket', 'Investigator')","[0, 'you have_to wear life jacket']",jacket,66.0013552639685,male,EllisWeismer
+toy, ,"('and I do think I ever got_to play the game with you before', 'Investigator')","[0, 'and I do think I ever got_to play the game with you before']",game,66.0013552639685,male,EllisWeismer
+toy, ,"('or anybody you play the game with', 'Investigator')","[0, 'or anybody you play the game with']",game,66.0013552639685,male,EllisWeismer
+toy, ,"('do you ever play game with a boy here', 'Investigator')","[0, 'do you ever play game with a boy here']",game,66.0013552639685,male,EllisWeismer
+toy, ,"('you like to play compute game', 'Investigator')","[0, 'you like to play compute game']",game,66.0013552639685,female,EllisWeismer
+vehicle, ,"('you can ride without train wheel', 'Investigator')","[0, 'you can ride without train wheel']",train,66.0013552639685,female,EllisWeismer
+toy, ,"('do you play game there', 'Investigator')","[0, 'do you play game there']",game,66.0013552639685,female,EllisWeismer
+food, ,"('do you still go up and eat the candy', 'Investigator')","[0, 'do you still go up and eat the candy']",candy,66.0013552639685,male,EllisWeismer
+vehicle, ,"('so do you ride the bus to school', 'Investigator')","[0, 'so do you ride the bus to school']",bus,66.0013552639685,male,EllisWeismer
+vehicle, ,"('what it like ride a bus to school', 'Investigator')","[0, 'what it like ride a bus to school']",bus,66.0013552639685,male,EllisWeismer
+toy, ,"('you know some kid like to play with block or play with car or puzzle', 'Investigator')","[0, 'you know some kid like to play with block or play with car or puzzle']",block,67.001375798271,male,EllisWeismer
+toy, ,"('you know some kid like to play with block or play with car or puzzle', 'Investigator')","[0, 'you know some kid like to play with block or play with car or puzzle']",block,67.001375798271,male,EllisWeismer
+toy, ,"('you know some kid like to play with block or play with car or puzzle', 'Investigator')","[0, 'you know some kid like to play with block or play with car or puzzle']",car,67.001375798271,male,EllisWeismer
+toy, ,"('you know some kid like to play with block or play with car or puzzle', 'Investigator')","[0, 'you know some kid like to play with block or play with car or puzzle']",car,67.001375798271,male,EllisWeismer
+clothes, ,"('maroon so_that must mean you wear shirt that be maroon', 'Investigator')","[0, 'maroon so_that must mean you wear shirt that be maroon']",shirt,67.001375798271,female,EllisWeismer
+toy, ,"('so do you guy play with your horse together', 'Investigator')","[0, 'so do you guy play with your horse together']",horse,66.0013552639685,female,EllisWeismer
+toy, ,"('do you play game in kindergarten', 'Investigator')","[0, 'do you play game in kindergarten']",game,66.0013552639685,female,EllisWeismer
+toy, ,"('do they ever play chase game', 'Investigator')","[0, 'do they ever play chase game']",game,67.001375798271,male,EllisWeismer
+food, ,"('and Pudge could eat the tuna could he', 'Investigator')","[0, 'and Pudge could eat the tuna could he']",tuna,66.0013552639685,male,EllisWeismer
+food, ,"('and then do you get to eat the gum at home', 'Investigator')","[0, 'and then do you get to eat the gum at home']",gum,66.0013552639685,female,EllisWeismer
+toy, ,"('I do know how to play that game', 'Investigator')","[0, 'I do know how to play that game']",game,67.001375798271,female,EllisWeismer
+vehicle, ,"('do you ride the bus to school', 'Investigator')","[0, 'do you ride the bus to school']",bus,67.001375798271,female,EllisWeismer
+vehicle, ,"('so what that like to ride the bus', 'Investigator')","[0, 'so what that like to ride the bus']",bus,67.001375798271,female,EllisWeismer
+vehicle, ,"('do you ride the bus with them', 'Investigator')","[0, 'do you ride the bus with them']",bus,67.001375798271,female,EllisWeismer
+vehicle, ,"('so you ride the bus', 'Investigator')","[0, 'so you ride the bus']",bus,67.001375798271,female,EllisWeismer
+toy, ,"('so you have snack you play game', 'Investigator')","[0, 'so you have snack you play game']",game,67.001375798271,female,EllisWeismer
+toy, ,"('and it sound like you do want play the game anymore either huh', 'Investigator')","[0, 'and it sound like you do want play the game anymore either huh']",game,66.0013552639685,female,EllisWeismer
+toy, ,"('play the game', 'Investigator')","[0, 'play the game']",game,67.001375798271,male,EllisWeismer
+toy, ,"('I wonder if you play game', 'Investigator')","[0, 'I wonder if you play game']",game,66.0013552639685,female,EllisWeismer
+toy, ,"('I never play the game', 'Investigator')","[0, 'I never play the game']",game,66.0013552639685,female,EllisWeismer
+vehicle, ,"('so it sound like you get it all figure out how to ride the bus', 'Investigator')","[0, 'so it sound like you get it all figure out how to ride the bus']",bus,67.001375798271,female,EllisWeismer
+vehicle, ,"('so you ride the bus you get to school', 'Investigator')","[0, 'so you ride the bus you get to school']",bus,67.001375798271,female,EllisWeismer
+toy, ,"('do you ever play the game with him', 'Investigator')","[0, 'do you ever play the game with him']",game,67.001375798271,female,EllisWeismer
+toy, ,"('oh so then you play more game huh', 'Investigator')","[0, 'oh so then you play more game huh']",game,67.001375798271,male,EllisWeismer
+toy, ,"('do you like to play with car', 'Investigator')","[0, 'do you like to play with car']",car,67.001375798271,female,EllisWeismer
+toy, ,"('do you like to play with car', 'Investigator')","[0, 'do you like to play with car']",car,67.001375798271,female,EllisWeismer
+toy, ,"('I have play that game in a long time', 'Investigator')","[0, 'I have play that game in a long time']",game,66.0013552639685,female,EllisWeismer
+food, ,"('and do you eat the apple', 'Investigator')","[0, 'and do you eat the apple']",apple,66.0013552639685,female,EllisWeismer
+toy, ,"('just play a game', 'Investigator')","[0, 'just play a game']",game,67.001375798271,female,EllisWeismer
+toy, ,"('they let you play with truck out in the hallway', 'Investigator')","[0, 'they let you play with truck out in the hallway']",truck,67.001375798271,female,EllisWeismer
+toy, ,"('they let you play with truck out in the hallway', 'Investigator')","[0, 'they let you play with truck out in the hallway']",truck,67.001375798271,female,EllisWeismer
+vehicle, ,"('so do you and your mom ride on the bus to the pumpkin patch or do you take her car', 'Investigator')","[0, 'so do you and your mom ride on the bus to the pumpkin patch or do you take her car']",bus,66.0013552639685,female,EllisWeismer
+toy, ,"('so you play with truck', 'Investigator')","[0, 'so you play with truck']",truck,67.001375798271,female,EllisWeismer
+toy, ,"('so you play with truck', 'Investigator')","[0, 'so you play with truck']",truck,67.001375798271,female,EllisWeismer
+vehicle, ,"('now everyday when you go to school do you ride a bus or do your mom take you', 'Investigator')","[0, 'now everyday when you go to school do you ride a bus or do your mom take you']",bus,66.0013552639685,female,EllisWeismer
+food, ,"('oh you go eat turkey on Thanksgiving', 'Investigator')","[0, 'oh you go eat turkey on Thanksgiving']",turkey,66.0013552639685,female,EllisWeismer
+vehicle, ,"('you usual ride the bus', 'Investigator')","[0, 'you usual ride the bus']",bus,66.0013552639685,female,EllisWeismer
+vehicle, ,"('so what be that like ride the bus without your sister', 'Investigator')","[0, 'so what be that like ride the bus without your sister']",bus,66.0013552639685,female,EllisWeismer
+vehicle, ,"('what kind of thing do you guy do when you ride the bus together', 'Investigator')","[0, 'what kind of thing do you guy do when you ride the bus together']",bus,66.0013552639685,female,EllisWeismer
+toy, ,"('and do you play with the truck then usual', 'Investigator')","[0, 'and do you play with the truck then usual']",truck,67.001375798271,female,EllisWeismer
+vehicle, ,"('I never got_to ride on the bus until I be in', 'Investigator')","[0, 'I never got_to ride on the bus until I be in']",bus,66.0013552639685,female,EllisWeismer
+vehicle, ,"('what it like ride the bus', 'Investigator')","[0, 'what it like ride the bus']",bus,66.0013552639685,female,EllisWeismer
+vehicle, ,"('I rather ride my sled in the snow', 'Investigator')","[0, 'I rather ride my sled in the snow']",sled,66.0013552639685,female,EllisWeismer
+toy, ,"('how do you play hot potato', 'Investigator')","[0, 'how do you play hot potato']",potato,67.001375798271,female,EllisWeismer
+vehicle, ,"('do you ride the bus or walk to school or do your mom take you', 'Investigator')","[0, 'do you ride the bus or walk to school or do your mom take you']",bus,66.0013552639685,female,EllisWeismer
+food, ,"('you just eat cake', 'Investigator')","[0, 'you just eat cake']",cake,67.001375798271,female,EllisWeismer
+vehicle, ,"('what it like to ride the bus', 'Investigator')","[0, 'what it like to ride the bus']",bus,66.0013552639685,female,EllisWeismer
+vehicle, ,"('so you ride the bus', 'Investigator')","[0, 'so you ride the bus']",bus,67.001375798271,female,EllisWeismer
+toy, ,"('do you ever play game with him', 'Investigator')","[0, 'do you ever play game with him']",game,66.0013552639685,female,EllisWeismer
+toy, ,"('well maybe when he get a little bit big you be able to play game with him', 'Investigator')","[0, 'well maybe when he get a little bit big you be able to play game with him']",game,66.0013552639685,female,EllisWeismer
+toy, ,"('now sometimes kid play chase game at recess', 'Investigator')","[0, 'now sometimes kid play chase game at recess']",game,66.0013552639685,female,EllisWeismer
+toy, ,"('do you ever play any game', 'Investigator')","[0, 'do you ever play any game']",game,67.001375798271,female,EllisWeismer
+toy, ,"('you play with block', 'Investigator')","[0, 'you play with block']",block,67.001375798271,female,EllisWeismer
+toy, ,"('you play with block', 'Investigator')","[0, 'you play with block']",block,67.001375798271,female,EllisWeismer
+toy, ,"('do you ever play any game', 'Investigator')","[0, 'do you ever play any game']",game,66.0013552639685,female,EllisWeismer
+vehicle, ,"('and that be we be talk about kindergarten before and you ride the bus', 'Investigator')","[0, 'and that be we be talk about kindergarten before and you ride the bus']",bus,66.0013552639685,female,EllisWeismer
+toy, ,"('and that tell you how to play the game', 'Investigator')","[0, 'and that tell you how to play the game']",game,67.001375798271,female,EllisWeismer
+food, ,"('be that so_that they can eat other ant', 'Investigator')","[0, 'be that so_that they can eat other ant']",ant,66.0013552639685,female,EllisWeismer
+toy, ,"('so you play game', 'Investigator')","[0, 'so you play game']",game,66.0013552639685,female,EllisWeismer
+toy, ,"('how many person can play that game', 'Investigator')","[0, 'how many person can play that game']",game,60.0012320581531,female,UCSD
+toy, ,"('how many person can play that game', 'Investigator')","[0, 'how many person can play that game']",game,60.0012320581531,female,UCSD
+toy, ,"('how many person can you play that game', 'Investigator')","[0, 'how many person can you play that game']",game,60.0012320581531,female,UCSD
+clothes, ,"('you wear a dress today', 'Investigator')","[0, 'you wear a dress today']",dress,69.0014168668761,male,UCSD
+clothes, ,"('do boy usual wear dress', 'Investigator')","[0, 'do boy usual wear dress']",dress,69.0014168668761,male,UCSD
+food, ,"('do you ever eat pancake', 'Investigator')","[0, 'do you ever eat pancake']",pancake,69.0014168668761,male,UCSD
+toy, ,"('how do you play that game', 'Investigator')","[0, 'how do you play that game']",game,68.0013963325736,male,UCSD
+toy, ,"('you can play game in a trolley can you', 'Investigator')","[0, 'you can play game in a trolley can you']",game,61.0012525924557,male,UCSD
+food, ,"('yes eat nice potato and egg and bacon and egg', 'Mother')","[0, 'yes eat nice potato and egg and bacon and egg']",potato,60.7897492761658,male,Wells
+food, ,"('have you eat your egg and bacon', 'Mother')","[0, 'have you eat your egg and bacon']",egg,60.7897492761658,male,Wells
+toy, ,"('have you play this game before', 'Investigator')","[0, 'have you play this game before']",game,60.034086942237,male,Fletcher
+toy, ,"('have you play this game before', 'Investigator')","[0, 'have you play this game before']",game,60.034086942237,male,Fletcher
+toy, ,"('we want to play our game', 'Investigator')","[0, 'we want to play our game']",game,61.165527012875,female,Fletcher
+toy, ,"('do you want to play another game', 'Investigator')","[0, 'do you want to play another game']",game,61.165527012875,female,Fletcher
+clothes, ,"('be you not allow to wear your shoe', 'Investigator')","[0, 'be you not allow to wear your shoe']",shoe,61.6254953900491,female,Fletcher
+toy, ,"('now we go to play game with a farm', 'Investigator')","[0, 'now we go to play game with a farm']",game,62.1655475471776,male,Fletcher
+toy, ,"('do you want to play another game', 'Investigator')","[0, 'do you want to play another game']",game,61.2640916651266,male,Fletcher
+toy, ,"('we play a game with a house', 'Investigator')","[0, 'we play a game with a house']",game,61.3626563173782,female,Fletcher
+toy, ,"('do your sister play game like this with you', 'Investigator')","[0, 'do your sister play game like this with you']",game,63.5598266904865,female,Fletcher
+toy, ,"('do you play some game', 'Investigator')","[0, 'do you play some game']",game,61.1983818969589,female,Fletcher
+vehicle, ,"('some child walk to school and some ride the bus', 'Investigator')","[0, 'some child walk to school and some ride the bus']",bus,62.1655475471776,male,Fletcher
+toy, ,"('uhhuh shall we play another game now', 'Investigator')","[0, 'uhhuh shall we play another game now']",game,62.6255159243516,female,Fletcher
+vehicle, ,"('some child walk to school and some ride the bus', 'Investigator')","[0, 'some child walk to school and some ride the bus']",bus,61.165527012875,female,Fletcher
+toy, ,"('and this be the girl who play with some ball', 'Investigator')","[0, 'and this be the girl who play with some ball']",ball,63.5598266904865,female,Fletcher
+toy, ,"('now we go to play with horse and tiger', 'Investigator')","[0, 'now we go to play with horse and tiger']",horse,62.1655475471776,male,Fletcher
+toy, ,"('now we go to play with horse and tiger', 'Investigator')","[0, 'now we go to play with horse and tiger']",horse,62.1655475471776,male,Fletcher
+toy, ,"('we go to play some game today', 'Investigator')","[0, 'we go to play some game today']",game,60.0012320581531,male,Fletcher
+vehicle, ,"('some child walk to school and some ride the bus', 'Investigator')","[0, 'some child walk to school and some ride the bus']",bus,61.4612209696298,male,Fletcher
+toy, ,"('so_that they can play with that game as_well', 'Investigator')","[0, 'so_that they can play with that game as_well']",game,63.5598266904865,female,Fletcher
+toy, ,"('this do make your arm get tire play these game do it', 'Investigator')","[0, 'this do make your arm get tire play these game do it']",game,60.6254748557465,male,Fletcher
+toy, ,"('now we go to play with horse and tiger', 'Investigator')","[0, 'now we go to play with horse and tiger']",horse,61.2640916651266,male,Fletcher
+toy, ,"('now we go to play with horse and tiger', 'Investigator')","[0, 'now we go to play with horse and tiger']",horse,61.2640916651266,male,Fletcher
+vehicle, ,"('I love to ride a horse', 'Investigator')","[0, 'I love to ride a horse']",horse,61.1983818969589,female,Fletcher
+toy, ,"('will you like to play a game with me then', 'Investigator')","[0, 'will you like to play a game with me then']",game,60.0012320581531,male,Fletcher
+vehicle, ,"('be it good ride a donkey', 'Investigator')","[0, 'be it good ride a donkey']",donkey,61.1983818969589,female,Fletcher
+food, ,"('you go to eat my horse up', 'Investigator')","[0, 'you go to eat my horse up']",horse,63.5598266904865,female,Fletcher
+toy, ,"('it be the only place where we could play these game together', 'Investigator')","[0, 'it be the only place where we could play these game together']",game,61.1983818969589,female,Fletcher
+vehicle, ,"('some child walk to school and some ride the bus', 'Investigator')","[0, 'some child walk to school and some ride the bus']",bus,62.6255159243516,female,Fletcher
+toy, ,"('now we go to play another game', 'Investigator')","[0, 'now we go to play another game']",game,61.2640916651266,male,Fletcher
+toy, ,"('we go to play some game today', 'Investigator')","[0, 'we go to play some game today']",game,60.0012320581531,female,Fletcher
+toy, ,"('we gonna play some game today', 'Investigator')","[0, 'we gonna play some game today']",game,60.0012320581531,male,Fletcher
+toy, ,"('so do you fancy play some game today', 'Investigator')","[0, 'so do you fancy play some game today']",game,60.0012320581531,male,Fletcher
+toy, ,"('she do want to play any game do she', 'Investigator')","[0, 'she do want to play any game do she']",game,63.8883755313251,female,Fletcher
+toy, ,"('shall I go and play some game with her next week', 'Investigator')","[0, 'shall I go and play some game with her next week']",game,60.0012320581531,male,Fletcher
+toy, ,"('she like play game', 'Investigator')","[0, 'she like play game']",game,60.0012320581531,male,Fletcher
+vehicle, ,"('some child walk to school and some ride the bus', 'Investigator')","[0, 'some child walk to school and some ride the bus']",bus,62.8883549970225,male,Fletcher
+toy, ,"('uhhuh probable she play with the ball', 'Investigator')","[0, 'uhhuh probable she play with the ball']",ball,63.0998583133124,female,Fletcher
+vehicle, ,"('some child walk to school and some ride the bus', 'Investigator')","[0, 'some child walk to school and some ride the bus']",bus,63.5598266904865,female,Fletcher
+food, ,"('or do you think the cat have eat the fish', 'Investigator')","[0, 'or do you think the cat have eat the fish']",fish,61.3626563173782,female,Fletcher
+food, ,"('or do you think the cat have eat the fish', 'Investigator')","[0, 'or do you think the cat have eat the fish']",fish,61.3626563173782,female,Fletcher
+toy, ,"('now we go to play with horse and tiger', 'Investigator')","[0, 'now we go to play with horse and tiger']",horse,62.8883549970225,male,Fletcher
+toy, ,"('now we go to play with horse and tiger', 'Investigator')","[0, 'now we go to play with horse and tiger']",horse,62.8883549970225,male,Fletcher
+toy, ,"('have you be play game at then', 'Investigator')","[0, 'have you be play game at then']",game,63.8883755313251,female,Fletcher
+toy, ,"('now we go to play with horse and tiger', 'Investigator')","[0, 'now we go to play with horse and tiger']",horse,63.0998583133124,female,Fletcher
+toy, ,"('now we go to play with horse and tiger', 'Investigator')","[0, 'now we go to play with horse and tiger']",horse,63.0998583133124,female,Fletcher
+vehicle, ,"('some child walk to school and some ride the bus', 'Investigator')","[0, 'some child walk to school and some ride the bus']",bus,61.6254953900491,female,Fletcher
+vehicle, ,"('some child walk to school and some ride the bus', 'Investigator')","[0, 'some child walk to school and some ride the bus']",bus,62.7240805766032,male,Fletcher
+vehicle, ,"('look some child walk to school and some ride the bus', 'Investigator')","[0, 'look some child walk to school and some ride the bus']",bus,62.7240805766032,male,Fletcher
+toy, ,"('now we go to play horse and tiger', 'Investigator')","[0, 'now we go to play horse and tiger']",horse,60.0012320581531,male,Fletcher
+toy, ,"('Then you say to Carl look I want to play with your car', 'Investigator')","[0, 'Then you say to Carl look I want to play with your car']",car,60.0012320581531,female,Fletcher
+toy, ,"('and you say but I want to play with your car and Carl say no and then you start fight with each_other', 'Investigator')","[0, 'and you say but I want to play with your car and Carl say no and then you start fight with each_other']",car,60.0012320581531,female,Fletcher
+toy, ,"('this be a girl who play with a doll in the pram', 'Investigator')","[0, 'this be a girl who play with a doll in the pram']",doll,62.0012731267582,female,Fletcher
+vehicle, ,"('do you know how to ride a tractor', 'Investigator')","[0, 'do you know how to ride a tractor']",tractor,60.0012320581531,male,Fletcher
+vehicle, ,"('some child walk to school and some ride the bus', 'Investigator')","[0, 'some child walk to school and some ride the bus']",bus,61.3626563173782,female,Fletcher
+toy, ,"('do you want to play a game then', 'Investigator')","[0, 'do you want to play a game then']",game,60.0012320581531,male,Fletcher
+toy, ,"('let play a game', 'Investigator')","[0, 'let play a game']",game,60.0012320581531,male,Fletcher
+vehicle, ,"('some child walk to school and some ride the bus', 'Investigator')","[0, 'some child walk to school and some ride the bus']",bus,60.6254748557465,male,Fletcher
+vehicle, ,"('some child walk to school and some ride the bus', 'Investigator')","[0, 'some child walk to school and some ride the bus']",bus,63.0998583133124,female,Fletcher
+toy, ,"('so she play with her doll', 'Investigator')","[0, 'so she play with her doll']",doll,62.0012731267582,female,Fletcher
+toy, ,"('my friend and Richard they play with that game before', 'Investigator')","[0, 'my friend and Richard they play with that game before']",game,62.7240805766032,male,Fletcher
+toy, ,"('this girl play with a doll in a pram', 'Investigator')","[0, 'this girl play with a doll in a pram']",doll,61.1983818969589,female,Fletcher
+vehicle, ,"('some child walk to school and some ride the bus', 'Investigator')","[0, 'some child walk to school and some ride the bus']",bus,60.0012320581531,male,Fletcher
+toy, ,"('shall we play another game', 'Investigator')","[0, 'shall we play another game']",game,60.0012320581531,male,Fletcher
+toy, ,"('play with his car', 'Investigator')","[0, 'play with his car']",car,60.0012320581531,male,Fletcher
+toy, ,"('boy play with the car', 'Investigator')","[0, 'boy play with the car']",car,60.0012320581531,male,Fletcher
+vehicle, ,"('some child walk to school and some ride the bus', 'Investigator')","[0, 'some child walk to school and some ride the bus']",bus,63.8883755313251,female,Fletcher
+toy, ,"('now we play another game Rachel', 'Investigator')","[0, 'now we play another game Rachel']",game,60.0012320581531,female,Fletcher
+vehicle, ,"('some child walk to school and some ride the bus', 'Investigator')","[0, 'some child walk to school and some ride the bus']",bus,62.0012731267582,female,Fletcher
+toy, ,"('this girl be play with some ball', 'Investigator')","[0, 'this girl be play with some ball']",ball,62.7240805766032,male,Fletcher
+toy, ,"('play another game', 'Investigator')","[0, 'play another game']",game,60.0012320581531,male,Fletcher
+toy, ,"('I get a boy who play with a car', 'Investigator')","[0, 'I get a boy who play with a car']",car,60.0012320581531,male,Fletcher
+toy, ,"('and this girl play with ball', 'Investigator')","[0, 'and this girl play with ball']",ball,62.7240805766032,male,Fletcher
+toy, ,"('and this girl play with ball', 'Investigator')","[0, 'and this girl play with ball']",ball,62.7240805766032,male,Fletcher
+vehicle, ,"('some child walk to school and some ride the bus', 'Investigator')","[0, 'some child walk to school and some ride the bus']",bus,60.0012320581531,female,Fletcher
+toy, ,"('one be play with ball', 'Investigator')","[0, 'one be play with ball']",ball,62.7240805766032,male,Fletcher
+toy, ,"('one be play with ball', 'Investigator')","[0, 'one be play with ball']",ball,62.7240805766032,male,Fletcher
+food, ,"('there she eat cake', 'Investigator')","[0, 'there she eat cake']",cake,60.0012320581531,male,Fletcher
+food, ,"('do you know anyone who eat cake for breakfast', 'Investigator')","[0, 'do you know anyone who eat cake for breakfast']",cake,60.0012320581531,male,Fletcher
+vehicle, ,"('some child walk to school and some ride the bus', 'Investigator')","[0, 'some child walk to school and some ride the bus']",bus,61.1983818969589,female,Fletcher
+toy, ,"('this girl be play with ball', 'Investigator')","[0, 'this girl be play with ball']",ball,60.0012320581531,male,Fletcher
+toy, ,"('this girl be play with ball', 'Investigator')","[0, 'this girl be play with ball']",ball,60.0012320581531,male,Fletcher
+toy, ,"('yes she play with the doll', 'Investigator')","[0, 'yes she play with the doll']",doll,60.0012320581531,male,Fletcher
+vehicle, ,"('some child ride the bus to school and some child walk to school', 'Investigator')","[0, 'some child ride the bus to school and some child walk to school']",bus,60.0012320581531,male,Fletcher
+toy, ,"('shall we play another game', 'Investigator')","[0, 'shall we play another game']",game,60.0012320581531,male,Fletcher
+toy, ,"('this girl be play with two ball and this girl', 'Investigator')","[0, 'this girl be play with two ball and this girl']",ball,60.0012320581531,female,Fletcher

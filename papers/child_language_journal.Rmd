@@ -192,7 +192,7 @@ n general, we found little instances of parents anchorinfg super-ordinate terms 
 
 ## Data
 
-We constructed a large-scale corpus by aggregating all English-language transcripts from CHILDES [@macwhinney2000; @sanchez2019]. We selected all utterances in which the speaker was not tagged as "Child" or "Target_Child." In other words, we only keep input from adults, excluding language produced by children. In the main analyses, we limit the input to the speech addressed to children up to three years of age as this is the age where early signs of conceptual hierarchy appear according to the above-reviewed developmental literature. That said, we also include results from speech addressed to children up to six years to investigate potential developmental changes in the input. The final corpus contained 1.9 million utterances and 7.9 million words from a collection of 4,939 transcripts across 660 children with an average age of 26.8 months. We decided to study the six following superordinate categories: "animal", "furniture", "clothes", "food", "toys" and "vehicles." For each of these categories, we used the corresponding basic-level terms available in the English-language MacArthur-Bates Communicative Inventory (CDI) [@fenson94], a parent-report instrument that provides a partial listing and categorization of words produced by children 18--30 months. 
+We constructed a large-scale corpus by aggregating all English-language transcripts from CHILDES [@macwhinney2000; @sanchez2019]. We selected all utterances in which the speaker was not tagged as "Child" or "Target_Child." In other words, we only keep input from adults, excluding language produced by children. In the main analyses, we limit the input to the speech addressed to children up to three years of age as this is the age where early signs of conceptual hierarchy appear according to the above-reviewed developmental literature. That said, we also include results from speech addressed to children up to six years to investigate potential developmental changes in the input. The final corpus contained 1.9 million utterances and 8.2 million words from a collection of 4,939 transcripts across 660 children (mean age = 26.5 months, SD = 5.9, median = 27.5). We decided to study the six following superordinate categories: "animal", "furniture", "clothes", "food", "toys" and "vehicles." For each of these categories, we used the corresponding basic-level terms available in the English-language MacArthur-Bates Communicative Inventory (CDI) [@fenson94], a parent-report instrument that provides a partial listing and categorization of words produced by children 18--30 months. 
 
 ## Cues to Conceptual Hierarchy and their Feature Vectors 
 
@@ -369,14 +369,16 @@ We followed the same approach as above but with data addressed to children up to
 \caption{\label{tab:development} Information about the corpora used in the analysis of developmental change.}
 \begin{tabularx}{\linewidth}{cXccXX}
 
-\textbf{Age} & Age (months) & Children & Transcripts & Utterances & Words \\
+\textbf{Age} & Mean Age (months) & SD & Median & Children & Transcripts & Utterances & Words \\
 \hline
 
-\textbf{\textless4} & 30.1 & 843 & 6,750 & 2.657 M & 10.827 M\\
+\textbf{\textless3} & 26.5 & 5.9 & 27.5 & 660 & 4,939 & 1.996 M & 8.262 M\\
 
-\textbf{\textless5} & 33.5 & 971 & 7,889 & 3.093 M & 12.807 M\\
+\textbf{\textless4} & 30.1 & 8.2 & 30 & 843 & 6,750 & 2.657 M & 11.270 M\\
 
-\textbf{\textless6} & 34.8 & 1,046 & 8,654 & 3.221 M & 13.325 M\\
+\textbf{\textless5} & 33.1 & 11 & 31.3 & 971 & 7,889 & 3.093 M & 13.393 M\\
+
+\textbf{\textless6} & 35 & 13 & 32.1 & 1,046 & 8,654 & 3.221 M & 13.991 M\\
 
 \hline
 \end{tabularx}
@@ -389,6 +391,62 @@ We followed the same approach as above but with data addressed to children up to
 dev <- feather::read_feather("../saved/aggregate.feather") 
 
 ggplot(data=dev, aes(x=age, y=AUC, col=cue)) +
+  geom_point(position=position_dodge()) +
+    geom_line() +
+    ylim(0, 1) + 
+  geom_hline(yintercept=0.5, linetype = "dashed") +
+    theme_few()+
+    theme(
+      aspect.ratio=0.7,
+      legend.title = element_text(size=7),
+      legend.text=element_text(size=7),
+      axis.text = element_text(size = 11)
+      ) +
+    theme(legend.position = c(0.99, 0.01),
+      legend.justification = c("right", "bottom"),
+      legend.key.size = unit(0, 'lines'))
+
+```
+
+```{r dev_2, fig.env = "figure", fig.pos = "!htbp", fig.align = "center", fig.width=3, fig.height=3, fig.cap = "\\label{fig:dev_2} The Area Under the ROC Curve (AUC) scores for each cue (across all categories) using speech heard by children within a particular age range. A value of 0.5 represents pure chance, and a value of 1 represents perfect performance."}
+
+dev <- feather::read_feather("../saved/aggregate_2.feather")
+
+dev <- dev %>% filter(grepl("-", yr, fixed=TRUE)) %>% rename(
+    value = AUC,
+    mode = cue,
+    yr = AgeRange) 
+
+mean <- dev %>% dplyr::group_by(cue, AgeRange) %>% dplyr::summarise(AUC = mean(AUC))
+mean$cue2 <- ifelse(mean$cue == "cooccurrence", "Pragmatic", ifelse(mean$cue == "w2v", "Co-occurrence", "Affordance"))
+
+ggplot(data=mean, aes(x=AgeRange, y=AUC, group=cue2, col=cue2)) +
+  geom_point(position=position_dodge()) +
+    geom_line() +
+    ylim(0, 1) + 
+  geom_hline(yintercept=0.5, linetype = "dashed") +
+    theme_few()+
+    theme(
+      aspect.ratio=0.7,
+      legend.title = element_text(size=7),
+      legend.text=element_text(size=7),
+      axis.text = element_text(size = 11)
+      ) +
+    theme(legend.position = c(0.99, 0.01),
+      legend.justification = c("right", "bottom"),
+      legend.key.size = unit(0, 'lines'))
+
+dev <- feather::read_feather("../saved/aggregate_2.feather") 
+
+dev2 <- dev %>% filter(!grepl("-", yr, fixed=TRUE)) %>% rename(
+    yr = Age,
+    value = AUC,
+    mode = cue)
+
+mean2 <- dev2 %>% dplyr::group_by(cue, Age) %>% dplyr::summarise(AUC = mean(AUC))
+mean2$cue2 <- ifelse(mean2$cue == "cooccurrence", "Pragmatic", ifelse(mean2$cue == "w2v", "Co-occurrence", "Affordance"))
+
+ggplot(data=mean2, aes(x=Age, y=AUC, group=cue2, col=cue2)) +
   geom_point(position=position_dodge()) +
     geom_line() +
     ylim(0, 1) + 
