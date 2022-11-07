@@ -304,15 +304,14 @@ Instances of our most explicit cue type, the *"is-a-kind-of" cue*, were so rare 
 auc_all <- feather::read_feather("../saved/auc_combined.feather") %>%
   rename(category = variable,
            AUC = value,
-           cue = mode) %>%
-  select(-yr)
+           cue = mode) %>% dplyr::select(-yr)
 
 auc_all$cue <- mapvalues(auc_all$cue, from = c("w2v", "cooccurrence", "verbs"), to = c("Distributional", "Pragmatic", "Affordance"))
 auc_all$category <- mapvalues(auc_all$category, from = c("food_drink", "furniture_rooms", "toys", "animals", "clothing", "vehicles"), to = c("food", "furniture", "toys", "animals", "clothes", "vehicles"))
 
 dev <- feather::read_feather("../saved/aggregate.feather") %>%
   filter(age == 3) %>%
-  select(-age) %>%
+  dplyr::select(-age) %>%
   mutate(category = "ALL")
 
 dev$cue <- mapvalues(dev$cue, from = c("Co-occurrence", "Pragmatic", "Affordance"), to = c("Distributional", "Pragmatic", "Affordance"))
@@ -400,6 +399,7 @@ For this analysis, we followed the same approach as above but included progressi
 ```{r dev, fig.env = "figure", fig.pos = "!htbp", fig.align = "center", fig.width=3, fig.height=3, fig.cap = "\\label{fig:dev} The Area Under the ROC Curve (AUC) scores for each cue (across all categories) using speech heard by children up to a particular age. A value of 0.5 represents pure chance, and a value of 1 represents perfect performance."}
 
 dev <- feather::read_feather("../saved/aggregate.feather") 
+print(dev)
 
 ggplot(data=dev, aes(x=age, y=AUC, col=cue)) +
   geom_point(position=position_dodge()) +

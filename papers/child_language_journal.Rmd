@@ -83,6 +83,7 @@ library(ggplot2)
 #library(langcog)
 library(boot)
 #library(lazyeval)
+#library(plyr)
 library(dplyr)
 library(tidyr)
 #library(wordbankr)
@@ -390,6 +391,8 @@ We followed the same approach as above but with data addressed to children up to
 
 dev <- feather::read_feather("../saved/aggregate.feather") 
 
+print(dev)
+
 ggplot(data=dev, aes(x=age, y=AUC, col=cue)) +
   geom_point(position=position_dodge()) +
     geom_line() +
@@ -408,45 +411,19 @@ ggplot(data=dev, aes(x=age, y=AUC, col=cue)) +
 
 ```
 
-```{r dev_2, fig.env = "figure", fig.pos = "!htbp", fig.align = "center", fig.width=3, fig.height=3, fig.cap = "\\label{fig:dev_2} The Area Under the ROC Curve (AUC) scores for each cue (across all categories) using speech heard by children within a particular age range. A value of 0.5 represents pure chance, and a value of 1 represents perfect performance."}
+```{r dev_2, include =F, fig.env = "figure", fig.pos = "!htbp", fig.align = "center", fig.width=3, fig.height=3, fig.cap = "\\label{fig:dev_2} The Area Under the ROC Curve (AUC) scores for each cue (across all categories) using speech heard by children within a particular age range. A value of 0.5 represents pure chance, and a value of 1 represents perfect performance."}
 
 dev <- feather::read_feather("../saved/aggregate_2.feather")
 
-dev <- dev %>% filter(grepl("-", yr, fixed=TRUE)) %>% rename(
-    value = AUC,
-    mode = cue,
-    yr = AgeRange) 
+dev <- dev %>% dplyr::filter(grepl("-", yr, fixed=TRUE)) %>% rename(
+    AUC = value,
+    cue = mode,
+    AgeRange = yr) 
 
 mean <- dev %>% dplyr::group_by(cue, AgeRange) %>% dplyr::summarise(AUC = mean(AUC))
-mean$cue2 <- ifelse(mean$cue == "cooccurrence", "Pragmatic", ifelse(mean$cue == "w2v", "Co-occurrence", "Affordance"))
+mean$cue2 <- plyr::mapvalues(mean$cue, from = c("w2v", "cooccurrence", "verbs"), to = c("Co-occurrence", "Pragmatic", "Affordance"))
 
 ggplot(data=mean, aes(x=AgeRange, y=AUC, group=cue2, col=cue2)) +
-  geom_point(position=position_dodge()) +
-    geom_line() +
-    ylim(0, 1) + 
-  geom_hline(yintercept=0.5, linetype = "dashed") +
-    theme_few()+
-    theme(
-      aspect.ratio=0.7,
-      legend.title = element_text(size=7),
-      legend.text=element_text(size=7),
-      axis.text = element_text(size = 11)
-      ) +
-    theme(legend.position = c(0.99, 0.01),
-      legend.justification = c("right", "bottom"),
-      legend.key.size = unit(0, 'lines'))
-
-dev <- feather::read_feather("../saved/aggregate_2.feather") 
-
-dev2 <- dev %>% filter(!grepl("-", yr, fixed=TRUE)) %>% rename(
-    yr = Age,
-    value = AUC,
-    mode = cue)
-
-mean2 <- dev2 %>% dplyr::group_by(cue, Age) %>% dplyr::summarise(AUC = mean(AUC))
-mean2$cue2 <- ifelse(mean2$cue == "cooccurrence", "Pragmatic", ifelse(mean2$cue == "w2v", "Co-occurrence", "Affordance"))
-
-ggplot(data=mean2, aes(x=Age, y=AUC, group=cue2, col=cue2)) +
   geom_point(position=position_dodge()) +
     geom_line() +
     ylim(0, 1) + 
